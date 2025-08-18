@@ -92,11 +92,18 @@
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
 	mask = /obj/item/clothing/mask/rogue/spectacles
 	backpack_contents = list(
-		/obj/item/recipe_book/alchemy
+		/obj/item/recipe_book/alchemy,
+		/obj/item/skillbook/unfinished, //give the book man a starter book, enough paper for 3 pages, and a writing instrument to get him started
+		/obj/item/natural/feather,
+		/obj/item/paper,
+		/obj/item/paper,
+		/obj/item/paper
+
 	)
 
 	if(H.mind)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/teach)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/learn)
 	if(H.age == AGE_OLD)
 		H.change_stat(STATKEY_SPD, -1)
 		H.change_stat(STATKEY_INT, 1)

@@ -5,6 +5,7 @@
 	dream_cost_base = 2
 	dream_cost_per_level = 1
 	color = "#ec994b"
+	max_skillbook_level = 3
 
 /datum/skill/combat/knives
 	name = "Knife-fighting"

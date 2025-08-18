@@ -208,6 +208,7 @@
 #define TRAIT_COMBAT_AWARE	"Combat Aware"
 #define TRAIT_SILVER_WEAK "Silverbaned"
 #define TRAIT_EQUESTRIAN "Equestrian"
+#define TRAIT_GOODWRITER "Great Writer"
 // ARMOR / CLOTHING GIVEN TRAITS (GIVEN BY WEARING CLOTHES/ARMOR PIECES)
 #define TRAIT_MONK_ROBE	"Holy Vestatures"
 
@@ -419,6 +420,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_MASTER_MASON = span_warning("I've been trained to make the most of stone"), 
 	TRAIT_EQUESTRIAN = span_warning("I am a capable rider. My mount is an extension of me."),
 	TRAIT_ROYALSERVANT = span_greentext("I've been serving the royal family for long enough to know their exotic tastes."),
+	TRAIT_GOODWRITER = span_notice("I'm proficient at writing. Any skillbooks made by me will allow the reader to learn the subject more quickly.")
 ))
 
 // trait accessor defines
