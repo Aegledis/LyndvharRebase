@@ -7,7 +7,7 @@
 	category_tags = list(CTAG_INQUISITION)
 	subclass_languages = list(/datum/language/valorian)
 	cmode_music = 'sound/music/combat_orthodoxist.ogg'
-	traits_applied = list(TRAIT_HEAVYARMOR,	TRAIT_SILVER_BLESSED, TRAIT_NOFAITHHEAL)
+	traits_applied = list(TRAIT_HEAVYARMOR,	TRAIT_SILVER_BLESSED, TRAIT_PSYDONITE)
 	subclass_stats = list(
 		STATKEY_WIL = 3,
 		STATKEY_CON = 2,

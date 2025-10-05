@@ -107,8 +107,9 @@
 #define TRAIT_LONGSTRIDER "Longstrider"
 #define TRAIT_UNDIVIDED "The Ten Undivided"
 #define TRAIT_PSYDONIAN_GRIT "Psydonian Grit" // Pain Tolerance. Through faith, ENDURE.
-#define TRAIT_NOFAITHHEAL "Atypical Devotion" // Anti-Miracles on a selective basis, anastasis / cure rot still apply. Slow passive wound healing while you have blood.
+#define TRAIT_PSYDONITE "Psydonite Devotion" // Anti-Miracles on a selective basis, anastasis / cure rot still apply. Slow passive wound healing while you have blood.
 #define TRAIT_BLACKBAGGER "Apprehension Techniques" // Capable of using Garrotes and Blackbags. Apprehension techniques.
+#define TRAIT_NOFAITHHEAL "Apostasis" // Miracles dont work, blue bar regenerates faster when resting, sleep faster.
 
 // PATRON GOD CURSES
 
@@ -316,8 +317,9 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_SHARPER_BLADES = span_info("My blades go dull slower, ensuring they stay sharp longer."),
 	TRAIT_CABAL = span_info("In secret, I have studied the ways of the First, and know of others of the Cult."),
 	TRAIT_HORDE = span_info("BY BLOOD AND BONE, I AM OF GRAGGAR'S ANOINTED! I FEEL THE STRENGTH IN OTHERS WHO ARE THE SAME."),
-	TRAIT_NOFAITHHEAL = span_info("My atypical faith protects me through sheer will. I can handle wounds better than most as a result. Healing miracles hold no sway over me and others of my faith, as apostate magic does not work on my soul."),
+	TRAIT_PSYDONITE = span_info("My faith protects me through sheer will. I can handle wounds better than most as a result. Healing miracles hold no sway over me and others of my faith, as apostate magic does not work on my soul."),
 	TRAIT_PSYDONIAN_GRIT = span_info("I can shrug off my wounds and maintain composure under duress. My own mortality is proof that I LYVE, as too does HE."),
+	TRAIT_NOFAITHHEAL = span_info("I am able to recuperate myself much faster than others thanks to my own perseverance and tenacity. Through my rejection of all faiths, the miracles of the Divine hold no sway over me or any others of my ilk."),
 	TRAIT_BLACKBAGGER = span_info("I've been trained to properly abduct individuals through the use of seizing garrotes and blackbags."),
 	TRAIT_FORTITUDE = span_info("The typical drain I feel from day to day life is lessened, my athleticism greater."),
 	TRAIT_GUIDANCE = span_info("The arcyne aides me in battle."),

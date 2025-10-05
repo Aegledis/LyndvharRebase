@@ -42,7 +42,7 @@
 			wound.heal_wound(1)
 
 	/// ENDVRE AS HE DOES.
-	if(!stat && HAS_TRAIT(src, TRAIT_NOFAITHHEAL) && !HAS_TRAIT(src, TRAIT_PARALYSIS))
+	if(!stat && HAS_TRAIT(src, TRAIT_PSYDONITE) && !HAS_TRAIT(src, TRAIT_PARALYSIS))
 		handle_wounds()
 		//passively heal wounds, but not if you're skullcracked OR DEAD.
 		if(blood_volume > BLOOD_VOLUME_SURVIVE)

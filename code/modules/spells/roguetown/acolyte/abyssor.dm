@@ -208,10 +208,15 @@
 	. = ..()
 	if(isliving(targets[1]))
 		var/mob/living/target = targets[1]
-		if(HAS_TRAIT(target, TRAIT_NOFAITHHEAL))
+		if(HAS_TRAIT(target, TRAIT_PSYDONITE))
 			target.visible_message(span_info("[target] stirs for a moment, the miracle dissipates."), span_notice("A dull warmth swells in your heart, only to fade as quickly as it arrived."))
 			playsound(target, 'sound/magic/PSY.ogg', 100, FALSE, -1)
 			user.playsound_local(user, 'sound/magic/PSY.ogg', 100, FALSE, -1)
+			return FALSE
+		if(HAS_TRAIT(target, TRAIT_NOFAITHHEAL))
+			target.visible_message(span_info("[target] stirs for a moment, the miracle dissipates."), span_notice("As quickly as the swelling warmth arrives, it fades- rejecting your vessel."))
+			playsound(target, 'sound/magic/godless.ogg', 100, FALSE, -1)
+			user.playsound_local(user, 'sound/magic/godless.ogg', 100, FALSE, -1)
 			return FALSE
 		if(user.patron?.undead_hater && (target.mob_biotypes & MOB_UNDEAD))
 			target.visible_message(span_danger("[target] is crushed by divine pressure!"), span_userdanger("I'm crushed by divine pressure!"))

@@ -629,13 +629,15 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 					if(!fallingas)
 						to_chat(src, span_warning("I'll fall asleep soon..."))
 					fallingas++
-					if(HAS_TRAIT(src, TRAIT_FASTSLEEP))
+					if(HAS_TRAIT(src, TRAIT_FASTSLEEP) || HAS_TRAIT(src, TRAIT_NOFAITHHEAL))
 						fallingas++
 					if(fallingas > 15)
 						teleport_to_dream(src, 10000, 2)
 						Sleeping(300)
 			else
 				energy_add(sleepy_mod * 10)
+				if(HAS_TRAIT(src, TRAIT_NOFAITHHEAL))
+					energy_add(sleepy_mod * 4)
 		// Resting on the ground (not sleeping or with eyes closed and about to fall asleep)
 		else if(!(mobility_flags & MOBILITY_STAND))
 			if(eyesclosed)
@@ -653,16 +655,20 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 					if(!fallingas)
 						to_chat(src, span_warning("I'll fall asleep soon, although a bed would be more comfortable..."))
 					fallingas++
-					if(HAS_TRAIT(src, TRAIT_FASTSLEEP))
+					if(HAS_TRAIT(src, TRAIT_FASTSLEEP) || HAS_TRAIT(src, TRAIT_NOFAITHHEAL))
 						fallingas++
 					if(fallingas > 25)
 						teleport_to_dream(src, 10000, 2)
 						Sleeping(300)
 			else
 				energy_add(10)
+				if(HAS_TRAIT(src, TRAIT_NOFAITHHEAL))
+					energy_add(10)
 		else if(fallingas)
 			fallingas = 0
 
 	// Leaning against a wall: slowly regain stamina
 	if(mobility_flags & MOBILITY_STAND && wallpressed && !IsSleeping() && !buckled && !lying && !climbing)
 		energy_add(5)
+		if(HAS_TRAIT(src, TRAIT_NOFAITHHEAL))
+			energy_add(5)
