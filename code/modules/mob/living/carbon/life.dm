@@ -653,7 +653,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 					if(!fallingas)
 						to_chat(src, span_warning("I'll fall asleep soon, although a bed would be more comfortable..."))
 					fallingas++
-					if(HAS_TRAIT(src, TRAIT_FASTSLEEP))
+					if(HAS_TRAIT(src, TRAIT_FASTSLEEP) || HAS_TRAIT(src, TRAIT_NOFAITHHEAL))
 						fallingas++
 					if(fallingas > 25)
 						teleport_to_dream(src, 10000, 2)
