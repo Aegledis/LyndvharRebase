@@ -26,6 +26,11 @@
 			user.playsound_local(user, 'sound/magic/PSY.ogg', 100, FALSE, -1)
 			playsound(target, 'sound/magic/PSY.ogg', 100, FALSE, -1)
 			return FALSE
+		if(HAS_TRAIT(target, TRAIT_NOFAITHHEAL))
+			target.visible_message(span_info("[target] stirs for a moment, the miracle dissipates."), span_notice("As quickly as the swelling warmth arrives, it fades- rejecting your vessel."))
+			playsound(target, 'sound/magic/PSY.ogg', 100, FALSE, -1)
+			user.playsound_local(user, 'sound/magic/PSY.ogg', 100, FALSE, -1)
+			return FALSE
 		if(target.has_status_effect(/datum/status_effect/buff/druqks/baotha))
 			to_chat(user, span_warning("They're already blessed by these effects!"))
 			revert_cast()

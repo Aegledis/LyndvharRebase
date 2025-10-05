@@ -319,7 +319,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_HORDE = span_info("BY BLOOD AND BONE, I AM OF GRAGGAR'S ANOINTED! I FEEL THE STRENGTH IN OTHERS WHO ARE THE SAME."),
 	TRAIT_TRAIT_PSYDONITE = span_info("My faith protects me through sheer will. I can handle wounds better than most as a result. Healing miracles hold no sway over me and others of my faith, as apostate magic does not work on my soul."),
 	TRAIT_PSYDONIAN_GRIT = span_info("I can shrug off my wounds and maintain composure under duress. My own mortality is proof that I LYVE, as too does HE."),
-	TRAIT_NOFAITHHEAL = span_info("I am able to recuperate myself much faster than others thanks to my own perseverance and tenacity. Through my rejection of all faiths, the miracles of the Divine hold no sway over me or any others of my ilk.")
+	TRAIT_NOFAITHHEAL = span_info("I am able to recuperate myself much faster than others thanks to my own perseverance and tenacity. Through my rejection of all faiths, the miracles of the Divine hold no sway over me or any others of my ilk."),
 	TRAIT_BLACKBAGGER = span_info("I've been trained to properly abduct individuals through the use of seizing garrotes and blackbags."),
 	TRAIT_FORTITUDE = span_info("The typical drain I feel from day to day life is lessened, my athleticism greater."),
 	TRAIT_GUIDANCE = span_info("The arcyne aides me in battle."),
