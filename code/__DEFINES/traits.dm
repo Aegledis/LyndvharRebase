@@ -109,7 +109,7 @@
 #define TRAIT_PSYDONIAN_GRIT "Psydonian Grit" // Pain Tolerance. Through faith, ENDURE.
 #define TRAIT_PSYDONITE "Psydonite Devotion" // Anti-Miracles on a selective basis, anastasis / cure rot still apply. Slow passive wound healing while you have blood.
 #define TRAIT_BLACKBAGGER "Apprehension Techniques" // Capable of using Garrotes and Blackbags. Apprehension techniques.
-#define TRAIT_NOFAITHHEAL "PLACEHOLDER" // Miracles dont work
+#define TRAIT_NOFAITHHEAL "PLACEHOLDER" // Miracles dont work, blue bar regenerates faster when resting, sleep faster
 
 // PATRON GOD CURSES
 
