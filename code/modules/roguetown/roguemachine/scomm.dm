@@ -63,7 +63,7 @@
 			. += span_warning("Uhhh... I can't read them...")
 			return
 		for(var/i in 1 to length(GLOB.laws_of_the_land))
-			. += span_small("[i]. [GLOB.laws_of_the_land[i]]")
+			. += span_info("[i]. [GLOB.laws_of_the_land[i]]") //nonmodular lynd edit
 
 /obj/structure/roguemachine/scomm/process()
 	if(world.time <= next_decree)
@@ -667,9 +667,9 @@
 	. = ..()
 	switch(slot)
 		if(SLOT_RING)
-			fakename = "silver signet ring"	
+			fakename = "silver signet ring"
 			name = fakename
-	return TRUE		
+	return TRUE
 
 
 /obj/item/speakerinq/dropped(mob/user, silent)
@@ -768,7 +768,7 @@
 	if(!active)
 		to_chat(user, span_warning("[src] is inactive.."))
 		return FALSE
-	
+
 	to_chat(user, span_notice("I attach [src] to [M]."))
 	effect = M.apply_status_effect(/datum/status_effect/bugged)
 	effect.device = src
