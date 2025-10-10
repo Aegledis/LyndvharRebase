@@ -634,7 +634,7 @@
 
 /obj/item/rogueweapon/sword/sabre/shamshir
 	name = "shamshir"
-	desc = "A curved one-handed longsword. This type of scimitar is the quintessential armament of Ziggurati horsemen, its name derived from Sama'glos for \"Tiger's claw\"."
+	desc = "A curved one-handed longsword. This type of scimitar is the quintessential armament of Ziggurati horsemen, its name derived from Zybanti for \"Tiger's claw\"."
 	force = 24
 	wdefense = 6	//Has chop mode, so slightly less defense. Slightly.
 	wbalance = WBALANCE_SWIFT
@@ -1043,7 +1043,7 @@
 
 /obj/item/rogueweapon/sword/sabre/shamshir
 	name = "shamshir"
-	desc = "A curved one-handed longsword. This type of scimitar is the quintessential armament of Ranesheni horsemen, its name derived from Sama'glos for \"Tiger's claw\"."
+	desc = "A curved one-handed longsword. This type of scimitar is the quintessential armament of Ziguratti horsemen, its name derived from Zybanti for \"Tiger's claw\"."
 	force = 24
 	wdefense = 6	//Has chop mode, so slightly less defense. Slightly.
 	icon_state = "tabi"
