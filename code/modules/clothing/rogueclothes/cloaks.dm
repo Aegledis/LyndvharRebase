@@ -373,7 +373,7 @@
 
 /obj/item/clothing/cloak/tabard/knight/guard
 	desc = "A tabard with the viscount's heraldic colors."
-	color = CLOTHING_AZURE
+	color = CLOTHING_BLACK
 	detail_tag = "_spl"
 	detail_color = CLOTHING_WHITE
 
@@ -526,7 +526,7 @@
 /obj/item/clothing/cloak/stabard/guard
 	name = "guard tabard"
 	desc = "A tabard with the viscount's heraldic colors."
-	color = CLOTHING_AZURE
+	color = CLOTHING_BLACK
 	detail_tag = "_spl"
 	detail_color = CLOTHING_WHITE
 
@@ -689,7 +689,7 @@
 
 /obj/item/clothing/cloak/stabard/surcoat/guard
 	desc = "A surcoat with the viscount's heraldic colors."
-	color = CLOTHING_AZURE
+	color = CLOTHING_BLACK
 	detail_tag = "_quad"
 	detail_color = CLOTHING_WHITE
 
@@ -761,7 +761,7 @@
 //	allowed_sex = list(MALE)
 	allowed_race = NON_DWARVEN_RACE_TYPES
 	detail_tag = "_det"
-	detail_color = CLOTHING_AZURE
+	detail_color = CLOTHING_BLACK
 
 /obj/item/clothing/cloak/lordcloak/update_icon()
 	cut_overlays()
@@ -1029,7 +1029,7 @@
 	color = CLOTHING_WHITE
 
 /obj/item/clothing/cloak/cape/guard
-	color = CLOTHING_AZURE
+	color = CLOTHING_BLACK
 
 /obj/item/clothing/cloak/cape/guard/Initialize()
 	. = ..()
@@ -1214,7 +1214,7 @@
 /obj/item/clothing/cloak/half/rider
 	name = "rider cloak"
 	icon_state = "guardcloak"
-	color = CLOTHING_AZURE
+	color = CLOTHING_BLACK
 	allowed_sex = list(MALE, FEMALE)
 	allowed_race = NON_DWARVEN_RACE_TYPES
 	inhand_mod = FALSE
@@ -1225,7 +1225,7 @@
 /obj/item/clothing/cloak/half/vet
 	name = "town watch cloak"
 	icon_state = "guardcloak"
-	color = CLOTHING_AZURE
+	color = CLOTHING_BLACK
 	allowed_sex = list(MALE, FEMALE)
 	allowed_race = NON_DWARVEN_RACE_TYPES
 	inhand_mod = FALSE
@@ -1692,7 +1692,7 @@
 /obj/item/clothing/cloak/stabard/guardhood
 	name = "guard hood"
 	desc = "A hood with the viscount's heraldic colors."
-	color = CLOTHING_AZURE
+	color = CLOTHING_BLACK
 	detail_tag = "_spl"
 	detail_color = CLOTHING_WHITE
 	icon_state = "guard_hood"

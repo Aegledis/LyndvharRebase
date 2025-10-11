@@ -22,10 +22,10 @@ GLOBAL_VAR(lordsecondary)
 		return
 	var/prim
 	var/sec
-	var/choice = browser_input_list(src, "Choose a Primary Color", "HERALD THINE KINGDOM", colorlist)
+	var/choice = browser_input_list(src, "Choose a Primary Color", "HERALD THINE CITY", colorlist)
 	if(choice)
 		prim = colorlist[choice]
-	choice = browser_input_list(src, "Choose a Secondary Color", "HERALD THINE KINGDOM", colorlist)
+	choice = browser_input_list(src, "Choose a Secondary Color", "HERALD THINE CITY", colorlist)
 	if(choice)
 		sec = colorlist[choice]
 	if(!prim || !sec)
@@ -41,8 +41,8 @@ GLOBAL_VAR(lordsecondary)
 		GLOB.lordcolor -= T
 
 /proc/lord_color_default()
-	GLOB.lordprimary = "#611310" //RED
-	GLOB.lordsecondary = "#142c5a" //BLUE
+	GLOB.lordprimary = "#2b292e" //BLACK
+	GLOB.lordsecondary = "#ffffff" //WHITE
 	for(var/obj/O in GLOB.lordcolor)
 		O.lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	for(var/turf/T in GLOB.lordcolor)
