@@ -6,12 +6,14 @@
 	outfit = /datum/outfit/job/roguetown/wretch/heretic
 	category_tags = list(CTAG_WRETCH)
 	traits_applied = list(TRAIT_RITUALIST, TRAIT_HEAVYARMOR)
-	maximum_possible_slots = 2 //Ppl dont like heavy armor antags.
-	// Heretic is by far the best class with access to rituals (as long as they play a god with ritual), holy and heavy armor. So they keep 7 points.
+	maximum_possible_slots = 2
+	// Heretic is by far the best class with access to rituals (as long as they play a god with ritual), holy and heavy armor. So they keep 8 points.
 	subclass_stats = list(
 		STATKEY_STR = 2,
-		STATKEY_CON = 2,
-		STATKEY_WIL = 1
+		STATKEY_CON = 3,
+		STATKEY_WIL = 1,
+		STATKEY_INT = 2,
+		STATKEY_SPD = -1
 	)
 	subclass_skills = list(
 		/datum/skill/magic/holy = SKILL_LEVEL_EXPERT,
@@ -31,6 +33,7 @@
 
 /datum/outfit/job/roguetown/wretch/heretic
 	has_loadout = TRUE
+	allowed_patrons = ALL_INHUMEN_PATRONS
 
 /datum/outfit/job/roguetown/wretch/heretic/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -53,7 +56,7 @@
 				beltr = /obj/item/rogueweapon/flail/sflail
 			if("Axe")
 				H.adjust_skillrank_up_to(/datum/skill/combat/axes, SKILL_LEVEL_EXPERT, TRUE)
-				beltr = /obj/item/rogueweapon/stoneaxe/woodcut/steel
+				beltr = /obj/item/rogueweapon/stoneaxe/battle
 		var/datum/devotion/C = new /datum/devotion(H, H.patron)
 		C.grant_miracles(H, cleric_tier = CLERIC_T1, passive_gain = CLERIC_REGEN_MINOR, devotion_limit = CLERIC_REQ_4)	//Minor regen, can level up to T4.
 		wretch_select_bounty(H)
@@ -67,17 +70,17 @@
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/gravemark)
 			H.mind.current.faction += "[H.name]_faction"
 		ADD_TRAIT(H, TRAIT_GRAVEROBBER, TRAIT_GENERIC)
-	mask = /obj/item/clothing/mask/rogue/facemask
+	head = /obj/item/clothing/head/roguetown/helmet/heavy/knight/skettle
 	neck = /obj/item/clothing/neck/roguetown/gorget/steel
-	armor = /obj/item/clothing/suit/roguetown/armor/plate/half
-	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
-	gloves = /obj/item/clothing/gloves/roguetown/chain/iron
-	wrists = /obj/item/clothing/wrists/roguetown/bracers/iron
-	pants = /obj/item/clothing/under/roguetown/chainlegs/iron
+	armor = /obj/item/clothing/suit/roguetown/armor/plate
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
+	gloves = /obj/item/clothing/gloves/roguetown/chain
+	wrists = /obj/item/clothing/wrists/roguetown/bracers
+	pants = /obj/item/clothing/under/roguetown/chainlegs
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	backl = /obj/item/storage/backpack/rogue/satchel/short
-	backr = /obj/item/rogueweapon/shield/tower/metal
-	belt = /obj/item/storage/belt/rogue/leather
+	backr = /obj/item/rogueweapon/shield/heater
+	belt = /obj/item/storage/belt/rogue/leather/steel/tasset
 	beltl = /obj/item/rogueweapon/huntingknife
 	backpack_contents = list(
 		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
@@ -92,230 +95,12 @@
 	switch(H.patron?.type)
 		if(/datum/patron/inhumen/zizo)
 			H.cmode_music = 'sound/music/combat_heretic.ogg'
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/knight/iron, SLOT_HEAD, TRUE)
-		if(/datum/patron/inhumen/matthios)
-			H.cmode_music = 'sound/music/combat_matthios.ogg'
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/knight/iron, SLOT_HEAD, TRUE)
-		if(/datum/patron/inhumen/baotha)
-			H.cmode_music = 'sound/music/combat_baotha.ogg'
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/knight/iron, SLOT_HEAD, TRUE)
-		if(/datum/patron/inhumen/graggar)
-			H.cmode_music = 'sound/music/combat_graggar.ogg'
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/knight/iron, SLOT_HEAD, TRUE)
-		if(/datum/patron/divine/astrata)
-			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/psicross/astrata, SLOT_WRISTS, TRUE)
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold, SLOT_HEAD, TRUE)
-			H.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
-		if(/datum/patron/divine/abyssor)
-			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/psicross/abyssor, SLOT_WRISTS, TRUE)
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy, SLOT_HEAD, TRUE)
-			H.adjust_skillrank(/datum/skill/labor/fishing, 2, TRUE)
-			ADD_TRAIT(H, TRAIT_WATERBREATHING, TRAIT_GENERIC)
-		if(/datum/patron/divine/xylix)
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/knight/skettle, SLOT_HEAD, TRUE)
-			H.cmode_music = 'sound/music/combat_jester.ogg'
-			H.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
-			H.adjust_skillrank(/datum/skill/misc/lockpicking, 1, TRUE)
-			H.adjust_skillrank(/datum/skill/misc/music, 1, TRUE)
-		if(/datum/patron/divine/dendor)
-			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/psicross/dendor, SLOT_WRISTS, TRUE)
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/volfplate, SLOT_HEAD, TRUE)
-			H.cmode_music = 'sound/music/cmode/garrison/combat_warden.ogg'
-			H.adjust_skillrank(/datum/skill/labor/farming, 1, TRUE)
-			H.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
-		if(/datum/patron/divine/necra)
-			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/psicross/necra, SLOT_WRISTS, TRUE)
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/guard, SLOT_HEAD, TRUE)
-			ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
-			ADD_TRAIT(H, TRAIT_SOUL_EXAMINE, TRAIT_GENERIC)
-		if(/datum/patron/divine/pestra)
-			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/psicross/pestra, SLOT_WRISTS, TRUE)
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/sallet/visored, SLOT_HEAD, TRUE)
-			ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
-			H.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-			H.adjust_skillrank(/datum/skill/craft/alchemy, 1, TRUE)
-		if(/datum/patron/divine/eora)
-			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/psicross/eora, SLOT_WRISTS, TRUE)
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/bascinet/pigface/hounskull, SLOT_HEAD, TRUE)
-			ADD_TRAIT(H, TRAIT_BEAUTIFUL, TRAIT_GENERIC)
-			ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
-		if(/datum/patron/divine/noc)
-			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/psicross/noc, SLOT_WRISTS, TRUE)
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/knight, SLOT_HEAD, TRUE)
-			H.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE) // Really good at reading... does this really do anything? No. BUT it's soulful.
-			H.adjust_skillrank(/datum/skill/craft/alchemy, 1, TRUE)
-			H.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
-		if(/datum/patron/divine/ravox)
-			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/psicross/ravox, SLOT_WRISTS, TRUE)
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/bucket, SLOT_HEAD, TRUE)
-			H.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
-		if(/datum/patron/divine/malum)
-			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/psicross/malum, SLOT_WRISTS, TRUE)
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/sheriff, SLOT_HEAD, TRUE)
-			H.adjust_skillrank(/datum/skill/craft/blacksmithing, 1, TRUE)
-			H.adjust_skillrank(/datum/skill/craft/armorsmithing, 1, TRUE)
-			H.adjust_skillrank(/datum/skill/craft/weaponsmithing, 1, TRUE)
-			H.adjust_skillrank(/datum/skill/craft/smelting, 1, TRUE)
-			ADD_TRAIT(H, TRAIT_SMITHING_EXPERT, TRAIT_GENERIC)
-		if(/datum/patron/old_god)
-			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/psicross, SLOT_WRISTS, TRUE)
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/roguetown/helmet/heavy/knight/armet, SLOT_HEAD, TRUE)
-			H.equip_to_slot_or_del(new /obj/item/clothing/cloak/tabard/crusader/psydon, SLOT_CLOAK, TRUE)
-			H.change_stat(STATKEY_WIL, 2) //ENDVRE
-
-/datum/advclass/wretch/heretic/spy
-	name = "Heretic Spy"
-	tutorial = "Nimble of dagger and foot both, you are the shadowy herald of the cabal. They will not see you coming."
-	outfit = /datum/outfit/job/roguetown/wretch/hereticspy
-	maximum_possible_slots = 2 //Ppl dont like rogue antags.
-	traits_applied = list(TRAIT_RITUALIST, TRAIT_DODGEEXPERT)
-	//Slower than outlaw, but a bit more PER and INT
-	subclass_stats = list(
-		STATKEY_PER = 2,
-		STATKEY_WIL = 2,
-		STATKEY_SPD = 2,
-		STATKEY_INT = 1
-	)
-	subclass_skills = list(
-		/datum/skill/magic/holy = SKILL_LEVEL_EXPERT,
-		/datum/skill/misc/tracking = SKILL_LEVEL_EXPERT,
-		/datum/skill/combat/knives = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/swords = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/misc/swimming = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/wrestling = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/combat/unarmed = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/misc/athletics = SKILL_LEVEL_EXPERT,
-		/datum/skill/misc/climbing = SKILL_LEVEL_MASTER,
-		/datum/skill/misc/reading = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/misc/sneaking = SKILL_LEVEL_EXPERT,
-		/datum/skill/misc/stealing = SKILL_LEVEL_EXPERT,
-		/datum/skill/misc/lockpicking = SKILL_LEVEL_EXPERT,
-		/datum/skill/craft/traps = SKILL_LEVEL_JOURNEYMAN,
-	)
-	extra_context = "This subclass gain the Wound Heal miracle and the Convert Heretic spell."
-
-
-/datum/outfit/job/roguetown/wretch/hereticspy
-	has_loadout = TRUE
-
-/datum/outfit/job/roguetown/wretch/hereticspy/pre_equip(mob/living/carbon/human/H)
-	..()
-	to_chat(H, span_warning("Nimble of dagger and foot both, you are the shadowy herald of the cabal. They will not see you coming."))
-	H.mind.current.faction += "[H.name]_faction"
-	pants = /obj/item/clothing/under/roguetown/heavy_leather_pants
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
-	cloak = /obj/item/clothing/cloak/raincloak/mortus
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/lord
-	backl = /obj/item/storage/backpack/rogue/satchel/short
-	belt = /obj/item/storage/belt/rogue/leather
-	gloves = /obj/item/clothing/gloves/roguetown/fingerless_leather
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
-	neck = /obj/item/clothing/neck/roguetown/gorget
-	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/heavy
-	mask = /obj/item/clothing/mask/rogue/ragmask/black
-	backpack_contents = list(
-		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
-		/obj/item/lockpickring/mundane = 1,
-		/obj/item/flashlight/flare/torch/lantern/prelit = 1,
-		/obj/item/rope/chain = 1,
-		/obj/item/storage/roguebag = 1,
-		/obj/item/ritechalk = 1,
-		/obj/item/reagent_containers/glass/bottle/alchemical/healthpot = 1,	//Small health vial
-		)
-	H.cmode_music = 'sound/music/cmode/antag/combat_cutpurse.ogg'
-	if(H.mind)
-		var/weapons = list("Rapier","Dagger", "Bow", "Crossbow")
-		var/weapon_choice = input(H, "Choose your weapon.", "TAKE UP ARMS") as anything in weapons
-		H.set_blindness(0)
-		switch(weapon_choice)
-			if("Rapier")
-				H.adjust_skillrank_up_to(/datum/skill/combat/swords, SKILL_LEVEL_EXPERT, TRUE)
-				beltl = /obj/item/rogueweapon/scabbard/sword
-				l_hand = /obj/item/rogueweapon/sword/rapier
-			if("Dagger")
-				H.adjust_skillrank_up_to(/datum/skill/combat/knives, SKILL_LEVEL_EXPERT, TRUE)
-				beltl = /obj/item/rogueweapon/scabbard/sheath
-				l_hand = /obj/item/rogueweapon/huntingknife/idagger/steel/special
-			if("Bow")
-				H.adjust_skillrank_up_to(/datum/skill/combat/bows, SKILL_LEVEL_JOURNEYMAN, TRUE)
-				beltl = /obj/item/quiver/arrows
-				backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
-			if("Crossbow")
-				H.adjust_skillrank_up_to(/datum/skill/combat/crossbows, SKILL_LEVEL_JOURNEYMAN, TRUE) //have to specifically go into bows/crossbows unlike outlaw
-				beltr = /obj/item/quiver/bolts
-				backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
-		var/datum/devotion/C = new /datum/devotion(H, H.patron)
-		C.grant_miracles(H, cleric_tier = CLERIC_T1, passive_gain = CLERIC_REGEN_MINOR, devotion_limit = CLERIC_REQ_4)	//Minor regen, can level up to T4.
-		wretch_select_bounty(H)
-
-	if (istype (H.patron, /datum/patron/inhumen/zizo))
-		if(H.mind)
-			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/minion_order)
-			H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/gravemark)
-			H.mind.current.faction += "[H.name]_faction"
-		ADD_TRAIT(H, TRAIT_GRAVEROBBER, TRAIT_GENERIC)
-	H.mind?.AddSpell(new /obj/effect/proc_holder/spell/invoked/convert_heretic)
-	H.mind?.AddSpell(new /obj/effect/proc_holder/spell/invoked/wound_heal)
-
-/datum/outfit/job/roguetown/wretch/hereticspy/choose_loadout(mob/living/carbon/human/H)
-	. = ..()
-	switch(H.patron?.type)
-		if(/datum/patron/inhumen/zizo)
-			H.cmode_music = 'sound/music/combat_heretic.ogg'
 		if(/datum/patron/inhumen/matthios)
 			H.cmode_music = 'sound/music/combat_matthios.ogg'
 		if(/datum/patron/inhumen/baotha)
 			H.cmode_music = 'sound/music/combat_baotha.ogg'
 		if(/datum/patron/inhumen/graggar)
 			H.cmode_music = 'sound/music/combat_graggar.ogg'
-		if(/datum/patron/divine/astrata)
-			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/psicross/astrata, SLOT_WRISTS, TRUE)
-			H.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
-		if(/datum/patron/divine/abyssor)
-			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/psicross/abyssor, SLOT_WRISTS, TRUE)
-			H.adjust_skillrank(/datum/skill/labor/fishing, 2, TRUE)
-			ADD_TRAIT(H, TRAIT_WATERBREATHING, TRAIT_GENERIC)
-		if(/datum/patron/divine/xylix)
-			H.cmode_music = 'sound/music/combat_jester.ogg'
-			H.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
-			H.adjust_skillrank(/datum/skill/misc/lockpicking, 1, TRUE)
-			H.adjust_skillrank(/datum/skill/misc/music, 1, TRUE)
-		if(/datum/patron/divine/dendor)
-			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/psicross/dendor, SLOT_WRISTS, TRUE)
-			H.cmode_music = 'sound/music/cmode/garrison/combat_warden.ogg'
-			H.adjust_skillrank(/datum/skill/labor/farming, 1, TRUE)
-			H.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
-		if(/datum/patron/divine/necra)
-			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/psicross/necra, SLOT_WRISTS, TRUE)
-			ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
-			ADD_TRAIT(H, TRAIT_SOUL_EXAMINE, TRAIT_GENERIC)
-		if(/datum/patron/divine/pestra)
-			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/psicross/pestra, SLOT_WRISTS, TRUE)
-			ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
-			H.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-			H.adjust_skillrank(/datum/skill/craft/alchemy, 1, TRUE)
-		if(/datum/patron/divine/eora)
-			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/psicross/eora, SLOT_WRISTS, TRUE)
-			ADD_TRAIT(H, TRAIT_BEAUTIFUL, TRAIT_GENERIC)
-			ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
-		if(/datum/patron/divine/noc)
-			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/psicross/noc, SLOT_WRISTS, TRUE)
-			H.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE) // Really good at reading... does this really do anything? No. BUT it's soulful.
-			H.adjust_skillrank(/datum/skill/craft/alchemy, 1, TRUE)
-			H.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
-		if(/datum/patron/divine/ravox)
-			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/psicross/ravox, SLOT_WRISTS, TRUE)
-			H.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
-		if(/datum/patron/divine/malum)
-			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/psicross/malum, SLOT_WRISTS, TRUE)
-			H.adjust_skillrank(/datum/skill/craft/blacksmithing, 1, TRUE)
-			H.adjust_skillrank(/datum/skill/craft/armorsmithing, 1, TRUE)
-			H.adjust_skillrank(/datum/skill/craft/weaponsmithing, 1, TRUE)
-			H.adjust_skillrank(/datum/skill/craft/smelting, 1, TRUE)
-		if(/datum/patron/old_god)
-			H.equip_to_slot_or_del(new /obj/item/clothing/neck/roguetown/psicross, SLOT_WRISTS, TRUE)
-			H.equip_to_slot_or_del(new /obj/item/clothing/cloak/tabard/crusader/psydon, SLOT_CLOAK, TRUE)
-			H.change_stat(STATKEY_WIL, 2) //ENDVRE
 
 /obj/effect/proc_holder/spell/invoked/convert_heretic
 	name = "Convert The Downtrodden"
