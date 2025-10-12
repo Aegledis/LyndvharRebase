@@ -50,11 +50,14 @@
 	if(should_wear_femme_clothes(H))
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/purple
 		cloak = /obj/item/clothing/cloak/raincloak/purple
-	backpack_contents = list(/obj/item/recipe_book/survival = 1) // Someone gonna argue it is sovlful to not have this but whatever
+	backpack_contents = list(
+		/obj/item/recipe_book/survival = 1,
+		/obj/item/mundane/adventurer_kit = 1,
+		/obj/item/rogueweapon/huntingknife/idagger = 1,
+		/obj/item/rogueweapon/scabbard/sheath = 1)
 	var/turf/TU = get_turf(H)
 	if(TU)
 		new /mob/living/simple_animal/hostile/retaliate/rogue/saiga/tame/saddled(TU)
-	H.set_blindness(0)
 
 /datum/migrant_role/noble/bodyguard
 	name = "Bodyguard"
@@ -82,13 +85,14 @@
 		/datum/skill/combat/crossbows= SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/wrestling= SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/unarmed= SKILL_LEVEL_APPRENTICE,
-		/datum/skill/combat/swords= SKILL_LEVEL_EXPERT,
+		/datum/skill/combat/swords= SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/shields= SKILL_LEVEL_NOVICE,
 		/datum/skill/combat/polearms= SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/whipsflails= SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/knives= SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/reading= SKILL_LEVEL_NOVICE,
 		/datum/skill/misc/athletics= SKILL_LEVEL_EXPERT,
+		/datum/skill/misc/riding = SKILL_LEVEL_EXPERT,
 	)
 
 /datum/outfit/job/roguetown/noble/bodyguard/pre_equip(mob/living/carbon/human/H)
@@ -110,5 +114,10 @@
 	backpack_contents = list(
 		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
 		/obj/item/rogueweapon/huntingknife/idagger = 1,
-		/obj/item/rogueweapon/scabbard/sheath = 1
+		/obj/item/rogueweapon/scabbard/sheath = 1,
+		/obj/item/recipe_book/survival = 1,
+		/obj/item/mundane/adventurer_kit = 1
 		)
+	var/turf/TU = get_turf(H)
+	if(TU)
+		new /mob/living/simple_animal/hostile/retaliate/rogue/saiga/tame/saddled(TU)
