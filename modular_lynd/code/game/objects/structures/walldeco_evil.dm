@@ -78,12 +78,14 @@
 		say("SKRAAAAK!! GUARDEZ!! GUARDEZ!! CREACHER DANS L'ZONE SECURISEE!!")
 		HU.ambushable = TRUE //this shit literally does not work otherwise bro, idfk
 		HU.consider_ambush(always = TRUE, ignore_cooldown = TRUE, min_dist = 1, max_dist = 7, silent = FALSE)
+		turnthetvoff()
 
 	else
 		playsound(loc, 'sound/misc/gold_license.ogg', 100, TRUE, -1)
 		say("SKRAAAAK!! GUARDEZ!! GUARDEZ!! CREACHER DANS L'ZONE SECURISEE!!")
 		user.ambushable = TRUE //this shit literally does not work otherwise bro, idfk
 		user.consider_ambush(always = TRUE, ignore_cooldown = TRUE, min_dist = 1, max_dist = 7, silent = FALSE)
+		turnthetvoff()
 
 
 /obj/structure/fluff/walldeco/alarmevil/proc/turnthetvoff() //mustaaard
