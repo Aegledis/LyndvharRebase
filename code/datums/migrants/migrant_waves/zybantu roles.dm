@@ -54,7 +54,7 @@
 /datum/migrant_role/zybantu/janissary
 	name = "Janissary"
 	greet_text = "You are a dilligent soldier in employ of the Envoy for protection and to assure that their mission goes as planned."
-	outfit = /datum/outfit/job/roguetown/grenzel/doppelsoldner
+	outfit = /datum/outfit/job/roguetown/zybantu/janissary
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_SHUNNED_UP
 /datum/outfit/job/roguetown/zybantu/janissary/pre_equip(mob/living/carbon/human/H)
