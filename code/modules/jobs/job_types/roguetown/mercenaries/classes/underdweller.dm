@@ -21,7 +21,7 @@
 		/datum/skill/combat/wrestling = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/shields = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/unarmed = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/misc/athletics = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/misc/athletics = SKILL_LEVEL_EXPERT,
 		/datum/skill/misc/climbing = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/knives = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/craft/crafting = SKILL_LEVEL_APPRENTICE,
@@ -33,29 +33,30 @@
 		/datum/skill/craft/smelting = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/craft/armorsmithing = SKILL_LEVEL_NOVICE, //feel like it's ok to make em a bit more self-reliant
 		/datum/skill/craft/weaponsmithing = SKILL_LEVEL_NOVICE,
+		/datum/skill/craft/sewing = SKILL_LEVEL_NOVICE,
 	)
 
 /datum/outfit/job/roguetown/mercenary/underdweller/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/helmet/kettle/minershelm
-	pants = /obj/item/clothing/under/roguetown/heavy_leather_pants
+	pants = /obj/item/clothing/under/roguetown/splintlegs
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/half
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/heavy
-	gloves = /obj/item/clothing/gloves/roguetown/leather
+	gloves = /obj/item/clothing/gloves/roguetown/angle/atgervi
 	mask = /obj/item/clothing/mask/rogue/shepherd
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/lord
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
-	belt = /obj/item/storage/belt/rogue/leather/steel	//Should give these guys a unique miners belt at some point..
+	belt = /obj/item/storage/belt/rogue/leather/steel/tasset
 	neck = /obj/item/clothing/neck/roguetown/gorget/steel
 	beltl = /obj/item/rogueweapon/stoneaxe/woodcut/pick
-	beltr = /obj/item/rogueweapon/huntingknife
+	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backl = /obj/item/storage/backpack/rogue/backpack
-	backr = /obj/item/rogueweapon/shield/wood
+	backr = /obj/item/rogueweapon/shield/heater
 	backpack_contents = list(
-		/obj/item/roguekey/mercenary,
-		/obj/item/storage/belt/rogue/pouch/coins/poor,
+		/obj/item/roguekey/mercenary = 1,
 		/obj/item/bomb = 2,
 		/obj/item/rogueweapon/scabbard/sheath = 1,
+		/obj/item/rogueweapon/huntingknife = 1,
 		/obj/item/mundane/adventurer_kit = 1
 		)
 	H.merctype = 12
