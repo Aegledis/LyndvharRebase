@@ -1,7 +1,7 @@
 /datum/patron/divine/ravox
 	name = "Ravox"
 	domain = "God of Justice, Glory, Battle"
-	desc = "Stalwart warrior, glorious justicier; legends say he came down to the Basin to repel the vile hordes of demons with his own hands, and that he seeks warriors for his divine army among mortals."
+	desc = "At the advent of the BLOODWAKE, one God showed more ferocity against the forces of the ARCHDAEMONS than the others- and that was RAVOX. The patron God of all warfare and strife, there is no equal to Ravox in combat, and he is the guardian of his siblings in the PANTHEON. He was one of the few Gods in the Bloodwake that the Archdaemons truly feared opposing, as his chivalric wrath was endless. It is believed that Ravox personally slew the Archdaemon GRAGGAR in open combat, eliminating his part in the grand war."
 	worshippers = "Warriors, Sellswords & those who seek Justice"
 	mob_traits = list(TRAIT_SHARPER_BLADES, TRAIT_JUSTICARSIGHT)
 	miracles = list(/obj/effect/proc_holder/spell/targeted/touch/orison			= CLERIC_ORI,

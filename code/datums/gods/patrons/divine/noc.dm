@@ -1,7 +1,7 @@
 /datum/patron/divine/noc
 	name = "Noc"
 	domain = "God of the Moon, Night, Knowledge and Arcyne"
-	desc = "The Nite-Scholar, brother and rival to Astrata. His wisdom paves the way in the moonlight. Tales of esoteric magicka at the destination are sung - in the words of decaying scripts."
+	desc = "The second eldest of the Pantheonic siblings, NOC is the God of the Moon. His domain is that of the arcane, and of knowledge. When the realm was first created, Astrata and Noc shared the sky together, but Astrata grew jealous and exiled Noc to only be present during the night, while Astrata reigned the day. As a result Noc is considered a fierce rival of his sister, looking to overshadow her as much as possible."
 	worshippers = "Wizards and Scholars"
 	mob_traits = list(TRAIT_NIGHT_OWL)
 	miracles = list(/obj/effect/proc_holder/spell/targeted/touch/orison			= CLERIC_ORI,

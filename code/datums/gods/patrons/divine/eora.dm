@@ -1,7 +1,7 @@
 /datum/patron/divine/eora
 	name = "Eora"
 	domain = "Goddess of Love, Life and Beauty"
-	desc = "Baotha's fairer half, made from blind, unconditional love. She is without a shred of hate in her heart and taught mankind that true love that even transcends Necra's grasp."
+	desc = "This world is one of despair, and of toil. However, it does not mean one can not find love, nor joy in the life they live. For this EORA represents. She is the goddess of love, life, and all morality. Many believe her to be one of the weaker goddesses, but they would be incorrect. Her domain is one of primordial desires for innate companionship seen in all lives, sapient or not. It is believed that she is in a close relationship with RAVOX, and shares the toils of life with the greatest defender of the PANTHEON."
 	worshippers = "Lovers, the romantically inclined, and Doting Grandparents"
 	mob_traits = list(TRAIT_EMPATH, TRAIT_EXTEROCEPTION)
 	miracles = list(/obj/effect/proc_holder/spell/targeted/touch/orison			= CLERIC_ORI,
@@ -12,7 +12,7 @@
 					/obj/effect/proc_holder/spell/invoked/bud					= CLERIC_T1,
 					/obj/effect/proc_holder/spell/invoked/heartweave			= CLERIC_T2,
 					/obj/effect/proc_holder/spell/invoked/eoracurse				= CLERIC_T3,
-					/obj/effect/proc_holder/spell/invoked/pomegranate			= CLERIC_T4,
+					/obj/effect/proc_holder/spell/invoked/pomegranate			= CLERIC_T3,
 					/obj/effect/proc_holder/spell/invoked/resurrect/eora		= CLERIC_T4,
 	)
 	confess_lines = list(

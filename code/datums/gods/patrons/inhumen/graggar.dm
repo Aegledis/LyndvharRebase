@@ -1,8 +1,8 @@
 /datum/patron/inhumen/graggar
 	name = "Graggar"
-	domain = "God of Conquest, War, Strategy, Bind-Breaking"
-	desc = "Slave orc turned deity, said by the Holy Ecclesial to have been blessed by Ravox himself. He took his blessings to wage a bloody war against his once-captors, and then continued his conquest in his own name. Some Graggarites might care for honor, however many do not- what matters are results, and victory at a reasonable cost."
-	worshippers = "Prisoners, Slaves, Militants, and the Cruel"
+	domain = "Archdaemon of Conquest, War, and Murder"
+	desc = "The Archdaemon GRAGGAR was the second to be born from the sins of mortalkind. He represents all aspects of total rage, wroth, destruction, as well as murderous conquest. The strongest fighter of the Archdaemons, he crafted the ORCS and the GOBLINS in his own image and visage to fight alongside the daemons and TIEFLINGS of ZIZO."
+	worshippers = "Murderers, Militants, and the Cruel"
 	mob_traits = list(TRAIT_HORDE, TRAIT_ORGAN_EATER)
 	miracles = list(/obj/effect/proc_holder/spell/targeted/touch/orison					= CLERIC_ORI,
 					/obj/effect/proc_holder/spell/self/graggar_bloodrage				= CLERIC_T0,

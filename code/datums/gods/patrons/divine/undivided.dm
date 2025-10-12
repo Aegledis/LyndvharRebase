@@ -1,7 +1,7 @@
 /datum/patron/divine/undivided
 	name = "Undivided"
 	domain = "The Sun, the Moon, Earth, Justice, Freedom, the Seas, Creation, Inspiration, Death, Decay, Love, Healing, and Life."
-	desc = "A United Pantheon, Stalwart against the Darkness. The Ten grant lessons and boons to mortals. The primary form of worship being a generalist approach to worshipping all Ten, and taking lessons from all. This is the primary theology of the Grenzelhoft Holy See."
+	desc = "A United Pantheon, Stalwart against the Darkness. The Ten grant lessons and boons to mortals. The primary form of worship being a generalist approach to worshipping all Ten, and taking lessons from all. This is the primary theology of clergy in the Mother Church."
 	worshippers = "Holy See Clergymen. Pragmatists of the Ten."
 	mob_traits = list(TRAIT_UNDIVIDED)
 	miracles = list(/obj/effect/proc_holder/spell/targeted/touch/orison			= CLERIC_ORI, // ONLY Lower miracles of other lists. A much more varied utility miracle list, and a much wider selection. Also, our generic miracles(Lesser heal + Divine blast for acolytes) are better. But no specialization makes a lower level list. We're going to exclude Abyssor.

@@ -1,7 +1,7 @@
 /datum/patron/divine/necra
 	name = "Necra"
 	domain = "Goddess of Death and the Afterlife"
-	desc = "Veiled Lady of the underworld, equally feared and respected by mortals. She taught mortals the inevitability of death and cares for them as they reach the afterlife."
+	desc = "One of the more enigmatic of the siblings, NECRA is the patron Goddess of the Dead and Underworld. Considered to be cold and calculating, and distant from the rest of her siblings. Despite this, it is believed that she is one of immense benevolence, only seeking to guide the dead to safe passage to her realm, which is believed to be one of opulence and blissful rest."
 	worshippers = "The Dead, Mourners, Gravekeepers"
 	mob_traits = list(TRAIT_SOUL_EXAMINE, TRAIT_NOSTINK)	//No stink is generic but they deal with dead bodies so.. makes sense, I suppose?
 	miracles = list(/obj/effect/proc_holder/spell/targeted/touch/orison			= CLERIC_ORI,

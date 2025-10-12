@@ -1,8 +1,8 @@
 /datum/patron/divine/abyssor
 	name = "Abyssor"
-	domain = "The great dreamer, primordial father of the tides. The ancient one, the most warped and potent of the ten."
-	desc = "The strongest of the Ten; when awakened, the world flooded for a thousand daes and a thousand nights before he was put to slumber. Resting fitfully did Dendor split from his skull like a gaping wound. Communes rarely with his followers, only offering glimpses in dreams. Gifted primordial Man water. "
-	worshippers = "Men of the Sea, Primitive Aquatics"
+	domain = "Goddess of the Oceans, Tides and Dreams"
+	desc = "The patron of all the oceans and seas, ABYSSOR is the Goddess of the Seas and the Storms. Sailors and Axian alike pay tribute to Abyssor in order to have safe passage across the seas and oceans. Respect is absolutely demanded for her waves, for if they are not respected, your travels across them will surely be doomed to be sunk to the bottom of them. It is believed that she is a fierce rival to DENDOR, due to disagreements on who should control most of the world- her oceans, or his land."
+	worshippers = "Sailors, Primitive Aquatics, Fisherfolk"
 	mob_traits = list(TRAIT_ABYSSOR_SWIM, TRAIT_SEA_DRINKER)
 	miracles = list(/obj/effect/proc_holder/spell/targeted/touch/orison			= CLERIC_ORI,
 					/obj/effect/proc_holder/spell/invoked/aquatic_compulsion	= CLERIC_T0,
@@ -14,7 +14,7 @@
 					/obj/effect/proc_holder/spell/invoked/abyssheal				= CLERIC_T2,
 					/obj/effect/proc_holder/spell/invoked/call_mossback			= CLERIC_T3,
 					/obj/effect/proc_holder/spell/invoked/call_dreamfiend		= CLERIC_T3,
-					/obj/effect/proc_holder/spell/invoked/abyssal_infusion		= CLERIC_T4,
+					/obj/effect/proc_holder/spell/invoked/abyssal_infusion		= CLERIC_T3,
 					/obj/effect/proc_holder/spell/invoked/resurrect/abyssor		= CLERIC_T4,
 	)
 	confess_lines = list(

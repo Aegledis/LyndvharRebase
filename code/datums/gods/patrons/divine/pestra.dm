@@ -1,7 +1,7 @@
 /datum/patron/divine/pestra
 	name = "Pestra"
 	domain = "Goddess of Decay, Disease and Medicine"
-	desc = "Goddess that blessed many a saint with healing hands, Pestra taught man the arts of medicine and its benefits."
+	desc = "The Mother of the Sick and the Mother of Medicine, PESTRA’s domain is that of medicine and healing. Much to the disapproval of her siblings, she supports all advances in the fields of medicine and alchemical craft, and the curing of those afflicted by the dreaded Rot- much to the hatred and despise of her sister, Necra. As a result- they are in fierce opposition to each other."
 	worshippers = "The Sick, Phyicians, Apothecaries"
 	mob_traits = list(TRAIT_EMPATH, TRAIT_ROT_EATER)
 	miracles = list(/obj/effect/proc_holder/spell/targeted/touch/orison			= CLERIC_ORI,

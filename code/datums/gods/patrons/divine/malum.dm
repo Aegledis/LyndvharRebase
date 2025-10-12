@@ -1,7 +1,7 @@
 /datum/patron/divine/malum
 	name = "Malum"
 	domain = "God of Fire, Destruction and Rebirth"
-	desc = "Opinionless god of the crafts. He teaches that great works for killing or saving are great works, either way. The well-oiled guillotine and the well-sharpened axe are tools, and there is no good and evil to their craft."
+	desc = "Believed to have been the one who crafted Beowricke with their powerful hammer, MALUM is the patron God of all Craftsmen, Blacksmiths, and Hard Labor. At the behest of Astrata, the realm was made with his hammer, though it is believed to have been lost in the crafting. It is believed that all dwarven kind was forged from his hand, and that most grand natural wonders of the world were crafted by him personally. Hard work will find you blessed by his hand with new ideas for innovation."
 	worshippers = "Smiths, Miners, Engineers"
 	mob_traits = list(TRAIT_FORGEBLESSED, TRAIT_BETTER_SLEEP)
 	miracles = list(/obj/effect/proc_holder/spell/targeted/touch/orison			= CLERIC_ORI,
@@ -12,7 +12,7 @@
 					/obj/effect/proc_holder/spell/invoked/vigorousexchange		= CLERIC_T1,
 					/obj/effect/proc_holder/spell/invoked/heatmetal				= CLERIC_T2,
 					/obj/effect/proc_holder/spell/invoked/hammerfall			= CLERIC_T3,
-					/obj/effect/proc_holder/spell/invoked/craftercovenant		= CLERIC_T4,
+					/obj/effect/proc_holder/spell/invoked/craftercovenant		= CLERIC_T3,
 					/obj/effect/proc_holder/spell/invoked/resurrect/malum		= CLERIC_T4,
 	)
 	confess_lines = list(

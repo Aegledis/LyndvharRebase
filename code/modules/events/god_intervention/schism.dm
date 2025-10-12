@@ -72,7 +72,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 			challenger_count++
 
 	if(astrata_count >= challenger_count)
-		priority_announce("Astrata's light prevails over the challenge of [challenger.name]! The Sun Queen confirms her status as a true heir of Psydon!", "Astrata is VICTORIOUS!", 'sound/magic/ahh2.ogg')
+		priority_announce("Astrata's light prevails over the challenge of [challenger.name]! The Sun Queen confirms her status as the one true creator!", "Astrata is VICTORIOUS!", 'sound/magic/ahh2.ogg')
 		adjust_storyteller_influence("Astrata", 200)
 		adjust_storyteller_influence(challenger.name, -50)
 

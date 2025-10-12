@@ -1,7 +1,7 @@
 /datum/patron/divine/dendor
 	name = "Dendor"
 	domain = "God of the Earth and Nature"
-	desc = "The God of Wilds, born from Abyssor's feverish dreams. Spilt forth life from the oceans to land in a wild craze. The Father of Ground-Lyfe. Treefather."
+	desc = "To many, nature is one of wild behaviour and unpredictably, where horrible things can happen at any moment in them. That would be thanks to DENDOR- the ruler of the forests and the land. Dendor is a god that in recent years has gone silent, much believed to be due to the rapid growth and settlement of his lands, as well as the destruction of the environment. As a result, wildlife has become more fierce- wolves are rabid, and even local animals once benevolent seem to have their eyes filled with rage at those he holds responsible - mortals. Despite this, he has many preachers and worshippers, who believe it to be punishment from his divine roots, and that we must repent and seek repatriation by leaving our settlements and returning to the wilds."
 	worshippers = "Druids, Beasts, Madmen"
 	mob_traits = list(TRAIT_KNEESTINGER_IMMUNITY, TRAIT_LEECHIMMUNE)
 	miracles = list(/obj/effect/proc_holder/spell/targeted/touch/orison			= CLERIC_ORI,
@@ -11,7 +11,7 @@
 					/obj/effect/proc_holder/spell/invoked/blood_heal			= CLERIC_T1,
 					/obj/effect/proc_holder/spell/targeted/wildshape			= CLERIC_T2,
 					/obj/effect/proc_holder/spell/targeted/conjure_glowshroom	= CLERIC_T3,
-					/obj/effect/proc_holder/spell/self/howl/call_of_the_moon	= CLERIC_T4,
+					/obj/effect/proc_holder/spell/self/howl/call_of_the_moon	= CLERIC_T3,
 					/obj/effect/proc_holder/spell/invoked/resurrect/dendor		= CLERIC_T4,
 	)
 	confess_lines = list(
