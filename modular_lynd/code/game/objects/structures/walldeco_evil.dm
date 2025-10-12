@@ -1,5 +1,5 @@
-//hello mapper reading this
-//this is a reviel murmur that spawns an ambush. it unfortunately respects ambush cooldown despite my best efforts, so keep that in mind
+//hello mapper reading this. heed myne warnings, sire!
+//this is a reviel murmur that spawns an ambush
 //you may want to make a child of the area you're putting this in to ensure it spawns the 'correct' ambush mobs
 //can be bypassed with money or lockpick
 
@@ -46,6 +46,8 @@
 			say("O, la morte... To sleep?! Perchance, to DREAM...")
 			src.onoff = 0 //nightnight!
 			icon_state = "alarm_evil_off"
+			playsound(src.loc, 'sound/items/pickgood1.ogg', 5, TRUE)
+			playsound(src, 'sound/misc/gold_menu.ogg', 100, TRUE, -1)
 
 	if(istype(I, /obj/item/melee/touch_attack/lesserknock))
 		to_chat(user, "<span class='warning'>I start trying to disable \the [src.name]...</span>")
@@ -54,6 +56,9 @@
 			say("O, la morte... To sleep?! Perchance, to DREAM...")
 			src.onoff = 0 //nightnight!
 			icon_state = "alarm_evil_off"
+			playsound(src.loc, 'sound/items/pickgood1.ogg', 5, TRUE)
+			playsound(src, 'sound/misc/gold_menu.ogg', 100, TRUE, -1)
+
 
 	else
 		return //no cheese
