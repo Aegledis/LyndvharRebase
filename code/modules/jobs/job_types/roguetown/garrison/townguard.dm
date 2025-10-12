@@ -25,30 +25,38 @@
 
 	cmode_music = 'sound/music/combat_garrison.ogg'
 
+	job_subclasses = list(
+		/datum/advclass/watchman/footsman,
+		/datum/advclass/watchman/archer,
+		/datum/advclass/watchman/pikeman,
+		)
+
+
 /datum/outfit/job/roguetown/guardsman
 	job_bitflag = BITFLAG_GARRISON
+
 
 /datum/job/roguetown/guardsman/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	. = ..()
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
-		if(istype(H.cloak, /obj/item/clothing/cloak/stabard/guard))
+		if(istype(H.cloak, /obj/item/clothing/cloak/stabard/surcoat/guard))
 			var/obj/item/clothing/S = H.cloak
 			var/index = findtext(H.real_name, " ")
 			if(index)
 				index = copytext(H.real_name, 1,index)
 			if(!index)
 				index = H.real_name
-			S.name = "watchman tabard ([index])"
+			S.name = "watchman jupon ([index])"
 
 /datum/outfit/job/roguetown/guardsman
 	pants = /obj/item/clothing/under/roguetown/heavy_leather_pants
-	cloak = /obj/item/clothing/cloak/stabard/guard
+	cloak = /obj/item/clothing/cloak/stabard/surcoat/guard
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
-	belt = /obj/item/storage/belt/rogue/leather/steel/tasset
-	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	belt = /obj/item/storage/belt/rogue/leather/black
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/heavy
 	backr = /obj/item/storage/backpack/rogue/satchel/short
 	backpack_contents = list(/obj/item/signal_horn = 1)
 
@@ -56,8 +64,8 @@
 Footsman is basically a regular foots-soldier with gear to combat criminals, specializes in maces, polearms, and decent flail/sword training.
 Archer is basically a 'bounty-catcher' in function, less specialized at close-quarters, beyond knives, but very capable of downing a fleeing criminal.*/
 /datum/advclass/watchman/footsman
-	name = "Watch Footsman"
-	tutorial = "You are a footsman of the Town Watch. Well versed in various close-quarters weapons and aprehending street-savy criminals."
+	name = "Watch Footman"
+	tutorial = "You are a footman of the Town Watch. Well versed in various close-quarters weapons and aprehending street-savy criminals."
 	outfit = /datum/outfit/job/roguetown/guardsman/footsman
 
 	category_tags = list(CTAG_WATCH)
@@ -74,7 +82,7 @@ Archer is basically a 'bounty-catcher' in function, less specialized at close-qu
 		/datum/skill/combat/unarmed = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/axes = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/swords = SKILL_LEVEL_APPRENTICE,
-		/datum/skill/combat/shields = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/shields = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/polearms = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/knives = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/whipsflails = SKILL_LEVEL_APPRENTICE,
@@ -90,14 +98,13 @@ Archer is basically a 'bounty-catcher' in function, less specialized at close-qu
 
 /datum/outfit/job/roguetown/guardsman/footsman/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = pickweight(list(/obj/item/clothing/head/roguetown/helmet/kettle/iron = 3, /obj/item/clothing/head/roguetown/helmet/kettle = 7))
-	armor = pickweight(list(/obj/item/clothing/suit/roguetown/armor/plate/half = 3, /obj/item/clothing/suit/roguetown/armor/plate/half/iron = 7))
+	head = /obj/item/clothing/head/roguetown/helmet/kettle/iron
+	armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
 	beltr = /obj/item/rogueweapon/mace/cudgel
-	backl = /obj/item/rogueweapon/shield/tower
+	backl = /obj/item/rogueweapon/shield/iron
 	backr = /obj/item/storage/backpack/rogue/satchel/short
 	beltl = /obj/item/storage/keyring/guardcastle
-	belt = /obj/item/storage/belt/rogue/leather/steel/tasset
-	gloves = /obj/item/clothing/gloves/roguetown/leather
+	gloves = /obj/item/clothing/gloves/roguetown/angle
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/rope/chain = 1, /obj/item/rogueweapon/scabbard/sheath = 1)
 	H.verbs |= /mob/proc/haltyell
 
@@ -117,7 +124,7 @@ Archer is basically a 'bounty-catcher' in function, less specialized at close-qu
 	)
 	subclass_skills = list(
 		/datum/skill/combat/bows = SKILL_LEVEL_EXPERT,
-		/datum/skill/combat/crossbows = SKILL_LEVEL_EXPERT,
+		/datum/skill/combat/crossbows = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/wrestling = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/unarmed = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/knives = SKILL_LEVEL_EXPERT,
@@ -137,15 +144,14 @@ Archer is basically a 'bounty-catcher' in function, less specialized at close-qu
 
 /datum/outfit/job/roguetown/guardsman/archer/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = pickweight(list(/obj/item/clothing/head/roguetown/helmet/kettle/iron = 3, /obj/item/clothing/head/roguetown/helmet/leather = 7))
+	head = /obj/item/clothing/head/roguetown/helmet/kettle/iron
 	mask = /obj/item/clothing/head/roguetown/roguehood/red		//To-do: Make a guard hood come in kingdom's colors.
 	armor = /obj/item/clothing/suit/roguetown/armor/leather	//So they get default-dodge expert usage.
 	beltr = /obj/item/quiver/arrows
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
 	backr = /obj/item/storage/backpack/rogue/satchel/short
 	beltl = /obj/item/storage/keyring/guardcastle
-	belt = /obj/item/storage/belt/rogue/leather
-	gloves = /obj/item/clothing/gloves/roguetown/leather
+	gloves = /obj/item/clothing/gloves/roguetown/angle
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel = 1, /obj/item/rope/chain = 1, /obj/item/rogueweapon/scabbard/sheath = 1)
 	H.verbs |= /mob/proc/haltyell
 
@@ -190,14 +196,13 @@ Archer is basically a 'bounty-catcher' in function, less specialized at close-qu
 
 /datum/outfit/job/roguetown/guardsman/pikeman/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = pickweight(list(/obj/item/clothing/head/roguetown/helmet/kettle/iron = 3, /obj/item/clothing/head/roguetown/helmet/kettle = 7))
-	armor = pickweight(list(/obj/item/clothing/suit/roguetown/armor/leather/heavy = 4, /obj/item/clothing/suit/roguetown/armor/chainmail = 3, /obj/item/clothing/suit/roguetown/armor/plate/half/iron = 2))
+	head = /obj/item/clothing/head/roguetown/helmet/kettle/iron
+	armor = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
 	backr = /obj/item/storage/backpack/rogue/satchel/short
 	beltl = /obj/item/storage/keyring/guardcastle
 	beltr = /obj/item/rogueweapon/scabbard/sword
 	l_hand = /obj/item/rogueweapon/sword/short
-	belt = /obj/item/storage/belt/rogue/leather/steel/tasset
-	gloves = /obj/item/clothing/gloves/roguetown/leather
+	gloves = /obj/item/clothing/gloves/roguetown/angle
 	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger = 1, /obj/item/rope/chain = 1, /obj/item/rogueweapon/scabbard/sheath = 1)
 	var/weapontype = pickweight(list("Spear" = 5, "Bardiche" = 3, "Lucerne" = 2)) //pooors
 	switch(weapontype)
