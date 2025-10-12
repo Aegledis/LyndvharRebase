@@ -76,7 +76,7 @@
 	name = "Noc"
 	vote_desc = "Knowledge reigns. Occurrences are tame, but remain suspectable to arcyne intervention. His favor shines upon those who dream for greater ambitions."
 	desc = "Noc will try to send more magical events."
-	welcome_text = "The air crackles with arcyne energy.."
+	welcome_text = "The air crackles with arcyne energy- a storm of potency comes.."
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#F0F0F0"
@@ -106,7 +106,7 @@
 	name = "Ravox"
 	vote_desc = "Glory reigns. Raids, villains, and omens are more likely to occur. His favor shines upon clashing steel and the cries of war."
 	desc = "Ravox will cause raids to happen naturally instead of only when people are dying a lot."
-	welcome_text = "\"The trumpets of Zericho are echoing in the distance..\""
+	welcome_text = "\"The trumpets of battle are echoing in the distance..\""
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#228822"
@@ -215,7 +215,7 @@
 	name = "Necra"
 	vote_desc = "Death reigns. Occurrences happen less often, and villains are less likely. Her favor shines upon those who put the deathless back into their graves."
 	desc = "Necra takes things very slow, rarely bringing in newcomers."
-	welcome_text = "\"In the fief of Zenmarke, there was the odor of decay..\""
+	welcome_text = "All things die eventually- but death does not have to be suffering."
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#888888"
@@ -483,7 +483,7 @@
 
 /datum/storyteller/graggar
 	name = "Graggar"
-	vote_desc = " Inhumenity reigns. Villains are assured, and raids occur far more often. His favor shines upon bloodshed and cannibalism."
+	vote_desc = "Archdaemons reign. Villains are assured, and raids occur far more often. His favor shines upon bloodshed and cannibalism."
 	desc = "Graggar encourages war and conquest, making combat the solution to all."
 	welcome_text = "A glorious feast awaits us! Stain ourselves with the blood of our enemies!"
 	weight = 4
