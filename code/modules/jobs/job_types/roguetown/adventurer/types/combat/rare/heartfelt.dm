@@ -4,7 +4,7 @@
 	tutorial = "You are the proud lord of Weocilyn \
 	but why did you come to the city of Lyndvhar?"
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_NO_CONSTRUCT
+	allowed_races = RACES_SHUNNED_UP
 	outfit = /datum/outfit/job/roguetown/adventurer/weocilynlord
 	maximum_possible_slots = 1
 	pickprob = 100

@@ -50,7 +50,9 @@
 	H.adjust_blindness(-3)
 
 	if(should_wear_masc_clothes(H))
+		head = /obj/item/clothing/head/roguetown/mentorhat
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/easttats
+		neck = /obj/item/clothing/neck/roguetown/leather
 		cloak = /obj/item/clothing/cloak/eastcloak1
 		pants = /obj/item/clothing/under/roguetown/heavy_leather_pants/eastpants1
 		gloves = /obj/item/clothing/gloves/roguetown/eastgloves2
@@ -61,6 +63,7 @@
 		H.dna.species.soundpack_m = new /datum/voicepack/male/evil()
 	else if(should_wear_femme_clothes(H))
 		head = /obj/item/clothing/head/roguetown/mentorhat
+		neck = /obj/item/clothing/neck/roguetown/leather
 		armor = /obj/item/clothing/suit/roguetown/armor/basiceast/captainrobe
 		cloak = /obj/item/clothing/cloak/eastcloak1
 		gloves = /obj/item/clothing/gloves/roguetown/eastgloves2
