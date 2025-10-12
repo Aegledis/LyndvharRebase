@@ -724,6 +724,8 @@
 #include "code\datums\migrants\migrant_waves\underdark wave.dm"
 #include "code\datums\migrants\migrant_waves\zybantu roles.dm"
 #include "code\datums\migrants\migrant_waves\zybantu wave.dm"
+#include "code\datums\migrants\migrant_waves\noble roles.dm"
+#include "code\datums\migrants\migrant_waves\noble wave.dm"
 #include "code\datums\mob_descriptors\mob_descriptor.dm"
 #include "code\datums\mob_descriptors\descriptors\body.dm"
 #include "code\datums\mob_descriptors\descriptors\face.dm"

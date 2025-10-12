@@ -80,10 +80,10 @@
 	category_tags = list(CTAG_ROYALGUARD)
 	traits_applied = list(TRAIT_HEAVYARMOR)
 	subclass_stats = list(
-		STATKEY_STR = 3,//Heavy hitters. Less con/end, high strength.
-		STATKEY_INT = 3,
-		STATKEY_CON = 1,
-		STATKEY_WIL = 1,
+		STATKEY_STR = 3,//Heavy hitters. Less speed, high strength.
+		STATKEY_INT = 1,
+		STATKEY_CON = 2,
+		STATKEY_WIL = 2,
 		STATKEY_SPD = -1
 	)
 	subclass_skills = list(
@@ -180,6 +180,7 @@
 		STATKEY_INT = 1,
 		STATKEY_CON = 3,
 		STATKEY_WIL = 3,
+		STATKEY_SPD = -1
 	)
 	subclass_skills = list(
 		/datum/skill/combat/swords = SKILL_LEVEL_EXPERT,
@@ -373,10 +374,11 @@
 	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_DODGEEXPERT)
 	category_tags = list(CTAG_ROYALGUARD)
 	subclass_stats = list(
-		STATKEY_STR = 1,
+		STATKEY_STR = -1,
+		STATKEY_PER = 1,
 		STATKEY_INT = 1,
 		STATKEY_WIL = 2,
-		STATKEY_SPD = 2
+		STATKEY_SPD = 3
 	)
 	subclass_skills = list(
 		/datum/skill/combat/swords = SKILL_LEVEL_EXPERT, //Swords and knives class.

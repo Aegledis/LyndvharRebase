@@ -310,7 +310,7 @@
 
 /obj/item/rogueweapon/sword/long/church
 	name = "see longsword"
-	desc = "The workhorse of the Holy See. Blades like this have drawn blood against the  old Infidels and the modern Inhumen heretics alike for centuries."
+	desc = "The workhorse of the Holy See. Blades like this have drawn blood against the old Infidels and the modern Daemon heretics alike for centuries."
 	icon_state = "churchsword"
 
 /obj/item/rogueweapon/sword/long/undivided
@@ -422,7 +422,7 @@
 
 /obj/item/rogueweapon/sword/long/church
 	name = "see longsword"
-	desc = "The workhorse of the Holy See. Blades like this have drawn blood against the  old Infidels and the modern Inhumen heretics alike for centuries."
+	desc = "The workhorse of the Holy See. Blades like this have drawn blood against the old Infidels and the modern Daemon heretics alike for centuries."
 	icon_state = "churchsword"
 
 /obj/item/rogueweapon/sword/long/undivided
