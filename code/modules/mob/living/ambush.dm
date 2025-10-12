@@ -69,10 +69,10 @@ GLOBAL_VAR_INIT(ambush_mobconsider_cooldown, 2 MINUTES) // Cooldown for each ind
 		// This is the part where we scale ambush difficulty based on threat. Due to how we have a mix of
 		// Ambush Config and Single Mob Ambush, I use a weird scaling system:
 		// Single Mob
-		// Low - 1 Mob only 
+		// Low - 1 Mob only
 		// Moderate - 1 to 2 (This is REALLY moderate)
-		// Dangerous - 2 to 3 
-		// Dire - 3 to 4 
+		// Dangerous - 2 to 3
+		// Dire - 3 to 4
 		// Ambush Difficulty Scaling:
 		// Low = -1 Mob
 		// Dangerous = +1 Mob
