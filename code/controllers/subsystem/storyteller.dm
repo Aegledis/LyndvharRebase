@@ -1172,13 +1172,13 @@ SUBSYSTEM_DEF(gamemode)
         STATS_ALIVE_TIEFLINGS,
         STATS_ALIVE_HALFKIN,
         STATS_ALIVE_WILDKIN,
-        STATS_ALIVE_CONSTRUCTS,
-        STATS_ALIVE_VERMINFOLK,
-        STATS_ALIVE_DRACON,
         STATS_ALIVE_AXIAN,
         STATS_ALIVE_TABAXI,
         STATS_ALIVE_VULPS,
-        STATS_ALIVE_LUPIANS
+        STATS_ALIVE_LUPIANS,
+		STATS_ALIVE_CERVALINE,
+		STATS_ALIVE_RHAETEIAN,
+		STATS_ALIVE_CAPRIDAE,
 	)
 
 	for(var/stat_name in statistics_to_clear)
@@ -1289,8 +1289,12 @@ SUBSYSTEM_DEF(gamemode)
 				record_round_statistic(STATS_ALIVE_HALFKIN)
 			if(iswildkin(human_mob))
 				record_round_statistic(STATS_ALIVE_WILDKIN)
-			if(isdracon(human_mob))
-				record_round_statistic(STATS_ALIVE_DRACON)
+			if(iscervaline(human_mob))
+				record_round_statistic(STATS_ALIVE_CERVALINE)
+			if(isrhaeteian(human_mob))
+				record_round_statistic(STATS_ALIVE_RHAETEIAN)
+			if(iscapridae(human_mob))
+				record_round_statistic(STATS_ALIVE_CAPRIDAE)
 			if(isaxian(human_mob))
 				record_round_statistic(STATS_ALIVE_AXIAN)
 			if(istabaxi(human_mob))

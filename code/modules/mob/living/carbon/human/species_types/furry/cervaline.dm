@@ -181,12 +181,12 @@
 	if(unique)
 		if(gender == MALE)
 			for(var/i in 1 to 10)
-				randname = pick( world.file2list("strings/names/roguetown/wildkinm.txt") )
+				randname = pick( world.file2list("strings/names/roguetown/cervalinem.txt") )
 				if(!findname(randname))
 					break
 		if(gender == FEMALE)
 			for(var/i in 1 to 10)
-				randname = pick( world.file2list("strings/names/roguetown/wildkinf.txt") )
+				randname = pick( world.file2list("strings/names/roguetown/cervalinef.txt") )
 				if(!findname(randname))
 					break
 	else
