@@ -82,6 +82,12 @@
 		/datum/language/orcish
 	)
 
+/datum/species/halforc/check_roundstart_eligible()
+	return TRUE
+
+/datum/species/halforc/qualifies_for_rank(rank, list/features)
+	return TRUE
+
 /datum/species/halforc/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()
 	RegisterSignal(C, COMSIG_MOB_SAY, PROC_REF(handle_speech))

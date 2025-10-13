@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/rogue/zardman_jailer_mage
+/mob/living/simple_animal/hostile/rogue/eskallian_jailer_mage
 	name = "Zardman Jailer"
 	desc = ""
 	icon = 'icons/mob/zard_guard_mage.dmi'
@@ -39,10 +39,10 @@
 	ai_controller = /datum/ai_controller/skeleton_ranged/event
 	melee_cooldown = SKELETON_ATTACK_SPEED
 
-	projectiletype = /obj/projectile/magic/zardman_jailer_mage/lightning
+	projectiletype = /obj/projectile/magic/eskallian_jailer_mage/lightning
 	projectilesound = list('sound/magic/charged.ogg')
 
-/obj/projectile/magic/zardman_jailer_mage/lightning/on_hit(target)
+/obj/projectile/magic/eskallian_jailer_mage/lightning/on_hit(target)
 	. = ..()
 	if(ismob(target))
 		var/mob/M = target
@@ -57,7 +57,7 @@
 			playsound(get_turf(src), pick('sound/misc/elec (1).ogg', 'sound/misc/elec (2).ogg', 'sound/misc/elec (3).ogg'), 100, FALSE)
 	qdel(src)
 
-/obj/projectile/magic/zardman_jailer_mage/lightning
+/obj/projectile/magic/eskallian_jailer_mage/lightning
 	name = "bolt of lightning"
 	tracer_type = /obj/effect/projectile/tracer/stun
 	muzzle_type = null
@@ -71,7 +71,7 @@
 	speed = 0.3
 	flag = "magic"
 	light_color = "#ffffff"
-/obj/projectile/magic/zardman_jailer_mage/lightning/on_hit(target)
+/obj/projectile/magic/eskallian_jailer_mage/lightning/on_hit(target)
 	. = ..()
 	if(ismob(target))
 		var/mob/M = target
@@ -86,7 +86,7 @@
 			playsound(get_turf(src), pick('sound/misc/elec (1).ogg', 'sound/misc/elec (2).ogg', 'sound/misc/elec (3).ogg'), 100, FALSE)
 	qdel(src)
 
-/mob/living/simple_animal/hostile/rogue/zardman_jailer_mage/simple_limb_hit(zone)
+/mob/living/simple_animal/hostile/rogue/eskallian_jailer_mage/simple_limb_hit(zone)
 	if(!zone)
 		return ""
 	switch(zone)

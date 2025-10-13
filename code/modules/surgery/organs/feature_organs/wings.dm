@@ -43,6 +43,10 @@
 	name = "dragon wings"
 	desc = "A pair of intimidating, membranous wings. They look strong enough to lift you up in the air."
 
+/obj/item/organ/wings/rhaeteian
+	name = "rhaeteian wings"
+	desc = "A pair of rhaeteian wings. Rumored to be edible. Too many feathers and sinew prove unappetizing."
+
 /obj/item/organ/wings/flight/megamoth
 	name = "megamoth wings"
 	desc = "A pair of horrifyingly large, fuzzy wings. They look strong enough to lift you up in the air."

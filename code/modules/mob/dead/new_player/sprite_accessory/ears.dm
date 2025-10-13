@@ -48,7 +48,7 @@
 	extra_state = TRUE
 
 /datum/sprite_accessory/ears/bunny
-	name = "Bunny"
+	name = "Floppy"
 	icon_state = "bunny"
 	color_keys = 2
 	color_key_names = list("Ears", "Inner")
@@ -128,6 +128,10 @@
 /datum/sprite_accessory/ears/jellyfish
 	name = "Jellyfish"
 	icon_state = "jellyfish"
+
+/datum/sprite_accessory/ears/sheep
+	name = "Sheep"
+	icon_state = "sheep"
 
 /datum/sprite_accessory/ears/kangaroo
 	name = "Kangaroo"

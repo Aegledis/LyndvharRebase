@@ -9,6 +9,15 @@
 /obj/item/organ/snout/beak
 	name = "beak"
 
+/obj/item/organ/snout/beak/rhaeteian
+	name = "rhaeteian beak"
+
+/obj/item/organ/snout/capridae
+	name = "capridae snout"
+
+/obj/item/organ/snout/cervaline
+	name = "cervaline snout"
+
 /obj/item/organ/snout/vox
 	name = "large beak"
 
@@ -19,7 +28,7 @@
 	name = "lupian snout"
 
 /obj/item/organ/snout/lizard
-	name = "zardman snout"
+	name = "eskallian snout"
 
 /obj/item/organ/snout/vulpkanin
 	name = "venardine snout"

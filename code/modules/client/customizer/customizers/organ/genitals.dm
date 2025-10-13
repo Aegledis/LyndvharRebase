@@ -77,6 +77,26 @@
 		/datum/customizer_choice/organ/penis/tapered_knot_mammal,
 		)
 
+/datum/customizer/organ/penis/capridae
+	customizer_choices = list(
+		/datum/customizer_choice/organ/penis/human_anthro,
+		/datum/customizer_choice/organ/penis/tapered,
+		/datum/customizer_choice/organ/penis/equine,
+		)		
+
+/datum/customizer/organ/penis/cervaline
+	customizer_choices = list(
+		/datum/customizer_choice/organ/penis/human_anthro,
+		/datum/customizer_choice/organ/penis/tapered,
+		/datum/customizer_choice/organ/penis/equine,
+		)	
+
+/datum/customizer/organ/penis/rhaeteian
+	customizer_choices = list(
+		/datum/customizer_choice/organ/penis/human_anthro,
+		/datum/customizer_choice/organ/penis/tapered,
+		)		
+
 /datum/customizer/organ/penis/feline
 	customizer_choices = list(
 		/datum/customizer_choice/organ/penis/human_anthro,
@@ -416,6 +436,40 @@
 		/datum/sprite_accessory/vagina/gaping,
 		/datum/sprite_accessory/vagina/hairy,
 		/datum/sprite_accessory/vagina/spade,
+		/datum/sprite_accessory/vagina/furred,
+		)
+
+/datum/customizer/organ/vagina/rhaeteian
+	customizer_choices = list(/datum/customizer_choice/organ/vagina/rhaeteian)
+
+/datum/customizer_choice/organ/vagina/rhaeteian
+	sprite_accessories = list(
+		/datum/sprite_accessory/vagina/human,
+		/datum/sprite_accessory/vagina/gaping,
+		/datum/sprite_accessory/vagina/hairy,
+		/datum/sprite_accessory/vagina/furred,
+		/datum/sprite_accessory/vagina/cloaca,
+		)
+
+/datum/customizer/organ/vagina/capridae
+	customizer_choices = list(/datum/customizer_choice/organ/vagina/capridae)
+
+/datum/customizer_choice/organ/vagina/capridae
+	sprite_accessories = list(
+		/datum/sprite_accessory/vagina/human,
+		/datum/sprite_accessory/vagina/gaping,
+		/datum/sprite_accessory/vagina/hairy,
+		/datum/sprite_accessory/vagina/furred,
+		)
+
+/datum/customizer/organ/vagina/cervaline
+	customizer_choices = list(/datum/customizer_choice/organ/vagina/cervaline)
+
+/datum/customizer_choice/organ/vagina/cervaline
+	sprite_accessories = list(
+		/datum/sprite_accessory/vagina/human,
+		/datum/sprite_accessory/vagina/gaping,
+		/datum/sprite_accessory/vagina/hairy,
 		/datum/sprite_accessory/vagina/furred,
 		)
 

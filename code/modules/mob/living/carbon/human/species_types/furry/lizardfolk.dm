@@ -2,11 +2,11 @@
 	race = /datum/species/lizardfolk
 
 /datum/species/lizardfolk
-	name = "Zardman"
+	name = "Eskallian"
 	id = "lizardfolk"
-	desc = "<b>Zardman</b><br>\
-	Composed of scales and hardened hides - the Zards of Calmirixia are some of the hardiest beings of this central area of the Ruby Sea. Once the slave chattel of the Draconae of the Calmirixia province, they are a very industrious and martial race, having served under the direct oppression of Draconae overlordship for years. They have adapted hardily to modern societies and are very quick to integrate with communities. When Naexidor came to Calmirixia and destroyed Draconae hegemony over the region, what followed was a complete schism of Draconae and Zardman society. Zardmen often kill their young that form into their draconic counterparts as a result of this deep hatred for each other- a practice that is currently banned in most provinces but has seen an increase with the vacuum of power in the wake of the Empire’s destruction.<br>"
-	skin_tone_wording = "Skin Colors"
+	desc = "<b>Eskallian</b><br>\
+	The Eskallian are incredibly distinct from the many other races dotted across Beowricke. This race hailing from the swamps of Calmirixia consists of many different shapes and sizes of scaled hides- which many could refer to smaller depictions of drakes, or Dragons- as they were much more well known in the Gilded Era. What position exactly they served- whether it be as servants or as their chosen beings- is a wildly debated topic amongst Eskallian society. Divided into two castes, the Eskallian consist of the Dracaena and the Caiman- who split during a heavy disagreement that resulted in brutal suppression and open revolt for years after the Dragons mysteriously vanished near the end of the Gilded Era. The Dracaena believed themselves to be the chosen of the Dragons, while the Caiman believed they had never been anything more than slaves. This resulting schism would uproot and destroy Eskallian society- much so to the point that both Dracaena and Caiman have formed a brutal hatred for one another, and something that to this day long after Naexidor’s conquest of Calmirixia has still not been mended.<br>"
+	skin_tone_wording = "Tribe"
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	possible_ages = ALL_AGES_LIST
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
@@ -62,10 +62,11 @@
 		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/organ/tail/lizard,
 		/datum/customizer/organ/tail_feature/lizard_spines,
+		/datum/customizer/organ/wings/dracon,
 		/datum/customizer/organ/snout/lizard,
 		/datum/customizer/organ/ears/lizard,
 		/datum/customizer/organ/frills/lizard,
-		/datum/customizer/organ/horns/humanoid/zardman,
+		/datum/customizer/organ/horns/humanoid/eskallian,
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,

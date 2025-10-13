@@ -12,7 +12,7 @@
 	customizer_choices = list(/datum/customizer_choice/organ/horns/humanoid)
 	allows_disabling = TRUE
 
-/datum/customizer/organ/horns/humanoid/zardman
+/datum/customizer/organ/horns/humanoid/eskallian
 	default_disabled = TRUE
 
 /datum/customizer_choice/organ/horns/humanoid
@@ -113,6 +113,54 @@
 		/datum/sprite_accessory/horns/tiefling,
 		/datum/sprite_accessory/horns/tieflingalt
 		)
+
+
+/datum/customizer/organ/horns/capridae
+	customizer_choices = list(/datum/customizer_choice/organ/horns/capridae)
+	allows_disabling = TRUE
+	default_disabled =  FALSE
+
+/datum/customizer_choice/organ/horns/capridae
+	name = "Capridae Horns"
+	organ_type = /obj/item/organ/horns/capridae
+	sprite_accessories = list(
+		/datum/sprite_accessory/horns/ram,
+		/datum/sprite_accessory/horns/bigcurlyhorns,
+		/datum/sprite_accessory/horns/stabbers,
+		/datum/sprite_accessory/horns/longhorns,
+		/datum/sprite_accessory/horns/outstretched,
+		/datum/sprite_accessory/horns/greathorns,
+		/datum/sprite_accessory/horns/sheephorns,
+		/datum/sprite_accessory/horns/ramalt,
+		/datum/sprite_accessory/horns/curledramhorns,
+		/datum/sprite_accessory/horns/curledramhornsalt,
+		/datum/sprite_accessory/horns/smallramhorns,
+		/datum/sprite_accessory/horns/smallramhornsalt,
+		/datum/sprite_accessory/horns/liftedhorns,
+		/datum/sprite_accessory/horns/halo,
+		/datum/sprite_accessory/horns/brokenliftedhorns,
+		)	
+
+/datum/customizer/organ/horns/cervaline
+	customizer_choices = list(/datum/customizer_choice/organ/horns/cervaline)
+	allows_disabling = TRUE
+	default_disabled =  FALSE
+
+/datum/customizer_choice/organ/horns/cervaline
+	name = "Cervaline Horns"
+	organ_type = /obj/item/organ/horns/cervaline
+	sprite_accessories = list(
+		/datum/sprite_accessory/horns/simple,
+		/datum/sprite_accessory/horns/short,
+		/datum/sprite_accessory/horns/curled,
+		/datum/sprite_accessory/horns/broken,
+		/datum/sprite_accessory/horns/rbroken,
+		/datum/sprite_accessory/horns/lbroken,
+		/datum/sprite_accessory/horns/antlers,
+		/datum/sprite_accessory/horns/smallantlers,
+		/datum/sprite_accessory/horns/billberry,
+		/datum/sprite_accessory/horns/bunhorns,
+	)
 
 /datum/customizer/organ/horns/anthro
 	customizer_choices = list(/datum/customizer_choice/organ/horns/anthro)

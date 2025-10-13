@@ -108,6 +108,12 @@
 		return list(SPAN_DELF)
 	return message_language.spans
 
+/datum/species/elf/dark/check_roundstart_eligible()
+	return TRUE
+
+/datum/species/elf/dark/qualifies_for_rank(rank, list/features)
+	return TRUE
+
 /datum/species/elf/dark/get_skin_list()
 	return list(
 		"Commorah" = SKIN_COLOR_COMMORAH,

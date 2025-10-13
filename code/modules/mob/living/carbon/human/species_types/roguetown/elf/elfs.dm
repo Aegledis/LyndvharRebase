@@ -92,6 +92,12 @@
 //		return list(SPAN_SELF)
 	return message_language.spans
 
+/datum/species/elf/wood/check_roundstart_eligible()
+	return TRUE
+
+/datum/species/elf/wood/qualifies_for_rank(rank, list/features)
+	return TRUE
+
 /datum/species/elf/wood/get_skin_list()
 	return list(
 		"Snow Elf" = SKIN_COLOR_SNOW_ELF,

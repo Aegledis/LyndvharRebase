@@ -169,7 +169,7 @@
 	can_wag = TRUE
 
 /datum/sprite_accessory/tail/rabbit
-	name = "Rabbit"
+	name = "Tuft"
 	icon_state = "rabbit"
 	can_wag = TRUE
 
@@ -296,7 +296,7 @@
 	can_wag = TRUE
 
 /datum/sprite_accessory/tail/deer
-	name = "Deer"
+	name = "Tuft 2"
 	icon_state = "deer"
 	color_keys = 2
 	color_key_names = list("Tail", "Inner")

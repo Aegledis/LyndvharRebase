@@ -37,6 +37,7 @@
 		/datum/sprite_accessory/tail/wolf,
 		/datum/sprite_accessory/tail/fox,
 		/datum/sprite_accessory/tail/fox2,
+		/datum/sprite_accessory/tail/lab,
 		/datum/sprite_accessory/tail/husky
 		)
 
@@ -98,7 +99,7 @@
 	allows_disabling = TRUE
 
 /datum/customizer_choice/organ/tail/demihuman
-	name = "Half-Kinhuman Tail"
+	name = "Half-Kin Tail"
 	organ_type = /obj/item/organ/tail
 	generic_random_pick = TRUE
 	sprite_accessories = list(
@@ -110,7 +111,6 @@
 		/datum/sprite_accessory/tail/bee,
 		/datum/sprite_accessory/tail/catbig,
 		/datum/sprite_accessory/tail/twocat,
-		/datum/sprite_accessory/tail/corvid,
 		/datum/sprite_accessory/tail/cow,
 		/datum/sprite_accessory/tail/data_shark,
 		/datum/sprite_accessory/tail/eevee,
@@ -118,7 +118,6 @@
 		/datum/sprite_accessory/tail/fish,
 		/datum/sprite_accessory/tail/fox,
 		/datum/sprite_accessory/tail/fox2,
-		/datum/sprite_accessory/tail/hawk,
 		/datum/sprite_accessory/tail/horse,
 		/datum/sprite_accessory/tail/husky,
 		/datum/sprite_accessory/tail/insect,
@@ -160,15 +159,62 @@
 		/datum/sprite_accessory/tail/lynx,
 		/datum/sprite_accessory/tail/owl,
 		/datum/sprite_accessory/tail/forked_long,
+		/datum/sprite_accessory/tail/pinecone,
 		/datum/sprite_accessory/tail/haven,
 		/datum/sprite_accessory/tail/swallow,
-		/datum/sprite_accessory/tail/pinecone
+		/datum/sprite_accessory/tail/hawk,
+		/datum/sprite_accessory/tail/corvid,
+		)
+
+/datum/customizer/organ/tail/rhaeteian
+	customizer_choices = list(/datum/customizer_choice/organ/tail/rhaeteian)
+	allows_disabling = TRUE
+	default_disabled = FALSE
+
+/datum/customizer_choice/organ/tail/rhaeteian
+	name = "Rhaeteian Plumage"
+	organ_type = /obj/item/organ/tail/rhaeteian
+	sprite_accessories = list(
+		/datum/sprite_accessory/tail/haven,
+		/datum/sprite_accessory/tail/swallow,
+		/datum/sprite_accessory/tail/hawk,
+		/datum/sprite_accessory/tail/corvid,
+		/datum/sprite_accessory/tail/owl,
+		/datum/sprite_accessory/tail/forked_long,
+		)
+
+/datum/customizer/organ/tail/capridae
+	customizer_choices = list(/datum/customizer_choice/organ/tail/capridae)
+	allows_disabling = TRUE
+	default_disabled = FALSE
+
+/datum/customizer_choice/organ/tail/capridae
+	name = "Capridae Tail"
+	organ_type = /obj/item/organ/tail/capridae
+	sprite_accessories = list(
+		/datum/sprite_accessory/tail/cow,
+		/datum/sprite_accessory/tail/horse,
+		/datum/sprite_accessory/tail/rabbit,
+		/datum/sprite_accessory/tail/deer,
+		)
+
+/datum/customizer/organ/tail/cervaline
+	customizer_choices = list(/datum/customizer_choice/organ/tail/cervaline)
+	allows_disabling = FALSE
+	default_disabled = FALSE
+
+/datum/customizer_choice/organ/tail/cervaline
+	name = "Cervaline Tail"
+	organ_type = /obj/item/organ/tail/cervaline
+	sprite_accessories = list(
+		/datum/sprite_accessory/tail/rabbit,
+		/datum/sprite_accessory/tail/deer,
 		)
 
 /datum/customizer/organ/tail/anthro
 	customizer_choices = list(/datum/customizer_choice/organ/tail/anthro)
 	allows_disabling = TRUE
-	default_disabled = TRUE
+	default_disabled = TRUE	
 
 /datum/customizer_choice/organ/tail/anthro
 	name = "Wild-Kin Tail"
@@ -182,25 +228,19 @@
 		/datum/sprite_accessory/tail/bee,
 		/datum/sprite_accessory/tail/catbig,
 		/datum/sprite_accessory/tail/twocat,
-		/datum/sprite_accessory/tail/corvid,
-		/datum/sprite_accessory/tail/cow,
 		/datum/sprite_accessory/tail/data_shark,
 		/datum/sprite_accessory/tail/eevee,
 		/datum/sprite_accessory/tail/fennec,
 		/datum/sprite_accessory/tail/fish,
 		/datum/sprite_accessory/tail/fox,
 		/datum/sprite_accessory/tail/fox2,
-		/datum/sprite_accessory/tail/hawk,
-		/datum/sprite_accessory/tail/horse,
 		/datum/sprite_accessory/tail/husky,
 		/datum/sprite_accessory/tail/insect,
 		/datum/sprite_accessory/tail/kangaroo,
 		/datum/sprite_accessory/tail/kitsune,
-		/datum/sprite_accessory/tail/lab,
 		/datum/sprite_accessory/tail/murid,
 		/datum/sprite_accessory/tail/orca,
 		/datum/sprite_accessory/tail/otie,
-		/datum/sprite_accessory/tail/rabbit,
 		/datum/sprite_accessory/tail/redpanda,
 		/datum/sprite_accessory/tail/pede,
 		/datum/sprite_accessory/tail/sergal,
@@ -232,8 +272,4 @@
 		/datum/sprite_accessory/tail/lizard/spikes,
 		/datum/sprite_accessory/tail/rattlesnake,
 		/datum/sprite_accessory/tail/lynx,
-		/datum/sprite_accessory/tail/owl,
-		/datum/sprite_accessory/tail/forked_long,
-		/datum/sprite_accessory/tail/haven,
-		/datum/sprite_accessory/tail/swallow,
 		)

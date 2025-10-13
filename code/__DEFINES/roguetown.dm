@@ -192,11 +192,13 @@ Balloon Alert / Floating Text defines
 	/datum/species/lizardfolk,\
 	/datum/species/lupian,\
 	/datum/species/tabaxi,\
+	/datum/species/capridae,\
+	/datum/species/rhaeteian,\
+	/datum/species/cervaline,\
 	/datum/species/vulpkanin,\
 	/datum/species/akula,\
-	/datum/species/dracon,\
 	/datum/species/anthromorph,\
-	/datum/species/anthromorphsmall,\
+	,\
 	/datum/species/demihuman,\
 	/datum/species/halforc,\
 	/datum/species/kobold,\
@@ -210,33 +212,35 @@ Balloon Alert / Floating Text defines
 
 #define RACES_RESPECTED \
 	/datum/species/aasimar,\
-	/datum/species/human/halfelf
+	/datum/species/human/halfelf,\
 
 #define RACES_TOLERATED \
 	/datum/species/tabaxi,\
 	/datum/species/lupian,\
 	/datum/species/vulpkanin,\
 	/datum/species/demihuman,\
-	/datum/species/lizardfolk \
+	/datum/species/lizardfolk,\
+	/datum/species/capridae,\
+	/datum/species/rhaeteian,\
+	/datum/species/cervaline,\
 
 #define RACES_SHUNNED \
 	/datum/species/halforc,\
 	/datum/species/akula,\
 	/datum/species/tieberian,\
 	/datum/species/elf/dark,\
-	/datum/species/dracon,\
 
 #define RACES_DESPISED \
 	/datum/species/anthromorph,\
-	/datum/species/anthromorphsmall,\
+	,\
 	/datum/species/goblinp,\
 	/datum/species/kobold,\
-	/datum/species/construct/metal,\
+	,\
 
 #define RACES_RESPECTED_UP list(RACES_RESPECTED, RACES_ESTEEMED)
 
 #define RACES_CONSTRUCT \
-	/datum/species/construct/metal,\
+	,\
 
 #define RACES_ALL_KINDS list(RACES_DESPISED, RACES_SHUNNED, RACES_TOLERATED, RACES_RESPECTED, RACES_CONSTRUCT, RACES_ESTEEMED)
 
@@ -257,15 +261,17 @@ Balloon Alert / Floating Text defines
 	/datum/species/lizardfolk,\
 	/datum/species/lupian,\
 	/datum/species/tabaxi,\
+	/datum/species/capridae,\
+	/datum/species/rhaeteian,\
+	/datum/species/cervaline,\
 	/datum/species/vulpkanin,\
 	/datum/species/akula,\
-	/datum/species/dracon,\
 	/datum/species/anthromorph,\
-	/datum/species/anthromorphsmall,\
+	,\
 	/datum/species/demihuman,\
 	/datum/species/kobold,\
 	/datum/species/goblinp,\
-	/datum/species/construct/metal,\
+	,\
 )
 
 #define CLOTHED_RACES_TYPES list(\
@@ -279,17 +285,17 @@ Balloon Alert / Floating Text defines
 	/datum/species/lizardfolk,\
 	/datum/species/lupian,\
 	/datum/species/tabaxi,\
+	/datum/species/capridae,\
+	/datum/species/rhaeteian,\
+	/datum/species/cervaline,\
 	/datum/species/vulpkanin,\
 	/datum/species/akula,\
-	/datum/species/dracon,\
 	/datum/species/anthromorph,\
-	/datum/species/anthromorphsmall,\
 	/datum/species/demihuman,\
 	/datum/species/halforc,\
 	/datum/species/orc,\
 	/datum/species/kobold,\
 	/datum/species/goblinp,\
-	/datum/species/construct/metal,\
 )
 // Non-dwarf non-kobold non-goblin mostly
 #define NON_DWARVEN_RACE_TYPES list(\
@@ -302,13 +308,14 @@ Balloon Alert / Floating Text defines
 	/datum/species/lizardfolk,\
 	/datum/species/lupian,\
 	/datum/species/tabaxi,\
+	/datum/species/capridae,\
+	/datum/species/rhaeteian,\
+	/datum/species/cervaline,\
 	/datum/species/vulpkanin,\
 	/datum/species/akula,\
-	/datum/species/dracon,\
 	/datum/species/anthromorph,\
 	/datum/species/demihuman,\
 	/datum/species/halforc,\
-	/datum/species/construct/metal,\
 )
 // Non-elf non-dwarf non-kobold non-goblin mostly
 #define HUMANLIKE_RACE_TYPES list(\
@@ -318,12 +325,13 @@ Balloon Alert / Floating Text defines
 	/datum/species/lizardfolk,\
 	/datum/species/lupian,\
 	/datum/species/tabaxi,\
+	/datum/species/capridae,\
+	/datum/species/rhaeteian,\
+	/datum/species/cervaline,\
 	/datum/species/vulpkanin,\
 	/datum/species/akula,\
-	/datum/species/dracon,\
 	/datum/species/anthromorph,\
 	/datum/species/demihuman,\
-	/datum/species/construct/metal,\
 )
 #define ALL_CLERIC_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/necra, /datum/patron/divine/pestra, /datum/patron/divine/ravox, /datum/patron/divine/malum, /datum/patron/divine/eora, /datum/patron/divine/undivided) // Currently unused.
 

@@ -39,7 +39,8 @@
 		/datum/sprite_accessory/ears/husky,
 		/datum/sprite_accessory/ears/otie,
 		/datum/sprite_accessory/ears/wolf,
-		/datum/sprite_accessory/ears/lab
+		/datum/sprite_accessory/ears/lab,
+		/datum/sprite_accessory/ears/bunny,
 	)
 
 /datum/customizer/organ/ears/tajaran
@@ -233,6 +234,43 @@
 		/datum/sprite_accessory/ears/big/acrador_short,
 		/datum/sprite_accessory/ears/big/sandfox_large,
 		/datum/sprite_accessory/ears/lynx,
+		)
+
+/datum/customizer/organ/ears/capridae
+	customizer_choices = list(/datum/customizer_choice/organ/ears/capridae)
+	allows_disabling = TRUE
+	default_disabled = FALSE
+
+/datum/customizer_choice/organ/ears/capridae
+	name = "Capridae Ears"
+	organ_type = /obj/item/organ/ears/capridae
+	sprite_accessories = list(
+		/datum/sprite_accessory/ears/curled,
+		/datum/sprite_accessory/ears/bunny,
+		/datum/sprite_accessory/ears/cow,
+		/datum/sprite_accessory/ears/perky,
+		/datum/sprite_accessory/ears/sheep,
+		)
+
+/datum/customizer/organ/ears/cervaline
+	customizer_choices = list(/datum/customizer_choice/organ/ears/cervaline)
+	allows_disabling = FALSE
+	default_disabled = FALSE
+
+/datum/customizer_choice/organ/ears/cervaline
+	name = "Cervaline Ears"
+	organ_type = /obj/item/organ/ears/cervaline
+	sprite_accessories = list(
+		/datum/sprite_accessory/ears/bunny,
+		/datum/sprite_accessory/ears/perky,
+		/datum/sprite_accessory/ears/sheep,
+		/datum/sprite_accessory/ears/rabbit,
+		/datum/sprite_accessory/ears/bunny,
+		/datum/sprite_accessory/ears/big/rabbit_large,
+		/datum/sprite_accessory/ears/bunny_perky,
+		/datum/sprite_accessory/ears/bunny_long,
+		/datum/sprite_accessory/ears/possum,
+		/datum/sprite_accessory/ears/raccoon,
 		)
 
 /datum/customizer/organ/ears/lizard
