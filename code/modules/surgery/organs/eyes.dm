@@ -139,7 +139,7 @@
 
 
 /obj/item/organ/eyes/night_vision/argonian
-	name = "zardman eyes"
+	name = "eskallian eyes"
 	desc = ""
 
 /obj/item/organ/eyes/night_vision/alien

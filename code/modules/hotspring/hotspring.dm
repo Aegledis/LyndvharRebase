@@ -203,7 +203,7 @@
 
 /obj/structure/flora/sakura
 	name = "cherry blossom tree"
-	desc = "A tree that has been introduced from the far east. A symbol of the transience of life. In the islands of Kazengun,\
+	desc = "A tree that has been introduced from the far east. A symbol of the transience of life. In the far distant land of Saltlia,\
 	it is strongly associated with both romance and death. On the mainland, it is known as a representation of brotherhood.\ "
 	icon = 'icons/obj/structures/sakura_tree.dmi'
 	icon_state = "sakura_tree"

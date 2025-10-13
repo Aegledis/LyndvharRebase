@@ -1,6 +1,6 @@
 /datum/language/hellspeak
 	name = "Infernal"
-	desc = ""
+	desc = "Considered anathema by the Mother Church and the Bisphoric of Valoria alike, the tongue of the infernal was first created to serve as the base language for the legions of ZIZO during the Bloodwake. It has since survived among cultural centers of tiefling populations, though it is spoken in very hushed words amongst civilized spaces for fear of persecution for its use. It is a very rare tongue to find outside of the hellspawn, save for some cultists who use it for their dark practices to the Daemon of Ambition."
 	speech_verb = "says"
 	ask_verb = "asks"
 	exclaim_verb = "yells"

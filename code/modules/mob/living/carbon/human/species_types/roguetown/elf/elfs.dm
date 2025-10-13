@@ -5,7 +5,7 @@
 	name = "Elf"
 	id = "elfw"
 	desc = "<b>Elf</b><br>\
-	The eldest of the Pantheon’s creations, the elves are one of the most ancient races in Beowricke. Known for being one of the most intelligent and long-living races, they have graceful nature in their stead and are almost exclusively seen in the upper echelons of societies, and in fact many baronies, cities, and even realms (like Greencrest) are made up of an entire elvish nobility. Elves are prideful and believe themselves to be the superior mortal race, however have been intertwined with Humens for so long that it is not uncommon to see a half-elf.<br>"
+	The eldest of the Pantheon’s creations, the elves are one of the most ancient races in Beowricke. Known for being one of the most intelligent and long-living races, they have graceful nature in their stead and are almost exclusively seen in the upper echelons of societies, and in fact many baronies, cities, and even realms (like Greencrest) are made up of an entire elvish nobility. Elves are prideful and believe themselves to be the superior mortal race, however have been intertwined with Humens for so long that it is not uncommon to see a half-elf in many circles of the world.<br>"
 
 	skin_tone_wording = "Tribal Identity"
 
@@ -91,6 +91,12 @@
 //	if(message_language.type == /datum/language/common)
 //		return list(SPAN_SELF)
 	return message_language.spans
+
+/datum/species/elf/wood/check_roundstart_eligible()
+	return TRUE
+
+/datum/species/elf/wood/qualifies_for_rank(rank, list/features)
+	return TRUE
 
 /datum/species/elf/wood/get_skin_list()
 	return list(

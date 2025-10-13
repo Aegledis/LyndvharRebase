@@ -3,11 +3,11 @@ GLOBAL_LIST_EMPTY(cursed_players)
 GLOBAL_LIST_EMPTY(excommunicated_players)
 GLOBAL_LIST_EMPTY(heretical_players)
 #define PRIEST_ANNOUNCEMENT_COOLDOWN (2 MINUTES)
-#define PRIEST_SERMON_COOLDOWN (30 MINUTES)
-#define PRIEST_APOSTASY_COOLDOWN (10 MINUTES)
-#define PRIEST_EXCOMMUNICATION_COOLDOWN (10 MINUTES)
-#define PRIEST_CURSE_COOLDOWN (15 MINUTES)
-#define PRIEST_SWAP_COOLDOWN (20 MINUTES)
+#define PRIEST_SERMON_COOLDOWN (20 MINUTES)
+#define PRIEST_APOSTASY_COOLDOWN (5 MINUTES)
+#define PRIEST_EXCOMMUNICATION_COOLDOWN (5 MINUTES)
+#define PRIEST_CURSE_COOLDOWN (10 MINUTES)
+#define PRIEST_SWAP_COOLDOWN (15 MINUTES)
 
 /datum/job/roguetown/priest
 	title = "Priest"
@@ -18,14 +18,14 @@ GLOBAL_LIST_EMPTY(heretical_players)
 	spawn_positions = 1
 	selection_color = JCOLOR_CHURCH
 	f_title = "Priestess"
-	allowed_races = RACES_SHUNNED_UP
-	allowed_patrons = ALL_DIVINE_PATRONS
+	allowed_races = RACES_TOLERATED_UP
+	allowed_patrons = list(/datum/patron/divine/undivided)
 	allowed_sexes = list(MALE, FEMALE)
-	tutorial = "In this time of strife and destruction, only the power of the PANTHEON is what truly matters against those of immorality. You control and oversee the entire Church of Lyndvhar, and are respected as such. Keep the spirits of those under you uplifted and the city faithful, for danger may always come from within."
+	tutorial = "In this time of strife and destruction, only the power of the PANTHEON is what truly matters against those of immorality. You have served the Ten for as long as you can remember- from your birth swaddled in cloth to your anointment as a member of the upper echelons of the Mother Church- bestowed with the position of Priest of Lyndvhar. You control and oversee the entire Church in this city, and are respected as such- with almost as much influence as the Viscount themself. Keep the spirits of those under you uplifted and the city faithful, for danger may always come from within."
 	whitelist_req = FALSE
 	cmode_music = 'sound/music/cmode/church/combat_astrata.ogg'
 
-	spells = list(/obj/effect/proc_holder/spell/invoked/cure_rot, /obj/effect/proc_holder/spell/self/convertrole/templar, /obj/effect/proc_holder/spell/self/convertrole/monk, /obj/effect/proc_holder/spell/invoked/projectile/divineblast)
+	spells = list(/obj/effect/proc_holder/spell/invoked/cure_rot, /obj/effect/proc_holder/spell/self/convertrole/templar, /obj/effect/proc_holder/spell/self/convertrole/monk, /obj/effect/proc_holder/spell/invoked/projectile/divineblast, /obj/effect/proc_holder/spell/invoked/wound_heal)
 	outfit = /datum/outfit/job/roguetown/priest
 	display_order = JDO_PRIEST
 	give_bank_account = 115
@@ -33,22 +33,65 @@ GLOBAL_LIST_EMPTY(heretical_players)
 	max_pq = null
 	round_contrib_points = 5
 
+	//No nobility for you, being a member of the clergy means you gave UP your nobility. It says this in many of the church tutorial texts.
+	
+	job_traits = list(TRAIT_CHOSEN, TRAIT_RITUALIST, TRAIT_GRAVEROBBER)
+	advclass_cat_rolls = list(CTAG_BISHOP = 2)
+	job_subclasses = list(
+		/datum/advclass/bishop
+	)
+
+/datum/advclass/bishop
+	name = "Priest"
+	tutorial = "In this time of strife and destruction, only the power of the PANTHEON is what truly matters against those of immorality. You have served the Ten for as long as you can remember- from your birth swaddled in cloth to your anointment as a member of the upper echelons of the Mother Church- bestowed with the position of Priest of Lyndvhar. You control and oversee the entire Church in this city, and are respected as such- with almost as much influence as the Viscount themself. Keep the spirits of those under you uplifted and the city faithful, for danger may always come from within."
+	outfit = /datum/outfit/job/roguetown/priest/basic
+	subclass_languages = list(/datum/language/celestial)
+	category_tags = list(CTAG_BISHOP)
+	subclass_stats = list(
+		STATKEY_INT = 4,
+		STATKEY_WIL = 2,
+		STATKEY_STR = -1,
+		STATKEY_CON = -1,
+		STATKEY_SPD = -1
+	)
+	subclass_skills = list(
+		/datum/skill/combat/wrestling = SKILL_LEVEL_MASTER,
+		/datum/skill/combat/unarmed = SKILL_LEVEL_EXPERT,
+		/datum/skill/combat/polearms = SKILL_LEVEL_EXPERT,
+		/datum/skill/combat/swords = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/combat/shields = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/misc/reading = SKILL_LEVEL_LEGENDARY,
+		/datum/skill/misc/medicine = SKILL_LEVEL_EXPERT,
+		/datum/skill/craft/cooking = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/craft/crafting = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/craft/sewing = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/labor/farming = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/magic/holy = SKILL_LEVEL_LEGENDARY,
+		/datum/skill/craft/alchemy = SKILL_LEVEL_JOURNEYMAN,
+	)
+	subclass_stashed_items = list(
+		"The Verses and Acts of the Ten" = /obj/item/book/rogue/bibble,
+	)
+
 /datum/outfit/job/roguetown/priest
 	job_bitflag = BITFLAG_CHURCH
+	has_loadout = TRUE
 	allowed_patrons = list(/datum/patron/divine/undivided)	//We lock this cus head of church, acktully
 
-/datum/outfit/job/roguetown/priest/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/priest/basic/pre_equip(mob/living/carbon/human/H)
 	..()
+	H.adjust_blindness(-3)
 	neck = /obj/item/clothing/neck/roguetown/psicross/undivided
 	head = /obj/item/clothing/head/roguetown/priestmask
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
 	pants = /obj/item/clothing/under/roguetown/tights/black
-	shoes = /obj/item/clothing/shoes/roguetown/boots
+	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	beltl = /obj/item/storage/keyring/priest
-	belt = /obj/item/storage/belt/rogue/leather/rope
+	belt = /obj/item/storage/belt/rogue/leather/plaquegold
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 	id = /obj/item/clothing/ring/active/nomag
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/priest
+	cloak = /obj/item/clothing/cloak/templar/undivided
 	backl = /obj/item/storage/backpack/rogue/satchel/short
 	backpack_contents = list(
 		/obj/item/needle/pestra = 1,
@@ -57,40 +100,51 @@ GLOBAL_LIST_EMPTY(heretical_players)
 		/obj/item/rogueweapon/huntingknife/idagger/steel/holysee = 1,	//Unique knife from the Holy See
 		/obj/item/rogueweapon/scabbard/sheath = 1
 	)
-	ADD_TRAIT(H, TRAIT_CHOSEN, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_RITUALIST, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_GRAVEROBBER, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_UNDIVIDED, TRAIT_GENERIC)
-	H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-	H.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-	H.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-	H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-	H.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
-	H.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
-	H.adjust_skillrank(/datum/skill/misc/medicine, 5, TRUE)
-	H.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
-	H.adjust_skillrank(/datum/skill/craft/crafting, 4, TRUE)
-	H.adjust_skillrank(/datum/skill/misc/sewing, 3, TRUE)
-	H.adjust_skillrank(/datum/skill/labor/farming, 2, TRUE)
-	H.adjust_skillrank(/datum/skill/magic/holy, 6, TRUE)
-	H.adjust_skillrank(/datum/skill/craft/alchemy, 3, TRUE)
-	H.grant_language(/datum/language/celestial)
-	H.change_stat("strength", -1)
-	H.change_stat("intelligence", 3)
-	H.change_stat("constitution", -1)
-	H.change_stat("endurance", 1)
-	H.change_stat("speed", -1)
 	var/datum/devotion/C = new /datum/devotion(H, H.patron) // This creates the cleric holder used for devotion spells
 	C.grant_miracles(H, cleric_tier = CLERIC_T4, passive_gain = CLERIC_REGEN_MAJOR, start_maxed = TRUE)	//Starts off maxed out.
 
 	H.verbs |= /mob/living/carbon/human/proc/coronate_lord
 	H.verbs |= /mob/living/carbon/human/proc/churchannouncement
-	H.verbs |= /mob/living/carbon/human/proc/change_miracle_set
 	H.verbs |= /mob/living/carbon/human/proc/churchexcommunicate //your button against clergy
 	H.verbs |= /mob/living/carbon/human/proc/churchpriestcurse //snowflake priests button. Will not sacrifice them
 	H.verbs |= /mob/living/carbon/human/proc/churcheapostasy //punish the lamb reward the wolf
 	H.verbs |= /mob/living/carbon/human/proc/completesermon
 	H.mind?.AddSpell(new /obj/effect/proc_holder/spell/invoked/convert_heretic_priest)
+	H.mind?.AddSpell(new /obj/effect/proc_holder/spell/invoked/revive)
+
+/datum/outfit/job/roguetown/priest/basic/choose_loadout(mob/living/carbon/human/H)
+	. = ..()
+	var/t3_count = 2
+	var/list/t4 = list()
+	var/list/t3 = list()
+	for(var/path as anything in GLOB.patrons_by_faith[/datum/faith/divine])
+		var/datum/patron/patron = GLOB.patronlist[path]
+		if(!patron || !patron.name)
+			continue
+		for(var/miracle in patron.miracles)
+			var/obj/effect/proc_holder/checked_miracle = miracle
+			if(patron.miracles[checked_miracle] == CLERIC_T4 && (initial(checked_miracle.priest_excluded) == FALSE))
+				t4[initial(checked_miracle.name)] = checked_miracle
+			if(patron.miracles[checked_miracle] == CLERIC_T3 && (initial(checked_miracle.priest_excluded) == FALSE))
+				t3[initial(checked_miracle.name)] = checked_miracle
+	for(var/miracle in t4)
+		if(H.mind?.has_spell(t4[miracle]))
+			t4.Remove(miracle)
+	for(var/miracle in t3)
+		if(H.mind?.has_spell(t3[miracle]))
+			t3.Remove(miracle)
+	var/t4_choice = input(H,"Choose your Tier Four Miracle.", "TAKE UP KNAWLEDGE") as anything in t4
+	if(t4_choice)
+		var/obj/effect/proc_holder/chosen_miracle = t4[t4_choice]
+		H.mind?.AddSpell(new chosen_miracle)
+
+	for(var/i in 1 to t3_count)
+		var/t3_choice = input(H,"Choose your Tier Three Miracle.", "TAKE UP KNAWLEDGE ([t3_count] CHOICES REMAIN)") as anything in t3
+		if(t3_choice)
+			var/obj/effect/proc_holder/chosen_miracle = t3[t3_choice]
+			H.mind?.AddSpell(new chosen_miracle)
+			t3.Remove(t3_choice)
+			t3_count--
 
 /datum/job/priest/vice //just used to change the priest title
 	title = "Vice Priest"
@@ -99,148 +153,6 @@ GLOBAL_LIST_EMPTY(heretical_players)
 	department_flag = CHURCHMEN
 	total_positions = 0
 	spawn_positions = 0
-
-/mob/living/carbon/human/proc/change_miracle_set(mob/living/user)
-	set name = "Change Miracle Set"
-	set category = "Priest"
-	var/mono_first_pick = FALSE
-
-	if(!mind || user != src)
-		return
-
-	if(HAS_TRAIT(src, TRAIT_MONOTHEIST))
-		to_chat(src, "<font color='yellow'>I have dedicated myself to a single god.</font>")
-		return
-
-	if(!COOLDOWN_FINISHED(src, priest_change_miracles))
-		to_chat(src, "<font color='yellow'>I am not yet ready to call upon another god.</font>")
-		return
-
-	if(!HAS_TRAIT(src, TRAIT_POLYTHEIST))
-		var/choice = alert(src, "Do you wish to dedicate yourself to a single god? This choice is permanent and will prevent changing miracles in the future.", "Divine Dedication", "Dedicate (Monotheist)", "Remain Flexible (Polytheist)", "Cancel")
-
-		switch(choice)
-			if("Dedicate (Monotheist)")
-				ADD_TRAIT(src, TRAIT_MONOTHEIST, "divine_dedication")
-				mono_first_pick = TRUE
-			if("Remain Flexible (Polytheist)")
-				ADD_TRAIT(src, TRAIT_POLYTHEIST, "divine_dedication")
-			else
-				return
-
-	// Create god selection menu
-	var/list/god_choice = list()
-	var/list/god_type = list()
-	for(var/path as anything in GLOB.patrons_by_faith[/datum/faith/divine])
-		var/datum/patron/patron = GLOB.patronlist[path]
-		if(!patron || !patron.name)
-			continue
-		god_choice[patron.name] = icon(icon = 'icons/mob/overhead_effects.dmi', icon_state = "sign_[patron.name]")
-		god_type[patron.name] = patron
-
-	// Show radial menu
-	var/string_choice = show_radial_menu(src, src, god_choice, require_near = FALSE)
-	if(!string_choice)
-		return
-
-	// Apply new miracle set
-	var/datum/patron/god = god_type[string_choice]
-
-	if(patron.type == god.type && !mono_first_pick)
-		to_chat(src, "<font color='yellow'>I'm already blessed by that [patron.name].</font>")
-		return
-
-	if(mono_first_pick)
-		for(var/obj/effect/proc_holder/spell/S in src.devotion.granted_spells)
-			src.mind.RemoveSpell(S)
-	if(mono_first_pick)
-		//devotion.granted_spells.Cut()
-		var/datum/devotion/patrondev = new /datum/devotion(src, god)
-		patron = god
-		patrondev.grant_miracles(src, cleric_tier = CLERIC_T4, passive_gain = CLERIC_REGEN_MAJOR, devotion_limit = CLERIC_REQ_4)
-		if(!mind.has_spell(/obj/effect/proc_holder/spell/invoked/revive))
-			mind.AddSpell(/obj/effect/proc_holder/spell/invoked/revive)
-	else
-		// Define whitelist of swapable spells (T0-T2 only)
-		var/list/whitelist = list(
-			// Astrata
-			/obj/effect/proc_holder/spell/targeted/touch/orison,
-			/obj/effect/proc_holder/spell/invoked/ignition,
-			/obj/effect/proc_holder/spell/self/astrata_gaze,
-			/obj/effect/proc_holder/spell/invoked/lesser_heal,
-			/obj/effect/proc_holder/spell/invoked/blood_heal,
-			/obj/effect/proc_holder/spell/invoked/projectile/lightningbolt/sacred_flame_rogue,
-			/obj/effect/proc_holder/spell/invoked/heal,
-			// Noc
-			/obj/effect/proc_holder/spell/invoked/noc_sight,
-			/obj/effect/proc_holder/spell/targeted/touch/darkvision/miracle,
-			/obj/effect/proc_holder/spell/invoked/invisibility/miracle,
-			// Dendor
-			/obj/effect/proc_holder/spell/invoked/spiderspeak,
-			/obj/effect/proc_holder/spell/targeted/wildshape,
-			// Abyssor
-			/obj/effect/proc_holder/spell/self/abyssor_wind,
-			/obj/effect/proc_holder/spell/invoked/abyssor_bends,
-			/obj/effect/proc_holder/spell/invoked/abyssor_undertow,
-			/obj/effect/proc_holder/spell/invoked/abyssheal,
-			// Ravox
-			/obj/effect/proc_holder/spell/invoked/tug_of_war,
-			/obj/effect/proc_holder/spell/self/divine_strike,
-			/obj/effect/proc_holder/spell/self/call_to_arms,
-			/obj/effect/proc_holder/spell/invoked/challenge,
-			// Necra
-			/obj/effect/proc_holder/spell/invoked/necras_sight,
-			/obj/effect/proc_holder/spell/invoked/avert,
-			/obj/effect/proc_holder/spell/invoked/deaths_door,
-			/obj/effect/proc_holder/spell/invoked/raise_spirits_vengeance,
-			// Xylix
-			/obj/effect/proc_holder/spell/self/xylixslip,
-			/obj/effect/proc_holder/spell/invoked/mockery,
-			/obj/effect/proc_holder/spell/invoked/mastersillusion,
-			// Pestra
-			/obj/effect/proc_holder/spell/invoked/diagnose,
-			/obj/effect/proc_holder/spell/invoked/pestra_leech,
-			/obj/effect/proc_holder/spell/invoked/heal,
-			/obj/effect/proc_holder/spell/invoked/infestation,
-			/obj/effect/proc_holder/spell/invoked/attach_bodypart,
-			// Malum
-			/obj/effect/proc_holder/spell/invoked/malum_flame_rogue,
-			/obj/effect/proc_holder/spell/invoked/conjure_tool,
-			/obj/effect/proc_holder/spell/invoked/vigorousexchange,
-			/obj/effect/proc_holder/spell/invoked/heatmetal,
-			// Eora
-			/obj/effect/proc_holder/spell/invoked/eora_blessing,
-			/obj/effect/proc_holder/spell/invoked/bud,
-			/obj/effect/proc_holder/spell/invoked/heartweave
-		)
-		for(var/obj/effect/proc_holder/spell/S in mind.spell_list)
-			if(S.type in whitelist)
-				mind.RemoveSpell(S)
-		
-		for(var/spell_type in god.miracles)
-			if(god.miracles[spell_type] <= CLERIC_T4 && (spell_type in whitelist))
-				var/obj/effect/proc_holder/spell/new_spell = new spell_type
-				mind.AddSpell(new_spell)
-
-		var/list/base_spells = list(
-			/obj/effect/proc_holder/spell/invoked/revive,
-			/obj/effect/proc_holder/spell/invoked/immolation
-		)
-		for(var/type in base_spells)
-			if(!mind.has_spell(type))
-				mind.AddSpell(new type)
-
-	src.devotion.devotion *= 0.4
-
-	// Special messages
-	if(string_choice == "Astrata")
-		to_chat(src, "<font color='yellow'>HEAVEN SHALL THEE RECOMPENSE. THOU BEARS MYNE POWER ONCE MORE.</font>")
-	else
-		to_chat(src, "<font color='yellow'>Thou wieldeth now the power of [string_choice].</font>")
-
-	to_chat(src, "<font color='yellow'>The strain of changing your miracles has consumed all your devotion.</font>")
-
-	COOLDOWN_START(src, priest_change_miracles, PRIEST_SWAP_COOLDOWN)
 
 /mob/living/carbon/human/proc/coronate_lord()
 	set name = "Coronate"
@@ -280,7 +192,7 @@ GLOBAL_LIST_EMPTY(heretical_players)
 		var/dispjob = mind.assigned_role
 		removeomen(OMEN_NOLORD)
 		say("By the authority of the gods, I pronounce you Viscount of the city of Lyndvhar!")
-		priority_announce("[real_name] the [dispjob] has named [HU.real_name] the inheritor of the city of Lyndvhar!", title = "Long Live [HU.real_name]!", sound = 'sound/misc/coronation.ogg')
+		priority_announce("[real_name] the [dispjob] has named [HU.real_name] the inheritor of the city of LYNDVHAR!", title = "Long Live [HU.real_name]!", sound = 'sound/misc/coronation.ogg')
 		var/datum/job/roguetown/nomoredukes = SSjob.GetJob("Viscount")
 		if(nomoredukes)
 			nomoredukes.total_positions = -1000 //We got what we got now.
@@ -305,9 +217,9 @@ GLOBAL_LIST_EMPTY(heretical_players)
 			to_chat(src, span_warning("You must wait before speaking again."))
 			return
 		visible_message(span_warning("[src] takes a deep breath, preparing to make an announcement.."))
-		if(do_after(src, 5 SECONDS, target = src)) // Reduced to 15 seconds from 30 on the original Herald PR. 15 is well enough time for sm1 to shove you.
+		if(do_after(src, 15 SECONDS, target = src)) // Reduced to 15 seconds from 30 on the original Herald PR. 15 is well enough time for sm1 to shove you.
 			say(announcementinput)
-			priority_announce("[announcementinput]", "The Priest Speaks", 'sound/misc/bellold.ogg', sender = src)
+			priority_announce("[announcementinput]", "The Priest Preaches", 'sound/misc/bellold.ogg', sender = src)
 			COOLDOWN_START(src, priest_announcement, PRIEST_ANNOUNCEMENT_COOLDOWN)
 		else
 			to_chat(src, span_warning("Your announcement was interrupted!"))
@@ -378,7 +290,7 @@ GLOBAL_LIST_EMPTY(heretical_players)
 
 /mob/living/carbon/human/proc/churchecancurse(var/mob/living/carbon/human/H, apostasy = FALSE)
 	if (!H.devotion && apostasy)
-		to_chat(src, span_warning("This one's connection to the Ten is too shallow."))
+		to_chat(src, span_warning("This one's connection to the ten is too shallow."))
 		return FALSE
 
 	//Flavor messages for cursing certain god's faithful.
@@ -388,7 +300,7 @@ GLOBAL_LIST_EMPTY(heretical_players)
 		//If we check this here there's no need to apply this trait preemtively to a bunch of people, and allows for greater fluff feedback.
 		ADD_TRAIT(H, TRAIT_CURSE_RESIST, TRAIT_GENERIC)
 
-	//Abyssor's clergy are gripped by his dream.
+	//Abyssor's clergy are gripped by her dream.
 	if (istype(H.patron, /datum/patron/divine/abyssor))
 		to_chat(src, span_warning("The Maiden of the Sea, Abyssor, has her clutches grasped firmly around this one. The light of the Ten only barely penetrates the depths."))
 		ADD_TRAIT(H, TRAIT_CURSE_RESIST, TRAIT_GENERIC)
@@ -459,7 +371,7 @@ GLOBAL_LIST_EMPTY(heretical_players)
 		else
 			to_chat(H, span_warning("A holy silence falls upon you..."))
 
-		priority_announce("[real_name] has placed a mark of shame upon [inputty]! Their prayers fall on deaf ears..", title = "APOSTASY", sound = 'sound/misc/excomm.ogg')
+		priority_announce("[real_name] has placed mark of shame upon [inputty]. Their prayers fall on deaf ears.", title = "APOSTASY", sound = 'sound/misc/excomm.ogg')
 		message_admins("APOSTASY: [real_name] ([ckey]) has used apostasy at [H.real_name] ([H.ckey])")
 		log_game("APOSTASY: [real_name] ([ckey]) has used apostasy at [H.real_name] ([H.ckey])")
 		return TRUE
@@ -531,7 +443,7 @@ GLOBAL_LIST_EMPTY(heretical_players)
 			return FALSE
 
 	GLOB.excommunicated_players += inputty
-	priority_announce("[real_name] has excommunicated [inputty] from the Holy Pantheon! SHAME!", title = "EXCOMMUNICATION", sound = 'sound/misc/excomm.ogg')
+	priority_announce("[real_name] has excommunicated [inputty]! SHAME!", title = "EXCOMMUNICATION", sound = 'sound/misc/excomm.ogg')
 	message_admins("EXCOMMUNICATION: [real_name] ([ckey]) has excommunicated [H.real_name] ([H.ckey])")
 	log_game("EXCOMMUNICATION: [real_name] ([ckey]) has excommunicated [H.real_name] ([H.ckey])")
 
@@ -602,7 +514,7 @@ code\modules\admin\verbs\divinewrath.dm has a variant with all the gods so keep 
 			COOLDOWN_START(src, priest_curse, PRIEST_CURSE_COOLDOWN)
 			H.add_curse(curse_type)
 			
-			priority_announce("[real_name] has stricken [H.real_name] with [curse_pick]! WOE UPON THEM!", title = "JUDGEMENT", sound = 'sound/misc/excomm.ogg')
+			priority_announce("[real_name] has stricken [H.real_name] with [curse_pick]! SHAME!", title = "JUDGEMENT", sound = 'sound/misc/excomm.ogg')
 			message_admins("DIVINE CURSE: [real_name] ([ckey]) has stricken [H.real_name] ([H.ckey] with [curse_pick])")
 			log_game("DIVINE CURSE: [real_name] ([ckey]) has stricken [H.real_name] ([H.ckey] with [curse_pick])")
 
@@ -611,7 +523,7 @@ code\modules\admin\verbs\divinewrath.dm has a variant with all the gods so keep 
 /obj/effect/proc_holder/spell/invoked/convert_heretic_priest
 	name = "Absolve the Heretic"
 	desc = "Convert a heretic back to the fold of the church. Requires the heretic to be willing, and takes a long time to cast."
-	invocation = "Show this lost sheep the way back to the flock."
+	invocations = list("Show this lost sheep the way back to the flock.")
 	invocation_type = "whisper"
 	sound = 'sound/magic/bless.ogg'
 	devotion_cost = 100
@@ -632,7 +544,7 @@ code\modules\admin\verbs\divinewrath.dm has a variant with all the gods so keep 
 		revert_cast()
 		return FALSE
 
-	if(alert(target, "[user.real_name] is trying to convert you back to the light. Do you accept?", "Conversion Request", "Yes", "No") != "Yes")
+	if(alert(target, "[user.real_name] is trying to convert you back to the church. Do you accept?", "Conversion Request", "Yes", "No") != "Yes")
 		to_chat(user, span_warning("[target] refused your offer of conversion."))
 		revert_cast()
 		return FALSE
@@ -677,7 +589,7 @@ code\modules\admin\verbs\divinewrath.dm has a variant with all the gods so keep 
 	user.apply_status_effect(/datum/status_effect/debuff/devitalised)
 	target.apply_status_effect(/datum/status_effect/debuff/devitalised)
 
-	var/announcement_text = "[user.real_name] has brought [target.real_name] back into the fold of the Pantheon! [target.real_name] now follows [user.patron.name]. Praise be!"
+	var/announcement_text = "[user.real_name] has brought [target.real_name] back into the fold of the church! [target.real_name] now follows [user.patron.name]!"
 	priority_announce(announcement_text, title = "REDEMPTION", sound = 'sound/misc/bellold.ogg')
 	message_admins("HERETIC CONVERSION: [user.real_name] ([user.ckey]) has converted [target.real_name] ([target.ckey]) to [user.patron.name]")
 	log_game("HERETIC CONVERSION: [user.real_name] ([user.ckey]) converted [target.real_name] ([target.ckey]) to [user.patron.name]")

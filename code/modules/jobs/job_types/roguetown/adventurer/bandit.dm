@@ -3,11 +3,11 @@
 	flag = BANDIT
 	department_flag = PEASANTS
 	faction = "Station"
-	total_positions = 7
-	spawn_positions = 7
+	total_positions = 5
+	spawn_positions = 5
 	antag_job = TRUE
 	allowed_races = RACES_ALL_KINDS
-	tutorial = "Long ago you did a crime worthy of your bounty being hung on the wall outside of the local inn. It was those of MATTHIOS that took you in afterwards, and they are all have you known since as your closest confidants and allies. Do beware, however: as in the Cult of Matthios- loyalty is fleeting."
+	tutorial = "Long ago you did a crime worthy of your head being drawn on a bounty poster and placed around the walls and buildings dotted around the city of Lyndvhar. It was those of MATTHIOS that took you in afterwards, and they are all have you known since as your closest confidants and allies. Do beware, however: as in the Cult of Matthios- loyalty is often fleeting and set to the highest paying bidders."
 
 	outfit = null
 	outfit_female = null
@@ -16,7 +16,7 @@
 
 	display_order = JDO_BANDIT
 	announce_latejoin = FALSE
-	min_pq = 5
+	min_pq = 8
 	max_pq = null
 	round_contrib_points = 2
 
@@ -27,8 +27,18 @@
 	advjob_examine = TRUE
 	always_show_on_latechoices = TRUE
 	job_reopens_slots_on_death = FALSE //no endless stream of bandits, unless the migration waves deem it so
+	job_traits = list(TRAIT_SELF_SUSTENANCE)
 	same_job_respawn_delay = 1 MINUTES
 	cmode_music = 'sound/music/cmode/antag/combat_deadlyshadows.ogg'
+	job_subclasses = list(
+		/datum/advclass/brigand,
+		/datum/advclass/hedgeknight,
+		/datum/advclass/iconoclast,
+		/datum/advclass/knave,
+		/datum/advclass/roguemage,
+		/datum/advclass/sawbones,
+		/datum/advclass/sellsword
+	)
 
 /datum/job/roguetown/bandit/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
@@ -36,25 +46,23 @@
 		var/mob/living/carbon/human/H = L
 		if(!H.mind)
 			return
-		H.advsetup = 1
-		H.invisibility = INVISIBILITY_MAXIMUM
-		H.become_blind("advsetup")
 		H.ambushable = FALSE
 
 /datum/outfit/job/roguetown/bandit/post_equip(mob/living/carbon/human/H)
 	..()
-	var/datum/antagonist/new_antag = new /datum/antagonist/bandit()
-	H.mind.add_antag_datum(new_antag)
-	H.grant_language(/datum/language/thievescant)
-	addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, choose_name_popup), "BANDIT"), 5 SECONDS)
-	var/wanted = list("I am a notorious criminal", "I am a nobody")
-	var/wanted_choice = input("Are you a known criminal?") as anything in wanted
-	switch(wanted_choice)
-		if("I am a notorious criminal") //Extra challenge for those who want it
-			bandit_select_bounty(H)
-			ADD_TRAIT(H, TRAIT_KNOWNCRIMINAL, TRAIT_GENERIC)
-		if("I am a nobody") //Nothing ever happens
-			return
+	if(H.mind)
+		var/datum/antagonist/new_antag = new /datum/antagonist/bandit()
+		H.mind.add_antag_datum(new_antag)
+		H.grant_language(/datum/language/thievescant)
+		addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, choose_name_popup), "BANDIT"), 5 SECONDS)
+		var/wanted = list("I am a notorious criminal", "I am a nobody")
+		var/wanted_choice = input("Are you a known criminal?") as anything in wanted
+		switch(wanted_choice)
+			if("I am a notorious criminal") //Extra challenge for those who want it
+				bandit_select_bounty(H)
+				ADD_TRAIT(H, TRAIT_KNOWNCRIMINAL, TRAIT_GENERIC)
+			if("I am a nobody") //Nothing ever happens
+				return
 
 // Changed up proc from Wretch to suit bandits bit more
 /proc/bandit_select_bounty(mob/living/carbon/human/H)

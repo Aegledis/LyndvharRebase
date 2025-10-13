@@ -24,16 +24,14 @@
 
 /datum/magic_item/mundane/mining/on_equip(var/obj/item/i, var/mob/living/user, slot)
 	. = ..()
-	if(user.get_skill_level(/datum/skill/labor/mining)== 6)
-		max_skill = TRUE //they are max level, so we skip giving them skills
-		user.change_stat("endurance", 1)
-		to_chat(user, span_notice("I feel ready to mine!"))
-		active_item = TRUE
 	if(active_item)
 		return
 	if(slot == ITEM_SLOT_HANDS)
-		user.change_stat("endurance", 1)
-		user.adjust_skillrank(/datum/skill/labor/mining, 1, TRUE)
+		user.change_stat(STATKEY_WIL, 1)
+		if(user.get_skill_level(/datum/skill/labor/mining)== 6)
+			max_skill = TRUE //they are max level, so we skip giving them skills
+		else
+			user.adjust_skillrank(/datum/skill/labor/mining, 1, TRUE)
 		to_chat(user, span_notice("I feel ready to mine!"))
 		active_item = TRUE
 	else
@@ -45,7 +43,7 @@
 		active_item = FALSE
 		if (!max_skill)
 			user.adjust_skillrank(/datum/skill/labor/mining, -1, TRUE) //stripping them a level since they weren't max
-		user.change_stat("endurance", -1)
+		user.change_stat(STATKEY_WIL, -1)
 		to_chat(user, span_notice("I feel mundane once more"))
 
 
@@ -95,7 +93,8 @@
 	.=..()
 	var/obj/item/storage = i
 	var/datum/component/storage/STR = storage.GetComponent(/datum/component/storage)
-
+	if(STR.max_w_class == WEIGHT_CLASS_SMALL)
+		STR.max_w_class++
 	STR.screen_max_columns = STR.screen_max_columns + 2
 
 /datum/magic_item/mundane/revealing

@@ -3,7 +3,7 @@
 #define STAT_PERCEPTION "perception"
 #define STAT_INTELLIGENCE "intelligence"
 #define STAT_CONSTITUTION "constitution"
-#define STAT_ENDURANCE "endurance"
+#define STAT_WILLPOWER "willpower"
 #define STAT_SPEED "speed"
 #define STAT_FORTUNE "fortune"
 
@@ -40,7 +40,6 @@
 
 // MEDIUM
 #define ARMOR_INT_CHEST_MEDIUM_STEEL 300
-#define ARMOR_INT_CHEST_MEDIUM_HATANGA 325
 #define ARMOR_INT_CHEST_MEDIUM_IRON 225
 #define ARMOR_INT_CHEST_MEDIUM_SCALE 200 // More coverage, less integrity
 #define ARMOR_INT_CHEST_MEDIUM_DECREPIT 150
@@ -89,11 +88,12 @@
 
 // Light AC | Chest
 #define ARMOR_CLOTHING list("blunt" = 0, "slash" = 10, "stab" = 20, "piercing" = 0, "fire" = 0, "acid" = 0)
-#define ARMOR_PADDED_GOOD list("blunt" = 80, "slash" = 50, "stab" = 50, "piercing" = 80, "fire" = 0, "acid" = 0)
-#define ARMOR_PADDED list("blunt" = 60, "slash" = 40, "stab" = 30, "piercing" = 50, "fire" = 0, "acid" = 0)
 #define ARMOR_PADDED_BAD list("blunt" = 40, "slash" = 30, "stab" = 20, "piercing" = 40, "fire" = 0, "acid" = 0)
+#define ARMOR_PADDED list("blunt" = 60, "slash" = 40, "stab" = 30, "piercing" = 50, "fire" = 0, "acid" = 0)
+#define ARMOR_PADDED_GOOD list("blunt" = 80, "slash" = 50, "stab" = 50, "piercing" = 80, "fire" = 0, "acid" = 0)
 
 #define ARMOR_LEATHER list("blunt" = 60, "slash" = 50, "stab" = 40, "piercing" = 20, "fire" = 0, "acid" = 0)
+#define ARMOR_SPELLSINGER list("blunt" = 70, "slash" = 70, "stab" = 50, "piercing" = 30, "fire" = 0, "acid" = 0)
 #define ARMOR_LEATHER_GOOD list("blunt" = 100, "slash" = 70, "stab" = 50, "piercing" = 30, "fire" = 0, "acid" = 0)
 #define ARMOR_LEATHER_STUDDED list("blunt" = 80, "slash" = 80, "stab" = 60, "piercing" = 20, "fire" = 0, "acid" = 0)
 
@@ -142,21 +142,17 @@
 #define ARMOR_PANTS_CHAIN list("blunt" = 40, "slash" = 100, "stab" = 80, "piercing" = 20, "fire" = 0, "acid" = 0)
 #define ARMOR_PANTS_BRIGANDINE list("blunt" = 40, "slash" = 70, "stab" = 70, "piercing" = 50, "fire" = 0, "acid" = 0)
 
-// Weapon Armors (Yeah, we have this)
-#define ARMOR_SHIELD list("blunt" = 50, "slash" = 25, "stab" = 0, "piercing" = 0)
-#define ARMOR_GREATSWORD list("blunt" = 20, "slash" = 50, "stab" = 50, "piercing" = 0)
-#define ARMOR_BROADSWORD list("blunt" = 40, "slash" = 50, "stab" = 50, "piercing" = 0)
-#define ARMOR_SWORD list("blunt" = 60, "slash" = 50, "stab" = 50, "piercing" = 0)
-
 //Antag / Special / Unique armor defines
 #define ARMOR_VAMP list("blunt" = 100, "slash" = 100, "stab" = 90, "piercing" = 0, "fire" = 0, "acid" = 0)
 #define ARMOR_WWOLF list("blunt" = 100, "slash" = 90, "stab" = 80, "piercing" = 70, "fire" = 40, "acid" = 0)
 #define ARMOR_DRAGONSCALE list("blunt" = 100, "slash" = 100, "stab" = 100, "fire" = 50, "acid" = 0)
 #define ARMOR_ASCENDANT list("blunt" = 50, "slash" = 100, "stab" = 80, "piercing" = 80, "fire" = 0, "acid" = 0)
-#define ARMOR_SPELLSINGER list("blunt" = 70, "slash" = 70, "stab" = 50, "piercing" = 30, "fire" = 0, "acid" = 0)
 #define ARMOR_GRUDGEBEARER list("blunt" = 40, "slash" = 200, "stab" = 200, "piercing" = 100, "fire" = 0, "acid" = 0)
 #define ARMOR_ZIZOCONCSTRUCT list("blunt" = 60, "slash" = 70, "stab" = 70, "piercing" = 60, "fire" = 40, "acid" = 10)
-
+#define ARMOR_DRAGONHIDE list("blunt" = 30, "slash" = 30, "stab" = 30, "piercing" = 30, "fire" = 40, "acid" = 0) // snowflake armor for dragonhide, fire resist but lower other values from the ring since more integ
+#define ARMOR_FATEWEAVER list("blunt" = 10, "slash" = 100, "stab" = 100, "piercing" = 100, "fire" = 0, "acid" = 0)
+// Blocks every hit, at least once
+#define ARMOR_RHAENVAL_LIGHT list("blunt" = 80, "slash" = 80, "stab" = 30, "piercing" = 30, "fire" = 0, "acid" = 0)
 // Weapon balance defines
 #define WBALANCE_NORMAL 0
 #define WBALANCE_HEAVY -1
@@ -178,6 +174,11 @@
 #define COVERAGE_PANTS			( GROIN | LEGS )
 #define COVERAGE_FULL_LEG		( LEGS | FEET )
 
+/*
+Balloon Alert / Floating Text defines
+*/
+#define XP_SHOW_COOLDOWN (0.5 SECONDS)
+
 
 //used in various places
 #define ALL_RACES_TYPES list(\
@@ -191,12 +192,14 @@
 	/datum/species/lizardfolk,\
 	/datum/species/lupian,\
 	/datum/species/tabaxi,\
+	/datum/species/capridae,\
+	/datum/species/rhaeteian,\
+	/datum/species/cervaline,\
 	/datum/species/vulpkanin,\
 	/datum/species/akula,\
-	/datum/species/moth,\
 	/datum/species/dracon,\
 	/datum/species/anthromorph,\
-	/datum/species/anthromorphsmall,\
+	,\
 	/datum/species/demihuman,\
 	/datum/species/halforc,\
 	/datum/species/kobold,\
@@ -210,14 +213,17 @@
 
 #define RACES_RESPECTED \
 	/datum/species/aasimar,\
-	/datum/species/human/halfelf
+	/datum/species/human/halfelf,\
 
 #define RACES_TOLERATED \
 	/datum/species/tabaxi,\
 	/datum/species/lupian,\
 	/datum/species/vulpkanin,\
 	/datum/species/demihuman,\
-	/datum/species/lizardfolk \
+	/datum/species/lizardfolk,\
+	/datum/species/capridae,\
+	/datum/species/rhaeteian,\
+	/datum/species/cervaline,\
 
 #define RACES_SHUNNED \
 	/datum/species/halforc,\
@@ -228,16 +234,15 @@
 
 #define RACES_DESPISED \
 	/datum/species/anthromorph,\
-	/datum/species/anthromorphsmall,\
+	,\
 	/datum/species/goblinp,\
 	/datum/species/kobold,\
-	/datum/species/moth,\
-	/datum/species/construct/metal,\
+	,\
 
 #define RACES_RESPECTED_UP list(RACES_RESPECTED, RACES_ESTEEMED)
 
 #define RACES_CONSTRUCT \
-	/datum/species/construct/metal,\
+	,\
 
 #define RACES_ALL_KINDS list(RACES_DESPISED, RACES_SHUNNED, RACES_TOLERATED, RACES_RESPECTED, RACES_CONSTRUCT, RACES_ESTEEMED)
 
@@ -258,16 +263,18 @@
 	/datum/species/lizardfolk,\
 	/datum/species/lupian,\
 	/datum/species/tabaxi,\
+	/datum/species/capridae,\
+	/datum/species/rhaeteian,\
+	/datum/species/cervaline,\
 	/datum/species/vulpkanin,\
 	/datum/species/akula,\
-	/datum/species/moth,\
 	/datum/species/dracon,\
 	/datum/species/anthromorph,\
-	/datum/species/anthromorphsmall,\
+	,\
 	/datum/species/demihuman,\
 	/datum/species/kobold,\
 	/datum/species/goblinp,\
-	/datum/species/construct/metal,\
+	,\
 )
 
 #define CLOTHED_RACES_TYPES list(\
@@ -281,18 +288,20 @@
 	/datum/species/lizardfolk,\
 	/datum/species/lupian,\
 	/datum/species/tabaxi,\
+	/datum/species/capridae,\
+	/datum/species/rhaeteian,\
+	/datum/species/cervaline,\
 	/datum/species/vulpkanin,\
 	/datum/species/akula,\
-	/datum/species/moth,\
 	/datum/species/dracon,\
 	/datum/species/anthromorph,\
-	/datum/species/anthromorphsmall,\
+	,\
 	/datum/species/demihuman,\
 	/datum/species/halforc,\
 	/datum/species/orc,\
 	/datum/species/kobold,\
 	/datum/species/goblinp,\
-	/datum/species/construct/metal,\
+	,\
 )
 // Non-dwarf non-kobold non-goblin mostly
 #define NON_DWARVEN_RACE_TYPES list(\
@@ -305,14 +314,16 @@
 	/datum/species/lizardfolk,\
 	/datum/species/lupian,\
 	/datum/species/tabaxi,\
+	/datum/species/capridae,\
+	/datum/species/rhaeteian,\
+	/datum/species/cervaline,\
 	/datum/species/vulpkanin,\
 	/datum/species/akula,\
-	/datum/species/moth,\
 	/datum/species/dracon,\
 	/datum/species/anthromorph,\
 	/datum/species/demihuman,\
 	/datum/species/halforc,\
-	/datum/species/construct/metal,\
+	,\
 )
 // Non-elf non-dwarf non-kobold non-goblin mostly
 #define HUMANLIKE_RACE_TYPES list(\
@@ -322,13 +333,14 @@
 	/datum/species/lizardfolk,\
 	/datum/species/lupian,\
 	/datum/species/tabaxi,\
+	/datum/species/capridae,\
+	/datum/species/rhaeteian,\
+	/datum/species/cervaline,\
 	/datum/species/vulpkanin,\
 	/datum/species/akula,\
-	/datum/species/moth,\
 	/datum/species/dracon,\
 	/datum/species/anthromorph,\
 	/datum/species/demihuman,\
-	/datum/species/construct/metal,\
 )
 #define ALL_CLERIC_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/necra, /datum/patron/divine/pestra, /datum/patron/divine/ravox, /datum/patron/divine/malum, /datum/patron/divine/eora, /datum/patron/divine/undivided) // Currently unused.
 
@@ -338,7 +350,7 @@
 
 #define ALL_DIVINE_PATRONS list(/datum/patron/divine/undivided, /datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/ravox, /datum/patron/divine/necra, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora)
 
-#define ALL_NICE_PATRONS list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/ravox, /datum/patron/divine/necra, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora, /datum/patron/old_god, /datum/patron/godless)
+#define ALL_NICE_PATRONS list(/datum/patron/divine/undivided, /datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/ravox, /datum/patron/divine/necra, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora, /datum/patron/old_god, /datum/patron/godless)
 
 #define ALL_INHUMEN_PATRONS list(/datum/patron/inhumen/zizo, /datum/patron/inhumen/graggar, /datum/patron/inhumen/matthios, /datum/patron/inhumen/baotha)
 
@@ -421,6 +433,7 @@ GLOBAL_LIST_EMPTY(round_join_times)
 #define CTAG_VAGABOND		"CAT_VAGABOND"		// Vagabond class - start with nothing and work your way up
 #define CTAG_INQUISITION	"CAT_INQUISITION"	// For Orthodoxist subclasses
 #define CTAG_PURITAN		"CAT_PURITAN"		// For Inquisitor subclasses
+#define CTAG_ABSOLVER		"CAT_ABSOLVER"		// For Absolver (sub)class
 #define CTAG_COURTAGENT		"CAT_COURTAGENT"	// Court agent classes
 #define CTAG_WRETCH			"CAT_WRETCH"		// Wretch classes untethered from adventurer
 #define CTAG_LSKELETON		"CAT_LSKELETON"		// Lich Fortified Skeleton classes
@@ -447,6 +460,36 @@ GLOBAL_LIST_EMPTY(round_join_times)
 #define CTAG_GUILDSMASTER 	"CAT_GUILDSMASTER"	// Guildsmaster class - Handles Guildsmaster class selector 
 #define CTAG_GUILDSMEN 		"CAT_GUILDSMEN"		// Guildsmen class - Handles Guildsmen class selector
 #define CTAG_NIGHTMAIDEN	"CAT_NIGHTMAIDEN"	// Bathhouse Attendant's aesthetic choices.
+
+// List of mono-class categories. Only here for standardisation sake, but can be added on if desired.
+#define CTAG_DUNGEONEER		"CAT_DUNGEONEER"
+
+#define CTAG_BISHOP			"CAT_BISHOP"
+#define CTAG_MARTYR			"CAT_MARTYR"
+#define CTAG_ACOLYTE		"CAT_ACOLYTE"
+#define CTAG_CHURCHLING		"CAT_CHURCHLING"
+#define CTAG_DRUID			"CAT_DRUID"
+
+#define CTAG_STEWARD		"CAT_STEWARD"
+#define CTAG_CLERK			"CAT_CLERK"
+#define CTAG_COUNCILLOR		"CAT_COUNCIL"
+
+#define CTAG_COURTMAGE		"CAT_COURTMAGE"
+
+#define CTAG_COURTPHYS		"CAT_COURTPHYS"
+#define CTAG_APOTH			"CAT_APOTH"
+
+#define CTAG_MERCH			"CAT_MERCH"
+#define CTAG_SHOPHAND		"CAT_SHOPHAND"
+#define CTAG_ARCHIVIST		"CAT_ARCHIVIST"
+#define CTAG_TOWNCRIER		"CAT_TOWNCRIER"
+#define CTAG_TAILOR			"CAT_TAILOR"
+#define CTAG_SOILBRIDE		"CAT_SOILBRIDE"
+#define CTAG_INNKEEPER		"CAT_INNKEEPER"
+#define CTAG_COOK			"CAT_COOK"
+#define CTAG_BATHMOM		"CAT_BATHMOM"
+#define CTAG_TAPSTER		"CAT_TAPSTER"
+#define CTAG_LUNATIC		"CAT_LUNATIC"
 /*
 	Defines for the triumph buy datum categories
 */
@@ -460,14 +503,29 @@ GLOBAL_LIST_EMPTY(round_join_times)
 #define ARMOR_CLASS_MEDIUM 2
 #define ARMOR_CLASS_HEAVY 3
 
-#define BASE_PARRY_STAMINA_DRAIN 5 // Unmodified stamina drain for parry, now a var instead of setting on simplemobs
-#define BAD_GUARD_FATIGUE_DRAIN 20 //Percentage of your green bar lost on letting a guard expire.
-#define GUARD_PEEL_REDUCTION 2	//How many Peel stacks to lose if a Guard is hit.
-#define BAIT_PEEL_REDUCTION 1	//How many Peel stacks to lose if we perfectly bait.
-
 /*
-Medical defines
+	Defines for class select categories
 */
-#define ARTERY_LIMB_BLEEDRATE 20	//This is used as a reference point for dynamic wounds, so it's better off as a define.
-#define CONSTITUTION_BLEEDRATE_MOD 0.1	//How much slower we'll be bleeding for every CON point. 0.1 = 10% slower.
-#define CONSTITUTION_BLEEDRATE_CAP 15	//The CON value up to which we get a bleedrate reduction.
+
+//Adventurer categories
+#define CLASS_CAT_NOBLE	"Noble"
+#define CLASS_CAT_CLERIC "Cleric"
+#define CLASS_CAT_ROGUE	"Rogue"
+#define CLASS_CAT_RANGER "Ranger"
+#define CLASS_CAT_MAGE "Mage"
+#define CLASS_CAT_WARRIOR "Warrior"
+#define CLASS_CAT_TRADER "Trader"
+#define CLASS_CAT_NOMAD "Nomad"
+
+//Mercenary categories
+#define CLASS_CAT_DUNARGI "Dunargi"
+#define CLASS_CAT_GRENZELHOFT "Grenzelhoft"
+#define CLASS_CAT_KHAZUMIA "Khazumia"
+#define CLASS_CAT_ZYBANTI "Zybantu"
+#define CLASS_CAT_KARGRADI "Kargradi"
+#define CLASS_CAT_RHAENVAL "Rhaenval"
+#define CLASS_CAT_VALORIA "Valoria"
+#define CLASS_CAT_SALTLIA "Saltlia"
+#define CLASS_CAT_FORVHEIPAL "Forvheipal" 
+#define CLASS_CAT_RACIAL "Race Exclusive" //Used for black oaks, grudgebearer dwarves, etc.
+#define CLASS_CAT_UNALIGNED "Unaligned"

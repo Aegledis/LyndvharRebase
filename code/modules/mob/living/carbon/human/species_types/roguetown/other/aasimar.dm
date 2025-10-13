@@ -68,6 +68,12 @@
 		/datum/language/celestial
 	)
 
+/datum/species/aasimar/check_roundstart_eligible()
+	return TRUE
+
+/datum/species/aasimar/qualifies_for_rank(rank, list/features)
+	return TRUE
+
 /datum/species/aasimar/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()
 	RegisterSignal(C, COMSIG_MOB_SAY, PROC_REF(handle_speech))
@@ -75,7 +81,7 @@
 
 /datum/species/aasimar/after_creation(mob/living/carbon/C)
 	..()
-	to_chat(C, "<span class='info'>I can speak Celestial with ,c before my speech.</span>")
+	to_chat(C, "<span class='info'>I can speak Celestia with ,c before my speech.</span>")
 
 /datum/species/aasimar/on_species_loss(mob/living/carbon/C)
 	. = ..()

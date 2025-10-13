@@ -137,12 +137,12 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 		job_list.Insert(1, wanderers_listing)
 	dat += job_list
 	var/datum/browser/popup = new(src, "lobby_window", "<div align='center'>LOBBY</div>", 330, 430)
-	popup.set_window_options("can_close=1;can_minimize=0;can_maximize=0;can_resize=1;")
+	popup.set_window_options(can_minimize = FALSE, can_maximize = FALSE, can_resize = TRUE)
 	popup.set_content(dat.Join())
 	if(!client)
 		return
 	if(winexists(src, "lobby_window"))
-		src << browse(popup.get_content(), "window=lobby_window") //dont update the size or annoyingly refresh
+		src << browse(popup.build_page(), "window=lobby_window") //dont update the size or annoyingly refresh
 		qdel(popup)
 		return
 	else

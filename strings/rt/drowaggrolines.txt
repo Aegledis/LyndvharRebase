@@ -1,18 +1,30 @@
-You will DIE in DARKNESS!
-Your BLOOD will feed HER hunger!
-You DARE to challenge un child de l'underdark?
-Weak - just like la rest of your kind!
-I will CARVE OUT YOUR HEART for mon goddess!
-Her hand guides mon blade!
-Surrender and perhaps I'll grant you un quick death, oui?
-Skewer them! Let their screams echo throughout la caverns!
-Bleed, wretch! Your agony is un symphony to mon ears!
-Nothing but death awaits you down here, fool.
-You are nothing but un worm beneath mon heel. Perish!
-Squirm, insect!
-I want to hear you BEG before l'end!
-I'll take mon time breaking you, piece by piece!
-Another body for les skallax to feast on! 
-Her will is absolute - your life ends here, fool!
-Mon dieu!
-En garde!
+,e You will DIE in DARKNESS!
+,e Your BLOOD will feed the hunger of the skrallax!
+,e You DARE to challenge a child of the Underdark?
+,e Weak - just like the rest of your kind!
+,e I will CARVE OUT YOUR HEART for my mistress!
+,e Matriarch's hand guides my blade!
+,e Surrender and perhaps i'll grant you a quick death, yes?
+,e Skewer them! Let their screams echo throughout the caverns!
+,e Bleed, wretch! Your agony is a symphony to my ears!
+,e Nothing but death awaits you down here, fool.
+,e You are nothing but a worm beneath my heel. Perish!
+,e Squirm, insect!
+,e I want to hear you BEG before the end!
+,e I'll take my time breaking you, piece by piece!
+,e Another body for the skrallax to feast on! 
+,e The Matriarch's will is absolute - your life ends here, fool!
+,e Surrender now, and you might live as a slave!
+,e Bow before my strength!
+,e How dare you come down to our lands!
+,e Interloper!
+,e Fool!
+,e You never should have came here!
+,e Oh look, a surface-dweller come to offer themself!
+,e Prepare for your end!
+,e Beg for mercy- and watch as you receive nothing!
+,e Mon dieu!
+,e En garde!
+,e C'est fini!
+,e Effondrement dans le désespoir!
+,e Effondrer!

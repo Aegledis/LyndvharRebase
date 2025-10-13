@@ -1,6 +1,6 @@
 /obj/item/merctoken
 	name = "writ of commendation"
-	desc = "A small, palm-fitting bound scroll - a writ of commendation for a mercenary in the Duchy of Azure Peak."
+	desc = "A small, palm-fitting bound scroll - a writ of commendation for a mercenary in the Ruby Empire."
 	icon_state = "merctoken"
 	icon = 'modular_azurepeak/icons/clothing/mercmedals.dmi'
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
@@ -27,12 +27,12 @@
 			if(user.mind.assigned_role == "Mercenary")
 				to_chat(user, "<span class='warning'>...have I really stooped so low as to sign my own commendation?</span>")
 				return
-			if(user.mind.assigned_role != "Mercenary") // AZURE: anyone can hire a mercenary
+			if(user.mind.assigned_role != "Mercenary") // LYNDVHAR: anyone can hire a mercenary
 				signee = user.real_name
 				signeejob = user.mind.assigned_role
 				visible_message("<span class='warning'>[user] writes their name down on the token.</span>")
 				playsound(src, 'sound/items/write.ogg', 100, FALSE)
-				desc = "A small, palm-fitting bound scroll that can be sent by mail to the Guild. Most of the fine print is unintelligible, save for one bold SIGNEE: [signee], [signeejob] of Azure Peak."
+				desc = "A small, palm-fitting bound scroll that can be sent by mail to the Guild. Most of the fine print is unintelligible, save for one bold SIGNEE: [signee], [signeejob] of Lyndhardtia."
 				signed = 1
 				return
 		else
@@ -56,7 +56,7 @@
 	name = "imperial gryphon"
 	desc = "A parody of the brass medal issued to Grenzelhoftian soldiers of great honor and renown. Frequently adopted as medals by other, younger guilds among the mercenaries of Yoheon, with slight adjustment."
 
-/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/blackoak
+/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/crestguardian
 	name = "guardian's seedpouch"
 	desc = "A pouch, sealed tight, bearing the acorn of an oak native to the Crestborne forests. May your end be a new beginning for Greencrest."
 	icon_state = "blackoak_pouch"
@@ -73,7 +73,7 @@
 	others think them marks of favor from the highest echelons of the Ziggurat. The desert riders confirm neither rumour."
 	icon_state = "rider_sash"
 
-/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/forlorn
+/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/forvheipal
 	name = "laughing volf medal"
 	desc ="A trinket bearing the snarling visage of a volf and bolt, a mark of distinction among the Forvheipal thralldom. Often taken from the dead and issued anew to the living, each bearing \
 	lyfetymes of nicks and scratches."
@@ -81,14 +81,14 @@
 
 /obj/item/clothing/neck/roguetown/luckcharm/mercmedal/freifechter
 	name = "freifechter's obol"
-	desc = "A descendant of the oft-forgotten astilen, with a hole through one end for hanging on a string. With the advent of mammon as the Western Continent's currency of choice, \
-	they find new lyfe worn as marks of skill by freifechters."
+	desc = "A descendant of the oft-forgotten astilen, with a hole through one end for hanging on a string. The origins for why the Freifechter Potentate has adopted this insignia is still unknown, \
+	even to most of their own folk. Perhaps a long forgotten mythos shrouded in the Gilded."
 	icon_state = "freif_obol"
 
 /obj/item/clothing/neck/roguetown/luckcharm/mercmedal/atgervi
 	name = "northmanne's idol"
 	desc = "A humble token of tightly-wound canvas, fur, and wood. A piece of home, clutched tight against the chest. Feel its heart beat in tyme with your own. Even here, in distant Lyndvhar, \
-	the gods walk, and they walk with you."
+	the winds whisper, and they walk with you."
 	icon_state = "atgervi_idol"
 
 /obj/item/clothing/neck/roguetown/luckcharm/mercmedal/grudgebearer
@@ -101,7 +101,7 @@
 	desc = "The underdwellers claim this will always point you exactly where you need to go. If it doesn't work, that's just an issue of skill and mindset."
 	icon_state = "under_compass"
 
-/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/kazengun
+/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/saltlian
 	// NOT CURRENTLY IMPLEMENTED
 
 /obj/item/clothing/neck/roguetown/luckcharm/mercmedal/routier

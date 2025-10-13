@@ -22,7 +22,6 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 GLOBAL_LIST_INIT(our_forest_sex, typecacheof(list(
 	/area/rogue/outdoors/woods,
 	/area/rogue/indoors/shelter/woods,
-	/area/rogue/outdoors/river,
 	/area/rogue/outdoors/bog,
 	/area/rogue/indoors/shelter/bog,
 	/area/rogue/outdoors/rtfield,
@@ -92,12 +91,9 @@ GLOBAL_LIST_INIT(our_forest_sex, typecacheof(list(
 #define isaasimar(A) (is_species(A, /datum/species/aasimar))
 #define ishalfkin(A) (is_species(A, /datum/species/demihuman))
 #define iswildkin(A) (is_species(A, /datum/species/anthromorph))
-#define isconstruct(A) (is_species(A, /datum/species/construct/metal))	//Specified 'M' due to redefine lower
-#define isvermin(A) (is_species(A, /datum/species/anthromorphsmall))
 #define isaxian(A) (is_species(A, /datum/species/akula))
 #define isdracon(A) (is_species(A, /datum/species/dracon))
 #define islupian(A) (is_species(A, /datum/species/lupian))
-#define ismoth(A) (is_species(A, /datum/species/moth))
 #define istabaxi(A) (is_species(A, /datum/species/tabaxi))
 #define isvulp(A) (is_species(A, /datum/species/vulpkanin))
 

@@ -1,6 +1,6 @@
 /datum/language/grenzelhoftian
-	name = "Grenzelhoftian Imperial"
-	desc = "The primary language of the Grenzelhoft Emperiate, a robust language filled with hearty words and enthusiastic enunciation."
+	name = "Grenz"
+	desc = "The primary language of the Grenzelhoftians, its offshoot point is relatively unknown from other tongues but it developed strongly as the main cultural language of the entire region of the Grenzelhoftian fiefdoms that make up the Emperiate, or Kaiserate- if you are Grenzel. It is an incredibly robust language filled with hearty words and enthusiastic enunciation, making most who speak it sound rather uplifted in mood, no matter the circumstance. It is often considered to be the third most spoken language in all of Beowricke."
 	speech_verb = "remarks"
 	ask_verb = "inquires"
 	exclaim_verb = "asserts"

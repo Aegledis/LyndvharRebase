@@ -1,11 +1,10 @@
-/proc/show_individual_logging_panel(mob/M, source = LOGSRC_CLIENT, type = INDIVIDUAL_ATTACK_LOG)
-	if(!M || !ismob(M))
+/proc/show_individual_logging_panel(client/user, mob/M, source = LOGSRC_CLIENT, type = INDIVIDUAL_ATTACK_LOG)
+	if (!M || !ismob(M))
 		return
 
 	var/ntype = text2num(type)
-
+	var/dat = ""
 	//Add client links
-	var/list/dat = list()
 	if(M.client)
 		dat += "<center><p>Client</p></center>"
 		dat += "<center>"
@@ -65,7 +64,7 @@
 		dat += "</font>"
 
 	var/datum/browser/popup = new(usr, "window=invidual_logging_[key_name(M)]", "Individual Logs", 600, 600)
-	popup.set_content(dat.Join())
+	popup.set_content(dat)
 	popup.open()
 
 

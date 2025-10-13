@@ -421,29 +421,29 @@
 	color = "#772C48"
 	quality = DRINK_GOOD
 
-//Avar boozes
+//steppe boozes
 
-/datum/reagent/consumable/ethanol/avarmead
+/datum/reagent/consumable/ethanol/vruiridmead
 	name = "Zögiin bal"
 	boozepwr = 30
 	taste_description = "spicy honey"
 	color = "#e0a400"
 	quality = DRINK_GOOD
 
-/datum/reagent/consumable/ethanol/avarrice
+/datum/reagent/consumable/ethanol/okalbergrice
 	name = "Makkolir"
 	boozepwr = 30
 	taste_description = "tangy sweetness"
 	color = "#ddcbc9"
 	quality = DRINK_GOOD
 
-/datum/reagent/consumable/ethanol/saigamilk //No way, kumys from avar!!!
+/datum/reagent/consumable/ethanol/saigamilk
 	name = "Bökhiin Arkhi"
 	boozepwr = 15
 	taste_description = "bubbly, sour salt"
 	color = "#dddddd"
 
-//Kazengun boozes
+//Saltlia boozes
 
 /datum/reagent/consumable/ethanol/kgunlager
 	name = "Yamaguchi Pale"
@@ -568,14 +568,14 @@
 
 /datum/reagent/consumable/ethanol/whipwine // dont ask
 	name = "Magickal Whip Wine" 
-	description = "A recipe recently floated into the Peaks. Magickal Whip Wine is said to increase one's potence and stamina sevenfold."
+	description = "A recipe recently floated into the region. Magickal Whip Wine is said to increase one's potence and stamina sevenfold."
 	boozepwr = 10 // it's a whip. it's an actual whip.
 	taste_description = "leather, bitter herbs, and regret" // what did you expect
 	color = "#3a1d18"
 
 /datum/reagent/consumable/ethanol/komuchisake // if you put this outside the lich dungeon i'll kill you
 	name = "Divine Snake Wine" 
-	description = "The True Form of the Whipwine. The Magickal Snake Wine was an exclusively produced medicinal wine from over three centures ago in the Kazengun Shogunate..."
+	description = "The True Form of the Whipwine. The Magickal Snake Wine was an exclusively produced medicinal wine from over three centures ago in the Saltliac Kingdoms..."
 	boozepwr = 60 // ancient lichebrau...
 	taste_description = "bitterness, pain, iron, and ancient mistakes" // what did you expect [2]
 	color = "#553837"

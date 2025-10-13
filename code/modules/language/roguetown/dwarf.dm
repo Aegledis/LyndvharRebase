@@ -1,6 +1,6 @@
 /datum/language/dwarvish
 	name = "Dwarvish"
-	desc = ""
+	desc = "One of the many offshoots of the progenitor tongue, retrofitted into dwarven culture as the staple folk-language of their peoples. Written in runic patterns and with a hefty tone and loud verbal practice, it is a hardy representation of the enduring underground mountainous halls they call home. Many people who trade with the federations often adapt the language for their own needs in order to communicate easier."
 	speech_verb = "blabbers"
 	ask_verb = "asks"
 	exclaim_verb = "shouts"

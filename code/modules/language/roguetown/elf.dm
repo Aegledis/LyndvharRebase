@@ -1,6 +1,6 @@
 /datum/language/elvish
 	name = "Elvish"
-	desc = ""
+	desc = "Widely considered to be the first proper tongue used by a more civilized species, the tongue most spoken by elves was slowly crafted over the most early of progenitor days by elves, and spoken by humans heavily before the slow cultural offshoots formed. This precursor tongue is still used by elves in their personal communities, and often learned by the more educated masses."
 	speech_verb = "states"
 	ask_verb = "questions"
 	exclaim_verb = "shouts"

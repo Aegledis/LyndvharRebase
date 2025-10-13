@@ -104,16 +104,41 @@
 	descriptors = list(
 		/datum/mob_descriptor/stature/man,
 		/datum/mob_descriptor/stature/gentleman,
+		/datum/mob_descriptor/stature/hag,
+		/datum/mob_descriptor/stature/patriarch,
+		/datum/mob_descriptor/stature/villain,
 		/datum/mob_descriptor/stature/thug,
+		/datum/mob_descriptor/stature/knave,
+		/datum/mob_descriptor/stature/wench,
 		/datum/mob_descriptor/stature/snob,
 		/datum/mob_descriptor/stature/slob,
 		/datum/mob_descriptor/stature/brute,
 		/datum/mob_descriptor/stature/highbrow,
+		/datum/mob_descriptor/stature/scholar,
+		/datum/mob_descriptor/stature/rogue,
+		/datum/mob_descriptor/stature/hermit,
+		/datum/mob_descriptor/stature/pushover,
+		/datum/mob_descriptor/stature/beguiler,
+		/datum/mob_descriptor/stature/fiend,
+		/datum/mob_descriptor/stature/adventurer,
+		/datum/mob_descriptor/stature/valiant,
+		/datum/mob_descriptor/stature/plump,
+		/datum/mob_descriptor/stature/daredevil,
+		/datum/mob_descriptor/stature/stoic,
 		/datum/mob_descriptor/stature/stooge,
 		/datum/mob_descriptor/stature/fool,
 		/datum/mob_descriptor/stature/bookworm,
 		/datum/mob_descriptor/stature/lowlife,
 		/datum/mob_descriptor/stature/dignitary,
+		/datum/mob_descriptor/stature/degenerate,
+		/datum/mob_descriptor/stature/zealot,
+		/datum/mob_descriptor/stature/churl,
+		/datum/mob_descriptor/stature/archon,
+		/datum/mob_descriptor/stature/vizier,
+		/datum/mob_descriptor/stature/blaggard,
+		/datum/mob_descriptor/stature/creep,
+		/datum/mob_descriptor/stature/freek,
+		/datum/mob_descriptor/stature/weerdoe,
 	)
 
 /datum/descriptor_choice/voice
@@ -222,9 +247,11 @@
 	default_descriptor = /datum/mob_descriptor/height/moderate
 	descriptors = list(
 		/datum/mob_descriptor/height/moderate,
+		/datum/mob_descriptor/height/middling,
 		/datum/mob_descriptor/height/tall,
 		/datum/mob_descriptor/height/short,
 		/datum/mob_descriptor/height/towering,
+		/datum/mob_descriptor/height/giant,
 		/datum/mob_descriptor/height/tiny,
 	)
 
@@ -339,42 +366,42 @@
 	/datum/mob_descriptor/prominent/vulpine_features
 
 /datum/descriptor_choice/prominent_one
-	name = "Prominent #1"
+	name = "First Feature"
 	default_descriptor = /datum/mob_descriptor/prominent/unkempt
 	descriptors = list(PROMINENT_DESCRIPTORS)
 
 /datum/descriptor_choice/prominent_two
-	name = "Prominent #2"
+	name = "Second Feature"
 	default_descriptor = /datum/mob_descriptor/prominent/dim_look
 	descriptors = list(PROMINENT_DESCRIPTORS)
 
 /datum/descriptor_choice/prominent_three
-	name = "Prominent #3"
+	name = "Third Feature"
 	default_descriptor = /datum/mob_descriptor/prominent/none
 	descriptors = list(/datum/mob_descriptor/prominent/none, PROMINENT_DESCRIPTORS)
 
 /datum/descriptor_choice/prominent_four
-	name = "Prominent #4"
+	name = "Fourth Feature"
 	default_descriptor = /datum/mob_descriptor/prominent/none
 	descriptors = list(/datum/mob_descriptor/prominent/none, PROMINENT_DESCRIPTORS)
 
 /datum/descriptor_choice/prominent_one_wild
-	name = "Prominent #1"
+	name = "First Feature"
 	default_descriptor = /datum/mob_descriptor/prominent/unkempt
 	descriptors = list(PROMINENT_WILDKIN, PROMINENT_DESCRIPTORS)
 
 /datum/descriptor_choice/prominent_two_wild
-	name = "Prominent #2"
+	name = "Second Feature"
 	default_descriptor = /datum/mob_descriptor/prominent/dim_look
 	descriptors = list(PROMINENT_WILDKIN, PROMINENT_DESCRIPTORS)
 
 /datum/descriptor_choice/prominent_three_wild
-	name = "Prominent #3"
+	name = "Third Feature"
 	default_descriptor = /datum/mob_descriptor/prominent/none
 	descriptors = list(/datum/mob_descriptor/prominent/none, PROMINENT_WILDKIN, PROMINENT_DESCRIPTORS)
 
 /datum/descriptor_choice/prominent_four_wild
-	name = "Prominent #4"
+	name = "Fourth Feature"
 	default_descriptor = /datum/mob_descriptor/prominent/none
 	descriptors = list(/datum/mob_descriptor/prominent/none, PROMINENT_WILDKIN, PROMINENT_DESCRIPTORS)
 

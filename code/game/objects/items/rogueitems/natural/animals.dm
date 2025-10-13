@@ -174,9 +174,10 @@
 	icon2step = 10
 
 /obj/item/natural/cured/essence
-	name = "essense of wilderness"
+	name = "essence of wilderness"
 	icon_state = "wessence"
-	desc = "A mystical essense embued with the power of Dendor. Merely holding it transports one's mind to ancient times."
+	desc = "A large drop of mystical sap said to contain Dendor's own energies, \n\
+	often carried by hunters and other wildsmen as a token of luck. A skilled tailor can imbue it into certain clothing or leather to provide protection."
 	resistance_flags = FLAMMABLE
 	w_class = WEIGHT_CLASS_SMALL
 	sellprice = 20

@@ -39,7 +39,7 @@
 	var/datum/customizer_entry/organ/penis/penis_entry = entry
 	switch(href_list["customizer_task"])
 		if("penis_size")
-			var/named_size = input(user, "Choose your penis size:", "Character Preference", find_key_by_value(GLOB.named_penis_sizes, penis_entry.penis_size)) as anything in GLOB.named_penis_sizes
+			var/named_size = browser_input_list(user, "CHOOSE THEIR PENIS SIZE:", "WHAT'S DONE WITH IT", GLOB.named_penis_sizes, find_key_by_value(GLOB.named_penis_sizes, penis_entry.penis_size))
 			if(isnull(named_size))
 				return
 			var/new_size = GLOB.named_penis_sizes[named_size]
@@ -61,6 +61,8 @@
 		/datum/customizer_choice/organ/penis/equine,
 		/datum/customizer_choice/organ/penis/tapered_mammal,
 		/datum/customizer_choice/organ/penis/tapered,
+		/datum/customizer_choice/organ/penis/tapered_knot,
+		/datum/customizer_choice/organ/penis/tapered_knot_mammal,
 		/datum/customizer_choice/organ/penis/tapered_double,
 		/datum/customizer_choice/organ/penis/tapered_double_knot,
 		/datum/customizer_choice/organ/penis/barbed,
@@ -72,7 +74,21 @@
 	customizer_choices = list(
 		/datum/customizer_choice/organ/penis/human_anthro,
 		/datum/customizer_choice/organ/penis/knotted,
+		/datum/customizer_choice/organ/penis/tapered_knot_mammal,
 		)
+
+/datum/customizer/organ/penis/capridae
+	customizer_choices = list(
+		/datum/customizer_choice/organ/penis/human_anthro,
+		/datum/customizer_choice/organ/penis/tapered,
+		/datum/customizer_choice/organ/penis/equine,
+		)		
+
+/datum/customizer/organ/penis/rhaeteian
+	customizer_choices = list(
+		/datum/customizer_choice/organ/penis/human_anthro,
+		/datum/customizer_choice/organ/penis/tapered,
+		)		
 
 /datum/customizer/organ/penis/feline
 	customizer_choices = list(
@@ -85,6 +101,7 @@
 	customizer_choices = list(
 		/datum/customizer_choice/organ/penis/human_anthro,
 		/datum/customizer_choice/organ/penis/tapered,
+		/datum/customizer_choice/organ/penis/tapered_knot,
 		/datum/customizer_choice/organ/penis/tapered_double,
 		/datum/customizer_choice/organ/penis/tapered_double_knot,
 		)
@@ -136,16 +153,30 @@
 		/datum/sprite_accessory/penis/tapered,
 		)
 
+/datum/customizer_choice/organ/penis/tapered_knot
+	name = "Knotted Tapered Penis"
+	organ_type = /obj/item/organ/penis/tapered_knotted
+	sprite_accessories = list(
+		/datum/sprite_accessory/penis/taperedknot,
+		)
+
+/datum/customizer_choice/organ/penis/tapered_knot_mammal
+	name = "Knotted Tapered Penis (Mammal)"
+	organ_type = /obj/item/organ/penis/tapered_knotted_mammal
+	sprite_accessories = list(
+		/datum/sprite_accessory/penis/taperedknot_mammal,
+		)
+
 /datum/customizer_choice/organ/penis/tapered_double
 	name = "Hemi Tapered Penis"
-	organ_type = /obj/item/organ/penis/tapered
+	organ_type = /obj/item/organ/penis/tapered_double
 	sprite_accessories = list(
 		/datum/sprite_accessory/penis/hemi,
 		)
 
 /datum/customizer_choice/organ/penis/tapered_double_knot
 	name = "Knotted Hemi Tapered Penis"
-	organ_type = /obj/item/organ/penis/tapered
+	organ_type = /obj/item/organ/penis/tapered_double_knotted
 	sprite_accessories = list(
 		/datum/sprite_accessory/penis/hemiknot,
 		)
@@ -215,7 +246,7 @@
 	var/datum/customizer_entry/organ/testicles/testicles_entry = entry
 	switch(href_list["customizer_task"])
 		if("ball_size")
-			var/named_size = input(user, "Choose your ball size:", "Character Preference", find_key_by_value(GLOB.named_ball_sizes, testicles_entry.ball_size)) as anything in GLOB.named_ball_sizes
+			var/named_size = browser_input_list(user, "CHOOSE THEIR BALL SIZE:", "MIXED NUTS", GLOB.named_ball_sizes, find_key_by_value(GLOB.named_ball_sizes, testicles_entry.ball_size))
 			if(isnull(named_size))
 				return
 			var/new_size = GLOB.named_ball_sizes[named_size]
@@ -298,7 +329,7 @@
 	var/datum/customizer_entry/organ/breasts/breasts_entry = entry
 	switch(href_list["customizer_task"])
 		if("breast_size")
-			var/named_size = input(user, "Choose your breast size:", "Character Preference", find_key_by_value(GLOB.named_breast_sizes, breasts_entry.breast_size)) as anything in GLOB.named_breast_sizes
+			var/named_size = browser_input_list(user, "CHOOSE THEIR BREAST SIZE:", "TRACKS OF LAND", GLOB.named_breast_sizes, find_key_by_value(GLOB.named_breast_sizes, breasts_entry.breast_size))
 			if(isnull(named_size))
 				return
 			var/new_size = GLOB.named_breast_sizes[named_size]
@@ -398,6 +429,29 @@
 		/datum/sprite_accessory/vagina/gaping,
 		/datum/sprite_accessory/vagina/hairy,
 		/datum/sprite_accessory/vagina/spade,
+		/datum/sprite_accessory/vagina/furred,
+		)
+
+/datum/customizer/organ/vagina/rhaeteian
+	customizer_choices = list(/datum/customizer_choice/organ/vagina/rhaeteian)
+
+/datum/customizer_choice/organ/vagina/rhaeteian
+	sprite_accessories = list(
+		/datum/sprite_accessory/vagina/human,
+		/datum/sprite_accessory/vagina/gaping,
+		/datum/sprite_accessory/vagina/hairy,
+		/datum/sprite_accessory/vagina/furred,
+		/datum/sprite_accessory/vagina/cloaca,
+		)
+
+/datum/customizer/organ/vagina/capridae
+	customizer_choices = list(/datum/customizer_choice/organ/vagina/capridae)
+
+/datum/customizer_choice/organ/vagina/capridae
+	sprite_accessories = list(
+		/datum/sprite_accessory/vagina/human,
+		/datum/sprite_accessory/vagina/gaping,
+		/datum/sprite_accessory/vagina/hairy,
 		/datum/sprite_accessory/vagina/furred,
 		)
 

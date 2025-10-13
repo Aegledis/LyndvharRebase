@@ -180,7 +180,7 @@
 	antimagic_allowed = FALSE
 	miracle = TRUE
 
-	invocation = "Rot, take them!"
+	invocations = list("Rot, take them!")
 	invocation_type = "shout" //can be none, whisper, emote and shout
 
 
@@ -196,7 +196,7 @@
 	id = "infestation"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/infestation
 	duration = 10 SECONDS
-	effectedstats = list("constitution" = -2)
+	effectedstats = list(STATKEY_CON = -2)
 	var/static/mutable_appearance/rotten = mutable_appearance('icons/roguetown/mob/rotten.dmi', "rotten")
 
 /datum/status_effect/buff/infestation/on_apply()

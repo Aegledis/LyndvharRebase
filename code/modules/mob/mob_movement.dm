@@ -172,15 +172,25 @@
 			// Reset our sprint counter if we change direction
 			L.sprinted_tiles = 0
 
+	var/old_direct = mob.dir
+
 	. = ..()
 
 	if((direct & (direct - 1)) && mob.loc == n) //moved diagonally successfully
 		add_delay *= 2
-	mob.set_glide_size(DELAY_TO_GLIDE_SIZE(add_delay))
+
+	var/after_glide = 0
+
+	mob.set_glide_size(after_glide)
+
 	move_delay += add_delay
 	if(.) // If mob is null here, we deserve the runtime
 		if(mob.throwing)
 			mob.throwing.finalize(FALSE)
+
+		// At this point we've moved the client's attached mob. This is one of the only ways to guess that a move was done
+		// as a result of player input and not because they were pulled or any other magic.
+		SEND_SIGNAL(mob, COMSIG_MOB_CLIENT_MOVED, direct, old_direct)
 
 	var/atom/movable/P = mob.pulling
 	if(P)
@@ -200,15 +210,6 @@
 		to_chat(src, span_warning("I lost my concentration!"))
 		mob.stop_attack(FALSE)
 		mob.changeNext_move(CLICK_CD_MELEE)
-
-	for(var/datum/browser/X in open_popups)
-		if(!X.no_close_movement)
-	//		var/datum/browser/popup = new(mob, X, "", 5, 5)
-	//		popup.set_content()
-	//		popup.open()
-	//		popup.close()
-			mob << browse(null, "window=[X]")
-			open_popups -= X
 /**
   * Checks to see if you're being grabbed and if so attempts to break it
   *
@@ -464,6 +465,8 @@
 	switch(mob.zone_selected)
 		if(BODY_ZONE_HEAD)
 			next_in_line = BODY_ZONE_PRECISE_NECK
+		if(BODY_ZONE_PRECISE_NECK)
+			next_in_line = BODY_ZONE_PRECISE_SKULL
 		else
 			next_in_line = BODY_ZONE_HEAD
 
@@ -698,6 +701,12 @@
 		switch(intent)
 			if(MOVE_INTENT_SNEAK)
 				m_intent = MOVE_INTENT_SNEAK
+				if(isliving(src))
+					var/mob/living/L = src
+					if((/datum/mob_descriptor/prominent/prominent_bottom in L.mob_descriptors) || (/datum/mob_descriptor/prominent/prominent_thighs in L.mob_descriptors))
+						L.loud_sneaking = TRUE
+					else
+						L.loud_sneaking = FALSE
 				update_sneak_invis()
 
 			if(MOVE_INTENT_WALK)
@@ -827,38 +836,8 @@
 	for(var/atom/movable/screen/eye_intent/eyet in hud_used.static_inventory)
 		eyet.update_icon(src)
 	playsound_local(src, 'sound/misc/click.ogg', 100)
-
-/client/proc/hearallasghost()
-	set category = "Prefs - Admin"
-	set name = "HearAllAsAdmin"
-	if(!holder)
-		return
-	if(!prefs)
-		return
-	prefs.chat_toggles ^= CHAT_GHOSTEARS
-//	prefs.chat_toggles ^= CHAT_GHOSTSIGHT
-	prefs.chat_toggles ^= CHAT_GHOSTWHISPER
-	prefs.save_preferences()
-	if(prefs.chat_toggles & CHAT_GHOSTEARS)
-		to_chat(src, span_notice("I will hear all now."))
-	else
-		to_chat(src, span_info("I will hear like a mortal."))
-
-/client/proc/hearglobalLOOC()
-	set category = "Prefs - Admin"
-	set name = "Show/Hide Global LOOC"
-	if(!holder)
-		return
-	if(!prefs)
-		return
-	prefs.chat_toggles ^= CHAT_ADMINLOOC
-	prefs.save_preferences()
-	if(prefs.chat_toggles & CHAT_ADMINLOOC)
-		to_chat(src, span_notice("I will now hear all LOOC chatter."))
-	else
-		to_chat(src, span_info("I will now only hear LOOC chatter around me."))
-
 ///Moves a mob upwards in z level
+
 /mob/proc/ghost_up()
 	if(zMove(UP, TRUE))
 		to_chat(src, span_notice("I move upwards."))

@@ -19,12 +19,15 @@
 	ambush_times = list("night","dawn","dusk","day")
 	converted_type = /area/rogue/indoors/shelter/mountains/decap
 	deathsight_message = "a twisted tangle of soaring peaks"
+	threat_region = THREAT_REGION_MOUNT_DECAP
 
 /area/rogue/indoors/shelter/mountains/decap
 	icon_state = "decap"
 	droning_sound = 'sound/music/area/decap.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
+	threat_region = THREAT_REGION_MOUNT_DECAP
+	deathsight_message = "a twisted tangle of soaring peaks"
 
 
 /area/rogue/outdoors/mountains/decap/stepbelow
@@ -40,12 +43,13 @@
 				new /datum/ambush_config/medium_skeleton_party = 20,
 				new /datum/ambush_config/heavy_skeleton_party = 10,
 				)
-	droning_sound = 'sound/music/area/decap_deeper.ogg'
+	droning_sound = 'sound/music/area/caldera.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	first_time_text = "SCORCHED CALDERA"
 	ambush_times = list("night","dawn","dusk","day")
 	converted_type = /area/rogue/indoors/shelter/mountains/decap
+	threat_region = THREAT_REGION_MOUNT_DECAP
 
 /area/rogue/outdoors/mountains/decap/gunduzirak
 	name = "Ruins of Khuufvale"
@@ -63,6 +67,7 @@
 	ambush_times = list("night","dawn","dusk","day")
 	converted_type = /area/rogue/indoors/shelter/mountains/decap
 	ceiling_protected = TRUE
+	threat_region = THREAT_REGION_MOUNT_DECAP
 
 /area/rogue/outdoors/mountains/decap/gunduzirak/bossarena
 	name = "Baronness Boss Arena"
@@ -81,7 +86,7 @@
 	droning_sound_night = null
 	converted_type = /area/rogue/outdoors/dungeon1
 	ceiling_protected = TRUE
-	deathsight_message = "a twisted arena of drakeflame"
+	threat_region = THREAT_REGION_MOUNT_DECAP
 
 /area/rogue/under/cave/dragonden/can_craft_here()
 	return FALSE
@@ -96,6 +101,7 @@
 	converted_type = /area/rogue/outdoors/dungeon1
 	ceiling_protected = TRUE
 	deathsight_message = "a twisted tangle of soaring peaks"
+	threat_region = THREAT_REGION_MOUNT_DECAP
 
 /area/rogue/under/cave/scarymaze
 	name = "hauntedlabyrinth"
@@ -107,14 +113,16 @@
 	converted_type = /area/rogue/outdoors/dungeon1
 	ceiling_protected = TRUE
 	deathsight_message = "a twisted tangle of soaring peaks"
+	threat_region = THREAT_REGION_MOUNT_DECAP
 
 /area/rogue/outdoors/mountains/decap/minotaurfort
 	name = "Minotaur Fort"
 	icon_state = "decap"
-	droning_sound = 'sound/music/area/prospector.ogg'
+	droning_sound = 'sound/music/area/spidercave.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	first_time_text = "ANCIENT DWARVEN FORGE"
 	ambush_times = list("night","dawn","dusk","day")
 	converted_type = /area/rogue/indoors/shelter/mountains/decap
 	ceiling_protected = TRUE
+	threat_region = THREAT_REGION_MOUNT_DECAP

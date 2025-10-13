@@ -40,6 +40,10 @@ GLOBAL_LIST_EMPTY(loadout_items)
 	name = "Tricorn Hat"
 	path = /obj/item/clothing/head/roguetown/helmet/tricorn
 
+/datum/loadout_item/nurseveil
+	name = "Nurse's Veil"
+	path = /obj/item/clothing/head/roguetown/veiled
+
 /datum/loadout_item/archercap
 	name = "Archer's cap"
 	path = /obj/item/clothing/head/roguetown/archercap
@@ -198,9 +202,9 @@ GLOBAL_LIST_EMPTY(loadout_items)
 	name = "Exotic Anklets"
 	path = /obj/item/clothing/shoes/roguetown/anklets
 
-/datum/loadout_item/rumaclanshoes
+/datum/loadout_item/xuefengclanshoes
 	name = "Raised Sandals"
-	path = /obj/item/clothing/shoes/roguetown/armor/rumaclan
+	path = /obj/item/clothing/shoes/roguetown/armor/xuefengclan
 
 //SHIRTS
 /datum/loadout_item/longcoat
@@ -428,9 +432,9 @@ GLOBAL_LIST_EMPTY(loadout_items)
 	name = "Chain Leash"
 	path = /obj/item/leash/chain
 
-/datum/loadout_item/forlon_collar
+/datum/loadout_item/forvheipal_collar
 	name = "Light Forvheipal Collar"
-	path = /obj/item/clothing/neck/roguetown/collar/forlorn
+	path = /obj/item/clothing/neck/roguetown/collar/forvlight
 
 /datum/loadout_item/cursed_collar
 	name = "Cursed Collar"
@@ -439,6 +443,14 @@ GLOBAL_LIST_EMPTY(loadout_items)
 /datum/loadout_item/cloth_blindfold
 	name = "Cloth Blindfold"
 	path = /obj/item/clothing/mask/rogue/blindfold
+
+/datum/loadout_item/bases
+	name = "Cloth military skirt"
+	path = /obj/item/storage/belt/rogue/leather/battleskirt
+
+/datum/loadout_item/fauldedbelt
+	name = "Belt with faulds"
+	path = /obj/item/storage/belt/rogue/leather/battleskirt/faulds
 
 /datum/loadout_item/psicross
 	name = "Psydonian Cross"
@@ -479,6 +491,14 @@ GLOBAL_LIST_EMPTY(loadout_items)
 /datum/loadout_item/psicross/eora
 	name = "Amulet of Eora"
 	path = /obj/item/clothing/neck/roguetown/psicross/eora
+
+/datum/loadout_item/psicross/undivided
+	name = "Amulet of Ten"
+	path = /obj/item/clothing/neck/roguetown/psicross/undivided
+
+/datum/loadout_item/psicross/zizo
+	name = "Decrepit Zcross"
+	path = /obj/item/clothing/neck/roguetown/psicross/inhumen/aalloy
 
 /datum/loadout_item/wedding_band
 	name = "silver wedding band"

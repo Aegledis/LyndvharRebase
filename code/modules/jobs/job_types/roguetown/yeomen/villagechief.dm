@@ -8,12 +8,12 @@
 
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_SHUNNED_UP
-	allowed_ages = list(AGE_OLD)
-	tutorial = "You are as venerable and ancient as the trees themselves, wise even for your years spent with the first Wardens. The people look up to you both as a teacher and a guide to solve lesser issues before violence is involved. Not everything must end in bloodshed, no matter how much the retinue wish it were the case. Lead your fellow townsfolk in these troubling times lest they incur wrath of the nobility with their ignorance."
+	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
+	tutorial = "You are as venerable as the trees themselves, wise even for your years spent with the first Wardens. The people look up to you both as a teacher and a guide to solve lesser issues before violence is involved. Not everything must end in bloodshed, no matter how much the retinue wish it were the case. Lead your fellow townsfolk in these troubling times lest they incur wrath of the nobility with their ignorance."
 	whitelist_req = TRUE
 	outfit = /datum/outfit/job/roguetown/elder
 	display_order = JDO_CHIEF
-	min_pq = 2
+	min_pq = 1
 	max_pq = null
 	give_bank_account = 16
 	round_contrib_points = 5
@@ -38,7 +38,7 @@
 	l_hand = /obj/item/rogueweapon/woodstaff/wise
 	beltr = /obj/item/quiver/arrows
 	beltl = /obj/item/flashlight/flare/torch/lantern
-	backl = /obj/item/storage/backpack/rogue/satchel
+	backl = /obj/item/storage/backpack/rogue/satchel/short
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
 	backpack_contents = list(
 		/obj/item/storage/keyring/velder  = 1,
@@ -54,12 +54,12 @@
 	H.adjust_skillrank(/datum/skill/craft/carpentry, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/masonry, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/engineering, 2, TRUE)
-	H.adjust_skillrank(/datum/skill/misc/sewing, 4, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/sewing, 4, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/tanning, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/labor/farming, 3, TRUE)
-	H.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/medicine, 4, TRUE)
@@ -67,7 +67,7 @@
 	H.adjust_skillrank(/datum/skill/misc/tracking, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/cooking, 4, TRUE)
 	H.adjust_skillrank(/datum/skill/labor/butchering, 3, TRUE)
-	H.adjust_skillrank(/datum/skill/misc/ceramics, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/ceramics, 3, TRUE)
 	H.change_stat("strength", 1)
 	H.change_stat("perception", 3)
 	H.change_stat("endurance", 2)

@@ -5,7 +5,7 @@
 	name = "Vulpkian"
 	id = "vulpkanin"
 	desc = "<b>Vulpkian</b><br>\
-	A race hailing from Yoheon, they cohabit the Kingdom of Forvheipal with the Lupians. It is believed that the Lupians make up the majority of the martial administrative duties, while the Vulpkian handle economic and political trades. They are a race of clever fox-beasts, often depicted as wise and enigmatic, but completely practical and oftentimes devoid of much emotion. As a result they are not often seen in these parts of Llewyn, however the ones that do face much fear and judgement from those who do not trust them. They share a strong bond with the Lupians, however.<br>"
+	A race hailing from Yoheon, cohabitating many realms and fiefdoms, but most notably Forvheipal and the Saltlian provinces. Well known for their wit and intelligence when it comes to mercantilism, they are often depicted as wise and agile. However they are completely practical to a fault and nigh Macchievallian with their approach- and oftentimes devoid of much emotion. They are not often seen in these parts of the Ruby Empire, and those that do are often seen in the employ of others as advisors or highly trained mercenaries.<br>"
 	default_color = "444"
 	species_traits = list(
 		MUTCOLORS,
@@ -58,7 +58,7 @@
 	)
 	customizers = list(
 		/datum/customizer/organ/eyes/humanoid,
-		/datum/customizer/bodypart_feature/hair/head/humanoid/vulpkian,
+		/datum/customizer/bodypart_feature/hair/head/humanoid/,
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
@@ -90,6 +90,7 @@
 		/datum/body_marking/harlequinreversed,
 		/datum/body_marking/bangs,
 		/datum/body_marking/bun,
+		/datum/body_marking/gradient,
 	)
 	descriptor_choices = list(
 		/datum/descriptor_choice/height,
@@ -151,3 +152,23 @@
 
 /datum/species/vulpkanin/get_random_body_markings(list/passed_features)
 	return assemble_body_markings_from_set(GLOB.body_marking_sets_by_type[/datum/body_marking_set/bellysockstertiary], passed_features, src)
+
+/datum/species/vulpkanin/random_name(gender,unique,lastname)
+	var/randname
+	if(unique)
+		if(gender == MALE)
+			for(var/i in 1 to 10)
+				randname = pick( world.file2list("strings/names/roguetown/vulpkianm.txt") )
+				if(!findname(randname))
+					break
+		if(gender == FEMALE)
+			for(var/i in 1 to 10)
+				randname = pick( world.file2list("strings/names/roguetown/vulpkianf.txt") )
+				if(!findname(randname))
+					break
+	else
+		if(gender == MALE)
+			randname = pick( world.file2list("strings/rt/names/human/humnorm.txt") )
+		if(gender == FEMALE)
+			randname = pick( world.file2list("strings/rt/names/human/humnorf.txt") )
+	return randname

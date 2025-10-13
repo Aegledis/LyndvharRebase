@@ -175,7 +175,7 @@
 			BP.add_wound(/datum/wound/bite/small)
 
 /datum/component/eora_bond/proc/on_heal(datum/source, healing_on_tick, healing_datum)
-	if( !isliving(parent) || source != parent || istype(healing_datum, /datum/status_effect/buff/healing/eora) || HAS_TRAIT(parent, TRAIT_PSYDONITE))
+	if( !isliving(parent) || source != parent || istype(healing_datum, /datum/status_effect/buff/healing/eora) || HAS_TRAIT(parent, TRAIT_PSYDONITE) || HAS_TRAIT(parent, TRAIT_NOFAITHHEAL))
 		return
 
 	healing_on_tick = healing_on_tick * heal_share
@@ -228,7 +228,7 @@
 	overlay_state = "bliss"
 	range = 1
 	chargetime = 0.5 SECONDS
-	invocation = "By Eora's grace, let our fates intertwine!"
+	invocations = list("By Eora's grace, let our fates intertwine!")
 	sound = 'sound/magic/magnet.ogg'
 	recharge_time = 60 SECONDS
 	miracle = TRUE
@@ -303,8 +303,10 @@
 	var/quality
 	var/skill
 	var/bitesize_mod
+	// I hate this but let's be consistent.
+	var/datum/patron/patron
 
-/datum/component/blessed_food/Initialize(mob/living/_caster, var/holy_skill)
+/datum/component/blessed_food/Initialize(mob/living/_caster, var/holy_skill, var/patron_init)
 	if(!isitem(parent) || !istype(parent, /obj/item/reagent_containers/food/snacks))
 		return COMPONENT_INCOMPATIBLE
 
@@ -314,8 +316,9 @@
 	//Better food being blessed heals more
 	quality = F.faretype
 	bitesize_mod = 1 / F.bitesize
+	patron = patron_init
 	F.faretype = clamp(skill, 1, 5)
-	if(skill < 4)
+	if(skill < 5 || patron.type != /datum/patron/divine/eora)
 		F.add_filter(BLESSED_FOOD_FILTER, 1, list("type" = "outline", "color" = "#ff00ff", "size" = 1))
 	else
 		F.add_filter(BLESSED_FOOD_FILTER, 1, list("type" = "outline", "color" = "#f0b000", "size" = 1))
@@ -328,13 +331,13 @@
 		return
 
 	eater.apply_status_effect(/datum/status_effect/buff/healing, (quality + (skill / 5)) * bitesize_mod)
-	if(skill > 3)
-		eater.apply_status_effect(/datum/status_effect/buff/haste, 10 SECONDS)
+	if(skill > 4 && patron.type == /datum/patron/divine/eora)
+		eater.apply_status_effect(/datum/status_effect/buff/haste, 15 SECONDS)
 
 /obj/effect/proc_holder/spell/invoked/bless_food
 	name = "Bless Food"
-	invocation = "Eora, nourish this offering!"
-	desc = "Bless a food item. Items that take longer to eat heal slower. Skilled clergy can bless food more often. Finer food heals more."
+	invocations = list("Eora, nourish this offering!")
+	desc = "Bless a food item. Items that take longer to eat heal slower. Skilled clergy can bless food more often. Finer food heals more. Eoran masters can make food a golden hue."
 	sound = 'sound/magic/magnet.ogg'
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
 	devotion_cost = 25
@@ -351,7 +354,11 @@
 		return FALSE
 
 	var/holy_skill = user.get_skill_level(associated_skill)
-	target.AddComponent(/datum/component/blessed_food, user, holy_skill)
+	var/mob/living/carbon/human/H = user
+	var/patron = FALSE
+	if(ishuman(H))
+		patron = user.patron
+	target.AddComponent(/datum/component/blessed_food, user, holy_skill, patron)
 	to_chat(user, span_notice("You bless [target] with Eora's love!"))
 	return TRUE
 
@@ -369,7 +376,7 @@
 
 /obj/effect/proc_holder/spell/invoked/pomegranate
 	name = "Amaranth Sanctuary"
-	invocation = "Eora, provide sanctuary for your beauty!"
+	invocations = list("Eora, provide sanctuary for your beauty!")
 	desc = "Grow a pomegrenate tree that when tended to grows Aurils with variety of effects. Additionally heals beatiful people and HEAVILY debuffs both STR and PER for everyone in visible range."
 	sound = 'sound/magic/magnet.ogg'
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
@@ -595,10 +602,10 @@
 				else
 					to_chat(c, span_warning("A divine curse strikes you for destroying the sacred tree!"))
 					c.adjustFireLoss(100)
-					c.IgniteMob()
+					c.ignite_mob()
 					c.add_stress(/datum/stressevent/psycurse)
 			record_featured_stat(FEATURED_STATS_TREE_FELLERS, user)
-			GLOB.azure_round_stats[STATS_TREES_CUT]++
+			record_round_statistic(STATS_TREES_CUT)
 
 /obj/structure/eoran_pomegranate_tree/take_damage(damage_amount, damage_type = BRUTE, damage_flag = "", sound_effect = TRUE, attack_dir, armor_penetration = 0)
 	if(ash_offered)
@@ -862,7 +869,7 @@
 			icon_state = "rotten"
 		if(2)
 			name = "blemished pomegranate"
-			desc = "A blemished pomegranate, it's blue like azure."
+			desc = "A blemished pomegranate, it's blue like blortz."
 			icon_state = "blemished"
 		if(3)
 			desc = "A vibrant pomegranate pulsing with inner light. It radiates warmth."
@@ -1084,7 +1091,7 @@
 		var/mob/living/carbon/human/H = eater
 		if(HAS_TRAIT(H, TRAIT_UNSEEMLY))
 			REMOVE_TRAIT(H, TRAIT_UNSEEMLY, TRAIT_VIRTUE)
-			H.change_stat("constitution", -1)
+			H.change_stat(STATKEY_CON, -1)
 			to_chat(eater, span_good("You feel your imperfections melt away, but your body feels more fragile."))
 
 // TIER 3
@@ -1139,6 +1146,8 @@
 				if(!target.mind || !target.mind.active)
 					continue
 				if(HAS_TRAIT(target, TRAIT_NECRAS_VOW))
+					continue
+				if(HAS_TRAIT(target, TRAIT_DNR))
 					continue
 				if(target.mob_biotypes & MOB_UNDEAD)
 					continue
@@ -1273,7 +1282,7 @@
 	recharge_time = 10 MINUTES
 	miracle = TRUE
 	invocation_type = "shout"
-	invocation = "Let the beauty of lyfe fill you whole."
+	invocations = list("Let the beauty of lyfe fill you whole.")
 	overlay_state = "eora_bless"
 	associated_skill = /datum/skill/magic/holy
 

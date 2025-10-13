@@ -1,4 +1,4 @@
-// Azure Grove - the areas to the south of the map
+// Lyndvhar Forest - the areas to the west of the map
 
 /area/rogue/outdoors/woods
 	name = "Draguippe Forest"
@@ -21,6 +21,7 @@
 	first_time_text = "DRAGUIPPE FOREST"
 	converted_type = /area/rogue/indoors/shelter/woods
 	deathsight_message = "somewhere in the wilds"
+	threat_region = THREAT_REGION_FOREST
 
 /area/rogue/indoors/shelter/woods
 	name = "Draguippe Grove"
@@ -28,6 +29,8 @@
 	droning_sound = 'sound/music/area/forest.ogg'
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
 	droning_sound_night = 'sound/music/area/forestnight.ogg'
+	threat_region = THREAT_REGION_FOREST
+
 
 /area/rogue/outdoors/woods/north
 	name = "Draguippe - North"
@@ -38,6 +41,7 @@
 		/mob/living/carbon/human/species/skeleton/npc/easy = 20,
 		/mob/living/carbon/human/species/goblin/npc/ambush = 30,
 		/mob/living/carbon/human/species/human/northern/highwayman/ambush = 30)
+	threat_region = THREAT_REGION_FOREST
 
 /area/rogue/outdoors/woods/northeast
 	name = "Draguippe - Northeast"
@@ -49,6 +53,7 @@
 			/mob/living/carbon/human/species/goblin/npc/ambush = 20,
 			/mob/living/carbon/human/species/goblin/npc/sea = 10,
 			/mob/living/carbon/human/species/human/northern/highwayman/ambush = 30)
+	threat_region = THREAT_REGION_FOREST
 
 /area/rogue/outdoors/woods/southeast
 	name = "Draguippe - Southeast"
@@ -60,7 +65,6 @@
 		/mob/living/carbon/human/species/goblin/npc/sea = 10,
 		/mob/living/carbon/human/species/human/northern/highwayman/ambush = 30)
 
-// Below three areas is pretty deep into the wild, lean toward medium / hard skeletons
 /area/rogue/outdoors/woods/south
 	name = "Draguippe - South"
 	ambush_mobs = list(

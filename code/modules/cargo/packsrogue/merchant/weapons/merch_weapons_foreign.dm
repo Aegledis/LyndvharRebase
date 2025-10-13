@@ -50,16 +50,35 @@
 	contains = list(/obj/item/rogueweapon/spear/naginata)
 
 /datum/supply_pack/rogue/merc_weapons/katana
-	name = "Kazengun Straight Sword"
+	name = "Saltlian Straight Sword"
 	cost = 80
 	contains = list(/obj/item/rogueweapon/sword/sabre/mulyeog)
 
-/datum/supply_pack/rogue/merc_weapons/kazengunscabbard
-	name = "Kazengun Scabbard"
+/datum/supply_pack/rogue/merc_weapons/saltlianscabbard
+	name = "Saltlian Scabbard"
 	cost = 80
-	contains = list(/obj/item/rogueweapon/scabbard/sword/kazengun)
+	contains = list(/obj/item/rogueweapon/scabbard/sword/saltlian)
 
-/datum/supply_pack/rogue/merc_weapons/kazengunhookblade
-	name = "Kazengun Hook Sword"
+/datum/supply_pack/rogue/merc_weapons/saltlianhookblade
+	name = "Saltlian Hook Sword"
 	cost = 100
 	contains = list(/obj/item/rogueweapon/sword/sabre/hook)
+
+/datum/supply_pack/rogue/merc_weapons/glaive
+	name = "Glaive"
+	cost = 120
+	contains = list(/obj/item/rogueweapon/halberd/glaive)
+
+/datum/supply_pack/rogue/merc_weapons/dunargilongsword
+	name = "Dunargi Longsword"
+	cost = 409
+	contains = list(/obj/item/rogueweapon/sword/long/dunargi)
+/datum/supply_pack/rogue/merc_weapons/handclaw_iron
+	name = "Rhaenish Iron Claw"
+	cost = 150
+	contains = list(/obj/item/rogueweapon/handclaw)
+
+/datum/supply_pack/rogue/merc_weapons/handclaw_steel
+	name = "Rhaenish Steel Claw"
+	cost = 200
+	contains = list(/obj/item/rogueweapon/handclaw/steel)

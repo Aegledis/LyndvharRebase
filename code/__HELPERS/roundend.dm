@@ -104,6 +104,7 @@
 	adjustEarDamage(0, 6000)
 	Stun(6000, 1, 1)
 	ADD_TRAIT(src, TRAIT_MUTE, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_TALKTOOOC, TRAIT_GENERIC)
 	walk(src, 0) //stops them mid pathing even if they're stunimmune
 	if(isanimal(src))
 		var/mob/living/simple_animal/S = src
@@ -138,11 +139,9 @@
 	for(var/client/C in GLOB.clients)
 		if(C.mob)
 			SSdroning.kill_droning(C)
-			C.mob.playsound_local(C.mob, 'sound/music/creditsold.ogg', 100, FALSE)
+			C.mob.playsound_local(C.mob, 'sound/music/credits.ogg', 100, FALSE)
 		if(isliving(C.mob) && C.ckey)
 			key_list += C.ckey
-//	if(key_list.len)
-//		add_roundplayed(key_list)
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(H.stat != DEAD)
 			if(H.get_triumphs() < 0)
@@ -154,9 +153,8 @@
 					to_chat(H, "\n<font color='purple'><b>[job.round_contrib_points]</b> ROUND CONTRIBUTOR POINTS AWARDED. Thank you for playing!</font>")
 					add_roundpoints(job.round_contrib_points, H.ckey)
 	add_roundplayed(key_list)
-//	SEND_SOUND(world, sound(pick('sound/misc/roundend1.ogg','sound/misc/roundend2.ogg')))
-//	SEND_SOUND(world, sound('sound/misc/roundend.ogg'))
-
+	update_god_rankings()
+	
 	for(var/mob/M in GLOB.mob_list)
 		M.do_game_over()
 
@@ -224,7 +222,12 @@
 						"Without a Viscount, they were doomed to enjoy a mass-suicide.",
 						"Without a Viscount, the Lich made them his playthings.",
 						"Without a Viscount, some jealous rival reigned in tyranny.",
-						"Without a Viscount, the city was abandoned. The war claims another.")
+						"Without a Viscount, the city was abandoned. The war claims another.",
+						"Without a Viscount, the city was razed by Rhaenish pirates. The war claims another.",
+						"Without a Viscount, a raiding party lead by Baleron destroyed what was left. The war claims another.",
+						"Without a Viscount, the city was picked apart by scavengers and left to rot.",
+						"Without a Viscount, they were doomed to become dust.",
+						"Without a Viscount, the walls were breached and the city incinerated in fire by Laurence. The war claims another.")
 
 	if(vampire_werewolf() == "vampire")
 		end_reason = "When the Vampires finished sucking the city dry, they moved on to the next one."
@@ -364,7 +367,6 @@
 	else
 		content = file2text(filename)
 	roundend_report.set_content(content)
-	roundend_report.stylesheets = list()
 //	roundend_report.add_stylesheet("roundend", 'html/browser/roundend.css')
 //	roundend_report.add_stylesheet("font-awesome", 'html/font-awesome/css/all.min.css')
 	roundend_report.open(FALSE)
@@ -565,24 +567,16 @@
 	if(ply.key)
 		usede = ckey(ply.key)
 		if(ckey(ply.key) in GLOB.anonymize)
-//			if(check_whitelist(ckey(ply.key)))
 			usede = get_fake_key(ckey(ply.key))
 	var/text = "<b>[usede]</b> was <b>[ply.name]</b>[jobtext] and"
 	if(ply.current)
-		if(ply.current.real_name != ply.name)
-			text += " <span class='redtext'>died</span>"
+		if(ply.current.stat == DEAD)
+			text += span_redtext(" died.")
 		else
-			if(ply.current.stat == DEAD)
-				text += " <span class='redtext'>died</span>"
-			else
-				text += " <span class='greentext'>survived</span>"
-//		if(fleecheck)
-//			var/turf/T = get_turf(ply.current)
-//			if(!T || !is_station_level(T.z))
-//				text += " while <span class='redtext'>fleeing the station</span>"
-//		if(ply.current.real_name != ply.name)
-//			text += " as <b>[ply.current.real_name]</b>"
-	to_chat(world, "[text]")
+			text += span_greentext(" survived.")
+	else
+		text += span_redtext(" died.")
+	return text
 
 /proc/printplayerlist(list/players,fleecheck)
 	var/list/parts = list()

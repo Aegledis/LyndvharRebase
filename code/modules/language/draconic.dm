@@ -1,6 +1,6 @@
 /datum/language/draconic
 	name = "Draconic"
-	desc = ""
+	desc = "Consisting of many different hisses and grunting sounds, this is one of the many native languages that is almost nigh impossible for anyone outside of the draconic group of races to learn. Despite the name it is highly contested by Zardmen due to its heavy connotation of being the language of only the Draconae, as an attempt to slowly culturally erase them now that they are no longer under their thumb. It is considered to be rather frowned upon to use the language in organized gatherings like sermons or courtly matters, but most care little about it due to its rarity."
 	speech_verb = "hisses"
 	ask_verb = "hisses"
 	exclaim_verb = "roars"

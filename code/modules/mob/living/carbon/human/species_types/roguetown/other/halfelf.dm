@@ -83,6 +83,14 @@
 	..()
 	languages(literally_him)
 
+/datum/species/human/halfelf/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+	..()
+	RegisterSignal(C, COMSIG_MOB_SAY, PROC_REF(handle_speech))
+
+/datum/species/human/halfelf/on_species_loss(mob/living/carbon/C)
+	. = ..()
+	UnregisterSignal(C, COMSIG_MOB_SAY)	
+
 /datum/species/human/halfelf/get_skin_list()
 	return list(
 		"Jungle-Atvergian" = SKIN_COLOR_JUNGLE_ATVERGIAN,     // Was Timber-Gronn

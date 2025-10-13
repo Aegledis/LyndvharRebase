@@ -20,7 +20,7 @@
 	)
 
 //Dismember a limb
-/obj/item/bodypart/proc/dismember(dam_type = BRUTE, bclass = BCLASS_CUT, mob/living/user, zone_precise = src.body_zone)
+/obj/item/bodypart/proc/dismember(dam_type = BRUTE, bclass = BCLASS_CUT, mob/living/user, zone_precise = src.body_zone, damage = 0)
 	if(!owner)
 		return FALSE
 	var/mob/living/carbon/C = owner
@@ -32,21 +32,17 @@
 		if(!HAS_TRAIT(C, TRAIT_CRITICAL_WEAKNESS) && !HAS_TRAIT(C, TRAIT_EASYDISMEMBER))	//People with these traits can be decapped standing, or buckled, or however.
 			if(!isnull(C.mind) && (C.mobility_flags & MOBILITY_STAND) && !C.buckled) //Only allows upright decapitations if it's not a player. Unless they're buckled.
 				return FALSE
+
+	if(body_zone != BODY_ZONE_HEAD)
+		var/mob/living/carbon/human/victim = owner
+		if(victim.run_armor_check(zone_precise, bclass, damage = damage))
+			to_chat(victim, span_warning("My armour just saved me from losing my [C.get_bodypart(body_zone).name]!"))
+			return FALSE
+
 	if(C.status_flags & GODMODE)
 		return FALSE
 	if(HAS_TRAIT(C, TRAIT_NODISMEMBER))
 		return FALSE
-
-	if(ishuman(owner))
-		var/mob/living/carbon/human/H = owner
-		var/obj/item/clothing/checked_armor = H.checkcritarmorreference(src.body_zone, bclass)
-		if(checked_armor && checked_armor.max_integrity != 0)
-			var/int_percent = round(((checked_armor.obj_integrity / checked_armor.max_integrity) * 100), 1) //lifted from examine
-			if(int_percent > 30 && !HAS_TRAIT(H, TRAIT_CRITICAL_WEAKNESS) && !HAS_TRAIT(H, TRAIT_EASYDISMEMBER))
-				to_chat(H, span_green("My [checked_armor.name] just saved me from losing my [src.name]!"))
-				checked_armor.obj_integrity -= checked_armor.max_integrity / 2 //Armor sundered
-				checked_armor.obj_integrity = max(1, checked_armor.obj_integrity) //No negative integrity
-				return FALSE
 
 	if(SEND_SIGNAL(src, COMSIG_MOB_DISMEMBER, src) & COMPONENT_CANCEL_DISMEMBER)
 		return FALSE //signal handled the dropping
@@ -59,8 +55,10 @@
 		C.visible_message(span_danger("<B>[C] is [pick("BRUTALLY","VIOLENTLY","BLOODILY","MESSILY")] DECAPITATED!</B>"))
 	else
 		C.visible_message(span_danger("<B>The [src.name] is [pick("torn off", "sundered", "severed", "separated", "unsewn")]!</B>"))
-	C.emote("painscream")
-	src.add_mob_blood(C)
+	if(!HAS_TRAIT(C, TRAIT_NOPAIN))
+		C.emote("painscream")
+	if(!(NOBLOOD in C.dna?.species?.species_traits))
+		add_mob_blood(C)
 	SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "dismembered", /datum/mood_event/dismembered)
 	C.add_stress(/datum/stressevent/dismembered)
 	var/stress2give = /datum/stressevent/viewdismember
@@ -103,9 +101,10 @@
 		if(new_turf.density)
 			break
 	throw_at(target_turf, throw_range, throw_speed)
+	owner = C
 	return TRUE
 
-/obj/item/bodypart/chest/dismember(dam_type = BRUTE, bclass = BCLASS_CUT, mob/living/user, zone_precise = src.body_zone)
+/obj/item/bodypart/chest/dismember(dam_type = BRUTE, bclass = BCLASS_CUT, mob/living/user, zone_precise = src.body_zone, damage = 0)
 	if(!owner)
 		return FALSE
 	var/mob/living/carbon/C = owner
@@ -122,7 +121,6 @@
 /obj/item/bodypart/proc/drop_limb(special)
 	if(!owner)
 		return FALSE
-	testing("begin drop limb")
 	var/atom/drop_location = owner.drop_location()
 	var/mob/living/carbon/was_owner = owner
 	update_limb(dropping_limb = TRUE)
@@ -273,20 +271,6 @@
 		C.update_inv_pants()
 
 /obj/item/bodypart/l_leg/drop_limb(special) //copypasta
-	var/mob/living/carbon/C = owner
-	. = ..()
-	if(C && !special)
-		if(C.legcuffed)
-			C.legcuffed.forceMove(C.drop_location())
-			C.legcuffed.dropped(C)
-			C.legcuffed = null
-			C.update_inv_legcuffed()
-		if(C.shoes && (C.get_num_legs(FALSE) < 1))
-			C.dropItemToGround(C.shoes, force = TRUE)
-		C.update_inv_shoes()
-		C.update_inv_pants()
-
-/obj/item/bodypart/taur/drop_limb(special) //copypasta
 	var/mob/living/carbon/C = owner
 	. = ..()
 	if(C && !special)

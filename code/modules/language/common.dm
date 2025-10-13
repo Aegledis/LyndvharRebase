@@ -1,7 +1,7 @@
 // 'basic' language; spoken by default.
 /datum/language/common
 	name = "Imperial"
-	desc = ""
+	desc = "The Imperial tongue is the most spoken language in all of Beowricke. Formed in the early days of Naexidor’s conquest, it was a language created with the sole purpose of attempting to assimilate and unite all languages under it as a sole voice in order to bring total unity to all of the realms. This tactic due to the wide expanse of the Ruby Empire was actually very successful- as even realms that did not fall under their purview were forced to adapt it as trading language. Today, Imperial stands as one of the most important languages in the world, bringing together all walks of life with its tongue- sometimes being taught to children rather than their native languages."
 	speech_verb = "says"
 	whisper_verb = "whispers"
 	exclaim_verb = "yells"

@@ -5,7 +5,7 @@
 	name = "Draconae"
 	id = "dracon"
 	desc = "<b>Draconae</b><br>\
-	The Draconae are incredibly distinct from other races- save for the Zardmen. They harbor many traits of which could be seen in many depictions of “dragons”,  as a result of their direct servitude to Dragons themselves before their mysterious disappearance. When their masters vanished, they themselves became the masters. Greedy and mysterious, they come from the province of Calmirixial in the western frontiers of Lyndhardtia. Before they were conquered in Naexidor’s campaign, Calmirixial was its own independent fiefdom, where the Draconae  were the ultimate masters over their Zardmen underlings due to their successful birth into the Draconae  after being laid in the hatcheries. Those who would become Zardman would be seen as nothing more than slave chattel to be used as expendable resources. As such, the Draconae  and Zardmen in Lyndhardtia naturally despise eachother, where Draconae’s who have Zardman children often commit infanticide, and vice versa for the Zardmen. Due to this behavior the Draconae are very heavily disapproved of in Lyndhardtian society, and have been relegated to lower-end jobs and open hostilities at worst.<br>"
+	The Draconae are incredibly distinct from other races- save for the Zardmen. They harbor many traits of which could be seen in many depictions of “dragons”,  a mythical beast of extreme intelligence and power- likely as a result of their direct servitude to Dragons themselves before their mysterious disappearance. It is widely believed that they are the produced creation between Zardman offerings to these Dragons whom they worshipped as gods. When their masters vanished, they themselves became the masters. Greedy and mysterious, they come from the province of Calmirixia in the western frontiers of Lyndhardtia. Before they were conquered in Naexidor’s campaign, Calmirixia was its own independent fiefdom, where the Draconae were the ultimate masters over their Zardmen underlings due to their successful birth into the Draconae after being laid in the hatcheries. Those who would become Zardman would be seen as nothing more than slave chattel to be used as expendable resources. As such, the Draconae and Zardmen in Lyndhardtia naturally despise eachother, where Draconae’s who have Zardman children often commit infanticide, and vice versa for the Zardmen- a practice currently banned in the provincial areas. Due to this behavior the Draconae are very heavily disapproved of in Lyndhardtian society, and have been relegated to lower-end jobs and open hostilities at worst.<br>"
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	possible_ages = ALL_AGES_LIST
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
@@ -126,12 +126,6 @@
 		/datum/descriptor_choice/prominent_four,
 	)
 
-/datum/species/dracon/check_roundstart_eligible()
-	return TRUE
-
-/datum/species/dracon/qualifies_for_rank(rank, list/features)
-	return TRUE
-
 /datum/species/dracon/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()
 	RegisterSignal(C, COMSIG_MOB_SAY, PROC_REF(handle_speech))
@@ -181,3 +175,23 @@
 	returned["mcolor2"] = second_color
 	returned["mcolor3"] = second_color
 	return returned
+
+/datum/species/dracon/random_name(gender,unique,lastname)
+	var/randname
+	if(unique)
+		if(gender == MALE)
+			for(var/i in 1 to 10)
+				randname = pick( world.file2list("strings/names/roguetown/lizardm.txt") )
+				if(!findname(randname))
+					break
+		if(gender == FEMALE)
+			for(var/i in 1 to 10)
+				randname = pick( world.file2list("strings/names/roguetown/lizardf.txt") )
+				if(!findname(randname))
+					break
+	else
+		if(gender == MALE)
+			randname = pick( world.file2list("strings/rt/names/human/humnorm.txt") )
+		if(gender == FEMALE)
+			randname = pick( world.file2list("strings/rt/names/human/humnorf.txt") )
+	return randname

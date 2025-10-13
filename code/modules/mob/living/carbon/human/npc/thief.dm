@@ -1,3 +1,5 @@
+GLOBAL_LIST_INIT(thief_aggro, world.file2list("strings/rt/highwaymanaggrolines.txt"))
+
 /mob/living/carbon/human/species/human/northern/thief //I'm a thief, give me your shit
 	mode = NPC_AI_IDLE
 	faction = list("thieves")
@@ -39,19 +41,29 @@
 	ADD_TRAIT(src, TRAIT_LIGHT_STEP, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_LEECHIMMUNE, INNATE_TRAIT)
-	ADD_TRAIT(src, TRAIT_INFINITE_ENERGY, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_BREADY, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/human/species/human/northern/thief)
 	gender = pick(MALE, FEMALE)
 	regenerate_icons()
 
 	var/obj/item/organ/eyes/organ_eyes = getorgan(/obj/item/organ/eyes)
 	var/obj/item/bodypart/head/head = get_bodypart(BODY_ZONE_HEAD)
-	var/hairf = pick(list(/datum/sprite_accessory/hair/head/bedhead, 
-						/datum/sprite_accessory/hair/head/bob))
-	var/hairm = pick(list(/datum/sprite_accessory/hair/head/ponytail1, 
-						/datum/sprite_accessory/hair/head/shaved))
-	var/beard = pick(list(/datum/sprite_accessory/hair/facial/vandyke,
-						/datum/sprite_accessory/hair/facial/croppedfullbeard))
+	var/hairf = pick(list(/datum/sprite_accessory/hair/head/lowbraid, 
+						/datum/sprite_accessory/hair/head/himecut, 
+						/datum/sprite_accessory/hair/head/countryponytailalt, 
+						/datum/sprite_accessory/hair/head/stacy,
+						/datum/sprite_accessory/hair/head/stacybun,
+						/datum/sprite_accessory/hair/head/kusanagi_alt))
+	var/hairm = pick(list(/datum/sprite_accessory/hair/head/ponytailwitcher, 
+						/datum/sprite_accessory/hair/head/lowbraid,
+						/datum/sprite_accessory/hair/head/dave, 
+						/datum/sprite_accessory/hair/head/emo, 
+						/datum/sprite_accessory/hair/head/sabitsuki,
+						/datum/sprite_accessory/hair/head/sabitsuki_ponytail))
+	var/beard = pick(list(/datum/sprite_accessory/hair/facial/viking,
+						/datum/sprite_accessory/hair/facial/manly,
+						/datum/sprite_accessory/hair/facial/longbeard))
+	head.sellprice = 20
 
 	var/datum/bodypart_feature/hair/head/new_hair = new()
 	var/datum/bodypart_feature/hair/facial/new_facial = new()
@@ -110,6 +122,14 @@
 	if(!wander && prob(10))
 		face_atom(get_step(src,pick(GLOB.cardinals)))
 
+/mob/living/carbon/human/species/human/northern/thief/handle_combat()
+	if(mode == NPC_AI_HUNT)
+		if(prob(2)) // do not make this big or else they NEVER SHUT UP
+			emote("laugh")
+		if(prob(5))
+			say(pick(GLOB.thief_aggro))
+	. = ..()
+
 /datum/outfit/job/roguetown/human/species/human/northern/thief/pre_equip(mob/living/carbon/human/H)
 	cloak = /obj/item/clothing/cloak/raincloak/mortus
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
@@ -121,7 +141,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/light
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	head = /obj/item/clothing/head/roguetown/helmet/leather
-	mask = /obj/item/clothing/mask/rogue/skullmask
+	mask = /obj/item/clothing/mask/rogue/ragmask/black
 	neck = /obj/item/clothing/neck/roguetown/gorget/copper
 	if(prob(50))
 		neck = /obj/item/clothing/neck/roguetown/leather
@@ -133,7 +153,7 @@
 	H.STASTR = 11
 	H.STASPD = 16
 	H.STACON = 11
-	H.STAEND = 11
+	H.STAWIL = 11
 	H.STAPER = 11
 	H.STAINT = 1
 	H.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)

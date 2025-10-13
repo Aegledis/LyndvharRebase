@@ -25,6 +25,7 @@
 		create_object_html = file2text('html/create_object.html')
 		create_object_html = replacetext(create_object_html, "null /* object types */", "\"[objectjs]\"")
 		create_object_html = replacetext(create_object_html, "null /* object names */", "\"[objectnames]\"")
+		create_object_html += usr.client.prefs.get_ui_theme_stylesheet()
 
 	user << browse(create_panel_helper(create_object_html), "window=create_object;size=425x475")
 
@@ -59,4 +60,5 @@
 		html_form = replacetext(html_form, "null /* object names */", "\"[objectnames]\"")
 		create_object_forms[path] = html_form
 
+	html_form += usr.client.prefs.get_ui_theme_stylesheet()
 	user << browse(create_panel_helper(html_form), "window=qco[path];size=425x475")

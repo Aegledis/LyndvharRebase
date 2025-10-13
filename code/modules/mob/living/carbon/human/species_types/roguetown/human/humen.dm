@@ -5,7 +5,7 @@
 	name = "Humen"
 	id = "humen"
 	desc = "<b>Humen</b><br>\
-	Those of Humenity are the second eldest of the Pantheon’s creations. They are mostly noted for their tenacity, as well as their ability to adapt to most if not all situations. Humens are the largest majority of mortal life in Beowricke, and come in many shapes, sizes, as well as different cultures and personal beliefs. They are the most diverse of the mortal creations, and are the majority presence in Lyndhardtia and beyond.<br>"
+	The second eldest of the Pantheon’s creations. They are mostly noted for their tenacity and adaptability, able to adapt to most if not all situations, as well as surviving through most cataclysms that the realm has wrought upon them thus far. Humens are the largest majority of mortal life in Beowricke, and come in many shapes, sizes, as well as different cultures and personal beliefs. They are the most diverse of the mortal creations, and are the majority racial presence in Lyndhardtia and beyond. It was Humen hands that molded the many great empires of Aeon, as well as the current standing hegemonies of the world.<br>"
 	skin_tone_wording = "Ancestry"
 
 	default_color = "FFFFFF"

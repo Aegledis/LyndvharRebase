@@ -96,16 +96,19 @@
 	var/list/eligible_players = list()
 
 	if(user.mind.known_people.len)
-		for(var/guys_name in user.mind.known_people)
-			eligible_players += guys_name
+		for(var/mob/living/carbon/human/H in GLOB.human_list)
+			if(H.real_name in user.mind.known_people)
+				eligible_players[H.real_name] = H
 	else
 		to_chat(user, span_warning("I don't know anyone."))
 		return
-	eligible_players = sortList(eligible_players)
-	var/target = input(user, "Whose name shall be etched on the wanted list?", src) as null|anything in eligible_players
-	if(isnull(target))
+
+	var/choice = input(user, "Whose name shall be etched on the wanted list?", src) as null|anything in eligible_players
+	if(isnull(choice))
 		say("No target selected.")
 		return
+
+	var/mob/living/carbon/human/target = eligible_players[choice]
 
 	var/amount = input(user, "How many mammons shall be stained red for their demise?", src) as null|num
 	if(isnull(amount))
@@ -147,7 +150,7 @@
 	amount -= royal_tax
 
 	// Finally create bounty
-	add_bounty(target, amount, FALSE, reason, user.real_name)
+	add_bounty(target.real_name, amount, FALSE, reason, user.real_name)
 
 	//Announce it locally and on scomm
 	playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)

@@ -56,7 +56,7 @@
 			for(var/desc_type in choice.descriptors)
 				var/datum/mob_descriptor/descriptor = MOB_DESCRIPTOR(desc_type)
 				picklist[descriptor.name] = desc_type
-			var/picked_descriptor_name = input(user, "Describe my [lowertext(choice.name)]", "Describe myself") as null|anything in picklist
+			var/picked_descriptor_name = browser_input_list(user, "DESCRIBE THEIR [uppertext(choice.name)]", "THE SELF", picklist, FALSE)
 
 			if(!picked_descriptor_name)
 				return
@@ -69,7 +69,7 @@
 			var/index = text2num(href_list["index"])
 			var/datum/custom_descriptor_entry/custom_entry = custom_descriptors[index]
 			var/current_prefix_text = translation["[custom_entry.prefix_type ]"]
-			var/new_prefix_text = input(user, "Choose the prefix", "Describe myself", current_prefix_text) as null|anything in input_list
+			var/new_prefix_text = browser_input_list(user, "CHOOSE A DESCRIPTOR PREFIX", "THE SELF", input_list, current_prefix_text)
 			if(!new_prefix_text)
 				return
 			var/new_prefix_type = input_list[new_prefix_text]
@@ -77,7 +77,7 @@
 		if("custom_descriptor_content")
 			var/index = text2num(href_list["index"])
 			var/datum/custom_descriptor_entry/custom_entry = custom_descriptors[index]
-			var/new_content = input(user, "Describe the feature", "Describe myself") as text|null
+			var/new_content = browser_input_text(user, "DESCRIBE THE FEATURE", "THE SELF", custom_entry.content_text, CUSTOM_DESCRIPTOR_TEXT_LENGTH)
 			if(!new_content)
 				return
 			new_content = STRIP_HTML_SIMPLE(lowertext(new_content), CUSTOM_DESCRIPTOR_TEXT_LENGTH)
@@ -89,7 +89,7 @@
 		var/datum/descriptor_choice/choice = DESCRIPTOR_CHOICE(choice_type)
 		var/datum/descriptor_entry/entry = get_descriptor_entry_for_choice(choice_type)
 		var/datum/mob_descriptor/descriptor = MOB_DESCRIPTOR(entry.descriptor_type)
-		dat += "<b>[choice.name]:</b> <a href='?_src_=prefs;descriptor_choice=[choice_type];preference=choose_descriptor;task=change_descriptor'>[descriptor.name]</a><br>"
+		dat += "<b>[choice.name]:</b> <a href='byond://?_src_=prefs;descriptor_choice=[choice_type];preference=choose_descriptor;task=change_descriptor'>[descriptor.name]</a><br>"
 
 	for(var/i in 1 to CUSTOM_DESCRIPTOR_AMOUNT)
 		// Ugly, I know
@@ -118,7 +118,7 @@
 /datum/preferences/proc/show_descriptors_ui(mob/user)
 	var/list/dat = list()
 	dat += print_descriptors_page()
-	var/datum/browser/popup = new(user, "descriptors_customization", "<div align='center'>Describe myself</div>", 350, 510)
+	var/datum/browser/popup = new(user, "descriptors_customization", "<div align='center'>THE SENSE OF SELF</div>", 350, 510)
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
 

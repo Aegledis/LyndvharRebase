@@ -7,7 +7,7 @@
 
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | SLIME_EXTRACT
 	desc = "<b>Tabaxi</b><br>\
-	These feline-like beings hail from the far northern territories of Zybantu, found more in jungles than the rest of the territory. They are quite tall, often being seen at six to eight feet tall. With slender bodies they are often quite agile, making it much easier for them to hunt prey in the jungles of Northeastern Zybantu. Matched with an acute sense of smell and striking intelligence, the Tabaxi are some of the most feared hunters in these regions, often preying on travellers who stray into their prides. Many Tabaxi seen outside of these regions are descendants of those who were captured by patrols of Zybantu Slavers and sentenced to work elsewhere as free labor abroad.<br>"
+	These feline-like beings hail from the far northern territories of Zybantu, found more in the jungles of Akunana than the rest of the territory. They can come in many shapes and sizes, often being seen as tall as seven feet. With slender bodies they are often quite agile, making it much easier for them to hunt prey in the jungles of Northeastern Zybantium. Matched with an acute sense of smell and striking intelligence, the Tabaxi are some of the most feared hunters in these regions- as many still hold to tribal tradition in the northern areas where the Raj government is not able to so easily control or hold sway. They often prey on unsuspecting foreigners or adventurers who stray too close into their tribal prides in these jungles. Most others have propagated well outside of these regions however thanks to extreme efforts to slowly bring the race to heel over the decades and many Tabaxi are seen abroad now. Most living on this side of Beowricke are descendants of slaves that were brought by Zybantine corsairs to work as relatively cheap labor in many construction projects along the coastal regions of the Ruby Empire.<br>"
 	skin_tone_wording = "Fur Colors"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE, MUTCOLORS)
 	possible_ages = ALL_AGES_LIST
@@ -172,3 +172,23 @@
 /datum/species/tabaxi/on_species_loss(mob/living/carbon/C)
 	. = ..()
 	UnregisterSignal(C, COMSIG_MOB_SAY)
+
+/datum/species/tabaxi/random_name(gender,unique,lastname)
+	var/randname
+	if(unique)
+		if(gender == MALE)
+			for(var/i in 1 to 10)
+				randname = pick( world.file2list("strings/names/roguetown/tabaxim.txt") )
+				if(!findname(randname))
+					break
+		if(gender == FEMALE)
+			for(var/i in 1 to 10)
+				randname = pick( world.file2list("strings/names/roguetown/tabaxif.txt") )
+				if(!findname(randname))
+					break
+	else
+		if(gender == MALE)
+			randname = pick( world.file2list("strings/rt/names/human/humnorm.txt") )
+		if(gender == FEMALE)
+			randname = pick( world.file2list("strings/rt/names/human/humnorf.txt") )
+	return randname

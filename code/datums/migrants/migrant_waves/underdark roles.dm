@@ -16,10 +16,10 @@
 	pants = /obj/item/clothing/under/roguetown/chainlegs/iron
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/iron
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
-	backl = /obj/item/storage/backpack/rogue/satchel
+	backl = /obj/item/storage/backpack/rogue/satchel/short
 	backr = /obj/item/rogueweapon/shield/tower/metal
 	beltl = /obj/item/rogueweapon/whip/antique
-	beltr = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish
+	beltr = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish/drow
 	backpack_contents = list(
 		/obj/item/rogueweapon/scabbard/sheath = 1, 
 		/obj/item/flashlight/flare/torch/lantern = 1, 
@@ -74,9 +74,9 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	belt = /obj/item/storage/belt/rogue/leather/black
 	backl = /obj/item/storage/backpack/rogue/satchel/short
-	backr = /obj/item/gwstrap
+	backr = /obj/item/rogueweapon/scabbard/gwstrap
 	l_hand = /obj/item/rogueweapon/halberd/glaive
-	beltr = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish
+	beltr = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish/drow
 	backpack_contents = list(
 		/obj/item/rogueweapon/scabbard/sheath = 1, 
 		/obj/item/flashlight/flare/torch/lantern = 1,
@@ -125,10 +125,10 @@
 	pants = /obj/item/clothing/under/roguetown/heavy_leather_pants
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	belt = /obj/item/storage/belt/rogue/leather/black
-	backl = /obj/item/storage/backpack/rogue/satchel
+	backl = /obj/item/storage/backpack/rogue/satchel/short
 	l_hand = /obj/item/rogueweapon/sword/falx
 	beltl = /obj/item/rogueweapon/scabbard/sword
-	beltr = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish
+	beltr = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish/drow
 	backpack_contents = list(
 		/obj/item/rogueweapon/scabbard/sheath = 1, 
 		/obj/item/flashlight/flare/torch/lantern = 1,
@@ -178,7 +178,7 @@
 	backl = /obj/item/storage/backpack/rogue/satchel/short
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
 	beltl = /obj/item/quiver/arrows
-	beltr = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish
+	beltr = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish/drow
 	backpack_contents = list(
 		/obj/item/rogueweapon/scabbard/sheath = 1, 
 		/obj/item/flashlight/flare/torch/lantern = 1,
@@ -227,7 +227,7 @@
 	H.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
-	H.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/sewing, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/labor/butchering, 1, TRUE)
 	H.adjust_skillrank(/datum/skill/labor/farming, 2, TRUE)
 	H.change_stat("intelligence", -1)

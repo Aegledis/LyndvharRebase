@@ -5,7 +5,7 @@
 	name = "Lupian"
 	id = "lupian"
 	desc = "<b>Lupian</b><br>\
-	One of the many strange races that hail from the continent of Yoheon, the Lupian are believed to have originally come from Forvheipal, the kingdom located south of Khazumia. They cohabitate with the Vulpkian, forming tight pack communities. They are known for their cunning resilience, and fierce warriors. However due to their fighting prowess and the worth of their pelts, they are often hunted as game in communities outside of Yoheon across Lyndhardtia in the more decentralized regions for both sport and mammon. They also have an inherent amount of aggression in their culture, usually bringing simple arguments into full brawls abruptly and suddenly, likely ringing the truth that Forvheipal is an incredibly hostile land due to its tall cliffs, stinging tundras, and glistening swamps.<br>"
+	One of the many strange races that hail from the continent of Yoheon, the Lupian are believed to have originally come from Forvheipal, the kingdom located southeast of Khazumia. They cohabitate with the other multitude of races across the continent, forming tight pack communities. They are known for their cunning resilience, and the fierce warriors this produces. However due to their fighting prowess and the worth of their pelts, they are often hunted as game in communities outside of Yoheon across Lyndhardtia in the more decentralized regions for both sport and mammon. They also have an inherent amount of aggression in their culture, usually bringing simple arguments into full brawls abruptly and suddenly, likely ringing the truth that Forvheipal is an incredibly hostile land due to its tall cliffs, stinging tundras, and glistening swamps.<br>"
 	skin_tone_wording = "Pack"
 	species_traits = list(
 		MUTCOLORS,
@@ -101,6 +101,7 @@
 		/datum/body_marking/harlequinreversed,
 		/datum/body_marking/bangs,
 		/datum/body_marking/bun,
+		/datum/body_marking/gradient,
 	)
 	descriptor_choices = list(
 		/datum/descriptor_choice/height,
@@ -175,3 +176,23 @@
 	returned["mcolor2"] = second_color
 	returned["mcolor3"] = "373330"
 	return returned
+
+/datum/species/lupian/random_name(gender,unique,lastname)
+	var/randname
+	if(unique)
+		if(gender == MALE)
+			for(var/i in 1 to 10)
+				randname = pick( world.file2list("strings/names/roguetown/lupianm.txt") )
+				if(!findname(randname))
+					break
+		if(gender == FEMALE)
+			for(var/i in 1 to 10)
+				randname = pick( world.file2list("strings/names/roguetown/lupianf.txt") )
+				if(!findname(randname))
+					break
+	else
+		if(gender == MALE)
+			randname = pick( world.file2list("strings/rt/names/human/humnorm.txt") )
+		if(gender == FEMALE)
+			randname = pick( world.file2list("strings/rt/names/human/humnorf.txt") )
+	return randname

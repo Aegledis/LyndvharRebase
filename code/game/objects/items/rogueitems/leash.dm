@@ -11,8 +11,8 @@
 	alert_type = /atom/movable/screen/alert/status_effect/leash_owner
 
 /atom/movable/screen/alert/status_effect/leash_owner
-	name = "Leash Master"
-	desc = "You've got a leash, and a cute pet on the other end!"
+	name = "Leash Holder"
+	desc = "You've got a leash, and someone on the other end!"
 	icon_state = "leash_master" //These call icons that don't exist, so no icon comes up. Which is good.
 		//As a result, the descriptions also don't proc, which is fine.
 
@@ -21,8 +21,8 @@
 	alert_type = /atom/movable/screen/alert/status_effect/leash_freepet
 
 /atom/movable/screen/alert/status_effect/leash_freepet
-	name = "Escaped Pet"
-	desc = "You're on a leash, but you've no Master. If anyone grabs the leash they'll gain control!"
+	name = "Escaped"
+	desc = "You're on a leash, but you've no handler. If anyone grabs the leash they'll gain control!"
 	icon_state = "leash_freepet"
 
 
@@ -33,8 +33,8 @@
 	alert_type = /atom/movable/screen/alert/status_effect/leash_pet
 
 /atom/movable/screen/alert/status_effect/leash_pet
-	name = "Leashed Pet"
-	desc = "You're on the leash now! Be good for your Master now.."
+	name = "Leashed"
+	desc = "You've been put on a leash. An unfortunate circumstance."
 	icon_state = "leash_pet"
 
 
@@ -239,7 +239,7 @@
 		var/leash_break_message = "The leash snapped free from [leash_pet]!"
 		for(var/mob/viewing in viewers(leash_pet, null))
 			if(viewing == leash_master)
-				to_chat(leash_master, "<span class='warning'>The leash snapped free from your pet!</span>")
+				to_chat(leash_master, "<span class='warning'>The leash snapped free from [leash_pet]!</span>")
 			if(viewing == leash_pet)
 				to_chat(leash_pet, "<span class='warning'>Your leash has popped from your collar!</span>")
 			else
@@ -304,7 +304,7 @@
 		var/leash_break_message = "The leash snapped free from [leash_pet]!"
 		for(var/mob/viewing in viewers(leash_pet, null))
 			if(viewing == leash_master)
-				to_chat(leash_master, "<span class='warning'>The leash snapped free from your pet!</span>")
+				to_chat(leash_master, "<span class='warning'>The leash snapped free from [leash_pet]!</span>")
 			if(viewing == leash_pet)
 				to_chat(leash_pet, "<span class='warning'>Your leash has popped from your collar!</span>")
 			else

@@ -5,7 +5,7 @@
 	name = "Wild-Kin"
 	id = "anthromorph"
 	desc = "<b>Wild-Kin</b><br>\
-	The Mad God, at the beginning of his ceaseless and silent rage against mortalkind for the destruction of his woods, began to cast fell magics on the beasts of the realm. These magics went undetected for some time, before the animals slowly began to change, and morph. Many of them become fully sapient, walking on two-legs, and often harboring immense rage for those who despoil nature, seen many a time attacking settlements in groups. In old days it was not uncommon to even see a herd of cattle over time morph into the Wild-Kin, and destroy their farm. The Wild-Kin of today harbor much of the resentment that they were created with, and much resentment is still harbored to them. Despite this many Wild-Kin have found ways to calm themselves of Dendor’s rage- though it still lingers in the back of their minds, still attempting to break free..<br>"
+	The Mad God, at the beginning of his ceaseless and silent rage against mortalkind for the destruction of his woods, began to cast fell magics on the beasts of the realm. These magics went undetected for some time, before the animals slowly began to change, and morph. Many of them become fully sapient, walking on two-legs, and often harboring immense rage for those who despoil nature, seen many a time attacking settlements in groups. In old days it was not uncommon to even see a wide array of animals over time morph into Wild-Kin beasts and monsters, and begin to destroy settlements en masse. The Wild-Kin of today harbor much of the resentment that they were created with, and much resentment is still harbored to them by the victims of the Wrath. Despite this many Wild-Kin have found ways to calm themselves of Dendor’s rage- though it still lingers in the back of their minds, attempting to break free..<br>"
 	default_color = "444"
 	species_traits = list(
 		MUTCOLORS,
@@ -13,13 +13,6 @@
 		LIPS,
 		HAIR,
 	)
-
-	allowed_taur_types = list(
-		/obj/item/bodypart/taur/lamia,
-		/obj/item/bodypart/taur/spider,
-		/obj/item/bodypart/taur/horse,
-	)
-
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	attack_verb = "slash"
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
@@ -82,6 +75,7 @@
 		/datum/customizer/organ/breasts/animal,
 		/datum/customizer/organ/vagina/anthro,
 		)
+
 	body_marking_sets = list(
 		/datum/body_marking_set/none,
 		/datum/body_marking_set/belly,
@@ -89,6 +83,19 @@
 		/datum/body_marking_set/tiger,
 		/datum/body_marking_set/tiger_dark,
 		/datum/body_marking_set/gradient,
+		/datum/body_marking_set/moth/reddish,
+		/datum/body_marking_set/moth/royal,
+		/datum/body_marking_set/moth/gothic,
+		/datum/body_marking_set/moth/whitefly,
+		/datum/body_marking_set/moth/burnt_off,
+		/datum/body_marking_set/moth/deathhead,
+		/datum/body_marking_set/moth/poison,
+		/datum/body_marking_set/moth/ragged,
+		/datum/body_marking_set/moth/moonfly,
+		/datum/body_marking_set/moth/oakworm,
+		/datum/body_marking_set/moth/jungle,
+		/datum/body_marking_set/moth/witchwing,
+		/datum/body_marking_set/moth/lovers,
 	)
 	body_markings = list(
 		/datum/body_marking/flushed_cheeks,
@@ -120,6 +127,19 @@
 		/datum/body_marking/bangs,
 		/datum/body_marking/bun,
 		/datum/body_marking/gradient,
+		/datum/body_marking/moth/grayscale/reddish,
+		/datum/body_marking/moth/grayscale/royal,
+		/datum/body_marking/moth/grayscale/gothic,
+		/datum/body_marking/moth/grayscale/whitefly,
+		/datum/body_marking/moth/grayscale/burnt_off,
+		/datum/body_marking/moth/grayscale/deathhead,
+		/datum/body_marking/moth/grayscale/poison,
+		/datum/body_marking/moth/grayscale/ragged,
+		/datum/body_marking/moth/grayscale/moonfly,
+		/datum/body_marking/moth/grayscale/oakworm,
+		/datum/body_marking/moth/grayscale/jungle,
+		/datum/body_marking/moth/grayscale/witchwing,
+		/datum/body_marking/moth/grayscale/lovers,
 	)
 	descriptor_choices = list(
 		/datum/descriptor_choice/height,
@@ -185,3 +205,22 @@
 	returned["mcolor3"] = third_color
 	return returned
 
+/datum/species/anthromorph/random_name(gender,unique,lastname)
+	var/randname
+	if(unique)
+		if(gender == MALE)
+			for(var/i in 1 to 10)
+				randname = pick( world.file2list("strings/names/roguetown/wildkinm.txt") )
+				if(!findname(randname))
+					break
+		if(gender == FEMALE)
+			for(var/i in 1 to 10)
+				randname = pick( world.file2list("strings/names/roguetown/wildkinf.txt") )
+				if(!findname(randname))
+					break
+	else
+		if(gender == MALE)
+			randname = pick( world.file2list("strings/rt/names/human/humnorm.txt") )
+		if(gender == FEMALE)
+			randname = pick( world.file2list("strings/rt/names/human/humnorf.txt") )
+	return randname

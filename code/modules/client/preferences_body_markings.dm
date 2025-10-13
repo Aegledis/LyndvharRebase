@@ -8,12 +8,12 @@
 /datum/preferences/proc/handle_body_markings_topic(mob/user, href_list)
 	switch(href_list["preference"])
 		if("use_preset")
-			var/action = alert(usr, "Are you sure you want to use a preset (This will clear your existing markings)?", "Markings Preset", "Yes", "No")
-			if(action && action == "Yes")
+			var/action = browser_alert(usr, "Are you sure you want to use a preset (This will clear your existing markings)?", "Markings Preset", DEFAULT_INPUT_CHOICES)
+			if(action && action == CHOICE_YES)
 				var/list/candidates = marking_sets_for_species(pref_species)
 				if(length(candidates) == 0)
 					return
-				var/desired_set = input(user, "Choose your new body markings:", "Character Preference") as null|anything in candidates
+				var/desired_set = browser_input_list(user, "CHOOSE THEIR NEW MARKING SET:", "MARKING SET", candidates)
 				if(desired_set)
 					var/datum/body_marking_set/BMS = GLOB.body_marking_sets[desired_set]
 					body_markings = assemble_body_markings_from_set(BMS, features, pref_species)
@@ -71,7 +71,7 @@
 					possible_candidates -= keyed_name
 			if(possible_candidates.len == 0)
 				return
-			var/desired_marking = input(user, "Choose your new marking to add:", "Character Preference") as null|anything in possible_candidates
+			var/desired_marking = browser_input_list(user, "CHOOSE THE MARKING TO ADD:", "MARKINGS", possible_candidates)
 			if(desired_marking)
 				var/datum/body_marking/BD = GLOB.body_markings[desired_marking]
 				if(!body_markings[zone])

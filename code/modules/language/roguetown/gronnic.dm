@@ -1,6 +1,6 @@
 /datum/language/rhaenvalian
 	name = "Rhaenish"
-	desc = "The harsh tongue of the Rhaenvalians."
+	desc = "The language spoken by the many multitudes of tribes and cultures of Rhaenval, it was brought together through many years of cultural contact with each other as a result of the tribal federation. With the continued and surprisingly united cooperation of the tribes, Rhaenish was formed as a region-wide language mixing a multitude of native tongues together as a diplomatic and trading language to use outside of their borders. The actual tongues of the Rhaenvalians are far too complex for most outsiders to learn."
 	speech_verb = "remarks"
 	ask_verb = "inquires"
 	exclaim_verb = "asserts"

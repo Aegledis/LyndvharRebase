@@ -49,7 +49,7 @@
 	set hidden = 1
 	var/githuburl = CONFIG_GET(string/githuburl)
 	if(githuburl)
-		if(alert("This will open the Github repository in your browser. Are you sure?",,"Yes","No")!="Yes")
+		if(browser_alert(src, "This will open the Github repository in your browser. Are you sure?", null, DEFAULT_INPUT_CHOICES) != CHOICE_YES)
 			return
 		src << link(githuburl)
 	else
@@ -77,7 +77,7 @@
 		if(GLOB.revdata.testmerge.len)
 			message += "<br>The following experimental changes are active and are probably the cause of any new or sudden issues you may experience. If possible, please try to find a specific thread for your issue instead of posting to the general issue tracker:<br>"
 			message += GLOB.revdata.GetTestMergeInfo(FALSE)
-		if(tgalert(src, message, "Report Issue","Yes","No")!="Yes")
+		if(browser_alert(src, message, "Report Issue", DEFAULT_INPUT_CHOICES) !=CHOICE_YES)
 			return
 		var/static/issue_template = file2text(".github/ISSUE_TEMPLATE.md")
 		var/servername = CONFIG_GET(string/servername)
@@ -260,6 +260,18 @@ Hotkey-Mode: (hotkey-mode must be on)
 		prefs.clientfps = clamp(newfps, 1, 1000)
 		fps = prefs.clientfps
 		prefs.save_preferences()
+
+/client/verb/set_picinchat()
+	set name = "Headshot in Chat"
+	set category = "Options"
+
+	if(prefs)
+		prefs.chatheadshot = !prefs.chatheadshot
+		prefs.save_preferences()
+		if(prefs.chatheadshot)
+			to_chat(src, "Headshot in chat Enabled")
+		else
+			to_chat(src, "Headshot in chat Disabled")
 
 /*
 /client/verb/set_blur()

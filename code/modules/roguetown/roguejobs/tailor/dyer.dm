@@ -199,7 +199,7 @@ var/global/list/pridelist = list(
 		var/obj/item/inserted_item = inserted
 		inserted_item.detail_color = activecolor_detail
 		inserted_item.update_icon()
-		if(inserted_item in GLOB.lordcolor) //Prevent a latejoining duke from changing this color
+		if(inserted_item in GLOB.lordcolor) //Prevent a latejoining viscount from changing this color
 			GLOB.lordcolor -= inserted_item
 		playsound(src, "bubbles", 50, 1)
 		updateUsrDialog()

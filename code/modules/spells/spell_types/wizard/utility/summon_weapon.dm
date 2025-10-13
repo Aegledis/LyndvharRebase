@@ -7,7 +7,7 @@
 	recharge_time = 1 MINUTES
 	chargedloop = /datum/looping_sound/invokegen
 	action_icon_state = "summons"
-	invocation = "Evoca Telum"
+	invocations = list("Evoca telum")
 	invocation_type = "whisper"
 	spell_tier = 2 
 	cost = 1 // 1 Cost, I don't think this is amazing enough utility. Maybe.
@@ -33,7 +33,7 @@
 
 			if(!marked_item)
 				if(hand_items)
-					message = span_warning("I aren't holding anything that can be imbued to summon!")
+					message = span_warning("I am not holding anything that can be imbued to summon!")
 				else
 					message = span_warning("I must hold the desired weapon in my hands to imbue it for summoning!")
 

@@ -1,6 +1,6 @@
 /datum/language/orcish
 	name = "Orcish"
-	desc = ""
+	desc = "A very crude and simplistic language, it was formed on its own originally from the hands of GRAGGAR in order to better contain battleplans and retain cultural anonymity for his creations. Hardly anyone outside of tribal orcs speak this tongue, save for a few exiles. It is considered a very difficult language to speak and more often than not either considered outright heresy or grounds for investigation if spoken aloud in certain sects of religious fervor in the world."
 	speech_verb = "grumbles"
 	ask_verb = "asks"
 	exclaim_verb = "shouts"

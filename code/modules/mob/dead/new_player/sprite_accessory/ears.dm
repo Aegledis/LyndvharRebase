@@ -48,7 +48,7 @@
 	extra_state = TRUE
 
 /datum/sprite_accessory/ears/bunny
-	name = "Bunny"
+	name = "Floppy"
 	icon_state = "bunny"
 	color_keys = 2
 	color_key_names = list("Ears", "Inner")
@@ -129,6 +129,10 @@
 	name = "Jellyfish"
 	icon_state = "jellyfish"
 
+/datum/sprite_accessory/ears/sheep
+	name = "Sheep"
+	icon_state = "sheep"
+
 /datum/sprite_accessory/ears/kangaroo
 	name = "Kangaroo"
 	icon_state = "kangaroo"
@@ -156,6 +160,12 @@
 	icon_state = "rabbitlop"
 	color_keys = 2
 	color_key_names = list("Ears", "Inner")
+
+/datum/sprite_accessory/ears/bunny_long
+	name = "Bunny (Long)"
+	icon_state = "bunnylong"
+	color_keys = 2
+	color_key_names = list("Ears", "Tips")
 
 /datum/sprite_accessory/ears/big/rabbit_large
 	name = "Rabbit Ears (Large)"

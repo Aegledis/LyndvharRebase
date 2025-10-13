@@ -59,7 +59,8 @@
 					H.Immobilize(10)
 					H.apply_damage(15, BRUTE, "head", H.run_armor_check("head", "blunt", damage = 15))
 					playsound(src, "genblunt", 100, TRUE)
-					addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, Knockdown), 10), 10)
+					if(H.has_status_effect(/datum/status_effect/compliance))
+						addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, Knockdown), 10), 10)
 				H.toggle_rogmove_intent(MOVE_INTENT_WALK, TRUE)
 				H.visible_message(span_warning("[H] runs into [src]!"), span_warning("I run into [src]!"))
 

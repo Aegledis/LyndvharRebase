@@ -19,7 +19,7 @@
 	var/refid = REF(D)
 	var/icon/sprite
 	var/hash
-
+	var/html = usr.client.prefs.get_ui_theme_stylesheet()
 	var/type = islist? /list : D.type
 	var/no_icon = FALSE
 
@@ -89,20 +89,10 @@
 			if(D.can_vv_get(V))
 				variable_html += D.vv_get_var(V)
 
-	var/html = {"
+	html += {"
 <html>
 	<head>
 		<title>[title]</title>
-		<style>
-			body {
-				font-family: Verdana, sans-serif;
-				font-size: 9pt;
-			}
-			.value {
-				font-family: "Courier New", monospace;
-				font-size: 8pt;
-			}
-		</style>
 	</head>
 	<body onload='selectTextField()' onkeydown='return handle_keydown()' onkeyup='handle_keyup()'>
 		<script type="text/javascript">

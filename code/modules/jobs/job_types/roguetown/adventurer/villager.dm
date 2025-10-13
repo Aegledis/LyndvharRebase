@@ -14,7 +14,7 @@
 	bypass_jobban = FALSE
 	display_order = JDO_VILLAGER
 	give_bank_account = TRUE
-	min_pq = -15
+	min_pq = -10
 	max_pq = null
 	round_contrib_points = 3
 	wanderer_examine = FALSE
@@ -22,14 +22,24 @@
 	always_show_on_latechoices = TRUE
 	same_job_respawn_delay = 0
 	cmode_music = 'sound/music/cmode/towner/combat_towner.ogg'
-
-/datum/job/roguetown/villager/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
-	..()
-	if(L)
-		var/mob/living/carbon/human/H = L
-		H.advsetup = 1
-		H.invisibility = INVISIBILITY_MAXIMUM
-		H.become_blind("advsetup")
+	job_subclasses = list(
+		/datum/advclass/barbersurgeon,
+		/datum/advclass/blacksmith,
+		/datum/advclass/cheesemaker,
+		/datum/advclass/drunkard,
+		/datum/advclass/fisher,
+		/datum/advclass/homesteader,
+		/datum/advclass/hunter,
+		/datum/advclass/hunter/spear,
+		/datum/advclass/miner,
+		/datum/advclass/minstrel,
+		/datum/advclass/peasant,
+		/datum/advclass/potter,
+		/datum/advclass/seamstress,
+		/datum/advclass/thug,
+		/datum/advclass/witch,
+		/datum/advclass/woodworker
+	)
 
 /*
 /datum/job/roguetown/adventurer/villager/New()

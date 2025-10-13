@@ -25,9 +25,6 @@
 	skin_tone_wording = "Origin City-State"
 
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,OLDGREY)
-	allowed_taur_types = list(
-		/obj/item/bodypart/taur/spider,
-	)
 	default_features = MANDATORY_FEATURE_LIST
 	use_skintones = 1
 	disliked_food = NONE
@@ -111,6 +108,12 @@
 		return list(SPAN_DELF)
 	return message_language.spans
 
+/datum/species/elf/dark/check_roundstart_eligible()
+	return TRUE
+
+/datum/species/elf/dark/qualifies_for_rank(rank, list/features)
+	return TRUE
+
 /datum/species/elf/dark/get_skin_list()
 	return list(
 		"Commorah" = SKIN_COLOR_COMMORAH,
@@ -120,6 +123,9 @@
 		"Llurth Dreir" = SKIN_COLOR_LLURTH_DREIR,
 		"Tafravma" = SKIN_COLOR_TAFRAVMA,
 		"Yuethindrynn" = SKIN_COLOR_YUETHINDRYNN,
+		"Koredynn" = SKIN_COLOR_KOREDYNN,
+		"Aiseedrynn" = SKIN_COLOR_AISEEDRYNN,
+		"Grenduskra" = SKIN_COLOR_GRENDUSKRA
 	)
 
 /datum/species/elf/dark/get_hairc_list()

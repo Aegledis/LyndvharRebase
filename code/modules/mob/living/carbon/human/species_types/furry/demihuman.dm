@@ -5,15 +5,10 @@
 	name = "Half-Kin"
 	id = "demihuman"
 	desc = "<b>Half-Kin</b><br>\
-	With the advent and rise of more of the inhumen and denmorian races beginning to become larger communities in Llewyn and abroad, it was only natural that eventually half-humen and half-wild would begin to form. These beings retain much of their humen forms, however usually behave much in the same way of the animal or being that they are half of. Due to their union being one of humen they fair much better with other races, but their wild side often becomes a detriment due to differing tempers and behaviours. For this reason it is quite rare to see a half-kin in positions of power, usually working in lower-working jobs.<br>"
+	A growing contingent of being- the Halfkin are usually the resulting mixture of either a humen or elf combined with one of the many inhumen races running amok Beowricke- be it Tabaxi or even Zardman. How exactly this union works is still relatively unknown to most scholarly parts of the world- believing it to be a strange irony of the Gods themselves or simply a logical byproduct of communities becoming large enough for cultural intermingling. These peoples often retain much of their humen or elven behaviors, but also the identities of the races they were mixed with. This can oftentimes become a detriment in social environments and conversation due to differing tempers or behaviors. It is often for this reason that half-kin are rather rare to see in positions of power, usually found in lower-working jobs of the hierarchy ladder.<br>"
 	skin_tone_wording = "Ancestry"
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY,MUTCOLORS_PARTSONLY)
-	allowed_taur_types = list(
-		/obj/item/bodypart/taur/lamia,
-		/obj/item/bodypart/taur/spider,
-		/obj/item/bodypart/taur/horse,
-	)
 	default_features = MANDATORY_FEATURE_LIST
 	use_skintones = TRUE
 	possible_ages = ALL_AGES_LIST
@@ -108,6 +103,14 @@
 
 /datum/species/demihuman/qualifies_for_rank(rank, list/features)
 	return TRUE
+
+/datum/species/demihuman/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+	..()
+	RegisterSignal(C, COMSIG_MOB_SAY, PROC_REF(handle_speech))
+
+/datum/species/demihuman/on_species_loss(mob/living/carbon/C)
+	. = ..()
+	UnregisterSignal(C, COMSIG_MOB_SAY)	
 
 /datum/species/demihuman/get_random_features()
 	var/list/returned = MANDATORY_FEATURE_LIST

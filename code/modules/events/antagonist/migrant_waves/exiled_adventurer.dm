@@ -14,14 +14,14 @@
 	)
 
 /datum/migrant_wave/werewolf
-	name = "Exiled Adventurer (Verevolf)"
+	name = "Exiled Outlander (Verevolf)"
 	roles = list(
 		/datum/migrant_role/werewolf = 1,
 	)
 	can_roll = FALSE
 
 /datum/migrant_role/werewolf
-	name = "Adventurer"
+	name = "Outlander"
 	antag_datum = /datum/antagonist/werewolf
 	advclass_cat_rolls = list(CTAG_ADVENTURER = 5)
 
@@ -41,14 +41,14 @@
 	)
 
 /datum/migrant_wave/vampire
-	name = "Exiled Adventurer (Vampire)"
+	name = "Exiled Outlander (Vampire)"
 	roles = list(
 		/datum/migrant_role/vampire = 1,
 	)
 	can_roll = FALSE
 
 /datum/migrant_role/vampire
-	name = "Adventurer"
+	name = "Outlander"
 	antag_datum = /datum/antagonist/vampirelord/lesser/migrant
 	advclass_cat_rolls = list(CTAG_ADVENTURER = 5)
 
@@ -78,6 +78,6 @@
 	can_roll = FALSE
 
 /datum/migrant_role/unbound_death_knight
-	name = "Adventurer"
+	name = "Outlander"
 	antag_datum = /datum/antagonist/unbound_death_knight
 	advclass_cat_rolls = null

@@ -15,6 +15,8 @@
 	desc = "Wherever I go, I turn heads, such is my natural beauty. I am also rather good in bed, though they always say that."
 	custom_text = "Incompatible with Ugly virtue."
 	added_traits = list(TRAIT_BEAUTIFUL,TRAIT_GOODLOVER)
+	added_stashed_items = list(
+		"Hand Mirror" = /obj/item/handmirror)
 
 /datum/virtue/utility/beautiful/handle_traits(mob/living/carbon/human/recipient)
 	..()
@@ -48,7 +50,7 @@
 
 	if(mapswitch == 0)
 		return
-	if(recipient.mind?.assigned_role == "Adventurer" || recipient.mind?.assigned_role == "Mercenary" || recipient.mind?.assigned_role == "Court Agent")
+	if(recipient.mind?.assigned_role == "Outlander" || recipient.mind?.assigned_role == "Mercenary" || recipient.mind?.assigned_role == "Court Agent")
 		// Find tavern area for spawning
 		var/area/spawn_area
 		for(var/area/A in world)
@@ -86,9 +88,9 @@
 					recipient.forceMove(spawn_loc)
 					to_chat(recipient, span_notice("As a resident of Lyndvhar, you find yourself in the local tavern."))
 
-/*/datum/virtue/utility/failed_squire
-	name = "Failed Squire"
-	desc = "I was once a squire in training, but failed to achieve knighthood. Though my dreams of glory were dashed, I retained my knowledge of equipment maintenance and repair, including how to polish arms and armor."
+/datum/virtue/utility/failed_squire
+	name = "Self-Reliant"
+	desc = "I have lived in the wild for a long time, and have become quite adept at being self-sufficient with equipment. I am able to maintain my own equipment and repair my armor and equipment, as well as polish it."
 	added_traits = list(TRAIT_SQUIRE_REPAIR)
 	added_stashed_items = list(
 		"Hammer" = /obj/item/rogueweapon/hammer/iron,
@@ -97,8 +99,8 @@
 	)
 
 /datum/virtue/utility/failed_squire/apply_to_human(mob/living/carbon/human/recipient)
-	to_chat(recipient, span_notice("Though you failed to become a knight, your training in equipment maintenance and repair remains useful."))
-	to_chat(recipient, span_notice("You can retrieve your hammer and polishing tools from a tree, statue, or clock."))*/
+	to_chat(recipient, span_notice("Your training in equipment maintenance and repair has been your guiding light in these trying times."))
+	to_chat(recipient, span_notice("You can retrieve your hammer and polishing tools from a tree, statue, or clock."))
 
 /datum/virtue/utility/linguist
 	name = "Intellectual"
@@ -113,23 +115,26 @@
 	)
 
 /datum/virtue/utility/linguist/apply_to_human(mob/living/carbon/human/recipient)
-	recipient.change_stat("intelligence", 1)
+	recipient.change_stat(STATKEY_INT, 1)
 	addtimer(CALLBACK(src, .proc/linguist_apply, recipient), 50)
 
 /datum/virtue/utility/linguist/proc/linguist_apply(mob/living/carbon/human/recipient)
 	var/static/list/selectable_languages = list(
-		/datum/language/elvish,
-		/datum/language/dwarvish,
-		/datum/language/orcish,
-		/datum/language/hellspeak,
-		/datum/language/draconic,
 		/datum/language/celestial,
+		/datum/language/draconic,
+		/datum/language/dwarvish,
+		/datum/language/elvish,
 		/datum/language/grenzelhoftian,
-		/datum/language/saltlian,
+		/datum/language/hellspeak,
+		/datum/language/orcish,
 		/datum/language/valorian,
 		/datum/language/rhaenvalian,
 		/datum/language/dunargi,
-		/datum/language/kargradi
+		/datum/language/saltlian,
+		/datum/language/draconic,
+		/datum/language/kargradi,
+		/datum/language/forvheipan,
+		/datum/language/zybanti
 	)
 
 	var/list/choices = list()
@@ -155,52 +160,6 @@
 	name = "Deathless"
 	desc = "Some fell magick has rendered me inwardly unliving - I do not hunger, and I do not breathe. (Abuse of this Virtue will net punishment for immersion break. Tailored to Aasimar.)"
 	added_traits = list(TRAIT_NOHUNGER, TRAIT_NOBREATH)
-
-/*/datum/virtue/utility/blacksmith
-	name = "Blacksmith's Apprentice"
-	desc = "In my youth, I worked under a skilled blacksmith, honing my skills with an anvil."
-	added_skills = list(list(/datum/skill/craft/crafting, 2, 2),
-						list(/datum/skill/craft/weaponsmithing, 2, 2),
-						list(/datum/skill/craft/armorsmithing, 2, 2),
-						list(/datum/skill/craft/blacksmithing, 2, 2),
-						list(/datum/skill/craft/smelting, 2, 2)
-	)
-*/
-/datum/virtue/utility/hunter
-	name = "Hunter"
-	desc = "In my youth, I trained under a skilled hunter, learning how to butcher animals and work with leather/hide."
-	added_skills = list(list(/datum/skill/craft/crafting, 2, 2),
-						list(/datum/skill/craft/traps, 2, 2),
-						list(/datum/skill/labor/butchering, 2, 2),
-						list(/datum/skill/misc/sewing, 2, 2),
-						list(/datum/skill/craft/tanning, 2, 2),
-						list(/datum/skill/misc/tracking, 2, 2)
-	)
-
-/datum/virtue/utility/artificer
-	name = "Artificer"
-	desc = "In my youth, I worked under a skilled artificer, studying construction and engineering."
-	added_skills = list(list(/datum/skill/craft/crafting, 2, 2),
-						list(/datum/skill/craft/carpentry, 2, 2),
-						list(/datum/skill/craft/masonry, 2, 2),
-						list(/datum/skill/craft/engineering, 2, 2),
-						list(/datum/skill/craft/smelting, 2, 2),
-						list(/datum/skill/misc/ceramics, 2, 2)
-	)
-	added_stashed_items = list(
-		"Hammer" = /obj/item/rogueweapon/hammer/wood,
-		"Chisel" = /obj/item/rogueweapon/chisel,
-		"Hand Saw" = /obj/item/rogueweapon/handsaw
-	)
-
-/datum/virtue/utility/physician
-	name = "Apothecary"
-	desc = "In my youth, I worked under a skilled physician, studying medicine and alchemy."
-	added_stashed_items = list("Medicine Pouch" = /obj/item/storage/belt/rogue/pouch/medicine)
-	added_skills = list(list(/datum/skill/craft/crafting, 2, 2),
-						list(/datum/skill/craft/alchemy, 2, 2),
-						list(/datum/skill/misc/medicine, 2, 2)
-	)
 
 /datum/virtue/utility/feral_appetite
 	name = "Feral Appetite"
@@ -252,6 +211,7 @@
 
 /datum/virtue/utility/granary
 	name = "Cunning Provisioner"
+	added_traits = list(TRAIT_HOMESTEAD_EXPERT)
 	desc = "You've worked in or around the docks enough to steal away a sack of supplies that no one would surely miss, just in case. You've picked up on some cooking and fishing tips in your spare time, as well."
 	added_stashed_items = list("Bag of Food" = /obj/item/storage/roguebag/food)
 	added_skills = list(list(/datum/skill/craft/cooking, 3, 6),
@@ -259,6 +219,7 @@
 
 /datum/virtue/utility/forester
 	name = "Forester"
+	added_traits = list(TRAIT_HOMESTEAD_EXPERT)
 	desc = "The forest is your home, or at least, it used to be. You always long to return and roam free once again, and you have not forgotten your knowledge on how to be self sufficient."
 	added_stashed_items = list("Trusty hoe" = /obj/item/rogueweapon/hoe)
 	added_skills = list(list(/datum/skill/craft/cooking, 2, 2),
@@ -267,14 +228,6 @@
 						list(/datum/skill/labor/fishing, 2, 2),
 						list(/datum/skill/labor/lumberjacking, 2, 2)
 	)
-
-/datum/virtue/utility/mining
-	name = "Miner's Apprentice"
-	desc = "The dark shafts, the damp smells of ichor and the laboring hours are no stranger to me. I keep my pickaxe and lamptern close, and have been taught how to mine well."
-	added_stashed_items = list(
-		"Steel Pickaxe" = /obj/item/rogueweapon/pick/steel,
-		"Lamptern" = /obj/item/flashlight/flare/torch/lantern)
-	added_skills = list(list(/datum/skill/labor/mining, 3, 6))
 
 /datum/virtue/utility/ugly
 	name = "Ugly"

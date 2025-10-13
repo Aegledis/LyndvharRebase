@@ -124,21 +124,12 @@
 						foundstab = TRUE
 						break
 				if(foundstab)
-					var/prob2spoil = 33
-					if(user.get_skill_level(/datum/skill/craft/cooking))
-						prob2spoil = 1
 					user.visible_message("<span class='notice'>[user] starts to cook [W] over [src].</span>")
 					for(var/i in 1 to 6)
 						if(do_after(user, 30 / cooktime_divisor, target = src))
 							var/obj/item/reagent_containers/food/snacks/S = W
 							var/obj/item/C
-							if(prob(prob2spoil))
-								user.visible_message("<span class='warning'>[user] burns [S].</span>")
-								if(user.client?.prefs.showrolls)
-									to_chat(user, "<span class='warning'>Critfail... [prob2spoil]%.</span>")
-								C = S.cooking(1000, 1000, null)
-							else
-								C = S.cooking(S.cooktime/4, S.cooktime/4, src)
+							C = S.cooking(S.cooktime/4, S.cooktime/4, src)
 							if(C)
 								user.dropItemToGround(S, TRUE)
 								qdel(S)

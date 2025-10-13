@@ -10,7 +10,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	gender = PLURAL //placeholder
 
 	status_flags = CANPUSH
-
+	fire_stack_decay_rate = -3
 	var/icon_living = ""
 	///Icon when the animal is dead. Don't use animated icons for this.
 	var/icon_dead = ""
@@ -167,6 +167,10 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 
 	var/swinging = FALSE
 
+	var/familiar_headshot_link = null
+	var/familiar_ooc_notes = null
+	var/familiar_flavortext = null
+
 	buckle_lying = FALSE
 	cmode = 1
 
@@ -175,6 +179,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 
 	var/botched_butcher_results
 	var/perfect_butcher_results
+	var/list/inherent_spells = list()
 
 	///What distance should we be checking for interesting things when considering idling/deidling? Defaults to AI_DEFAULT_INTERESTING_DIST
 	var/interesting_dist = AI_DEFAULT_INTERESTING_DIST
@@ -195,6 +200,9 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	set_new_cells()
 //	if(dextrous)
 //		AddComponent(/datum/component/personal_crafting)
+	for(var/spell in inherent_spells)
+		var/obj/effect/proc_holder/spell/newspell = new spell()
+		AddSpell(newspell)
 
 /mob/living/simple_animal/Destroy()
 	our_cells = null
@@ -401,20 +409,20 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 		var/obj/item/held_item = user.get_active_held_item()
 		if(held_item)
 			if((butcher_results || guaranteed_butcher_results) && held_item.get_sharpness() && held_item.wlength == WLENGTH_SHORT)
-				var/used_time = 210
+				var/used_time = 3 SECONDS
+				var/on_meathook = FALSE
 				if(src.buckled && istype(src.buckled, /obj/structure/meathook))
-					used_time -= 30
+					on_meathook = TRUE
+					used_time -= 3 SECONDS
 					visible_message("[user] begins to efficiently butcher [src]...")
 				else
 					visible_message("[user] begins to butcher [src]...")
 				if(user.mind)
 					used_time -= (user.get_skill_level(/datum/skill/labor/butchering) * 30)
 				playsound(src, 'sound/foley/gross.ogg', 100, FALSE)
-				if(do_after(user, used_time, target = src))
-					butcher(user)
-					if(user.mind)
-						user.mind.add_sleep_experience(/datum/skill/labor/butchering, user.STAINT * 4)
-		
+				if(do_after(user, 3 SECONDS, target = src))
+					butcher(user, on_meathook)
+
 	else if (stat != DEAD && istype(ssaddle, /obj/item/natural/saddle))		//Fallback saftey for saddles
 		var/datum/component/storage/saddle_storage = ssaddle.GetComponent(/datum/component/storage)
 		var/access_time = (user in buckled_mobs) ? 10 : 30
@@ -422,15 +430,19 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 			saddle_storage.show_to(user)
 	..()
 
-/mob/living/simple_animal/proc/butcher(mob/user)
+/mob/living/simple_animal/proc/butcher(mob/living/user, on_meathook = FALSE)
 	if(ssaddle)
 		ssaddle.forceMove(get_turf(src))
 		ssaddle = null
-	var/list/butcher = list()
+
 	var/butchery_skill_level = user.get_skill_level(/datum/skill/labor/butchering)
+	var/time_per_cut = max(5, 30 - butchery_skill_level * 5) // 3 seconds for no skill, 5 ticks for master
+	if(on_meathook)
+		time_per_cut *= 0.75
 	var/botch_chance = 0
 	if(length(botched_butcher_results) && butchery_skill_level < SKILL_LEVEL_JOURNEYMAN)
 		botch_chance = 70 - (20 * butchery_skill_level) // 70% at unskilled, 20% lower for each level above it, 0% at journeyman or higher
+
 	var/perfect_chance = 0
 	if(length(perfect_butcher_results))
 		switch(butchery_skill_level)
@@ -442,30 +454,76 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 				perfect_chance = 50
 			if(SKILL_LEVEL_MASTER to INFINITY)
 				perfect_chance = 100
-	butcher = butcher_results
-	if(prob(botch_chance))
-		butcher = botched_butcher_results
-		to_chat(user, "<span class='smallred'>I BOTCHED THE BUTCHERY! ([botch_chance]%!)</span>")
-	else if(prob(perfect_chance))
-		butcher = perfect_butcher_results
-		to_chat(user,"<span class='smallgreen'>My butchering was perfect! ([perfect_chance]%!)</span>")
-	if(guaranteed_butcher_results)
-		butcher += guaranteed_butcher_results
-	
+
 	var/rotstuff = FALSE
 	var/datum/component/rot/simple/CR = GetComponent(/datum/component/rot/simple)
-	if(CR)
-		if(CR.amount >= 10 MINUTES)
-			rotstuff = TRUE
+	if(CR && CR.amount >= 10 MINUTES)
+		rotstuff = TRUE
 	var/atom/Tsec = drop_location()
-	for(var/path in butcher)
-		for(var/i in 1 to butcher[path])
+
+	// Track results
+	var/botch_count = 0
+	var/perfect_count = 0
+	var/normal_count = 0
+
+	for(var/path in butcher_results)
+		var/amount = butcher_results[path]
+		if(!do_after(user, time_per_cut, target = src))
+			if(botch_count || normal_count || perfect_count)
+				to_chat(user, "<span class='notice'>I stop butchering: [butcher_summary(botch_count, normal_count, perfect_count, botch_chance, perfect_chance)].</span>")
+			else
+				to_chat(user, "<span class='notice'>I stop butchering for now.</span>")
+			break
+
+		// Check for botch first
+		if(prob(botch_chance))
+			botch_count++
+			if(length(botched_butcher_results) && (path in botched_butcher_results))
+				amount = botched_butcher_results[path]
+			else
+				amount = 0
+
+		// Otherwise check for perfect
+		else if(length(perfect_butcher_results) && (path in perfect_butcher_results) && prob(perfect_chance))
+			amount = perfect_butcher_results[path]
+			perfect_count++
+
+		else
+			normal_count++
+
+		butcher_results -= path
+
+		// Spawn the item(s)
+		for(var/j in 1 to amount)
 			var/obj/item/I = new path(Tsec)
 			I.add_mob_blood(src)
 			if(rotstuff && istype(I,/obj/item/reagent_containers/food/snacks))
 				var/obj/item/reagent_containers/food/snacks/F = I
 				F.become_rotten()
-	gib()
+
+		if(user.mind)
+			user.mind.add_sleep_experience(/datum/skill/labor/butchering, user.STAINT * 0.5)
+		playsound(src, 'sound/foley/gross.ogg', 100, FALSE)
+	if(isemptylist(butcher_results))
+		to_chat(user, "<span class='notice'>I finish butchering: [butcher_summary(botch_count, normal_count, perfect_count, botch_chance, perfect_chance)].</span>")
+		gib()
+
+/mob/living/proc/butcher_summary(botch_count, normal_count, perfect_count, botch_chance, perfect_chance)
+    var/list/parts = list()
+    if(botch_count)
+        parts += "[botch_count] botched ([botch_chance]%)"
+    if(normal_count)
+        parts += "[normal_count] normal"
+    if(perfect_count)
+        parts += "[perfect_count] perfect ([perfect_chance]%)"
+
+    var/msg = ""
+    for(var/i = 1, i <= length(parts), i++)
+        msg += parts[i]
+        if(i < length(parts))
+            msg += ", "
+
+    return msg
 
 /mob/living/simple_animal/spawn_dust(just_ash = FALSE)
 	if(just_ash || !remains_type)
@@ -527,6 +585,8 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 		..()
 
 /mob/living/simple_animal/proc/CanAttack(atom/the_target)
+	if(binded)
+		return FALSE
 	if(see_invisible < the_target.invisibility)
 		return FALSE
 	if(ismob(the_target))
@@ -539,19 +599,10 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 			return FALSE
 	return TRUE
 
-/mob/living/simple_animal/handle_fire()
-	. = ..()
-	if(!on_fire)
-		return TRUE
-	if(fire_stacks + divine_fire_stacks > 0)
-		apply_damage(5, BURN)
-		if(fire_stacks + divine_fire_stacks > 5)
-			apply_damage(10, BURN)
-
-//mob/living/simple_animal/IgniteMob()
+//mob/living/simple_animal/ignite_mob()
 //	return FALSE
 
-///mob/living/simple_animal/ExtinguishMob()
+///mob/living/simple_animal/extinguish_mob()
 //	return
 
 /mob/living/simple_animal/revive(full_heal = FALSE, admin_revive = FALSE)
@@ -835,7 +886,8 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 			if(loc != oldloc)
 				var/obj/structure/mineral_door/MD = locate() in loc
 				if(MD && !MD.ridethrough)
-					violent_dismount(user)
+					if(!HAS_TRAIT(user, TRAIT_EQUESTRIAN))
+						violent_dismount(user)
 
 /mob/living/simple_animal/proc/violent_dismount(mob/living/user)
 	if(isliving(user))
@@ -887,6 +939,8 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 		toggle_ai(initial(AIStatus))
 
 /mob/living/simple_animal/Move()
+	if(binded)
+		return FALSE
 	. = ..()
 //	if(!stat)
 //		eat_plants()

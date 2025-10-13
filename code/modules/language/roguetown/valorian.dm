@@ -1,6 +1,6 @@
 /datum/language/valorian
 	name = "Valoric"
-	desc = "The language of the Republica Valoria, renowned for their chevaliers and for hosting the stricter sects of Psydon worshippers. A \"Language of Love\", as it has been called before."
+	desc = "The main language of the Republic of Valoria. It is a very homogenized tongue, and not often seen outside of the borders of Valoria- and is therefore rather rare to find, especially in the capital regions where Lyndvhar is. However the local inquisitorial sects working in tandem with the Mother Church (albeit begrudgingly) have brought the language with them, resulting in a slow spread of the tongue as a way to communicate easier between sects of new Lyndhardtian converts and the Inquisitorial Missives. Many consider the language to be rather passionate despite the firmness of the culture, and have often dubbed it a Language of Love."
 	speech_verb = "remarks"
 	ask_verb = "inquires"
 	exclaim_verb = "asserts"

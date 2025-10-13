@@ -1,3 +1,4 @@
+GLOBAL_LIST_INIT(searaider_quotes, world.file2list("strings/rt/searaiderlines.txt"))
 GLOBAL_LIST_INIT(searaider_aggro, world.file2list("strings/rt/searaideraggrolines.txt"))
 
 /mob/living/carbon/human/species/human/northern/searaider
@@ -36,7 +37,7 @@ GLOBAL_LIST_INIT(searaider_aggro, world.file2list("strings/rt/searaideraggroline
 	. = ..()
 	set_species(/datum/species/human/northern)
 	addtimer(CALLBACK(src, PROC_REF(after_creation)), 1 SECONDS)
-	is_silent = TRUE
+	is_silent = FALSE
 
 
 /mob/living/carbon/human/species/human/northern/searaider/after_creation()
@@ -46,7 +47,7 @@ GLOBAL_LIST_INIT(searaider_aggro, world.file2list("strings/rt/searaideraggroline
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_LEECHIMMUNE, INNATE_TRAIT)
-	ADD_TRAIT(src, TRAIT_INFINITE_ENERGY, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_BREADY, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/human/species/human/northern/searaider)
 	gender = pick(MALE, FEMALE)
 	var/obj/item/organ/eyes/organ_eyes = getorgan(/obj/item/organ/eyes)
@@ -115,39 +116,55 @@ GLOBAL_LIST_INIT(searaider_aggro, world.file2list("strings/rt/searaideraggroline
 	if(!wander && prob(10))
 		face_atom(get_step(src,pick(GLOB.cardinals)))
 
+	if(prob(10))
+		say(pick(GLOB.searaider_quotes))
+	if(prob(10))
+		emote(pick("laugh","burp","yawn","grumble","mumble","blink_r","clap"))
+
 /mob/living/carbon/human/species/human/northern/searaider/handle_combat()
 	if(mode == NPC_AI_HUNT)
 		if(prob(50)) // ignores is_silent because they should at least still be able to scream at people!
 			emote("rage")
+		if(prob(25)) // do not make this big or else they NEVER SHUT UP
+			emote("laugh")
+		if(prob(5))
+			say(pick(GLOB.searaider_aggro))
 	. = ..()
 
 /datum/outfit/job/roguetown/human/species/human/northern/searaider/pre_equip(mob/living/carbon/human/H)
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	if(prob(50))
 		wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/heavy
-	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
+	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/atgervi
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/brown
 	if(prob(50))
-		shirt = /obj/item/clothing/suit/roguetown/shirt/tunic
-	pants = /obj/item/clothing/under/roguetown/tights
+		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/atgervi
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/heavy/rhaenval
+	pants = /obj/item/clothing/under/roguetown/trou/leather/atgervi
 	if(prob(50))
-		pants = /obj/item/clothing/under/roguetown/chainlegs/iron
-	head = /obj/item/clothing/head/roguetown/helmet/leather
+		pants = /obj/item/clothing/under/roguetown/trou/leather/rhaenval
+	head = /obj/item/clothing/head/roguetown/helmet/bascinet/atgervi/rhaenval
 	if(prob(50))
-		head = /obj/item/clothing/head/roguetown/helmet/horned
+		head = /obj/item/clothing/head/roguetown/helmet/leather/saiga/atgervi
 	if(prob(50))
-		neck = /obj/item/clothing/neck/roguetown/gorget
+		neck = /obj/item/clothing/neck/roguetown/bevor/iron
 	if(prob(50))
-		gloves = /obj/item/clothing/gloves/roguetown/leather
-	if(prob(50))
-		r_hand = /obj/item/rogueweapon/sword/iron
-		l_hand = /obj/item/rogueweapon/shield/wood
-	else
-		r_hand = /obj/item/rogueweapon/greataxe
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+		gloves = /obj/item/clothing/gloves/roguetown/angle/rhaenvalfur
+	switch(rand(1, 4))
+		if(1)
+			r_hand = /obj/item/rogueweapon/sword/short/messer/iron
+			l_hand = /obj/item/rogueweapon/shield/atgervi
+		if(2)
+			r_hand = /obj/item/rogueweapon/spear
+		if(3)
+			r_hand = /obj/item/rogueweapon/greataxe
+		if(4)
+			r_hand = /obj/item/rogueweapon/greatsword/zwei
+		
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/atgervi
 	H.STASPD = 9
 	H.STACON = rand(10,12) //so their limbs no longer pop off like a skeleton
-	H.STAEND = 15
+	H.STAWIL = 15
 	H.STAPER = 10
 	H.STAINT = 1
 	H.STASTR = 14

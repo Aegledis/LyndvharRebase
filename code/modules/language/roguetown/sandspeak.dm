@@ -1,6 +1,6 @@
 /datum/language/celestial
-	name = "Sama'glos"
-	desc = ""
+	name = "Celestia"
+	desc = "A language primarily composed of old syllables and words from before the Bloodwake. Almost exclusively used by members of the Pantheonic Church in sermons, and still used primarily by remaining Aasimar."
 	speech_verb = "says"
 	ask_verb = "asks"
 	exclaim_verb = "yells"

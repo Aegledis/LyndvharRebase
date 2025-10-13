@@ -5,7 +5,7 @@
 	name = "Kobold"
 	id = "kobold"
 	desc = "<b>Kobold</b><br>\
-	Sharing common ancestry with Zardmen and Draconae, the Kobold is considered the failure-state of a Draconae hatchery. Kobolds are small and relatively scrawny, but make up for this by living in large communities above and under the ground. Ever since the Draconae were subjugated by Naexidor, Kobolds have lived in relatively more isolated but large tribes in the frontiers of society. They scavenge, steal, and raid from whatever they find, with a culture almost entirely based around their kleptomania. They reproduce fast, and unlike the Draconae and Zardmen, Kobolds simply make more Kobolds- and can only reproduce with other Kobolds. Due to being seen as little more than pests they face extreme scrutiny from other mortals, as many are still openly hostile to their kind due to the repeat raids from kobold settlements.<br>"
+	Sharing a slightly common ancestry with the Eskallian, the Kobold is considered the failure-state of an Eskallian hatchery. Kobolds are small and relatively scrawny, but make up for this by living in large communities above and under the ground. Ever since the Eskallian were subjugated by Naexidor, Kobolds have lived in relatively more isolated but large tribes in the frontiers of society. They scavenge, steal, and raid from whatever they find, with a culture almost entirely based around their kleptomania. They reproduce fast, and unlike the roots of the other scaled beings they come from, Kobolds simply make more Kobolds- and can only reproduce with other Kobolds. Due to being seen as little more than pests they face extreme scrutiny from other mortals, as many are still openly hostile to their kind due to the repeat raids from kobold settlements.<br>"
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	possible_ages = ALL_AGES_LIST
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
@@ -164,3 +164,23 @@
 	returned["mcolor2"] = second_color
 	returned["mcolor3"] = second_color
 	return returned
+
+/datum/species/kobold/random_name(gender,unique,lastname)
+	var/randname
+	if(unique)
+		if(gender == MALE)
+			for(var/i in 1 to 10)
+				randname = pick( world.file2list("strings/names/roguetown/lizardm.txt") )
+				if(!findname(randname))
+					break
+		if(gender == FEMALE)
+			for(var/i in 1 to 10)
+				randname = pick( world.file2list("strings/names/roguetown/lizardf.txt") )
+				if(!findname(randname))
+					break
+	else
+		if(gender == MALE)
+			randname = pick( world.file2list("strings/rt/names/human/humnorm.txt") )
+		if(gender == FEMALE)
+			randname = pick( world.file2list("strings/rt/names/human/humnorf.txt") )
+	return randname

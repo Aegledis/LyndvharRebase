@@ -308,7 +308,7 @@ GLOBAL_VAR_INIT(last_crown_announcement_time, -1000)
 			return
 		newtax = CLAMP(newtax, 1, 99)
 		SStreasury.tax_value = newtax / 100
-		priority_announce("The new tax in Lyndvhar shall be [newtax] percent.", "The Court Decrees", pick('sound/misc/royal_decree.ogg', 'sound/misc/royal_decree2.ogg'), "Retinue Captain")
+		priority_announce("The new tax in Lyndvhar shall be [newtax] percent.", "NOBLE DECREE", pick('sound/misc/royal_decree.ogg', 'sound/misc/royal_decree2.ogg'), "Retinue Captain")
 
 
 /obj/structure/roguemachine/titan/proc/make_announcement(mob/living/user, raw_message)
@@ -345,7 +345,7 @@ GLOBAL_VAR_INIT(last_crown_announcement_time, -1000)
 			if(!SSmapping.retainer.head_rebel_decree)
 				user.mind.adjust_triumphs(1)
 			SSmapping.retainer.head_rebel_decree = TRUE
-	GLOB.azure_round_stats[STATS_LAWS_AND_DECREES_MADE]++
+	record_round_statistic(STATS_LAWS_AND_DECREES_MADE)
 	SScommunications.make_announcement(user, TRUE, raw_message)
 
 /obj/structure/roguemachine/titan/proc/declare_outlaw(mob/living/user, raw_message)
@@ -361,7 +361,7 @@ GLOBAL_VAR_INIT(last_crown_announcement_time, -1000)
 /proc/make_outlaw(raw_message)
 	if(raw_message in GLOB.outlawed_players)
 		GLOB.outlawed_players -= raw_message
-		priority_announce("[raw_message] is no longer an outlaw within the city limits of Lyndvhar.", "The [SSticker.rulertype] Decrees", 'sound/misc/outlaw.ogg', "Retinue Captain")
+		priority_announce("[raw_message] is no longer an outlaw within the city limits of Lyndvhar.", "The [SSticker.rulertype] Decrees", 'sound/misc/notice.ogg', "Retinue Captain")
 		return FALSE
 	var/found = FALSE
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
@@ -370,21 +370,21 @@ GLOBAL_VAR_INIT(last_crown_announcement_time, -1000)
 	if(!found)
 		return FALSE
 	GLOB.outlawed_players += raw_message
-	priority_announce("[raw_message] has been declared an outlaw by the nobility and must be captured or slain.", "The [SSticker.rulertype] Decrees", 'sound/misc/outlaw.ogg', "Retinue Captain")
+	priority_announce("[raw_message] has been declared an outlaw by the nobility and must be captured or slain.", "The [SSticker.rulertype] Decrees", 'sound/misc/notice.ogg', "Retinue Captain")
 	return TRUE
 
 /proc/make_law(raw_message)
 	GLOB.laws_of_the_land += raw_message
-	priority_announce("[length(GLOB.laws_of_the_land)]. [raw_message]", "A LAW IS DECLARED", pick('sound/misc/new_law.ogg', 'sound/misc/new_law2.ogg'), "Retinue Captain")
-	GLOB.azure_round_stats[STATS_LAWS_AND_DECREES_MADE]++
+	priority_announce("[length(GLOB.laws_of_the_land)]. [raw_message]", "A LAW IS DECLARED", pick('sound/misc/new_law.ogg', 'sound/misc/new_law2.ogg'), "Captain")
+	record_round_statistic(STATS_LAWS_AND_DECREES_MADE)
 
 /proc/remove_law(law_index)
 	if(!GLOB.laws_of_the_land[law_index])
 		return
 	var/law_text = GLOB.laws_of_the_land[law_index]
 	GLOB.laws_of_the_land -= law_text
-	priority_announce("[law_index]. [law_text]", "A LAW IS ABOLISHED", pick('sound/misc/new_law.ogg', 'sound/misc/new_law2.ogg'), "Retinue Captain")
-	GLOB.azure_round_stats[STATS_LAWS_AND_DECREES_MADE]--
+	priority_announce("[law_index]. [law_text]", "A LAW IS ABOLISHED", pick('sound/misc/new_law.ogg', 'sound/misc/new_law2.ogg'), "Captain")
+	record_round_statistic(STATS_LAWS_AND_DECREES_MADE, -1)
 
 /proc/purge_laws()
 	GLOB.laws_of_the_land = list()
@@ -395,6 +395,6 @@ GLOBAL_VAR_INIT(last_crown_announcement_time, -1000)
 	priority_announce("All of the city's prior decrees have been purged!", "DECREES PURGED", pick('sound/misc/royal_decree.ogg', 'sound/misc/royal_decree2.ogg'), "Retinue Captain")
 
 /proc/become_regent(mob/living/carbon/human/H)
-	priority_announce("[H.name], the [H.get_role_title()], sits as the regent of Lyndvhar.", "Regency Declared", pick('sound/misc/royal_decree.ogg', 'sound/misc/royal_decree2.ogg'), "Retinue Captain")
+	priority_announce("[H.name], the [H.get_role_title()], sits as the regent of the city of Lyndvhar.", "A REGENCY DECLARED", pick('sound/misc/coronation.ogg'), "Retinue Captain")
 	SSticker.regentmob = H
 	SSticker.regentday = GLOB.dayspassed

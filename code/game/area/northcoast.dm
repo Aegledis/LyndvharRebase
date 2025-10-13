@@ -1,4 +1,4 @@
-// Azure Coast - the northern part of the map - may not be actually coast 
+// Lyndvhar Coast - the east part of the map - may not be actually coast 
 /area/rogue/outdoors/beach/forest
 	name = "Lilac Bay"
 	icon_state = "beach"
@@ -7,7 +7,7 @@
 	ambientnight = AMB_FORESTNIGHT
 	spookysounds = SPOOKY_CROWS
 	spookynight = SPOOKY_FOREST
-	droning_sound = 'sound/music/area/forest.ogg'
+	droning_sound = 'sound/music/area/forestold.ogg'
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
 	droning_sound_night = 'sound/music/area/sleepingold.ogg'
 	soundenv = 15
@@ -26,17 +26,22 @@
 	first_time_text = "LILAC BAY"
 	converted_type = /area/rogue/indoors/shelter/woods
 	deathsight_message = "somewhere betwixt Abyssor's realm and Dendor's bounty"
+	threat_region = THREAT_REGION_COAST
 
 /area/rogue/outdoors/beach/forest/hamlet
 	name = "LILAC BAY - RAIDER CAMP"
-	first_time_text = "THE HAMLET"
+	first_time_text = "RHAENVALI CAMP"
+	droning_sound = 'sound/music/area/siege.ogg'
 	ambush_mobs = null // We don't want actual ambushes in Hamlet but we also don't want to misuse outdoors/beach lol
+	threat_region = THREAT_REGION_COAST
 
 /area/rogue/outdoors/beach/forest/north
 	name = "NORTHERN LILAC BAY"
+	threat_region = THREAT_REGION_COAST
 
 /area/rogue/outdoors/beach/forest/south
 	name = "SOUTHERN LILAC BAY"
+	threat_region = THREAT_REGION_COAST
 
 /area/rogue/under/cave/dukecourt
 	name = "dukedungeon"
@@ -47,3 +52,4 @@
 	droning_sound_night = null
 	converted_type = /area/rogue/outdoors/dungeon1
 	deathsight_message = "somewhere betwixt Abyssor's realm and Dendor's bounty"
+	threat_region = THREAT_REGION_COAST

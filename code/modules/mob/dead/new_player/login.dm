@@ -1,4 +1,7 @@
 /mob/dead/new_player/Login()
+//	winset(client, "outputwindow.output", "max-lines=1")
+//	winset(client, "outputwindow.output", "max-lines=100")
+
 	if(CONFIG_GET(flag/use_exp_tracking))
 		client.set_exp_from_db()
 		client.set_db_player_flags()
@@ -8,19 +11,6 @@
 		mind.current = src
 
 	..()
-
-	sight |= SEE_TURFS
-
-	addtimer(CALLBACK(src, PROC_REF(do_after_login)), 4 SECONDS)
-	new_player_panel()
-
-	if(client)
-		client.playtitlemusic()
-
-/mob/dead/new_player/proc/do_after_login()
-	PRIVATE_PROC(TRUE)
-	if(!client)
-		return
 
 	var/motd = global.config.motd
 	if(motd)
@@ -66,6 +56,11 @@
 	if(spc && living_player_count() >= spc)
 		to_chat(src, span_notice("<b>Server Notice:</b>\n \t [CONFIG_GET(string/soft_popcap_message)]"))
 
+	sight |= SEE_TURFS
+
+	new_player_panel()
+	if(client)
+		client.playtitlemusic()
 	if(SSticker.current_state < GAME_STATE_SETTING_UP)
 		var/tl = SSticker.GetTimeLeft()
 		var/postfix
@@ -74,8 +69,10 @@
 		else
 			postfix = "soon"
 		to_chat(src, "The game will start [postfix].")
-
-		SSvote.send_vote(client)
-		var/usedkey = ckey(key)
-		var/list/thinz = list("takes a seat.", "settles in.", "joins the session", "joins the table.", "becomes a player.")
-		SEND_TEXT(world, span_notice("[usedkey] [pick(thinz)]"))
+		if(client)
+			SSvote.send_vote(client)
+			var/usedkey = ckey(key)
+			/*if(usedkey in GLOB.anonymize)
+				usedkey = get_fake_key(usedkey)*/
+			var/list/thinz = list("takes a seat.", "settles in.", "joins the session", "joins the table.", "becomes a player.")
+			SEND_TEXT(world, span_notice("[usedkey] [pick(thinz)]"))

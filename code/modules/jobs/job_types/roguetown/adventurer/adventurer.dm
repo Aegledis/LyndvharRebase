@@ -12,7 +12,7 @@ GLOBAL_VAR_INIT(adventurer_hugbox_duration_still, 3 MINUTES)
 	spawn_positions = 20
 	allowed_races = RACES_ALL_KINDS
 	tutorial = "A wanderer, not from this region. Whatever led you to this fate is up to the wind to decide, be it that you are fleeing the civil war, looking for work, or otherwise. Whether you will survive the coming week is an altogether different matter entirely- however. The roads have become inhospitable and treacherous to most. You may learn fairly quickly why your destination has become so isolated from everywhere else."
-
+	class_categories = TRUE
 
 	outfit = null
 	outfit_female = null
@@ -33,18 +33,42 @@ GLOBAL_VAR_INIT(adventurer_hugbox_duration_still, 3 MINUTES)
 	same_job_respawn_delay = 1 MINUTES
 
 	cmode_music = 'sound/music/cmode/adventurer/combat_outlander2.ogg'
+	job_traits = list(TRAIT_OUTLANDER)
 
-/datum/job/roguetown/adventurer/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
-	..()
-	if(L)
-		var/mob/living/carbon/human/H = L
-		H.advsetup = 1
-		H.invisibility = INVISIBILITY_MAXIMUM
-		H.become_blind("advsetup")
-
-		if(GLOB.adventurer_hugbox_duration)
-			///FOR SOME silly FUCKING REASON THIS REFUSED TO WORK WITHOUT A FUCKING TIMER IT JUST FUCKED SHIT UP
-			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, adv_hugboxing_start)), 1)
+	job_subclasses = list(
+		/datum/advclass/cleric,
+		/datum/advclass/cleric/paladin,
+		/datum/advclass/cleric/cantor,
+		/datum/advclass/cleric/missionary,
+		/datum/advclass/sfighter,
+		/datum/advclass/sfighter/duelist,
+		/datum/advclass/sfighter/mhunter,
+		/datum/advclass/sfighter/barbarian,
+		/datum/advclass/sfighter/ironclad,
+		/datum/advclass/rogue,
+		/datum/advclass/rogue/thief,
+		/datum/advclass/rogue/bard,
+		/datum/advclass/rogue/swashbuckler,
+		/datum/advclass/mage,
+		/datum/advclass/mage/spellblade,
+		/datum/advclass/mage/spellsinger,
+		/datum/advclass/ranger,
+		/datum/advclass/ranger/assassin,
+		/datum/advclass/ranger/bombadier,
+		/datum/advclass/ranger/bwanderer,
+		/datum/advclass/trader,
+		/datum/advclass/trader/doomsayer,
+		/datum/advclass/trader/scholar,
+		/datum/advclass/trader/harlequin,
+		/datum/advclass/trader/peddler,
+		/datum/advclass/trader/brewer,
+		/datum/advclass/trader/cuisiner,
+		/datum/advclass/foreigner,
+		/datum/advclass/foreigner/amsalja,
+		/datum/advclass/foreigner/repentant,
+		/datum/advclass/foreigner/refugee,
+		/datum/advclass/foreigner/slaver
+	)
 
 /mob/living/carbon/human/proc/adv_hugboxing_start()
 	to_chat(src, span_warning("I will lose my divine protection when I begin to move."))

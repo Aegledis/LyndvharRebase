@@ -28,7 +28,7 @@
 	status = BODYPART_ROBOTIC
 	brute_reduction = 0
 	burn_reduction = 0
-	max_damage = 110
+	max_damage = 150
 	w_class = WEIGHT_CLASS_NORMAL
 	max_integrity = 350
 	sellprice = 30
@@ -80,7 +80,7 @@
 	status = BODYPART_ROBOTIC
 	brute_reduction = 0
 	burn_reduction = 0
-	max_damage = 220
+	max_damage = 150
 	w_class = WEIGHT_CLASS_NORMAL
 	max_integrity = 350
 	sellprice = 30
@@ -133,7 +133,7 @@
 	status = BODYPART_ROBOTIC
 	brute_reduction = 0
 	burn_reduction = 0
-	max_damage = 220
+	max_damage = 150
 	w_class = WEIGHT_CLASS_NORMAL
 	max_integrity = 350
 	sellprice = 30
@@ -184,7 +184,7 @@
 	status = BODYPART_ROBOTIC
 	brute_reduction = 0
 	burn_reduction = 0
-	max_damage = 220
+	max_damage = 150
 	w_class = WEIGHT_CLASS_NORMAL
 	max_integrity = 350
 	sellprice = 30

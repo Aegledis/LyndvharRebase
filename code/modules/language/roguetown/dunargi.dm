@@ -1,6 +1,6 @@
 /datum/language/dunargi
 	name = "Dunargiac"
-	desc = "The language of the inhabitants of the capitol region of Dunargi. Fast-paced, for those unused to its emotiveness."
+	desc = "The Dunargiac tongue is a rather local language to the area of Lyndvhar. Before the conquest it was the regional native tongue of the Kingdom of Dungar, of which the former capital is where Lyndvhar was in fact settled. When Naexidor came in his glorious conquest, and the capital of Dungar was settled in ash, not all of its cultural roots were destroyed, and the native tongue persists as a local tongue spoken by the commonfolk of the region, and many local nobles connected to the grand city of Lyndvhar speak the tongue on the offhand. It has seen a mild uptick as a result of the civil war’s chaos."
 	speech_verb = "remarks"
 	ask_verb = "inquires"
 	exclaim_verb = "asserts"

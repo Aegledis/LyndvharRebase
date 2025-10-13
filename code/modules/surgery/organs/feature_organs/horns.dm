@@ -8,6 +8,9 @@
 
 /obj/item/organ/horns/humanoid
 
+/obj/item/organ/horns/capridae
+	name = "capridae horns"
+
 /obj/item/organ/horns/halforc
 	name = "halforc horns"
 	accessory_type = /datum/sprite_accessory/horns/halforc

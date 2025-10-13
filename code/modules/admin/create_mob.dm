@@ -7,7 +7,7 @@
 		create_mob_html = file2text('html/create_object.html')
 		create_mob_html = replacetext(create_mob_html, "Create Object", "Create Mob")
 		create_mob_html = replacetext(create_mob_html, "null /* object types */", "\"[mobjs]\"")
-
+		create_mob_html += usr.client.prefs.get_ui_theme_stylesheet()
 	user << browse(create_panel_helper(create_mob_html), "window=create_mob;size=550x475")
 
 /proc/randomize_human(mob/living/carbon/human/H, include_gender = FALSE)

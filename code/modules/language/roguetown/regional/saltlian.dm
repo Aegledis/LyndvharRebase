@@ -1,6 +1,6 @@
 /datum/language/saltlian
 	name = "Saltliac"
-	desc = "The language of the Saltlian Kingdom. With intricate honorifics and complex grammar. The version rarely seen in Lyndhardtia is a result of centuries of cultural contact between the locale and Saltlian merchants from afar, and is a trade language combining Lyndhardtian and Saltlian vocabulary"
+	desc = "A language that is still relatively confusing to most that do not speak it, and considered one of the hardest in Beowricke to learn as a result- the Saltliac tongue is the language of the enigmatic far eastern fiefdoms that make up the Saltlian Celestial Kingdom. Said by many to have very intricate honorifics and extremely complex grammar, no scholar in Llewyn has heard the true, perfected form of it before- and if they have, they’ve never documented it. The version spoken in Lyndhardtia by Saltlian merchants is the result of a slow bastardization of Imperial and Saltliac as a result of decades of cultural contact. Hence, the Saltliac spoken in Llewyn is actually the trading language."
 	speech_verb = "says"
 	whisper_verb = "whispers"
 	exclaim_verb = "yells"

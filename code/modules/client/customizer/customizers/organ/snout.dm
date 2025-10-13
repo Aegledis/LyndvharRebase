@@ -17,9 +17,13 @@
 	generic_random_pick = TRUE
 	sprite_accessories = list(
 		/datum/sprite_accessory/snout/sharp,
+		/datum/sprite_accessory/snout/sharpdualcolor,
 		/datum/sprite_accessory/snout/round,
+		/datum/sprite_accessory/snout/rounddualcolor,
 		/datum/sprite_accessory/snout/sharplight,
+		/datum/sprite_accessory/snout/sharplightdualcolor,
 		/datum/sprite_accessory/snout/roundlight,
+		/datum/sprite_accessory/snout/roundlightdualcolor,
 		/datum/sprite_accessory/snout/front/sharp,
 		/datum/sprite_accessory/snout/front/round,
 		/datum/sprite_accessory/snout/front/sharplight,
@@ -121,14 +125,39 @@
 	default_disabled = TRUE
 	customizer_choices = list(/datum/customizer_choice/organ/snout/anthro)
 
-/datum/customizer/organ/snout/anthrosmall
-	allows_disabling = TRUE
+/datum/customizer/organ/snout/capridae
+	allows_disabling = FALSE
 	default_disabled = FALSE
-	customizer_choices = list(/datum/customizer_choice/organ/snout/anthro)
+	customizer_choices = list(/datum/customizer_choice/organ/snout/capridae)
 
-/datum/customizer_choice/organ/snout/anthro
-	name = "Wild-Kin Snout"
-	organ_type = /obj/item/organ/snout/anthro
+/datum/customizer_choice/organ/snout/capridae
+	name = "Capridae Snout"
+	organ_type = /obj/item/organ/snout/capridae
+	sprite_accessories = list(
+		/datum/sprite_accessory/snout/bovine,
+		/datum/sprite_accessory/snout/front/bovine,
+		/datum/sprite_accessory/snout/hhorse,
+		/datum/sprite_accessory/snout/hzebra,
+		/datum/sprite_accessory/snout/stubby,
+		/datum/sprite_accessory/snout/stubbyalt,
+		/datum/sprite_accessory/snout/front/lcanid,
+		/datum/sprite_accessory/snout/front/lcanidalt,
+		/datum/sprite_accessory/snout/front/lcanidstriped,
+		/datum/sprite_accessory/snout/front/lcanidstripedalt,
+		/datum/sprite_accessory/snout/front/scanid,
+		/datum/sprite_accessory/snout/front/scanidalt,
+		/datum/sprite_accessory/snout/front/scanidalt2,
+		/datum/sprite_accessory/snout/front/scanidalt3,
+		)	
+
+/datum/customizer/organ/snout/rhaeteian
+	allows_disabling = FALSE
+	default_disabled = FALSE
+	customizer_choices = list(/datum/customizer_choice/organ/snout/rhaeteian)
+
+/datum/customizer_choice/organ/snout/rhaeteian
+	name = "Rhaeteian Beak"
+	organ_type = /obj/item/organ/snout/beak/rhaeteian
 	sprite_accessories = list(
 		/datum/sprite_accessory/snout/bird,
 		/datum/sprite_accessory/snout/bigbeak,
@@ -138,11 +167,26 @@
 		/datum/sprite_accessory/snout/slimbeakalt,
 		/datum/sprite_accessory/snout/hookbeak,
 		/datum/sprite_accessory/snout/hookbeakbig,
+		/datum/sprite_accessory/snout/front/toucan,
+		/datum/sprite_accessory/snout/toucan,
+		/datum/sprite_accessory/snout/sbeak,
+		/datum/sprite_accessory/snout/front/bird,
+		/datum/sprite_accessory/snout/front/bigbeak,
+	)
+
+/datum/customizer/organ/snout/anthrosmall
+	allows_disabling = TRUE
+	default_disabled = FALSE
+	customizer_choices = list(/datum/customizer_choice/organ/snout/anthro)
+
+/datum/customizer_choice/organ/snout/anthro
+	name = "Wild-Kin Snout"
+	organ_type = /obj/item/organ/snout/anthro
+	sprite_accessories = list(
 		/datum/sprite_accessory/snout/bug,
 		/datum/sprite_accessory/snout/elephant,
 		/datum/sprite_accessory/snout/husky,
 		/datum/sprite_accessory/snout/rhino,
-		/datum/sprite_accessory/snout/bovine,
 		/datum/sprite_accessory/snout/rodent,
 		/datum/sprite_accessory/snout/lcanid,
 		/datum/sprite_accessory/snout/lcanidalt,
@@ -160,10 +204,8 @@
 		/datum/sprite_accessory/snout/pede,
 		/datum/sprite_accessory/snout/sergal,
 		/datum/sprite_accessory/snout/shark,
-		/datum/sprite_accessory/snout/toucan,
 		/datum/sprite_accessory/snout/redpanda,
 		/datum/sprite_accessory/snout/redpandaalt,
-		/datum/sprite_accessory/snout/sbeak,
 		/datum/sprite_accessory/snout/rat,
 		/datum/sprite_accessory/snout/stubby,
 		/datum/sprite_accessory/snout/alienlizard,
@@ -173,14 +215,9 @@
 		/datum/sprite_accessory/snout/hpanda,
 		/datum/sprite_accessory/snout/hjackal,
 		/datum/sprite_accessory/snout/hspots,
-		/datum/sprite_accessory/snout/hhorse,
-		/datum/sprite_accessory/snout/hzebra,
-		/datum/sprite_accessory/snout/front/bird,
-		/datum/sprite_accessory/snout/front/bigbeak,
 		/datum/sprite_accessory/snout/front/bug,
 		/datum/sprite_accessory/snout/front/elephant,
 		/datum/sprite_accessory/snout/front/rhino,
-		/datum/sprite_accessory/snout/front/bovine,
 		/datum/sprite_accessory/snout/front/husky,
 		/datum/sprite_accessory/snout/front/lcanid,
 		/datum/sprite_accessory/snout/front/lcanidalt,
@@ -197,7 +234,6 @@
 		/datum/sprite_accessory/snout/front/rodent,
 		/datum/sprite_accessory/snout/front/pede,
 		/datum/sprite_accessory/snout/front/sergal,
-		/datum/sprite_accessory/snout/front/toucan,
 		/datum/sprite_accessory/snout/front/redpanda,
 		/datum/sprite_accessory/snout/front/redpandaalt,
 		/datum/sprite_accessory/snout/front/skulldog,

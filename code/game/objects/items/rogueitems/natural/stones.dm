@@ -84,7 +84,7 @@ GLOBAL_LIST_INIT(stone_personalities, list(
 	"Daredevil",
 	"Barbarics",
 	"Fanciness",
-	"Relaxing",	
+	"Relaxing",
 	"Greed",
 	"Evil",
 	"Good",
@@ -120,7 +120,7 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 	"One must wonder: Where did this stone come from?",
 	"If all stones were like this, then they would be some pretty great stones.",
 	"I wish my personality was like this stone's...",
-	"I could sure do a whole lot with this stone.", 
+	"I could sure do a whole lot with this stone.",
 	"I love stones!",
 ))
 
@@ -141,7 +141,7 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 	mill_result = /obj/item/reagent_containers/powder/mineral
 	/// If our stone is magical, this lets us know -how- magical. Maximum is 15.
 	var/magic_power = 0
-	sharpening_factor = 0.1
+	sharpening_factor = 12
 	spark_chance = 35
 
 /obj/item/natural/stone/Initialize()
@@ -178,13 +178,12 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 	experimental_inhand = FALSE
 	mill_result = /obj/item/reagent_containers/powder/mineral
 	possible_item_intents = list(/datum/intent/hit, /datum/intent/mace/smash/wood, /datum/intent/dagger/cut)
-	sharpening_factor = 0.4
+	sharpening_factor = 21
 	spark_chance = 80
 
 /obj/item/natural/whetstone/Initialize()
 	. = ..()
 	var/static/list/slapcraft_recipe_list = list(
-		/datum/crafting_recipe/roguetown/survival/reinforcedshaft,
 		/datum/crafting_recipe/roguetown/survival/peasantry/thresher/whetstone,
 		/datum/crafting_recipe/roguetown/survival/peasantry/shovel/whetstone,
 		/datum/crafting_recipe/roguetown/survival/peasantry/hoe/whetstone,
@@ -211,7 +210,7 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 	var/stone_title = "stone" // Our stones title
 	var/stone_desc = "[desc]" // Total Bonus desc the stone will be getting
 
-	icon_state = "stone[rand(1,5)]" 
+	icon_state = "stone[rand(1,5)]"
 
 	var/bonus_force = 0 // Total bonus force the rock will be getting
 	var/list/given_intent_list = list(/datum/intent/hit) // By default you get this at least
@@ -250,7 +249,7 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 			desc_jumbler += pick(GLOB.stone_sharpness_descs)
 
 	if(name_jumbler.len) // Both name jumbler and desc jumbler should be symmetrical in insertions conceptually anyways.
-		for(var/i in 1 to name_jumbler.len) //Theres only two right now 
+		for(var/i in 1 to name_jumbler.len) //Theres only two right now
 			if(!name_jumbler.len) // If list somehow empty get the hell out! Now~!
 				break
 			//Remove so theres no repeats
@@ -273,7 +272,7 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 			stone_title = "[stone_title] of [pick(GLOB.stone_personalities)]"
 			stone_desc += " [pick(GLOB.stone_personality_descs)]"
 			personality_modifier += rand(1,5) // Personality gives a stone some more power too
-			
+
 	if (personality_modifier)
 		bonus_force += personality_modifier
 		magic_power += personality_modifier
@@ -299,7 +298,7 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 			var/cock = pick(extra_intent_list) // We pick one
 			given_intent_list += cock // Add it to the list
 			extra_intent_list -= cock // Remove it from the prev list
-	
+
 	//Now that we have built the history and lore of this stone, we apply it to the main vars.
 	name = stone_title
 	desc = stone_desc
@@ -324,6 +323,8 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 		user.visible_message("<span class='info'>[user] chisels the stone into a block.</span>")
 		if(do_after(user, work_time))
 			new /obj/item/natural/stoneblock(get_turf(src.loc))
+			if(HAS_TRAIT(user, TRAIT_MASTER_MASON)) //double the amount for any in a stone worker role
+				new /obj/item/natural/stoneblock(get_turf(src.loc))
 			new /obj/effect/decal/cleanable/debris/stony(get_turf(src))
 			playsound(src.loc, pick('sound/combat/hits/onrock/onrock (1).ogg', 'sound/combat/hits/onrock/onrock (2).ogg', 'sound/combat/hits/onrock/onrock (3).ogg', 'sound/combat/hits/onrock/onrock (4).ogg'), 100)
 			qdel(src)
@@ -403,7 +404,7 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 			var/obj/item/S = new /obj/item/natural/stone(src.loc)
 			S.pixel_x = rand(25,-25)
 			S.pixel_y = rand(25,-25)
-		GLOB.azure_round_stats[STATS_ROCKS_MINED]++
+		record_round_statistic(STATS_ROCKS_MINED)
 	qdel(src)
 
 /obj/item/natural/rock/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
@@ -445,6 +446,10 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 			new /obj/item/natural/stoneblock(get_turf(src.loc))
 			new /obj/item/natural/stoneblock(get_turf(src.loc))
 			new /obj/item/natural/stoneblock(get_turf(src.loc))
+			if(HAS_TRAIT(user, TRAIT_MASTER_MASON)) //double the amount for any in a stone worker role
+				new /obj/item/natural/stoneblock(get_turf(src.loc))
+				new /obj/item/natural/stoneblock(get_turf(src.loc))
+				new /obj/item/natural/stoneblock(get_turf(src.loc))
 			new /obj/effect/decal/cleanable/debris/stony(get_turf(src))
 			playsound(src.loc, pick('sound/combat/hits/onrock/onrock (1).ogg', 'sound/combat/hits/onrock/onrock (2).ogg', 'sound/combat/hits/onrock/onrock (3).ogg', 'sound/combat/hits/onrock/onrock (4).ogg'), 100)
 			user.mind.add_sleep_experience(/datum/skill/craft/masonry, (user.STAINT*0.5))
@@ -474,7 +479,7 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 	mineralType = /obj/item/rogueore/coal
 
 /obj/item/natural/rock/elementalmote
-	mineralType = /obj/item/magic/elementalmote
+	mineralType = /obj/item/magic/elemental/mote
 
 /obj/item/natural/rock/cinnabar
 	mineralType = /obj/item/rogueore/cinnabar
@@ -559,14 +564,15 @@ GLOBAL_LIST_INIT(stone_personality_descs, list(
 
 /obj/structure/roguerock/attackby(obj/item/W, mob/living/user, params)
 	. = ..()
+	var/stonetotal = 4
+	if(HAS_TRAIT(user, TRAIT_MASTER_MASON)) //double the amount for any in a stone worker role
+		stonetotal += stonetotal
 	if( user.used_intent.type == /datum/intent/chisel )
 		playsound(src.loc, pick('sound/combat/hits/onrock/onrock (1).ogg', 'sound/combat/hits/onrock/onrock (2).ogg', 'sound/combat/hits/onrock/onrock (3).ogg', 'sound/combat/hits/onrock/onrock (4).ogg'), 100)
 		user.visible_message("<span class='info'>[user] chisels the rock into blocks.</span>")
 		if(do_after(user, 10 SECONDS))
-			new /obj/item/natural/stoneblock(get_turf(src.loc))
-			new /obj/item/natural/stoneblock(get_turf(src.loc))
-			new /obj/item/natural/stoneblock(get_turf(src.loc))
-			new /obj/item/natural/stoneblock(get_turf(src.loc))
+			for(var/i=1, i<=stonetotal, ++i)
+				new /obj/item/natural/stoneblock(get_turf(src.loc))
 			new /obj/effect/decal/cleanable/debris/stony(get_turf(src))
 			playsound(src.loc, pick('sound/combat/hits/onrock/onrock (1).ogg', 'sound/combat/hits/onrock/onrock (2).ogg', 'sound/combat/hits/onrock/onrock (3).ogg', 'sound/combat/hits/onrock/onrock (4).ogg'), 100)
 			user.mind.add_sleep_experience(/datum/skill/craft/masonry, (user.STAINT*1))

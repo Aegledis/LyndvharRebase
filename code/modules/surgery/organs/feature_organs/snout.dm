@@ -9,6 +9,12 @@
 /obj/item/organ/snout/beak
 	name = "beak"
 
+/obj/item/organ/snout/beak/rhaeteian
+	name = "rhaeteian beak"
+
+/obj/item/organ/snout/capridae
+	name = "capridae snout"
+
 /obj/item/organ/snout/vox
 	name = "large beak"
 
@@ -19,7 +25,7 @@
 	name = "lupian snout"
 
 /obj/item/organ/snout/lizard
-	name = "zardman snout"
+	name = "eskallian snout"
 
 /obj/item/organ/snout/vulpkanin
 	name = "venardine snout"
@@ -37,3 +43,6 @@
 /obj/item/organ/snout/akula
 	name = "axian snout"
 	accessory_type = /datum/sprite_accessory/snout/sergal
+
+/obj/item/organ/snout/lizard/psy_vault_guard
+	accessory_type = /datum/sprite_accessory/snout/round

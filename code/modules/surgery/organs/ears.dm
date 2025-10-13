@@ -152,6 +152,9 @@
 /obj/item/organ/ears/lupian
 	name = "lupian ears"
 
+/obj/item/organ/ears/capridae
+	name = "capridae ears"
+
 /obj/item/organ/ears/vulpkanin
 	name = "venardine ears"
 	accessory_type = /datum/sprite_accessory/ears/fox
@@ -182,3 +185,7 @@
 /obj/item/organ/ears/goblin
 	name = "goblin ears"
 	accessory_type = /datum/sprite_accessory/ears/goblin
+
+/obj/item/organ/ears/psy_vault_guard
+	name = "cobra hood"
+	accessory_type = /datum/sprite_accessory/ears/cobrahood

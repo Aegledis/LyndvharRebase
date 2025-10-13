@@ -113,18 +113,18 @@
 	reagents.add_reagent(/datum/reagent/consumable/ethanol/kgunsake,900)
 
 
-/obj/structure/fermentation_keg/avarrice
-	desc = "A bottle with a simple cork-seal. A murky, white wine made from rice grown in the plantations of Greencrest."
+/obj/structure/fermentation_keg/okalbergrice
+	desc = "A bottle with a simple cork-seal. A murky, white wine made from rice grown in the plantations of the Okalberg mountains."
 
-/obj/structure/fermentation_keg/avarrice/Initialize()
+/obj/structure/fermentation_keg/okalbergrice/Initialize()
 	. = ..()
-	reagents.add_reagent(/datum/reagent/consumable/ethanol/avarrice,900)
+	reagents.add_reagent(/datum/reagent/consumable/ethanol/okalbergrice,900)
 
 
-/obj/structure/fermentation_keg/gronmead
+/obj/structure/fermentation_keg/rhaenvalianmead
 	desc = "A bottle with a Shieldmaiden Berewrey cork-seal. A deep red honey-wine, refined with the red berries native to far northern Rhaenvalian highlands."
 
-/obj/structure/fermentation_keg/gronmead/Initialize()
+/obj/structure/fermentation_keg/rhaenvalianmead/Initialize()
 	. = ..()
 	reagents.add_reagent(/datum/reagent/consumable/ethanol/rhaenvalianmead,900)
 

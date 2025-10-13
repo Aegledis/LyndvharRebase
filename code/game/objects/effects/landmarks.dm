@@ -125,6 +125,12 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	jobspawn_override = list("Mercenary")
 	delete_after_roundstart = FALSE
 
+/obj/effect/landmark/start/druidlate
+	name = "Druidlate"
+	icon_state = "arrow"
+	jobspawn_override = list("Druid")
+	delete_after_roundstart = FALSE
+
 /obj/effect/landmark/start/villagerlate
 	name = "Townerlate"
 	icon_state = "arrow"
@@ -135,7 +141,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Viscount"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/Cataphract
+/obj/effect/landmark/start/cataphract
 	name = "Cataphract"
 	icon_state = "arrow"
 
@@ -308,10 +314,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Soilson"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/beastmonger
-	name = "Butcher"
-	icon_state = "arrow"
-
 /obj/effect/landmark/start/cook
 	name = "Cook"
 	icon_state = "arrow"
@@ -341,7 +343,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/prince
-	name = "Prince"
+	name = "Heir"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/prisonerr
@@ -403,11 +405,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/wapprentice
-	name = "Magicians Apprentice"
+	name = "Magus Apprentice"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/apothecary
 	name = "Apothecary"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/beastmonger
+	name = "Butcher"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/servant

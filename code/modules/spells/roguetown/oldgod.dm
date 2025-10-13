@@ -9,7 +9,7 @@
 	desc = "Bleed for the target, taking their wounds and refilling their blood level."
 	movement_interrupt = FALSE
 	sound = 'sound/magic/psydonbleeds.ogg'
-	invocation = "I BLEED, SO THAT YOU MIGHT ENDURE!"
+	invocations = list("I BLEED, SO THAT YOU MIGHT ENDURE!")
 	invocation_type = "shout"
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = FALSE
@@ -99,8 +99,6 @@
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	sound = null
-	invocation = ". . ."
-	invocation_type = "none"
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = FALSE
 	recharge_time = 5 SECONDS
@@ -123,7 +121,7 @@
 	var/psicross_bonus = 0
 
 	for(var/obj/item/clothing/neck/current_item in H.get_equipped_items(TRUE))
-		if(current_item.type in list(/obj/item/clothing/neck/roguetown/zcross/aalloy, /obj/item/clothing/neck/roguetown/psicross, /obj/item/clothing/neck/roguetown/psicross/wood, /obj/item/clothing/neck/roguetown/psicross/aalloy, /obj/item/clothing/neck/roguetown/psicross/silver, /obj/item/clothing/neck/roguetown/psicross/g))
+		if(current_item.type in list(/obj/item/clothing/neck/roguetown/psicross/inhumen/aalloy, /obj/item/clothing/neck/roguetown/psicross, /obj/item/clothing/neck/roguetown/psicross/wood, /obj/item/clothing/neck/roguetown/psicross/aalloy, /obj/item/clothing/neck/roguetown/psicross/silver, /obj/item/clothing/neck/roguetown/psicross/g))
 			switch(current_item.type) // Worn Psicross Piety bonus. For fun.
 				if(/obj/item/clothing/neck/roguetown/psicross/wood)
 					psicross_bonus = -2				
@@ -135,7 +133,7 @@
 					psicross_bonus = -7
 				if(/obj/item/clothing/neck/roguetown/psicross/g) // PURITY AFLOAT.
 					psicross_bonus = -7
-				if(/obj/item/clothing/neck/roguetown/zcross/aalloy)
+				if(/obj/item/clothing/neck/roguetown/psicross/inhumen/aalloy)
 					zcross_trigger = TRUE		
 	if(brute > 100)
 		sit_bonus1 = -2
@@ -204,8 +202,6 @@
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	sound = null
-	invocation = ". . ."
-	invocation_type = "none"
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = FALSE
 	recharge_time = 5 SECONDS
@@ -228,7 +224,7 @@
 	var/psicross_bonus = 0
 
 	for(var/obj/item/clothing/neck/current_item in H.get_equipped_items(TRUE))
-		if(current_item.type in list(/obj/item/clothing/neck/roguetown/zcross/aalloy, /obj/item/clothing/neck/roguetown/psicross, /obj/item/clothing/neck/roguetown/psicross/wood, /obj/item/clothing/neck/roguetown/psicross/aalloy, /obj/item/clothing/neck/roguetown/psicross/silver, /obj/item/clothing/neck/roguetown/psicross/g))
+		if(current_item.type in list(/obj/item/clothing/neck/roguetown/psicross/inhumen/aalloy, /obj/item/clothing/neck/roguetown/psicross, /obj/item/clothing/neck/roguetown/psicross/wood, /obj/item/clothing/neck/roguetown/psicross/aalloy, /obj/item/clothing/neck/roguetown/psicross/silver, /obj/item/clothing/neck/roguetown/psicross/g))
 			switch(current_item.type) // Worn Psicross Piety bonus. For fun.
 				if(/obj/item/clothing/neck/roguetown/psicross/wood)
 					psicross_bonus = -2				
@@ -240,7 +236,7 @@
 					psicross_bonus = -7
 				if(/obj/item/clothing/neck/roguetown/psicross/g) // PURITY AFLOAT.
 					psicross_bonus = -7
-				if(/obj/item/clothing/neck/roguetown/zcross/aalloy)
+				if(/obj/item/clothing/neck/roguetown/psicross/inhumen/aalloy)
 					zcross_trigger = TRUE		
 	if(brute > 100)
 		sit_bonus1 = -2
@@ -309,7 +305,7 @@
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	sound = 'sound/magic/psyabsolution.ogg'
-	invocation = "BE ABSOLVED!"
+	invocations = list("BE ABSOLVED!")
 	invocation_type = "shout"
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = FALSE
@@ -367,7 +363,7 @@
 			H.emote("breathgasp")
 			H.Jitter(100)
 			H.update_body()
-			GLOB.azure_round_stats[STATS_LUX_REVIVALS]++
+			record_round_statistic(STATS_LUX_REVIVALS)
 			ADD_TRAIT(H, TRAIT_IWASREVIVED, "[type]")
 			H.apply_status_effect(/datum/status_effect/buff/psyvived)
 			user.apply_status_effect(/datum/status_effect/buff/psyvived)

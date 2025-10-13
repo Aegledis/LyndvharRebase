@@ -187,13 +187,6 @@
 	icon_state ="scrollpurple"
 	remarks = list("Returnus Revico..", "Manus de reverti..", "Menus de returnus..")
 
-/obj/item/book/granter/spell/blackstone/blindness
-	name = "Scroll of Blindness"
-	spell = /obj/effect/proc_holder/spell/invoked/blindness
-	spellname = "blindness"
-	icon_state ="scrollpurple"
-	remarks = list("Occultare oculos..", "Vivus amoevtar..", "Visioner removan..")
-
 /obj/item/book/granter/spell/blackstone/invisibility
 	name = "Scroll of Invisibility"
 	spell = /obj/effect/proc_holder/spell/invoked/invisibility
@@ -257,7 +250,7 @@
 	spellname = "Aerosolize"
 	icon_state ="scrolldarkred"
 	remarks = list("Lapides corrodunt..", "Spuma venenosa..", "Guttae flavescentes..")
-	
+
 
 /obj/item/book/granter/spell/blackstone/guidance
 	name = "Scroll of Guidance"
@@ -330,12 +323,13 @@
 	oneuse = TRUE
 	drop_sound = 'sound/foley/dropsound/paper_drop.ogg'
 	pickup_sound =  'sound/blank.ogg'
+	var/spellpoints = 3
 
 /obj/item/book/granter/spell_points/on_reading_finished(mob/user)
 	var/arcaneskill = user.get_skill_level(/datum/skill/magic/arcane)
 	if(arcaneskill >= SKILL_LEVEL_NOVICE) //Required arcane skill of NOVICE or higher to use the granter
 		to_chat(user, span_notice("I absorb the insights on the scroll, and feel more adept at spellcraft!"))
-		user.mind.adjust_spellpoints(3)
+		user.mind.adjust_spellpoints(spellpoints)
 		onlearned(user)
 	else
 		to_chat(user, span_notice("I don't know what to make of this."))
@@ -347,3 +341,7 @@
 		desc = "A scroll once inscribed with magical scripture. The surface is now barren of knowledge, siphoned by someone else. It's utterly useless."
 		icon_state = "scroll"
 		user.visible_message(span_warning("[src] has had its magic ink ripped from the scroll!"))
+
+/obj/item/book/granter/spell_points/voiddragon
+	name = "Arcyne Void Insight"
+	spellpoints = 6

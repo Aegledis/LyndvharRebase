@@ -36,18 +36,11 @@
 		/datum/sprite_accessory/wings/wide/spider,
 		/datum/sprite_accessory/wings/huge/dragon,
 		/datum/sprite_accessory/wings/large/harpyswept,
-		)
-
-/datum/customizer/organ/wings/moth
-	name = "Fluvian Wings"
-	allows_disabling = TRUE
-	default_disabled = FALSE
-	customizer_choices = list(/datum/customizer_choice/organ/wings/moth)
-
-/datum/customizer_choice/organ/wings/moth
-	name = "Fluvian Wings"
-	organ_type = /obj/item/organ/wings/moth
-	sprite_accessories = list(
+		/datum/sprite_accessory/wings/large/harpyswept_alt,
+		/datum/sprite_accessory/wings/large/harpyfluff,
+		/datum/sprite_accessory/wings/large/harpyfolded,
+		/datum/sprite_accessory/wings/large/harpyowl,
+		/datum/sprite_accessory/wings/large/harpybat_alt,
 		/datum/sprite_accessory/wings/moth/plain,
 		/datum/sprite_accessory/wings/moth/monarch,
 		/datum/sprite_accessory/wings/moth/luna,
@@ -75,8 +68,31 @@
 
 /datum/customizer/organ/wings/dracon
 	customizer_choices = list(/datum/customizer_choice/organ/wings/dracon)
+	allows_disabling = TRUE
+	default_disabled = FALSE
+
+/datum/customizer/organ/wings/rhaeteian
+	customizer_choices = list(/datum/customizer_choice/organ/wings/rhaeteian)
 	allows_disabling = FALSE
 	default_disabled = FALSE
+
+/datum/customizer_choice/organ/wings/rhaeteian
+	name = "Rhaeteian Wings"
+	organ_type = /obj/item/organ/wings/rhaeteian
+	sprite_accessories = list(
+		/datum/sprite_accessory/wings/large/harpyswept,
+		/datum/sprite_accessory/wings/large/harpyswept_alt,
+		/datum/sprite_accessory/wings/large/harpyfluff,
+		/datum/sprite_accessory/wings/large/harpyfolded,
+		/datum/sprite_accessory/wings/large/harpyowl,
+		/datum/sprite_accessory/wings/wide/harpywings,
+		/datum/sprite_accessory/wings/wide/harpywingsalt1,
+		/datum/sprite_accessory/wings/wide/harpywings_top,
+		/datum/sprite_accessory/wings/wide/harpywingsalt1_top,
+		/datum/sprite_accessory/wings/wide/low_wings,
+		/datum/sprite_accessory/wings/wide/low_wings_top,
+		)
+
 
 /datum/customizer_choice/organ/wings/dracon
 	name = "Drake Wings"

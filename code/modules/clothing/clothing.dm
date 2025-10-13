@@ -247,21 +247,15 @@
 	foodtype = CLOTH
 
 /obj/item/clothing/attack(mob/living/M, mob/living/user, def_zone)
-	if(user.used_intent.type != INTENT_HARM && ismoth(M))
-		var/obj/item/reagent_containers/food/snacks/clothing/clothing_as_food = new
-		clothing_as_food.name = name
-		if(clothing_as_food.attack(M, user, def_zone))
-			take_damage(15, sound_effect=FALSE)
-		qdel(clothing_as_food)
-	else if(M.on_fire)
+	if(M.on_fire)
 		if(user == M)
 			return
 		user.changeNext_move(CLICK_CD_MELEE)
 		M.visible_message(span_warning("[user] pats out the flames on [M] with [src]!"))
-		if(M.divine_fire_stacks > 0)
-			M.adjust_divine_fire_stacks(-2)
-		if(M.fire_stacks > 0)
-			M.adjust_fire_stacks(-2)
+		M.adjust_fire_stacks(-2, /datum/status_effect/fire_handler/fire_stacks/divine)
+		M.adjust_fire_stacks(-2)
+		M.adjust_fire_stacks(-2, /datum/status_effect/fire_handler/fire_stacks/sunder)
+		M.adjust_fire_stacks(-2, /datum/status_effect/fire_handler/fire_stacks/sunder/blessed)
 		take_damage(10, BURN, "fire")
 	else
 		return ..()
@@ -508,3 +502,24 @@ BLIND     // can't see anything
 		if(!user.incapacitated())
 			return 1
 	return 0
+
+/obj/item/clothing/take_damage(damage_amount, damage_type = BRUTE, damage_flag, sound_effect, attack_dir, armor_penetration)
+	var/newdam = run_obj_armor(damage_amount, damage_type, damage_flag, attack_dir, armor_penetration)
+	var/eff_maxint = max_integrity - (max_integrity * integrity_failure)
+	var/eff_currint = max(obj_integrity - (max_integrity * integrity_failure), 0)
+	var/ratio =	(eff_currint / eff_maxint)
+	var/ratio_newinteg = (eff_currint - newdam) / eff_maxint
+	var/text
+	var/y_offset
+	if(ratio > 0.75 && ratio_newinteg < 0.75)
+		text = "Armor <br><font color = '#8aaa4d'>marred</font>"
+		y_offset = -5
+	if(ratio > 0.5 && ratio_newinteg < 0.5)
+		text = "Armor <br><font color = '#d4d36c'>damaged</font>"
+		y_offset = 15
+	if(ratio > 0.25 && ratio_newinteg < 0.25)
+		text = "Armor <br><font color = '#a8705a'>sundered</font>"
+		y_offset = 30
+	if(text)
+		filtered_balloon_alert(TRAIT_COMBAT_AWARE, text, -20, y_offset)
+	. = ..()

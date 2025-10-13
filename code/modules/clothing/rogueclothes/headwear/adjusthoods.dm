@@ -60,7 +60,7 @@
 	color = "#b8252c"
 	icon_state = "shalal"
 	item_state = "shalal"
-	flags_inv = HIDEHAIR|HIDEFACIALHAIR|HIDEFACE|HIDEEARS
+	flags_inv = HIDEHAIR|HIDEFACIALHAIR|HIDEFACE|HIDEEARS|HIDESNOUT
 	sleevetype = null
 	sleeved = null
 	icon = 'icons/roguetown/clothing/head.dmi'
@@ -82,6 +82,9 @@
 
 /obj/item/clothing/head/roguetown/roguehood/shalal/black
 	color = CLOTHING_BLACK
+
+/obj/item/clothing/head/roguetown/roguehood/shalal/purple
+	color = CLOTHING_PURPLE
 
 /obj/item/clothing/head/roguetown/roguehood/shalal/hijab
 	name = "hijab"
@@ -110,6 +113,11 @@
 	icon_state = "heavyhood"
 	hidesnoutADJ = FALSE
 
+/obj/item/clothing/head/roguetown/roguehood/shalal/hijab/amsalja
+	name = "shadowed hood"
+	desc = "It sits just so, obscuring the face just enough to spoil recognition."
+	color = CLOTHING_BLACK
+
 // Holy Hoods
 
 /obj/item/clothing/head/roguetown/roguehood/astrata
@@ -126,6 +134,7 @@
 	adjustable = CAN_CADJUST
 	toggle_icon_state = TRUE
 	max_integrity = 100
+	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/head/roguetown/roguehood/abyssor
 	name = "depths hood"

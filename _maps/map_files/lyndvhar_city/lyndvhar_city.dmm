@@ -19211,7 +19211,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/town/keep)
 "mFW" = (
-/obj/structure/closet/crate/chest/crafted,
+/obj/structure/closet/crate/chest/neu,
 /obj/machinery/light/rogue/wallfire/candle/weak/r,
 /obj/item/reagent_containers/food/snacks/rogue/crackerscooked,
 /obj/item/reagent_containers/glass/bottle/waterskin,

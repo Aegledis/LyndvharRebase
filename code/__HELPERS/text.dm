@@ -9,6 +9,33 @@
  */
 
 
+/// Standard maptext
+/// Prepares a text to be used for maptext. Use this so it doesn't look hideous.
+#define MAPTEXT(text) {"<span class='maptext'>[##text]</span>"}
+
+
+/**
+ * Pixel-perfect scaled fonts for use in the MAP element as defined in skin.dmf
+ *
+ * Four sizes to choose from, use the sizes as mentioned below.
+ * Between the variations and a step there should be an option that fits your use case.
+ * BYOND uses pt sizing, different than px used in TGUI. Using px will make it look blurry due to poor antialiasing.
+ *
+ * Default sizes are prefilled in the macro for ease of use and a consistent visual look.
+ * To use a step other than the default in the macro, specify it in a span style.
+ * For example: MAPTEXT_PIXELLARI("<span style='font-size: 24pt'>Some large maptext here</span>")
+ */
+/// Large size (ie: context tooltips) - Size options: 12pt 24pt.
+#define MAPTEXT_PIXELLARI(text) {"<span style='font-family: \"Pixellari\"; font-size: 12pt; -dm-text-outline: 1px black'>[##text]</span>"}
+
+/// Standard size (ie: normal runechat) - Size options: 6pt 12pt 18pt.
+#define MAPTEXT_GRAND9K(text) {"<span style='font-family: \"Grand9K Pixel\"; font-size: 6pt; -dm-text-outline: 1px black'>[##text]</span>"}
+
+/// Small size. (ie: context subtooltips, spell delays) - Size options: 12pt 24pt.
+#define MAPTEXT_TINY_UNICODE(text) {"<span style='font-family: \"TinyUnicode\"; font-size: 12pt; line-height: 0.75; -dm-text-outline: 1px black'>[##text]</span>"}
+
+/// Smallest size. (ie: whisper runechat) - Size options: 6pt 12pt 18pt.
+#define MAPTEXT_SPESSFONT(text) {"<span style='font-family: \"Spess Font\"; font-size: 6pt; line-height: 1.4; -dm-text-outline: 1px black'>[##text]</span>"}
 
 /proc/format_table_name(table as text)
 	return CONFIG_GET(string/feedback_tableprefix) + table
@@ -80,6 +107,12 @@
 /proc/adminscrub(t,limit=MAX_MESSAGE_LEN)
 	return copytext((html_encode(strip_html_simple(t))),1,limit)
 
+/proc/remove_color_tags(html_text)
+    var/output = html_text
+    output = replacetext(output, regex("<font\[^>\]*color=\[^>\]*>", "g"), "")
+    output = replacetext(output, "</font>", "")
+    output = replacetext(output, regex("color=\[^ >\]*", "g"), "")
+    return output
 
 //Returns null if there is any bad text in the string
 /proc/reject_bad_text(text, max_length=512)
@@ -100,6 +133,12 @@
 				non_whitespace = 1
 	if(non_whitespace)
 		return text		//only accepts the text if it has some non-spaces
+
+/**
+ * stuff like `copytext(input, length(input))` will trim the last character of the input,
+ * because DM does it so it copies until the char BEFORE the `end` arg, so we need to bump `end` by 1 in these cases.
+ */
+#define PREVENT_CHARACTER_TRIM_LOSS(integer) (integer + 1) //thank you gummie
 
 // Used to get a properly sanitized input, of max_length
 // no_trim is self explanatory but it prevents the input from being trimed if you intend to parse newlines or whitespace.
@@ -279,7 +318,7 @@
 /proc/trim(text, max_length)
 	if(max_length)
 		text = copytext(text, 1, max_length)
-	return trim_left(trim_right(text))
+	return trimtext(text) || ""
 
 //Returns a string with the first element of the string capitalized.
 /proc/capitalize(t as text)
@@ -881,3 +920,7 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 /proc/sanitize_css_class_name(name)
 	var/static/regex/regex = new(@"[^a-zA-Z0-9]","g")
 	return replacetext(name, regex, "")
+
+/proc/endswith(input_text, ending)
+	var/input_length = LAZYLEN(ending)
+	return !!findtext(input_text, ending, -input_length)

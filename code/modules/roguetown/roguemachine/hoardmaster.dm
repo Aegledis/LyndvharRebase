@@ -18,25 +18,25 @@
 	var/namechance = rand(1,6)
 	switch(namechance)
 		if(1)
-			name = "Hoardmaster Skyblue"
+			name = "GILDWYRM"
 		if(2)
-			name = "Hoardmaster Thea"
+			name = "GILDWYRM"
 		if(3)
-			name = "Hoardmaster Radagon"
+			name = "GILDWYRM"
 		if(4)
-			name = "Hoardmaster Shiver"
+			name = "GILDWYRM"
 		if(5)
-			name = "Hoardmaster Deathbringer"
+			name = "GILDWYRM"
 		if(6)
-			name = "Hoardmaster Darkstalker"
+			name = "GILDWYRM"
 
 /obj/structure/roguemachine/Hoardmaster/examine(mob/user)
 	. = ..()
 	if(user.mind?.has_antag_datum(/datum/antagonist/bandit))
-		. += "Formerly a covetous creature, this one now shares its Hoard with the Freefolk. Protecting the transactor's Hoard, and trading it for Favor."
+		. += "A statue depicting Gildwyrm, a beast of Matthiosite creation that served as the mount for the physical form of Matthios during the Bloodwake. It radiates an aura of dread and power."
 		return
 	else
-		. += "Some mean looking statue of a dragon. Something about it makes me uneasy, like its eyes are following me."
+		. += "Some mean looking statue of a.. dragon? Drake? You do not know what this symbolizes. Something about it makes me uneasy, like its eyes are following me. Everytime I look at it my spine shivers.."
 		return
 
 /obj/structure/roguemachine/Hoardmaster/Topic(href, href_list)
@@ -83,7 +83,7 @@
 		return
 	user.changeNext_move(CLICK_CD_INTENTCAP)
 	var/contents
-	contents = "<center>Wishes for the Free<BR>"
+	contents = "<center>MATTHIOSITE BLESSINGS<BR>"
 	contents += "<a href='?src=[REF(src)];change=1'>Your favor:</a> [B.favor]<BR>"
 
 

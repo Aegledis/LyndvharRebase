@@ -182,7 +182,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/cave/dungeon1)
 "dq" = (
-/obj/structure/closet/crate/chest/crafted,
+/obj/structure/closet/crate/chest/neu,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/misc,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/misc,
 /turf/open/floor/rogue/blocks,
@@ -202,7 +202,7 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cave/dungeon1)
 "el" = (
-/obj/structure/closet/crate/chest/crafted,
+/obj/structure/closet/crate/chest/neu,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/misc,
 /turf/open/floor/rogue/blocks,
@@ -435,7 +435,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/cave/dungeon1)
 "lj" = (
-/obj/structure/closet/crate/chest/crafted,
+/obj/structure/closet/crate/chest/neu,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/clothing,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/clothing,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/clothing,
@@ -629,7 +629,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/cave/dungeon1)
 "pa" = (
-/obj/structure/closet/crate/chest/crafted,
+/obj/structure/closet/crate/chest/neu,
 /obj/effect/spawner/lootdrop/roguetown/dungeon,
 /obj/effect/spawner/lootdrop/roguetown/dungeon,
 /turf/open/floor/rogue/blocks,
@@ -843,7 +843,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/under/cave/dungeon1)
 "tS" = (
-/obj/structure/closet/crate/chest/crafted,
+/obj/structure/closet/crate/chest/neu,
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/clothing,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/clothing,
@@ -999,7 +999,7 @@
 /area/rogue/under/cave/dungeon1)
 "wG" = (
 /obj/item/grown/log/tree/stick,
-/obj/structure/closet/crate/chest/crafted,
+/obj/structure/closet/crate/chest/neu,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/materials,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/cave/dungeon1)
@@ -1419,7 +1419,7 @@
 /obj/item/grown/log/tree/stick,
 /obj/item/grown/log/tree/stick,
 /obj/item/grown/log/tree/stick,
-/obj/structure/closet/crate/chest/crafted,
+/obj/structure/closet/crate/chest/neu,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/cave/dungeon1)
 "EW" = (
@@ -1550,7 +1550,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/cave/dungeon1)
 "HR" = (
-/obj/structure/closet/crate/chest/crafted,
+/obj/structure/closet/crate/chest/neu,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/cave/dungeon1)
 "Ij" = (
@@ -1875,7 +1875,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/cave/dungeon1)
 "PB" = (
-/obj/structure/closet/crate/chest/crafted,
+/obj/structure/closet/crate/chest/neu,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/clothing,
 /obj/effect/spawner/lootdrop/roguetown/dungeon/clothing,
 /turf/open/floor/rogue/blocks,

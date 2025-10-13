@@ -24,6 +24,7 @@
 				new /datum/ambush_config/mirespiders_unfair = 5)
 	first_time_text = "THE TERRORBOG"
 	converted_type = /area/rogue/indoors/shelter/bog
+	threat_region = THREAT_REGION_TERRORBOG
 	deathsight_message = "a wretched, fetid bog"
 
 /area/rogue/indoors/shelter/bog
@@ -31,6 +32,7 @@
 	droning_sound = 'sound/music/area/bog.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
+	deathsight_message = "a wretched, fetid bog"
 
 /area/rogue/outdoors/bog/north
 	name = "Northern Terrorbog"

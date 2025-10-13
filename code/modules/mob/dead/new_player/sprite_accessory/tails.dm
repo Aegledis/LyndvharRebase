@@ -127,6 +127,7 @@
 /datum/sprite_accessory/tail/horse
 	name = "Horse"
 	icon_state = "horse"
+	can_wag = TRUE
 
 /datum/sprite_accessory/tail/husky
 	name = "Husky"
@@ -168,7 +169,7 @@
 	can_wag = TRUE
 
 /datum/sprite_accessory/tail/rabbit
-	name = "Rabbit"
+	name = "Tuft"
 	icon_state = "rabbit"
 	can_wag = TRUE
 
@@ -295,7 +296,7 @@
 	can_wag = TRUE
 
 /datum/sprite_accessory/tail/deer
-	name = "Deer"
+	name = "Tuft 2"
 	icon_state = "deer"
 	color_keys = 2
 	color_key_names = list("Tail", "Inner")
@@ -359,6 +360,11 @@
 	color_key_names = list("Tail", "Tip")
 	can_wag = TRUE
 
+/datum/sprite_accessory/tail/pinecone
+	name = "Pinecone"
+	icon_state = "expi"
+	color_keys = 2
+	color_key_names = list("Upper", "Tip")
 /datum/sprite_accessory/tail/lynx
 	name = "Lynx"
 	icon_state = "lynx"
@@ -368,3 +374,15 @@
 /datum/sprite_accessory/tail/owl
 	name = "Owl"
 	icon_state = "owl"
+
+/datum/sprite_accessory/tail/forked_long
+	name = "Forked Long"
+	icon_state = "forked_long"
+
+/datum/sprite_accessory/tail/haven
+	name = "Haven"
+	icon_state = "haven"
+
+/datum/sprite_accessory/tail/swallow
+	name = "Swallow"
+	icon_state = "swallow"

@@ -14,7 +14,6 @@
 	a_intent = INTENT_HELP
 	d_intent = INTENT_PARRY
 	possible_mmb_intents = list(INTENT_STEAL, INTENT_JUMP, INTENT_KICK, INTENT_BITE)
-	possible_rmb_intents = list(/datum/rmb_intent/feint, /datum/rmb_intent/aimed, /datum/rmb_intent/weak)
 	cmode_music = 'sound/music/combat_weird.ogg'
 
 /mob/living/carbon/human/species/skeleton/npc
@@ -41,6 +40,40 @@
 		src.dna.species.species_traits |= NOBLOOD
 		src.dna.species.soundpack_m = new /datum/voicepack/skeleton()
 		src.dna.species.soundpack_f = new /datum/voicepack/skeleton()
+	if(src.charflaw)
+		QDEL_NULL(src.charflaw)
+	faction = list("undead")
+	name = "Skeleton"
+	real_name = "Skeleton"
+	voice_type = VOICE_TYPE_MASC //So that "Unknown Man" properly substitutes in with face cover
+	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_BREADY, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_EASYDISMEMBER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOBREATH, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOPAIN, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_TOXIMMUNE, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_LEECHIMMUNE, INNATE_TRAIT)
+	ADD_TRAIT(src, TRAIT_LIMBATTACHMENT, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_SILVER_WEAK, TRAIT_GENERIC)
+	if(skel_fragile)
+		ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
+	else
+		ADD_TRAIT(src, TRAIT_SELF_SUSTENANCE, TRAIT_GENERIC) // If not fragile, then you're summoned by a real antag
+		// Therefore you get the trait to grind up to Jman.
+	skeletonize()
+	if(skel_outfit)
+		var/datum/outfit/OU = new skel_outfit
+		if(OU)
+			equipOutfit(OU)
+
+/mob/living/carbon/human/species/skeleton/fully_heal(admin_revive)
+	. = ..()
+	skeletonize()
+
+/mob/living/carbon/human/species/skeleton/proc/skeletonize()
+	mob_biotypes |= MOB_UNDEAD
 	var/obj/item/bodypart/O = src.get_bodypart(BODY_ZONE_R_ARM)
 	if(O)
 		O.drop_limb()
@@ -51,27 +84,6 @@
 		qdel(O)
 	src.regenerate_limb(BODY_ZONE_R_ARM)
 	src.regenerate_limb(BODY_ZONE_L_ARM)
-	if(src.charflaw)
-		QDEL_NULL(src.charflaw)
-	mob_biotypes |= MOB_UNDEAD
-	faction = list("undead")
-	name = "Skeleton"
-	real_name = "Skeleton"
-	voice_type = VOICE_TYPE_MASC //So that "Unknown Man" properly substitutes in with face cover
-	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_INFINITE_ENERGY, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_EASYDISMEMBER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOBREATH, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOPAIN, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_TOXIMMUNE, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_LEECHIMMUNE, INNATE_TRAIT)
-	ADD_TRAIT(src, TRAIT_LIMBATTACHMENT, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	if(skel_fragile)
-		ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
-	else
-		ADD_TRAIT(src, TRAIT_INFINITE_STAMINA, TRAIT_GENERIC) // Not touching lich balance in a fix PR - for now
 	var/obj/item/organ/eyes/eyes = src.getorganslot(ORGAN_SLOT_EYES)
 	if(eyes)
 		eyes.Remove(src,1)
@@ -81,10 +93,6 @@
 	for(var/obj/item/bodypart/B in src.bodyparts)
 		B.skeletonize(FALSE)
 	update_body()
-	if(skel_outfit)
-		var/datum/outfit/OU = new skel_outfit
-		if(OU)
-			equipOutfit(OU)
 
 /mob/living/carbon/human/species/skeleton/npc/no_equipment
     skel_outfit = null
@@ -99,8 +107,8 @@
 	..()
 	if(prob(50))//WRIST
 		wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	if(prob(10))//ARMOUR
-		armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
+	if(prob(25))//ARMOUR
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/studded/warden
 	if(prob(50))//SHIRT
 		shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/light
 		if(prob(15))
@@ -108,29 +116,30 @@
 			if(prob(15))
 				shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 	if(prob(50))//PANTS
-		pants = /obj/item/clothing/under/roguetown/tights/vagrant
+		pants = /obj/item/clothing/under/roguetown/trou/leather
 		if(prob(25))
 			pants = /obj/item/clothing/under/roguetown/chainlegs/iron
 			if(prob(25))
-				pants = /obj/item/clothing/under/roguetown/heavy_leather_pants
+				pants = /obj/item/clothing/under/roguetown/splintlegs/iron
 	if(prob(50))//HEAD
-		head = /obj/item/clothing/neck/roguetown/coif
+		head = /obj/item/clothing/head/roguetown/helmet/sallet/iron
 		if(prob(30))
-			head = /obj/item/clothing/head/roguetown/helmet/kettle
+			head = /obj/item/clothing/head/roguetown/helmet/kettle/iron
 	if(prob(50))
-		neck= /obj/item/clothing/neck/roguetown/chaincoif
+		neck= /obj/item/clothing/neck/roguetown/chaincoif/iron
 	if(prob(50))//CLOAK
 		cloak = /obj/item/clothing/cloak/stabard/bog
-	if(prob(45))//HANDS
-		r_hand = /obj/item/rogueweapon/sword
-		if(prob(45))
+	switch(rand(1, 3))
+		if(1)
+			r_hand = /obj/item/rogueweapon/sword/iron
+		if(2)
 			r_hand = /obj/item/rogueweapon/spear
-			if(prob(10))
-				r_hand = /obj/item/rogueweapon/mace
-	H.STASTR = rand(15,16)
+		if(3)
+			r_hand = /obj/item/rogueweapon/mace
+	H.STASTR = rand(12,14)
 	H.STASPD = 8
 	H.STACON = 4
-	H.STAEND = 15
+	H.STAWIL = 15
 	H.STAINT = 1
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	H.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
@@ -144,20 +153,21 @@
 
 /datum/outfit/job/roguetown/npc/skeleton/npc/bogguard/master/pre_equip(mob/living/carbon/human/H)
 	. = ..()
-	head = /obj/item/clothing/head/roguetown/helmet/bascinet/pigface/hounskull
-	gloves = /obj/item/clothing/gloves/roguetown/plate
+	head = /obj/item/clothing/head/roguetown/helmet/sallet/warden/bear
+	mask = /obj/item/clothing/head/roguetown/roguehood/warden/antler
+	gloves = /obj/item/clothing/gloves/roguetown/plate/iron
 	pants = /obj/item/clothing/under/roguetown/chainlegs/iron
-	cloak = /obj/item/clothing/cloak/stabard/bog
-	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	cloak = /obj/item/clothing/cloak/wardencloak
+	neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
-	armor = /obj/item/clothing/suit/roguetown/armor/plate/scale
-	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded/warden/upgraded
+	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/iron
 	belt = /obj/item/storage/belt/rogue/leather
-	r_hand = /obj/item/rogueweapon/halberd
+	r_hand = /obj/item/rogueweapon/greataxe/steel/doublehead
 	H.STASTR = 18
 	H.STASPD = 10
 	H.STACON = 10
-	H.STAEND = 16
+	H.STAWIL = 16
 	H.STAINT = 1
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)

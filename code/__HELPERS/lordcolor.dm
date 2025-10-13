@@ -18,15 +18,14 @@ GLOBAL_VAR(lordsecondary)
 
 /mob/proc/lord_color_choice()
 	if(!client)
-		addtimer(CALLBACK(src, PROC_REF(lord_color_choice)), 50)
+		addtimer(CALLBACK(src, PROC_REF(lord_color_choice)), 5 SECONDS)
 		return
 	var/prim
 	var/sec
-	var/choice = input(src, "Choose a Primary Color", "LYNDVHAR") as anything in colorlist
+	var/choice = browser_input_list(src, "Choose a Primary Color", "HERALD THINE CITY", colorlist)
 	if(choice)
 		prim = colorlist[choice]
-		colorlist -= choice
-	choice = input(src, "Choose a Secondary Color", "LYNDVHAR") as anything in colorlist
+	choice = browser_input_list(src, "Choose a Secondary Color", "HERALD THINE CITY", colorlist)
 	if(choice)
 		sec = colorlist[choice]
 	if(!prim || !sec)
@@ -42,8 +41,8 @@ GLOBAL_VAR(lordsecondary)
 		GLOB.lordcolor -= T
 
 /proc/lord_color_default()
-	GLOB.lordprimary = "#611310" //RED
-	GLOB.lordsecondary = "#142c5a" //BLUE
+	GLOB.lordprimary = "#2b292e" //BLACK
+	GLOB.lordsecondary = "#ffffff" //WHITE
 	for(var/obj/O in GLOB.lordcolor)
 		O.lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	for(var/turf/T in GLOB.lordcolor)

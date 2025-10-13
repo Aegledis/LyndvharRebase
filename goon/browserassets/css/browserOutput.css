@@ -61,7 +61,17 @@ body {
 	src: url('kargradi.ttf');
 }
 
-/* */
+@font-face {
+	font-family: "Caslame";
+	src: url('forvheipan.ttf');
+}
+
+@font-face {
+	font-family: "Persian";
+	src: url('zybanti.otf');
+}
+
+/* fuck you */
 
 em {
 	font-style: normal;
@@ -805,7 +815,7 @@ h2.alert {
 	font-family: "Emperialisme", "Pterra";
 	font-size: 120%;
 }
-.kazengunese {
+.saltlian {
 	font-family: "Yuji Boku", Pterra;
 }
 .orc {
@@ -834,6 +844,14 @@ h2.alert {
 	font-family: "Romeodn", "Pterra";
 	font-size: 100%;
 }
+.forvheipan {
+	font-family: "Caslame", "Pterra";
+	font-size: 100%;
+}
+.zybanti {
+	font-family: "Persian", "Pterra";
+	font-size: 120%;
+}
 
 .human 					{font-family: "Honoka Mincho", "Pterra";}
 .elf					{font-family: "Dauphin", cursive, "Pterra";}
@@ -854,6 +872,8 @@ h2.alert {
 .dunargi				{font-family: "Feronia", "Pterra"; font-size: 100%;}
 .rhaenvalian			{font-family: "Jorvik Informal", "Pterra"; font-size: 100%;}
 .kargradi				{font-family: "Romeodn", "Pterra"; font-size: 100%;}
+.forvheipan				{font-family: "Caslame", "Pterra"; font-size: 100%}
+.zybanti				{font-family: "Persian", "Pterra"; font-size: 120%}
 
 .command_headset {
 	font-weight: bold;

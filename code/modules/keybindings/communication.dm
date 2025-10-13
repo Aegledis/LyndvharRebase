@@ -1,6 +1,6 @@
 /datum/keybinding/client/communication
 	category = CATEGORY_COMMUNICATION
-
+/*
 /datum/keybinding/client/communication/say
 	hotkey_keys = list("T")
 	name = "Say"
@@ -10,7 +10,7 @@
 	var/mob/M = user.mob
 	M.say_typing_indicator()
 	return TRUE
-
+*/
 /datum/keybinding/client/communication/me
 	hotkey_keys = list("M")
 	name = "Me"

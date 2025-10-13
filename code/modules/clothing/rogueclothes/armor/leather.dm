@@ -65,12 +65,20 @@
 	icon_state = "hidearmor"
 	max_integrity = ARMOR_INT_CHEST_LIGHT_MEDIUM
 
-/obj/item/clothing/suit/roguetown/armor/leather/hide/warden
-	name = "forestry armor"
-	desc = "A light armor worn by the Wardens of Lyndvhar. Far more durable than leather."
+/obj/item/clothing/suit/roguetown/armor/leather/studded/warden
+	name = "forester's armor"
+	desc = "A hardened leather harness with a large pauldron worn over a maille coat, associated with the Draguippe wardens."
 	icon = 'icons/roguetown/clothing/special/warden.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/warden.dmi'
-	icon_state = "foresthide"
+	icon_state = "forestleather"
+
+/obj/item/clothing/suit/roguetown/armor/leather/studded/warden/upgraded
+	name = "forester's brigandine"
+	desc = "A hardened leather harness with a large pauldron worn over a tasseted brigandine."
+	icon_state = "forestbrig"
+	max_integrity = ARMOR_INT_CHEST_PLATE_BRIGANDINE + 50
+	equip_delay_self = 50
+	smeltresult = /obj/item/ingot/iron
 
 /obj/item/clothing/suit/roguetown/armor/leather/studded
 	name = "studded leather armor"
@@ -111,7 +119,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/confessor
 	name = "confessional coat"
-	desc = "A sturdy raincoat draped atop of a tightly-fastened boiled leather cuirass. Saint Astratan youths often fashion little pieces of memorabilia and stitch it on the inner pockets of the coat to remind the confessors that their cause is virtuous, and that they mustn't lose sight of what matters."
+	desc = "A sturdy raincoat draped atop of a tightly-fastened boiled leather cuirass. Valorian youths often fashion little pieces of memorabilia and stitch it on the inner pockets of the coat to remind the confessors that their cause is virtuous, and that they mustn't lose sight of what matters."
 	icon_state = "confessorcoat"
 	item_state = "confessorcoat"
 	body_parts_covered = COVERAGE_FULL

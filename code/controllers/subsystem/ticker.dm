@@ -137,7 +137,7 @@ SUBSYSTEM_DEF(ticker)
 	else
 		login_music = "[global.config.directory]/title_music/sounds/[pick(music)]"
 
-	login_music = pick('sound/music/title.ogg','sound/music/title2.ogg', 'sound/music/title3.ogg', 'sound/music/title4.ogg')
+	login_music = pick('sound/music/title1.ogg','sound/music/title2.ogg', 'sound/music/title3.ogg')
 
 	if(!GLOB.syndicate_code_phrase)
 		GLOB.syndicate_code_phrase	= generate_code_phrase(return_list=TRUE)
@@ -187,7 +187,7 @@ SUBSYSTEM_DEF(ticker)
 					++totalPlayersReady
 			
 			if(!gamemode_voted)
-				SSvote.initiate_vote("storyteller", "Psydon", timeLeft/2)
+				SSvote.initiate_vote("storyteller", "LYNDVHAR", timeLeft/2)
 				gamemode_voted = TRUE
 
 			if(start_immediately)
@@ -493,6 +493,7 @@ SUBSYSTEM_DEF(ticker)
 				S.Fade(TRUE)
 			livings += living
 			if(ishuman(living))
+				SSrole_class_handler.setup_class_handler(living)
 				try_apply_character_post_equipment(living)
 		else
 			continue

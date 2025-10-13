@@ -45,11 +45,11 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 			dat += "<div align='center'>[ooc_extra]</div>"
 		if(nsfw_headshot_link)
 			dat += "<br><div align='center'><b>NSFW</b></div>"
-		if(nsfw_headshot_link && !wear_armor && !wear_shirt)
+		if(nsfw_headshot_link && !wear_armor && !wear_shirt && !wear_pants)
 			dat += ("<br><div align='center'><img src='[nsfw_headshot_link]' width='600px'></div>")
-		else if(nsfw_headshot_link && (wear_armor || wear_shirt))
+		else if(nsfw_headshot_link && (wear_armor || wear_shirt || wear_pants))
 			dat += "<br><center><i><font size = 5>It remains to be seen...</font></i></center>"	
-		var/datum/browser/popup = new(user, "[src]", nwidth = 600, nheight = 800)
+		var/datum/browser/popup = new(user, "[src]", width = 700, height = 900)
 		popup.set_content(dat.Join())
 		popup.open(FALSE)
 		return
@@ -224,7 +224,7 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 					dat +=("PER: \Roman [H.STAPER]<br>")
 					dat +=("INT: \Roman [H.STAINT]<br>")
 					dat +=("CON: \Roman [H.STACON]<br>")
-					dat +=("END: \Roman [H.STAEND]<br>")
+					dat +=("END: \Roman [H.STAWIL]<br>")
 					dat +=("SPD: \Roman [H.STASPD]<br>")
 				else
 					dat +=("STR: \Roman [rand(1,20)]<br>")
@@ -431,7 +431,7 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 					
 			dat += "</td>"
 			dat += "</tr>"
-			var/datum/browser/popup = new(user, "assess", ntitle = "[src] Assesment", nwidth = 1000, nheight = 600)
+			var/datum/browser/popup = new(user, "assess", title = "Assessment of [src]", width = 1000, height = 600)
 			popup.set_content(dat.Join())
 			popup.open(FALSE)
 		else
@@ -540,28 +540,28 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 /proc/skilldiff_report(var/input)
 	switch (input)
 		if(-6)
-			return "<font color = '#ff4ad2'>I know nothing. They -- everything.</font>"
+			return "<font color = '#ff4ad2'>I know nothing. They -- everything</font>"
 		if(-5)
-			return "<font color = '#eb0000'<i>I stand no chance against them.</i></font>"
+			return "<font color = '#eb0000'<i>I stand no chance against them</i></font>"
 		if(-4)
-			return "<font color = '#c53c3c'<i>I am inferior.</i></font>"
+			return "<font color = '#c53c3c'<i>I am inferior</i></font>"
 		if(-3)
-			return "<font color = '#db8484'<i>I am notably worse.</i></font>"
+			return "<font color = '#db8484'<i>I am notably worse</i></font>"
 		if(-2)
-			return "<font color = '#e4a1a1'<i>I am worse.</i></font>"
+			return "<font color = '#e4a1a1'<i>I am worse</i></font>"
 		if(-1)
 			return "<font color = '#f8d3d3'<i>I am slightly worse.</i></font>"
 		if(0)
 			return "We are equal."
 		if(1)
-			return "<font color = '#3f6343'> I am slightly better.</font>"
+			return "<font color = '#3f6343'> I am slightly better</font>"
 		if(2)
-			return "<font color = '#49944f'> I am better.</font>"
+			return "<font color = '#49944f'> I am better</font>"
 		if(3)
-			return "<font color = '#44db51'> I am notably better.</font>"
+			return "<font color = '#44db51'> I am notably better</font>"
 		if(4)
-			return"<font color = '#62b4be'> I am superior.</font>"
+			return"<font color = '#62b4be'> I am superior</font>"
 		if(5)
-			return "<font color = '#2bdcfc'> They have no chance in this field.</font>"
+			return "<font color = '#2bdcfc'> They have no chance in this field</font>"
 		if(6)
-			return "<font color = '#ff4ad2'> They know nothing. A whelp.</font>"
+			return "<font color = '#ff4ad2'> They know nothing. A whelp</font>"

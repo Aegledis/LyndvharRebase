@@ -276,6 +276,7 @@ GLOBAL_VAR(restart_counter)
 		'sound/roundend/rest.ogg',
 		'sound/roundend/gather.ogg',
 		'sound/roundend/dwarfs.ogg',
+		'sound/roundend/bravery.ogg',
 	)
 	for(var/client/thing in GLOB.clients)
 		if(!thing)

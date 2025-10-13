@@ -1,62 +1,24 @@
-Blackbeard
-Bones
-The Feared
-Bird Eye
-Blackeye
-Dark-Skull
-Seadog
-Greybeard
-Goldheart
-Sea Legs
-Peg-Leg
-Puffypants
-Red-Locks
-Rough
-Foul
-Gold
-Stinkalot
-The Handsome
-Rattler
-Cutter
-Wilds
-Rummy
-Roach
-Razor-Face
-Starky
-O'Fish
-Tyde
-Neale
-Strong-Heart
-Winters
-Precious
-Snake-Eyes
-Two-Toe
-Dark-Waters
-Buckets
-Gun-Powder
-McGee
-Waters
-McStubby
-Tuna-Breath
-Sea-Wolf
-Lobster-Legs
-O'Greed
-Treasures
-O'Patches
-Gold-Tooth
-Atlantis
-Deep-Waters
-Shark-Bait
-Stubbs
-d'Plank
-Shadows
-Black
-O'Jelly
-McGraw
-Big-Lips
-Fish Monger
-Hook-Hand
-Whiskey-Woo
-One-Eyed
-Man-Eater
-Death-Bringer
+the Harper
+the Rogue
+the Toothless
+the Wise
+the Beast
+the Ravager
+the Viper
+the Snake
+the Phantom
+the Outlaw
+the Mad-Eyed
+the Crazy
+the Kind
+the Quick
+the Agile
+the Breeze
+the Two-Faced
+the Black-Eyed
+the Red-Eyed
+the Fang
+the Thieving
+the Jester
+the Laughing
+the Smirking

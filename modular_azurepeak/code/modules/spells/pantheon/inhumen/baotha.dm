@@ -26,6 +26,11 @@
 			user.playsound_local(user, 'sound/magic/PSY.ogg', 100, FALSE, -1)
 			playsound(target, 'sound/magic/PSY.ogg', 100, FALSE, -1)
 			return FALSE
+		if(HAS_TRAIT(target, TRAIT_NOFAITHHEAL))
+			target.visible_message(span_info("[target] stirs for a moment, the miracle dissipates."), span_notice("As quickly as the swelling warmth arrives, it fades- rejecting your vessel."))
+			playsound(target, 'sound/magic/godless.ogg', 100, FALSE, -1)
+			user.playsound_local(user, 'sound/magic/godless.ogg', 100, FALSE, -1)
+			return FALSE
 		if(target.has_status_effect(/datum/status_effect/buff/druqks/baotha))
 			to_chat(user, span_warning("They're already blessed by these effects!"))
 			revert_cast()
@@ -48,7 +53,7 @@
 	chargetime = 15
 	recharge_time = 10 SECONDS
 	invocation_type = "whisper"
-	invocation = "Have a taste of the maiden's pure-bliss..."
+	invocations = list("Have a taste of the maiden's pure-bliss...")
 	devotion_cost = 30
 
 /obj/projectile/magic/blowingdust
@@ -79,7 +84,7 @@
 	range = 7
 	warnie = "sydwarning"
 	sound = 'sound/magic/timestop.ogg'
-	invocation = "May you find bliss through your pain!"
+	invocations = list("May you find bliss through your pain!")
 	invocation_type = "shout"
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
@@ -123,12 +128,14 @@
 	if(ishuman(targets[1]))
 		var/vice_found
 		var/mob/living/carbon/human/H = targets[1]
-		if(HAS_TRAIT(H, TRAIT_DECEIVING_MEEKNESS) && user.get_skill_level(/datum/skill/magic/holy) > SKILL_LEVEL_NOVICE)
+		if(HAS_TRAIT(H, TRAIT_DECEIVING_MEEKNESS) && user.get_skill_level(/datum/skill/magic/holy) <= SKILL_LEVEL_NOVICE)
 			if(!(H in fake_vices))
 				fake_vices[H] = pick(GLOB.character_flaws)
 				vice_found = fake_vices[H]
 			else
 				vice_found = fake_vices[H]
+			if(prob(50 + ((H.STAPER - 10) * 10)))
+				to_chat(H, span_warning("A pair of prying eyes were laid on me..."))
 		if(!vice_found)
 			vice_found = H.charflaw.name
 		to_chat(user, span_info("They are... [span_warning("a [vice_found]")]"))
@@ -285,7 +292,7 @@
 	overlay_state = "bliss"
 	range = 2
 	chargetime = 0.5 SECONDS
-	invocation = "By Baotha's mercy, an ecstasy trance for two!"
+	invocations = list("By Baotha's mercy, an ecstasy trance for two!")
 	sound = 'sound/magic/magnet.ogg'
 	recharge_time = 60 SECONDS
 	miracle = TRUE
@@ -330,7 +337,7 @@
 	range = 7
 	warnie = "sydwarning"
 	sound = 'sound/magic/timestop.ogg'
-	invocation = "May you find bliss through your pain!"
+	invocations = list("May you find bliss through your pain!")
 	invocation_type = "shout"
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE

@@ -2,11 +2,11 @@
 	race = /datum/species/lizardfolk
 
 /datum/species/lizardfolk
-	name = "Zardman"
+	name = "Eskallian"
 	id = "lizardfolk"
-	desc = "<b>Zardman</b><br>\
-	Composed of scales resembling what could be seen in the common lizard, the Zardman is anything but this. Once the slave chattel of the Draconae of the Calmirixial province, they are a very industrious and martial race, having served under the direct oppression of Draconae overlordship for years. When Naexidor came to Calmirixial and destroyed Draconae hegemony over the region, what followed was a complete schism of Draconae and Zardman society. Zardmen often kill their young that form into their draconic counterparts as a result of this deep hatred for each other.<br>"
-	skin_tone_wording = "Skin Colors"
+	desc = "<b>Eskallian</b><br>\
+	The Eskallian are incredibly distinct from the many other races dotted across Beowricke. This race hailing from the swamps of Calmirixia consists of many different shapes and sizes of scaled hides- which many could refer to smaller depictions of drakes, or Dragons- as they were much more well known in the Gilded Era. What position exactly they served- whether it be as servants or as their chosen beings- is a wildly debated topic amongst Eskallian society. Divided into two castes, the Eskallian consist of the Dracaena and the Caiman- who split during a heavy disagreement that resulted in brutal suppression and open revolt for years after the Dragons mysteriously vanished near the end of the Gilded Era. The Dracaena believed themselves to be the chosen of the Dragons, while the Caiman believed they had never been anything more than slaves. This resulting schism would uproot and destroy Eskallian society- much so to the point that both Dracaena and Caiman have formed a brutal hatred for one another, and something that to this day long after Naexidor’s conquest of Calmirixia has still not been mended.<br>"
+	skin_tone_wording = "Tribe"
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
 	possible_ages = ALL_AGES_LIST
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
@@ -28,7 +28,7 @@
 		OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 		OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,-1), \
 		)
-	race_bonus = list(STAT_CONSTITUTION = 1, STAT_ENDURANCE = 1)
+	race_bonus = list(STAT_CONSTITUTION = 1, STAT_WILLPOWER = 1)
 	enflamed_icon = "widefire"
 	attack_verb = "slash"
 	attack_sound = 'sound/blank.ogg'
@@ -62,10 +62,11 @@
 		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/organ/tail/lizard,
 		/datum/customizer/organ/tail_feature/lizard_spines,
+		/datum/customizer/organ/wings/dracon,
 		/datum/customizer/organ/snout/lizard,
 		/datum/customizer/organ/ears/lizard,
 		/datum/customizer/organ/frills/lizard,
-		/datum/customizer/organ/horns/humanoid/zardman,
+		/datum/customizer/organ/horns/humanoid/eskallian,
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
@@ -81,10 +82,14 @@
 	body_markings = list(
 		/datum/body_marking/flushed_cheeks,
 		/datum/body_marking/eyeliner,
+		/datum/body_marking/plain,
 		/datum/body_marking/bellyscale,
 		/datum/body_marking/bellyscaleslim,
 		/datum/body_marking/bellyscaleslimsmooth,
 		/datum/body_marking/buttscale,
+		/datum/body_marking/tie,
+		/datum/body_marking/tiesmall,
+		/datum/body_marking/front,
 		/datum/body_marking/tiger,
 		/datum/body_marking/tiger/dark,
 		/datum/body_marking/drake_eyes,
@@ -93,6 +98,7 @@
 		/datum/body_marking/bangs,
 		/datum/body_marking/bun,
 		/datum/body_marking/gradient,
+		/datum/body_marking/tips,
 	)
 	languages = list(
 		/datum/language/common,
@@ -155,3 +161,23 @@
 	returned["mcolor2"] = second_color
 	returned["mcolor3"] = second_color
 	return returned
+
+/datum/species/lizardfolk/random_name(gender,unique,lastname)
+	var/randname
+	if(unique)
+		if(gender == MALE)
+			for(var/i in 1 to 10)
+				randname = pick( world.file2list("strings/names/roguetown/lizardm.txt") )
+				if(!findname(randname))
+					break
+		if(gender == FEMALE)
+			for(var/i in 1 to 10)
+				randname = pick( world.file2list("strings/names/roguetown/lizardf.txt") )
+				if(!findname(randname))
+					break
+	else
+		if(gender == MALE)
+			randname = pick( world.file2list("strings/rt/names/human/humnorm.txt") )
+		if(gender == FEMALE)
+			randname = pick( world.file2list("strings/rt/names/human/humnorf.txt") )
+	return randname

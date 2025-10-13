@@ -4,7 +4,8 @@
 	desc = "No gods or kings, only man! You and others are known as what are Apostates- those who reject all divinity in favor of their own strength."
 	worshippers = "Some Grenzers, Madmen, Narcissists, beasts, powerful nobility, and some dwarves"
 	associated_faith = /datum/faith/godless
-	preference_accessible = FALSE
+	mob_traits = list(TRAIT_NOFAITHHEAL)
+	preference_accessible = TRUE
 	undead_hater = FALSE
 	confess_lines = list(
 		"Gods are WORTHLESS!",
@@ -16,5 +17,16 @@
 
 /datum/patron/godless/can_pray(mob/living/follower)
 	. = ..()
-	to_chat(follower, span_danger("Zarlz Zarwin and psyvolution cannot hear my prayer!"))
+	to_chat(follower, span_danger("To whom would I even pray? To myself? Bah.."))
 	return FALSE	//heathen
+
+/datum/patron/godless/on_lesser_heal(
+    mob/living/user,
+    mob/living/target,
+    message_out,
+    message_self,
+    conditional_buff,
+    situational_bonus
+)
+	*message_out = span_info("Without any particular cause or reason, [target] is healed!")
+	*message_self = span_notice("My wounds close without cause.")

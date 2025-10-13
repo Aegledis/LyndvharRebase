@@ -15,7 +15,8 @@
 	chargedloop = /datum/looping_sound/invokefire
 	associated_skill = /datum/skill/magic/arcane
 	spell_tier = 2
-	invocation_type = "none"
+	invocations = list("Teguran neraka!")
+	invocation_type = "shout"
 	glow_color = GLOW_COLOR_FIRE
 	glow_intensity = GLOW_INTENSITY_LOW
 	gesture_required = TRUE
@@ -28,7 +29,7 @@
 		var/mob/living/carbon/target = targets[1]
 		target.adjustFireLoss(30) //damage
 		target.adjust_fire_stacks(4)
-		target.IgniteMob()
+		target.ignite_mob()
 		target.visible_message(span_warning("[user] makes a rude gesture at [target] and causes them to burst into flames!"), \
 		span_userdanger("[user] makes a rude gesture at you and causes you to burst into flames!"))
 		playsound(get_turf(target), 'sound/misc/explode/incendiary (1).ogg', 100, TRUE)

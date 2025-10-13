@@ -168,6 +168,13 @@
 	smelt_bar_num = 2
 	armor = ARMOR_HEAD_HELMET_VISOR
 
+/obj/item/clothing/head/roguetown/helmet/sallet/shishak
+	name = "steel shishak"
+	desc = "A flat decorated steel helmet of Vruirid make with a spike at the top end. A hanging layer of chainmail protects the sides of the head and even the neck."
+	body_parts_covered = HEAD|EARS|HAIR|NECK
+	max_integrity = ARMOR_INT_HELMET_STEEL + 50
+	icon_state = "shishak"
+
 /obj/item/clothing/head/roguetown/helmet/sallet/visored/ComponentInitialize()
 	AddComponent(/datum/component/adjustable_clothing, (HEAD|EARS|HAIR), HIDEHAIR, null, 'sound/items/visor.ogg', null, UPD_HEAD)	//Sallet. Does not hide anything when opened.
 
@@ -262,8 +269,8 @@
 	desc = "It fits snugly on one's elven head, with special slots for their pointier ears."
 	body_parts_covered = FULL_HEAD
 	body_parts_covered = HEAD|HAIR|NOSE
-	flags_inv = HIDEEARS|HIDEFACE|HIDESNOUT
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	flags_inv = HIDEEARS
+	flags_cover = HEADCOVERSEYES
 	icon_state = "elven_barbute_full"
 	item_state = "elven_barbute_full"
 	armor = ARMOR_HEAD_HELMET
@@ -438,8 +445,9 @@
 	icon_state = "eorahelmsallet"
 	item_state = "eorahelmsallet"
 
+// Warden Helmets
 /obj/item/clothing/head/roguetown/helmet/bascinet/antler
-	name = "wardens's helmet"
+	name = "warden's helmet"
 	desc = "A strange helmet adorned with antlers worn by the warden of the forest."
 	icon = 'icons/roguetown/clothing/special/warden.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/warden64.dmi'
@@ -459,3 +467,57 @@
 
 /obj/item/clothing/head/roguetown/helmet/bascinet/antler/ComponentInitialize()
 	AddComponent(/datum/component/adjustable_clothing, (HEAD|EARS|HAIR), (HIDEEARS|HIDEHAIR), null, 'sound/items/visor.ogg', null, UPD_HEAD)	//Standard helmet
+
+/obj/item/clothing/head/roguetown/helmet/sallet/warden
+	flags_inv = HIDEFACE|HIDESNOUT
+	body_parts_covered = FULL_HEAD
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	block2add = FOV_BEHIND
+
+/obj/item/clothing/head/roguetown/helmet/sallet/warden/wolf
+	name = "warden's volfskull helm"
+	desc = "The large, intimidating skull of an elusive white volf, plated with steel on its inner side and given padding - paired together with a steel maille mask and worn with a linen shroud. Such trophies are associated with life-long game wardens and their descendants."
+	icon = 'icons/roguetown/clothing/special/warden.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/warden.dmi'
+	icon_state = "skullmet_volf"
+
+/obj/item/clothing/head/roguetown/helmet/sallet/warden/goat
+	name = "warden's ramskull helm"
+	desc = "The large, intimidating horned skull of an elusive Kapushill great ram, plated with steel on its inner side and given padding - paired together with a steel maille mask and worn with a linen shroud. Such trophies are associated with life-long foresters and their descendants."
+	icon = 'icons/roguetown/clothing/special/warden.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/warden.dmi'
+	icon_state = "skullmet_goat"
+
+/obj/item/clothing/head/roguetown/helmet/sallet/warden/bear
+	name = "warden's bearskull helm"
+	desc = "The large, intimidating skull of a common direbear, plated with steel on its inner side and given padding - paired together with a steel maille mask and worn with a linen shroud. Such trophies are associated with life-long hunters and their descendants."
+	icon = 'icons/roguetown/clothing/special/warden.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/warden.dmi'
+	icon_state = "skullmet_bear"
+
+/obj/item/clothing/head/roguetown/roguehood/warden
+	name = "warden's hood"
+	desc = "A hunter's leather hood with two linen layers, sewn larger than usual to accommodate a helmet - or an animal's skull."
+	color = null
+	icon_state = "wardenhood"
+	item_state = "wardenhood"
+	icon = 'icons/roguetown/clothing/special/warden.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/warden.dmi'
+	body_parts_covered = NECK
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	dynamic_hair_suffix = ""
+	edelay_type = 1
+	adjustable = CAN_CADJUST
+	toggle_icon_state = TRUE
+	max_integrity = 200
+
+/obj/item/clothing/head/roguetown/roguehood/warden/antler
+	name = "warden's antlered hood"
+	desc = "A hunter's leather hood with two linen layers, sewn larger than usual tooo accommodate a helmet, and fitted with the large horns of an elder saiga."
+	icon_state = "wardenhoodalt"
+	item_state = "wardenhoodalt"
+	icon = 'icons/roguetown/clothing/special/warden.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/warden64.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	bloody_icon = 'icons/effects/blood64.dmi'

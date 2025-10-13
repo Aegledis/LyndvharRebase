@@ -10,5 +10,5 @@
 	name = "golgothaentry"
 	first_time_text = "GETHSMANE"
 	icon_state = "spider"
-	droning_sound = 'sound/music/area/original_sin.ogg'
+	droning_sound = 'sound/music/area/dungeon.ogg'
 
