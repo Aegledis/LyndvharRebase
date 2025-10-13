@@ -62,18 +62,15 @@
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
 		/datum/customizer/bodypart_feature/underwear,
-		/datum/customizer/organ/tail/anthro,
-		/datum/customizer/organ/tail_feature/anthro,
-		/datum/customizer/organ/snout/anthro,
-		/datum/customizer/organ/ears/anthro,
-		/datum/customizer/organ/horns/anthro,
-		/datum/customizer/organ/frills/anthro,
-		/datum/customizer/organ/wings/anthro,
+		/datum/customizer/organ/tail/cervaline,
+		/datum/customizer/organ/snout/cervaline,
+		/datum/customizer/organ/ears/cervaline,
+		/datum/customizer/organ/horns/cervaline,
 		/datum/customizer/organ/neck_feature/anthro,
 		/datum/customizer/organ/testicles/anthro,
-		/datum/customizer/organ/penis/anthro,
+		/datum/customizer/organ/penis/cervaline,
 		/datum/customizer/organ/breasts/animal,
-		/datum/customizer/organ/vagina/anthro,
+		/datum/customizer/organ/vagina/cervaline,
 	)
 
 	body_marking_sets = list(
@@ -105,7 +102,6 @@
 		/datum/body_marking/tiesmall,
 		/datum/body_marking/backspots,
 		/datum/body_marking/front,
-		/datum/body_marking/drake_eyes,
 		/datum/body_marking/tonage,
 		/datum/body_marking/spotted,
 		/datum/body_marking/nose,
@@ -185,12 +181,12 @@
 	if(unique)
 		if(gender == MALE)
 			for(var/i in 1 to 10)
-				randname = pick( world.file2list("strings/names/roguetown/wildkinm.txt") )
+				randname = pick( world.file2list("strings/names/roguetown/cervalinem.txt") )
 				if(!findname(randname))
 					break
 		if(gender == FEMALE)
 			for(var/i in 1 to 10)
-				randname = pick( world.file2list("strings/names/roguetown/wildkinf.txt") )
+				randname = pick( world.file2list("strings/names/roguetown/cervalinef.txt") )
 				if(!findname(randname))
 					break
 	else

@@ -15,6 +15,9 @@
 /obj/item/organ/snout/capridae
 	name = "capridae snout"
 
+/obj/item/organ/snout/cervaline
+	name = "cervaline snout"
+
 /obj/item/organ/snout/vox
 	name = "large beak"
 

@@ -150,6 +150,27 @@
 		/datum/sprite_accessory/snout/front/scanidalt3,
 		)	
 
+/datum/customizer/organ/snout/cervaline
+	allows_disabling = FALSE
+	default_disabled = FALSE
+	customizer_choices = list(/datum/customizer_choice/organ/snout/cervaline)
+
+/datum/customizer_choice/organ/snout/cervaline
+	name = "Cervaline Snout"
+	organ_type = /obj/item/organ/snout/cervaline
+	sprite_accessories = list(
+		/datum/sprite_accessory/snout/stubby,
+		/datum/sprite_accessory/snout/stubbyalt,
+		/datum/sprite_accessory/snout/front/lcanid,
+		/datum/sprite_accessory/snout/front/lcanidalt,
+		/datum/sprite_accessory/snout/front/lcanidstriped,
+		/datum/sprite_accessory/snout/front/lcanidstripedalt,
+		/datum/sprite_accessory/snout/front/scanid,
+		/datum/sprite_accessory/snout/front/scanidalt,
+		/datum/sprite_accessory/snout/front/scanidalt2,
+		/datum/sprite_accessory/snout/front/scanidalt3,
+		)	
+
 /datum/customizer/organ/snout/rhaeteian
 	allows_disabling = FALSE
 	default_disabled = FALSE

@@ -141,6 +141,27 @@
 		/datum/sprite_accessory/horns/brokenliftedhorns,
 		)	
 
+/datum/customizer/organ/horns/cervaline
+	customizer_choices = list(/datum/customizer_choice/organ/horns/cervaline)
+	allows_disabling = TRUE
+	default_disabled =  FALSE
+
+/datum/customizer_choice/organ/horns/cervaline
+	name = "Cervaline Horns"
+	organ_type = /obj/item/organ/horns/cervaline
+	sprite_accessories = list(
+		/datum/sprite_accessory/horns/simple,
+		/datum/sprite_accessory/horns/short,
+		/datum/sprite_accessory/horns/curled,
+		/datum/sprite_accessory/horns/broken,
+		/datum/sprite_accessory/horns/rbroken,
+		/datum/sprite_accessory/horns/lbroken,
+		/datum/sprite_accessory/horns/antlers,
+		/datum/sprite_accessory/horns/smallantlers,
+		/datum/sprite_accessory/horns/billberry,
+		/datum/sprite_accessory/horns/bunhorns,
+	)
+
 /datum/customizer/organ/horns/anthro
 	customizer_choices = list(/datum/customizer_choice/organ/horns/anthro)
 	allows_disabling = TRUE

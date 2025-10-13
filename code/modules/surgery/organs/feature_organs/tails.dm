@@ -38,6 +38,9 @@
 /obj/item/organ/tail/capridae
 	name = "capridae tail"
 
+/obj/item/organ/tail/cervaline
+	name = "cervaline tail"
+
 /obj/item/organ/tail/lupian
 	name = "lupian tail"
 

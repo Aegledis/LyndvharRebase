@@ -197,7 +197,6 @@ Balloon Alert / Floating Text defines
 	/datum/species/cervaline,\
 	/datum/species/vulpkanin,\
 	/datum/species/akula,\
-	/datum/species/dracon,\
 	/datum/species/anthromorph,\
 	,\
 	/datum/species/demihuman,\
@@ -230,7 +229,6 @@ Balloon Alert / Floating Text defines
 	/datum/species/akula,\
 	/datum/species/tieberian,\
 	/datum/species/elf/dark,\
-	/datum/species/dracon,\
 
 #define RACES_DESPISED \
 	/datum/species/anthromorph,\
@@ -268,7 +266,6 @@ Balloon Alert / Floating Text defines
 	/datum/species/cervaline,\
 	/datum/species/vulpkanin,\
 	/datum/species/akula,\
-	/datum/species/dracon,\
 	/datum/species/anthromorph,\
 	,\
 	/datum/species/demihuman,\
@@ -293,15 +290,12 @@ Balloon Alert / Floating Text defines
 	/datum/species/cervaline,\
 	/datum/species/vulpkanin,\
 	/datum/species/akula,\
-	/datum/species/dracon,\
 	/datum/species/anthromorph,\
-	,\
 	/datum/species/demihuman,\
 	/datum/species/halforc,\
 	/datum/species/orc,\
 	/datum/species/kobold,\
 	/datum/species/goblinp,\
-	,\
 )
 // Non-dwarf non-kobold non-goblin mostly
 #define NON_DWARVEN_RACE_TYPES list(\
@@ -319,11 +313,9 @@ Balloon Alert / Floating Text defines
 	/datum/species/cervaline,\
 	/datum/species/vulpkanin,\
 	/datum/species/akula,\
-	/datum/species/dracon,\
 	/datum/species/anthromorph,\
 	/datum/species/demihuman,\
 	/datum/species/halforc,\
-	,\
 )
 // Non-elf non-dwarf non-kobold non-goblin mostly
 #define HUMANLIKE_RACE_TYPES list(\
@@ -338,7 +330,6 @@ Balloon Alert / Floating Text defines
 	/datum/species/cervaline,\
 	/datum/species/vulpkanin,\
 	/datum/species/akula,\
-	/datum/species/dracon,\
 	/datum/species/anthromorph,\
 	/datum/species/demihuman,\
 )

@@ -198,6 +198,19 @@
 		/datum/sprite_accessory/tail/deer,
 		)
 
+/datum/customizer/organ/tail/cervaline
+	customizer_choices = list(/datum/customizer_choice/organ/tail/cervaline)
+	allows_disabling = FALSE
+	default_disabled = FALSE
+
+/datum/customizer_choice/organ/tail/cervaline
+	name = "Cervaline Tail"
+	organ_type = /obj/item/organ/tail/cervaline
+	sprite_accessories = list(
+		/datum/sprite_accessory/tail/rabbit,
+		/datum/sprite_accessory/tail/deer,
+		)
+
 /datum/customizer/organ/tail/anthro
 	customizer_choices = list(/datum/customizer_choice/organ/tail/anthro)
 	allows_disabling = TRUE
