@@ -236,7 +236,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/disciple/obj_break(damage_flag)
 	..()
-	visible_message(span_notice("My [src] begins to tauten with newfound vigor, before relaxing once more.."), vision_distance = 1)
+	visible_message(span_notice("My [name] begins to tauten with newfound vigor.."), vision_distance = 1)
 	addtimer(CALLBACK(src, PROC_REF(skin_repair)), repair_time, TIMER_OVERRIDE|TIMER_UNIQUE|TIMER_STOPPABLE)
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/disciple/proc/skin_repair(var/repair_percent = 0.2 * max_integrity)
@@ -244,7 +244,7 @@
 		return
 
 	obj_integrity = min(obj_integrity + repair_percent, max_integrity)
-	visible_message(span_notice("My [src] slowly mends its abuse.."), vision_distance = 1)
+	visible_message(span_notice("My [name] slowly mends its abuse.."), vision_distance = 1)
 	if(obj_broken)
 		obj_fix(full_repair = FALSE)
 	addtimer(CALLBACK(src, PROC_REF(skin_repair)), repair_time, TIMER_OVERRIDE|TIMER_UNIQUE|TIMER_STOPPABLE)
