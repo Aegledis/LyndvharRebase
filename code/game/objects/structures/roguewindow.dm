@@ -12,6 +12,7 @@
 	var/base_state = "window-solid"
 	var/lockdir = 0
 	var/brokenstate = 0
+	var/prystrength = 100
 	blade_dulling = DULLING_BASHCHOP
 	pass_flags = LETPASSTHROW
 	climb_time = 20
@@ -165,9 +166,61 @@
 /obj/structure/roguewindow/openclose/attackby(obj/item/attacking_item, mob/user, params)
 	if(istype(attacking_item, /obj/item/rogueweapon/huntingknife/idagger) && !climbable && !user.cmode)
 		to_chat(user, span_notice("I start trying to pry the window open..."))
-		if(do_after(user, 60, target = src))
-			playsound(src, 'sound/foley/doors/windowup.ogg', 100, FALSE)
-			src.force_open()
+		var/lockprogress = 0
+		var/locktreshold = prystrength
+
+		var/obj/item/rogueweapon/huntingknife/idagger/P = attacking_item
+		var/mob/living/L = user
+
+		var/pickskill = user.get_skill_level(/datum/skill/misc/lockpicking)
+		var/perbonus = L.STAPER/5
+		var/picktime = 70
+		var/pickchance = 35
+		var/moveup = 10
+
+		picktime -= (pickskill * 10)
+		picktime = clamp(picktime, 10, 70)
+
+		moveup += (pickskill * 3)
+		moveup = clamp(moveup, 10, 30)
+
+		pickchance += pickskill * 10
+		pickchance += perbonus
+		pickchance *= P.picklvl
+		pickchance = clamp(pickchance, 1, 95)
+
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+
+		while(!QDELETED(attacking_item) &&(lockprogress < locktreshold))
+			if(!do_after(user, picktime, target = src))
+				break
+			if(prob(pickchance))
+				lockprogress += moveup
+				playsound(src.loc, pick('sound/items/pickgood1.ogg','sound/items/pickgood2.ogg'), 5, TRUE)
+				to_chat(user, "<span class='warning'>Click...</span>")
+				if(L.mind)
+					add_sleep_experience(L, /datum/skill/misc/lockpicking, L.STAINT/2)
+				if(lockprogress >= locktreshold)
+					to_chat(user, "<span class='deadsay'>The locking mechanism gives.</span>")
+					if(ishuman(user))
+						var/mob/living/carbon/human/H = user
+						log_admin("[H.real_name]([key_name(user)]) successfully pried [src.name] open.")
+						record_featured_stat(FEATURED_STATS_CRIMINALS, user)
+						record_round_statistic(STATS_LOCKS_PICKED)
+						var/obj/effect/track/structure/new_track = new(get_turf(src))
+						new_track.handle_creation(user)
+					playsound(src, 'sound/foley/doors/windowup.ogg', 100, FALSE)
+					src.force_open()
+					break
+				else
+					continue
+			else
+				playsound(loc, 'sound/items/pickbad.ogg', 40, TRUE)
+				attacking_item.take_damage(1, BRUTE, "blunt")
+				to_chat(user, "<span class='warning'>Clack.</span>")
+				add_sleep_experience(L, /datum/skill/misc/lockpicking, L.STAINT/4)
+				continue
 	else
 		return ..()
 
