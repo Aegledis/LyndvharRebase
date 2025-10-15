@@ -22,6 +22,7 @@
 	converted_type = /area/rogue/indoors/shelter/woods
 	deathsight_message = "somewhere in the wilds"
 	threat_region = THREAT_REGION_FOREST
+	detail_text = DETAIL_TEXT_DRAGUIPPE_FOREST
 
 /area/rogue/indoors/shelter/woods
 	name = "Draguippe Grove"

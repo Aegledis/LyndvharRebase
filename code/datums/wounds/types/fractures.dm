@@ -113,6 +113,7 @@
 	)
 	embed_chance = 100	// Didn't we remove embeding..?
 	bleed_rate = 10		// Aooouuugh.. my brain..
+	fatal = TRUE // Yeah, you're dead.
 	knockout = 20
 	paralysis = TRUE
 

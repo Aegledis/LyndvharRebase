@@ -19,10 +19,12 @@
 				/mob/living/simple_animal/hostile/retaliate/rogue/troll = 15)
 	converted_type = /area/rogue/outdoors/caves
 	deathsight_message = "an acid-scarred depths"
+	detail_text = DETAIL_TEXT_UNDERDARK
 
 /area/rogue/under/underdark/south
 	name = "Southern Underdark"
-	first_time_text = "SOUTHERN UNDERDARK"
+	first_time_text = "The Southern Underdark"
+	detail_text = DETAIL_TEXT_SOUTHERN_UNDERDARK
 
 /area/rogue/under/underdark/north
 	name = "Melted Undercity"
@@ -32,3 +34,4 @@
 	droning_sound = 'sound/music/area/underdark.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
+	detail_text = DETAIL_TEXT_MELTED_UNDERCITY

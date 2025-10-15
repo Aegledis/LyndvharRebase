@@ -23,5 +23,5 @@
 		for(var/mob/dead/new_player/player as anything in GLOB.new_player_list)
 			if(!player.client)
 				continue
-
-			to_chat(player, span_danger("Matthios, is this true? Bandits flock to Azuria. Three bandit slots have been opened."))
+			
+			to_chat(player, span_danger("Matthios, is this true? Bandits flock to Lyndvhartia. Three bandit slots have been opened."))

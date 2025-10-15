@@ -1,6 +1,6 @@
 // Areas for Mount Decap
 /area/rogue/outdoors/mountains/decap
-	name = "mt decapitation"
+	name = "Mount Decapitation"
 	icon_state = "decap"
 	ambush_mobs = list(
 				new /datum/ambush_config/pair_of_direbear = 10,
@@ -20,6 +20,7 @@
 	converted_type = /area/rogue/indoors/shelter/mountains/decap
 	deathsight_message = "a twisted tangle of soaring peaks"
 	threat_region = THREAT_REGION_MOUNT_DECAP
+	detail_text = DETAIL_TEXT_DECAP
 
 /area/rogue/indoors/shelter/mountains/decap
 	icon_state = "decap"
@@ -28,7 +29,7 @@
 	droning_sound_night = null
 	threat_region = THREAT_REGION_MOUNT_DECAP
 	deathsight_message = "a twisted tangle of soaring peaks"
-
+	detail_text = DETAIL_TEXT_DECAP_TARICHEA
 
 /area/rogue/outdoors/mountains/decap/stepbelow
 	name = "Scorched Caldera"
@@ -50,6 +51,7 @@
 	ambush_times = list("night","dawn","dusk","day")
 	converted_type = /area/rogue/indoors/shelter/mountains/decap
 	threat_region = THREAT_REGION_MOUNT_DECAP
+	detail_text = DETAIL_TEXT_DECAP_TARICHEA
 
 /area/rogue/outdoors/mountains/decap/gunduzirak
 	name = "Ruins of Khuufvale"
@@ -68,17 +70,19 @@
 	converted_type = /area/rogue/indoors/shelter/mountains/decap
 	ceiling_protected = TRUE
 	threat_region = THREAT_REGION_MOUNT_DECAP
+	detail_text = DETAIL_TEXT_DECAP_GUNDU_ZIRAK
 
 /area/rogue/outdoors/mountains/decap/gunduzirak/bossarena
 	name = "Baronness Boss Arena"
 	first_time_text = "THE BARONESS"
+	detail_text = DETAIL_TEXT_DECAP_GUNDU_ZIRAK
 
 
 /area/rogue/outdoors/mountains/decap/gunduzirak/bossarena/can_craft_here()
 	return FALSE
 
 /area/rogue/under/cave/dragonden
-	name = "dragonnest"
+	name = "Den of Dragons"
 	icon_state = "under"
 	first_time_text = "DEN OF DRAGONS"
 	droning_sound = 'sound/music/area/dragonden.ogg'
@@ -87,12 +91,13 @@
 	converted_type = /area/rogue/outdoors/dungeon1
 	ceiling_protected = TRUE
 	threat_region = THREAT_REGION_MOUNT_DECAP
+	detail_text = DETAIL_TEXT_DECAP_DRAGONDEN
 
 /area/rogue/under/cave/dragonden/can_craft_here()
 	return FALSE
 
 /area/rogue/under/cave/goblinfort
-	name = "goblinfort"
+	name = "Goblin Fortress"
 	icon_state = "spidercave"
 	first_time_text = "GOBLIN FORTRESS"
 	droning_sound = 'sound/music/area/dungeon2.ogg'
@@ -102,9 +107,10 @@
 	ceiling_protected = TRUE
 	deathsight_message = "a twisted tangle of soaring peaks"
 	threat_region = THREAT_REGION_MOUNT_DECAP
+	detail_text = DETAIL_TEXT_DECAP_GOBLIN_FORTRESS
 
 /area/rogue/under/cave/scarymaze
-	name = "hauntedlabyrinth"
+	name = "Necran Labyrinth"
 	icon_state = "spidercave"
 	first_time_text = "NECRAN LABYRINTH"
 	droning_sound = 'sound/music/area/underworlddrone.ogg'
@@ -114,9 +120,10 @@
 	ceiling_protected = TRUE
 	deathsight_message = "a twisted tangle of soaring peaks"
 	threat_region = THREAT_REGION_MOUNT_DECAP
+	detail_text = DETAIL_TEXT_DECAP_NECRAN_LABYRINTH
 
 /area/rogue/outdoors/mountains/decap/minotaurfort
-	name = "Minotaur Fort"
+	name = "Ancient Dwarven Forge"
 	icon_state = "decap"
 	droning_sound = 'sound/music/area/spidercave.ogg'
 	droning_sound_dusk = null
@@ -126,3 +133,5 @@
 	converted_type = /area/rogue/indoors/shelter/mountains/decap
 	ceiling_protected = TRUE
 	threat_region = THREAT_REGION_MOUNT_DECAP
+	detail_text = DETAIL_TEXT_DECAP_MINOTAUR_FORTRESS
+

@@ -67,6 +67,7 @@
 	custom_text = "+1 to Swords and Knives, Up to Journeyman, Minimum Apprentice."
 	desc = "I have trained under a duelist of decent skill, and always have my trusty rapier close at hand."
 	added_stashed_items = list("Duelist's Hunting Sword" = /obj/item/rogueweapon/sword/short/messer/iron/virtue)
+	added_stashed_items = list("Duelist's Hunting Sword" = /obj/item/rogueweapon/huntingknife/idagger/virtue)
 
 /datum/virtue/combat/duelist/apply_to_human(mob/living/carbon/human/recipient)
 	recipient.adjust_skillrank_up_to(/datum/skill/combat/swords, SKILL_LEVEL_JOURNEYMAN, silent = TRUE)
@@ -87,6 +88,7 @@
 	desc = "I have trained under a skilled militiaman, and always have my trusty spear close at hand."
 	custom_text = "+1 to Maces and Polearms, Up to Journeyman, Minimum Apprentice."
 	added_stashed_items = list("Spear" = /obj/item/rogueweapon/spear)
+	added_stashed_items = list("Mace" = /obj/item/rogueweapon/mace)
 
 /datum/virtue/combat/militia/apply_to_human(mob/living/carbon/human/recipient)
 	recipient.adjust_skillrank_up_to(/datum/skill/combat/polearms, SKILL_LEVEL_JOURNEYMAN, silent = TRUE)
@@ -96,8 +98,9 @@
 	name = "Brawler"
 	desc = "I have trained under a skilled brawler, and have some experience fighting with my fists."
 	custom_text = "Guaranteed Journeyman for Unarmed & Wrestling."
-	added_stashed_items = list("Katar" = /obj/item/rogueweapon/katar)
-	
+	added_stashed_items = list("Katar" = /obj/item/rogueweapon/katar/bronze)
+	added_stashed_items = list("Knuckledusters" = /obj/item/rogueweapon/knuckles/bronzeknuckles)
+
 /datum/virtue/combat/brawler/apply_to_human(mob/living/carbon/human/recipient)
 	recipient.adjust_skillrank_up_to(/datum/skill/combat/unarmed, SKILL_LEVEL_JOURNEYMAN, silent = TRUE)
 	recipient.adjust_skillrank_up_to(/datum/skill/combat/wrestling, SKILL_LEVEL_JOURNEYMAN, silent = TRUE)
@@ -116,6 +119,19 @@
 		recipient.adjust_skillrank_up_to(/datum/skill/combat/bows, SKILL_LEVEL_APPRENTICE, silent = TRUE)
 	else
 		added_skills = list(list(/datum/skill/combat/bows, 1, 6))
+
+/datum/virtue/combat/shepherd
+	name = "Capable Shepherd"
+	desc = "Years of protecting my herd from brigands and thieves have taught me how to use the simplest of weapons in self-defense."
+	custom_text = "Guaranteed Journeyman for Staffs & Slings."
+	added_stashed_items = list("Iron Quarterstaff" = /obj/item/rogueweapon/woodstaff/quarterstaff/iron,
+								"Sling" = /obj/item/gun/ballistic/revolver/grenadelauncher/sling,
+								"Pouch of Iron Sling Bullets" = /obj/item/quiver/sling/iron)
+
+/datum/virtue/combat/shepherd/apply_to_human(mob/living/carbon/human/recipient)
+	recipient.adjust_skillrank_up_to(/datum/skill/combat/staves, SKILL_LEVEL_JOURNEYMAN, silent = TRUE)
+	recipient.adjust_skillrank_up_to(/datum/skill/combat/slings, SKILL_LEVEL_JOURNEYMAN, silent = TRUE)
+
 /*/datum/virtue/combat/tavern_brawler
 	name = "Tavern Brawler"
 	desc = "I've never met a problem my fists couldn't solve."

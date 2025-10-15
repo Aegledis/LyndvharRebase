@@ -53,7 +53,7 @@
 
 			GLOB.broadcast_list += list(list(
 			"message"   = input_text,
-			"tag"		= "The Crown of Azuria",
+			"tag"		= "The Crown",
 			"timestamp" = station_time_timestamp("hh:mm:ss")
 			))
 

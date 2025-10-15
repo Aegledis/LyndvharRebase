@@ -49,6 +49,9 @@
 				index = H.real_name
 			S.name = "watchman jupon ([index])"
 
+/obj/item/storage/backpack/rogue/satchel/short/black
+	color = CLOTHING_BLACK
+
 /datum/outfit/job/roguetown/guardsman
 	pants = /obj/item/clothing/under/roguetown/heavy_leather_pants
 	cloak = /obj/item/clothing/cloak/stabard/surcoat/guard
@@ -57,7 +60,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	belt = /obj/item/storage/belt/rogue/leather/black
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/heavy
-	backr = /obj/item/storage/backpack/rogue/satchel/short
+	backr = /obj/item/storage/backpack/rogue/satchel/short/black
 	backpack_contents = list(/obj/item/signal_horn = 1)
 
 /*Design philosophy: Men and women from various areas of life, from hunters to street-brawlers and more 'veteran' levy-men. Know less skills overall than Bog, but far more specialized.

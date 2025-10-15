@@ -79,8 +79,10 @@
 	salvage_result = /obj/item/natural/hide/cured
 
 /obj/item/clothing/gloves/roguetown/valorian/psygloves
-	name = "psydonian leather gloves"
+	name = "psydonic leather gloves"
 	desc = "Made with Valoria's Finest leather, these gloves are fashioned to last."
+	armor = ARMOR_GLOVES_LEATHER_GOOD
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT, BCLASS_TWIST) //Equivalent to Heavy Leather Gloves. Deinherits the durability and exclusive critprot of Otavan gloves.
 	icon_state = "psydongloves"
 	item_state = "psydongloves"
 	salvage_result = /obj/item/natural/hide/cured	

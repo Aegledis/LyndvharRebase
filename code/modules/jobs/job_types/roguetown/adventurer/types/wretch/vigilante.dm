@@ -90,6 +90,7 @@
 	H.adjust_skillrank_up_to(/datum/skill/misc/climbing, SKILL_LEVEL_MASTER, TRUE) // Escape routes
 	H.adjust_skillrank_up_to(/datum/skill/craft/engineering, SKILL_LEVEL_JOURNEYMAN, TRUE) //Make your own tinkering tools and smokebombs
 	H.adjust_skillrank_up_to(/datum/skill/craft/smelting, SKILL_LEVEL_JOURNEYMAN, TRUE) //Just so your smelted ingots aren't ruined
+	H.adjust_skillrank_up_to(/datum/skill/combat/staves, 3, TRUE) //Nearly missed this while finishing up the staff-skill port.
 	H.change_stat(STATKEY_INT, 3) 
 	H.change_stat(STATKEY_WIL, 3)
 	H.change_stat(STATKEY_PER, 3)

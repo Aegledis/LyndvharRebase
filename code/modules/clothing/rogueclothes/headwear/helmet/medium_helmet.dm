@@ -438,13 +438,6 @@
 	block2add = null
 	smeltresult = /obj/item/ingot/steel
 
-//............... Eora Helmet ............... //
-/obj/item/clothing/head/roguetown/helmet/sallet/eoran
-	name = "eora helmet"
-	desc = "A simple yet protective helmet forged in the style typical of Eoran worshippers. Upon it lays several laurels of flowers and other colorful ornaments followed by symbols noting the accomplishments and punishments of the owner's chapter."
-	icon_state = "eorahelmsallet"
-	item_state = "eorahelmsallet"
-
 // Warden Helmets
 /obj/item/clothing/head/roguetown/helmet/bascinet/antler
 	name = "warden's helmet"
