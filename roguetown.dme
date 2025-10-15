@@ -1035,7 +1035,6 @@
 #include "code\game\objects\items\rogueitems\painting.dm"
 #include "code\game\objects\items\rogueitems\perfume.dm"
 #include "code\game\objects\items\rogueitems\repairkit.dm"
-#include "code\game\objects\items\rogueitems\ropechainbola.dm"
 #include "code\game\objects\items\rogueitems\undies.dm"
 #include "code\game\objects\items\rogueitems\util.dm"
 #include "code\game\objects\items\rogueitems\waterskin.dm"
