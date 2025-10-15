@@ -575,6 +575,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	converted_type = /area/rogue/indoors/shelter/town
 	first_time_text = "THE CITY OF LYNDVHAR"
 	town_area = TRUE
+	detail_text = DETAIL_TEXT_LYNDVHAR
 
 /area/rogue/indoors/shelter/town
 	icon_state = "town"

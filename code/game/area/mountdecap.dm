@@ -29,7 +29,7 @@
 	droning_sound_night = null
 	threat_region = THREAT_REGION_MOUNT_DECAP
 	deathsight_message = "a twisted tangle of soaring peaks"
-	detail_text = DETAIL_TEXT_DECAP_TARICHEA
+	detail_text = DETAIL_TEXT_DECAP
 
 /area/rogue/outdoors/mountains/decap/stepbelow
 	name = "Scorched Caldera"

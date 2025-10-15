@@ -152,6 +152,7 @@
 	droning_sound_night = null
 	converted_type = /area/rogue/outdoors/exposed/tavern
 	tavern_area = TRUE
+	
 
 /area/rogue/outdoors/exposed/tavern
 	icon_state = "tavern"

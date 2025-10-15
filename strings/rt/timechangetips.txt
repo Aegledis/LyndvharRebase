@@ -14,13 +14,13 @@ Xylix's gift to mortals was the humble tarot deck, allowing them to divine the f
 Dendor's madness is enigmatic at best, and malicious at worst. There is no true way to understand beyond accepting it.
 If two spirits were in the Underworld, and one killed the other with a rock, would that be fucked up or what?
 THERE IS A TUMOR DIRECTLY BEHIND MY RIGHT EYEBALL; I NEED TO REACH IN AND CLAW IT OUT BEFORE IT FUCKING EATS ME.
-Necrans despise deadites and wish them exterminated or cured; Pestrans wish them cured of their rot, but think that pustules are neat!
+Necrans despise deadites and wish them exterminated or cured; Pestrans wish them cured of their rot.
 The divines smile upon your prayers in front of a psycross, but never mention them the name of the Daemon.
 Ravox stands for justice, not murder.
 Malum used to carry a divine hammer that gave life to all material things that Beowricke was built upon. It is now lost to history.
 Eora stands for far more than familial love- but frowns upon those who break matrimony.
 The Archdaemon Graggar represents all unbridled bloodlust and rage; an almost extreme opposite to Ravoxians.
-For the entire world, the annihilation of an entire species was seen as a cataclysmic event that shook reality to its core. For the Archdaemons, it was taking one step of many.
+For the entire world, the Bloodwake was seen as a cataclysmic event that shook reality to its core and brought everything to its knees. For the Archdaemons, it was taking one step of many.
 The Archdaemon ZIZO represents unbridled ambition and unchecked arcyne magic. In recent yils her power waned as the arcyne began to become rarer, however a spike in cultists has been observed since the civil war.
 Gaze upon the mighty empire of NAEXIDOR, ye mighty, and weep!
 The Archdaemon Matthios represents unbridled envy, and is the patron of all thieves and bandit-cultists. With the increase in banditry, his power has grown significantly. Much to your detriment.
@@ -57,13 +57,13 @@ As long as there's two people left on Beowricke, one of those idiots is going to
 THE HOLY PANTHEONIC GOSPEL RADIATES THROUGH MY HEAD. NOT ALL IS YET LOST.
 THERE ARE WORMS IN MY SKIN.
 Greencrest is a Kingdom to the Southwest of Lyndhardtia that is entirely ruled by a caste of noble Elves.
-Little is known about Khazumia. What we do know of the Caliphate is its ferocity and danger it poses should it become aggressive. Let us hope it stays in its isolation.
+Little is known about Khazumia. What we do know of the Khaliphate is its ferocity and danger it poses should it become aggressive. Let us hope it stays in its isolation.
 You know, I heard there was a realm somewhere in the world entirely conquered by Zizonic worshippers. That must not be true, right?
 I often get tired of hearing voices in my head, too, don't worry.
 WHAT THE FUCK WAS THAT?
 There are many beasts to be found in the ocean. Sailing is a horrifically dangerous occupation- but it pays extremely well.
 Lyndvhar has not heard from the rest of the realm for a long time. The roads are silent.
-Draconae, Zardmen, and Kobolds absolutely despise eachother. That is why filling the Garrison with them would be quite funny- do it.
+The Eskallian tribes hate one another. That is why filling the Garrison with them would be quite funny- do it.
 The more sensible Goblins are less Goblin and more the term "Hobgoblin". They are much more amicable than the ones in caves.
 Do not let them decieve you. Do not let them trick you. Do not let them play you. Do not trust anyone. You can't trust anyone. You are on your own.
 Drank too much last night. I'm seeing that thing in the corner of my eye again. You see it too, don't you? It's right there. Turn around.
@@ -102,3 +102,31 @@ Eyes dart across the sky- then to the ground. What could this mean?
 There is more than meets the eye in some underground locations.
 The Underdark is considered one of the most dangerous regions of the entirety of Beowricke.
 Mt Decapitation has not erupted for hundreds of yils. That may change.
+Dubbed the Ruby War, the conflict raging and destroying the Empire as brought everything to its knees. What will happen at its end is unknown, but the collapse has already happened. How much worse could it get?
+While ruins dot the regions surrounding the city, their reason for existing may be found in books- old tomes..
+Rest easy in your bed. Dreams may be more abhorrent than expected.
+Death is swift and may be unexpected. Never be caught offguard.
+This world is not forgiving for the naive soul. Keep your friends close in travels.
+Keeping a low profile in the wilderness may keep prying eyes from ambushing you.
+Never challenge a Cervaline archer in a competition with a bow.
+While the Capridae are usually a rather calm and collected sort, it is still unwise to make one mad.
+Rhaeteian wings are rumored to actually be decently edible, but why would anyone know this?
+Avoid the waking nightmares.
+Before me opened the waking eyes of the GODS themselves, and I wept- for I was nothing.
+Some parts of the Ruby Empire worship Naexidor as an eleventh God, having been raised to deity for his conquest at Ravox's side. But that's heresy, isn't it?
+Keep yourself well-fed, and well-rested. You wouldn't want to be caught off-guard while starving, would you?
+Some stories are best left forgotten.
+The plains open up- to a flood of blood. The thickness is drowning- and then you open your eyes.
+We are always watching.
+Aevislan is probably nice this time of yil.
+The Fool's Flagon is the largest place of gathering in the city.
+If you can't find work, you can always make a posting.
+Horrible, just awful.
+There is always something to find in rock. Minerals are a-plenty in this region.
+Beowricke is the realm of lyfe that all mortals find themselves in.
+The world is separated into two continents- Llewyn and Yoheon. You're currently standing in Llewyn.
+The Splitstern Sea is one of the only bodies of water in the world that is relatively safe to traverse. Thankfully- it is between the two continents, allowing travel between them.
+What lies outside of the maps?
+Noc hates those who destroy knowledge.
+Astrata's order is not one to be challenged, lest you face the pyre.
+Some of the most renowned physicians in the Empire are Pestrans.
