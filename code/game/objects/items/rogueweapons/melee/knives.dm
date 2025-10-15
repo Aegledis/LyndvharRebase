@@ -278,6 +278,7 @@
 	name = "iron dagger"
 	desc = "This is a common dagger of iron."
 	icon_state = "idagger"
+	picklvl = 1
 	sheathe_icon = "idagger"
 	smeltresult = /obj/item/ingot/iron
 
