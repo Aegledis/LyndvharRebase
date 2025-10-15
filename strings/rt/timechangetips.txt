@@ -14,13 +14,13 @@ Xylix's gift to mortals was the humble tarot deck, allowing them to divine the f
 Dendor's madness is enigmatic at best, and malicious at worst. There is no true way to understand beyond accepting it.
 If two spirits were in the Underworld, and one killed the other with a rock, would that be fucked up or what?
 THERE IS A TUMOR DIRECTLY BEHIND MY RIGHT EYEBALL; I NEED TO REACH IN AND CLAW IT OUT BEFORE IT FUCKING EATS ME.
-Necrans despise deadites and wish them exterminated or cured; Pestrans wish them cured of their rot, but think that pustules are neat!
+Necrans despise deadites and wish them exterminated or cured; Pestrans wish them cured of their rot.
 The divines smile upon your prayers in front of a psycross, but never mention them the name of the Daemon.
 Ravox stands for justice, not murder.
 Malum used to carry a divine hammer that gave life to all material things that Beowricke was built upon. It is now lost to history.
 Eora stands for far more than familial love- but frowns upon those who break matrimony.
 The Archdaemon Graggar represents all unbridled bloodlust and rage; an almost extreme opposite to Ravoxians.
-For the entire world, the annihilation of an entire species was seen as a cataclysmic event that shook reality to its core. For the Archdaemons, it was taking one step of many.
+For the entire world, the Bloodwake was seen as a cataclysmic event that shook reality to its core and brought everything to its knees. For the Archdaemons, it was taking one step of many.
 The Archdaemon ZIZO represents unbridled ambition and unchecked arcyne magic. In recent yils her power waned as the arcyne began to become rarer, however a spike in cultists has been observed since the civil war.
 Gaze upon the mighty empire of NAEXIDOR, ye mighty, and weep!
 The Archdaemon Matthios represents unbridled envy, and is the patron of all thieves and bandit-cultists. With the increase in banditry, his power has grown significantly. Much to your detriment.
@@ -127,3 +127,6 @@ Beowricke is the realm of lyfe that all mortals find themselves in.
 The world is separated into two continents- Llewyn and Yoheon. You're currently standing in Llewyn.
 The Splitstern Sea is one of the only bodies of water in the world that is relatively safe to traverse. Thankfully- it is between the two continents, allowing travel between them.
 What lies outside of the maps?
+Noc hates those who destroy knowledge.
+Astrata's order is not one to be challenged, lest you face the pyre.
+Some of the most renowned physicians in the Empire are Pestrans.
