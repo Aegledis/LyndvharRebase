@@ -62,6 +62,40 @@ body {
 }
 
 @font-face {
+	font-family: "Dauphin";
+	src: url('elf.ttf');
+}
+@font-face {
+	font-family: "Furqan";
+	src: url('sand.ttf');
+}
+
+@font-face {
+	font-family: "Xaphan";
+	src: url('hell.ttf');
+}
+
+@font-face {
+	font-family: "Thief by The Riddler";
+	src: url('orc.ttf');
+}
+
+@font-face {
+	font-family: "MasonAlternate";
+	src: url('dwarf.ttf');
+}
+
+@font-face {
+	font-family: "Kingthings Petrock";
+	src: url('draconic.ttf');
+}
+
+@font-face {
+	font-family: "Emperialisme";
+	src: url('grenzelhoftian.ttf');
+}
+
+@font-face {
 	font-family: "Caslame";
 	src: url('forvheipan.ttf');
 }
@@ -69,6 +103,16 @@ body {
 @font-face {
 	font-family: "Persian";
 	src: url('zybanti.otf');
+}
+
+@font-face {
+	font-family: "FriskyVampire";
+	src: url('undead.ttf');
+}
+
+@font-face {
+	font-family: "Papyrus";
+	src: url('thievescant.ttf');
 }
 
 /* fuck you */

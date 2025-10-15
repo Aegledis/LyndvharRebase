@@ -189,8 +189,6 @@
 		pickchance *= P.picklvl
 		pickchance = clamp(pickchance, 1, 95)
 
-		if(ishuman(user))
-			var/mob/living/carbon/human/H = user
 
 		while(!QDELETED(attacking_item) &&(lockprogress < locktreshold))
 			if(!do_after(user, picktime, target = src))
