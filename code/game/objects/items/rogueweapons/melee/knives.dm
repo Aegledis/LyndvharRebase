@@ -234,7 +234,7 @@
 /obj/item/rogueweapon/huntingknife/combat
 	force = 20
 	name = "seax"
-	desc = "An intimidatingly large sidearm that's been used amongst the Grenzels and Northerners for centuries, both as a combat knife and as a tool for dae-to-dae laboring."
+	desc = "An intimidatingly large sidearm that's been used amongst the Northerners for centuries, both as a combat knife and as a tool for dae-to-dae laboring."
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver, /datum/intent/dagger/sucker_punch, /datum/intent/dagger/thrust/combat)
 	icon_state = "combatknife"
 	sheathe_icon = "combatknife"
