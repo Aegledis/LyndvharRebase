@@ -107,13 +107,12 @@
 				to_chat(user, span_warning("[C.p_theyre(TRUE)] missing something."))
 			if(!C.can_smell())
 				to_chat(user, span_warning("[C.p_theyre(TRUE)] has no nose!"))
-			user.visible_message(span_danger("[user] attempts to force [C] to inhale [src]."), \
-								span_danger("[user] attempts to force me to inhale [src]!"))
+			C.visible_message(span_danger("[user] attempts to force [C] to inhale [src]."), span_danger("[user] attempts to force me to inhale [src]!"))
 			if(C.cmode)
-				if(!CH.grabbedby)
-					to_chat(user, span_info("[C.p_they(TRUE)] steals [C.p_their()] face from it."))
+				if(!C.grabbedby)
+					to_chat(user, span_info("[C] moves [C.p_their()] face away from it."))
 					return FALSE
-			if(!do_mob(user, M, 10))
+			if(!do_mob(user, M, 40))
 				return FALSE
 
 	playsound(M, 'sound/items/sniff.ogg', 100, FALSE)

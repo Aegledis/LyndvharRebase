@@ -78,7 +78,7 @@
 	M.setDir(dir)
 	buckled_mobs |= M
 	M.update_mobility()
-	M.throw_alert("buckled", /atom/movable/screen/alert/restrained/buckled)
+	M.apply_status_effect(/datum/status_effect/restrained/buckled)
 	M.set_glide_size(glide_size)
 	post_buckle_mob(M)
 
@@ -98,9 +98,9 @@
 		buckled_mob.buckled = null
 		buckled_mob.anchored = initial(buckled_mob.anchored)
 		buckled_mob.update_mobility()
-		buckled_mob.clear_alert("buckled")
 		buckled_mob.set_glide_size(DELAY_TO_GLIDE_SIZE(buckled_mob.total_multiplicative_slowdown()))
 		buckled_mobs -= buckled_mob
+		buckled_mob.remove_status_effect(/datum/status_effect/restrained/buckled)
 		SEND_SIGNAL(src, COMSIG_MOVABLE_UNBUCKLE, buckled_mob, force)
 //		if(buckle_lying)
 //			buckled_mob.set_resting(FALSE)

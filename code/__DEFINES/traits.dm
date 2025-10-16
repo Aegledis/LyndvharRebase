@@ -500,6 +500,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_MONKEYLIKE		"monkeylike" //sets IsAdvancedToolUser to FALSE
 #define TRAIT_NOTIGHTGRABMESSAGE "notightgrabmessage" // Hides grab tightening messages.
 #define TRAIT_NOSSDINDICATOR "nossdindicator" // Hides the SSD indicator. Used with scrying.
+#define TRAIT_SSD "ssd" // If someone's SSD, they have this trait.
 #define TRAIT_NOSTRUGGLE "nostruggle" // Instant grabs on someone else.
 #define TRAIT_GARROTED "garroted" // Garrote-wired. Used for a snowflaked grab with item relevant tracking.
 #define TRAIT_INDEXED "indexed" // Used in Indexer-mailing to prevent false-flags.

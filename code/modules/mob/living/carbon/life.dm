@@ -555,7 +555,8 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 		energy_add(5)
 		if(mind?.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 			energy_add(10)
-		return
+		if(!has_status_effect(/datum/status_effect/restrained/buckled))
+			return
 	//Healing while sleeping in a bed
 	if(IsSleeping())
 		var/sleepy_mod = 0.5
@@ -596,11 +597,10 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 			var/obj/structure/bed/rogue/bed = locate() in loc
 			if(bed)
 				sleepy_mod = bed.sleepy
-			else
-				if(HAS_TRAIT(src, TRAIT_OUTDOORSMAN))
-					var/obj/structure/flora/newbranch/branch = locate() in loc
-					if(branch)
-						sleepy_mod = 1.5 //Worse than a bedroll, better than nothing.
+			else if(HAS_TRAIT(src, TRAIT_OUTDOORSMAN))
+				var/obj/structure/flora/newbranch/branch = locate() in loc
+				if(branch)
+					sleepy_mod = 1.5 //Worse than a bedroll, better than nothing.	
 		if(sleepy_mod > 0)
 			if(eyesclosed)
 				var/armor_blocked = FALSE

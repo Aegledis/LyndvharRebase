@@ -27,7 +27,8 @@ GLOBAL_LIST_EMPTY(players_in_dream)
 /proc/teleport_to_dream(mob/living/carbon/human/user, base_probability = 10000, probability = 10)
 	if(!ishuman(user))
 		return
-
+	if(HAS_TRAIT(user, TRAIT_SSD))
+		return
 	var/effective_probability = probability
 	if(user.patron.type == /datum/patron/divine/abyssor)
 		effective_probability *= 5

@@ -40,3 +40,7 @@
 	name = "Max Peace"
 	desc = ""
 	icon_state = "stressvg"
+
+/datum/status_effect/restrained/buckled
+	id = "sittinglaying"
+	alert_type = /atom/movable/screen/alert/restrained/buckled
