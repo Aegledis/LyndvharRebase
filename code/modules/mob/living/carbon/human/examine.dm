@@ -243,7 +243,7 @@
 	if (HAS_TRAIT(src, TRAIT_CRITICAL_WEAKNESS) && (!HAS_TRAIT(src, TRAIT_VAMP_DREAMS)))
 		if(isliving(user))
 			var/mob/living/L = user
-			if(L.STAINT > 9 && L.STAPER > 9)
+			if(L.STAINT >= 12 || L.STAPER >= 14)
 				. += span_redtext("<i>[m1] critically fragile!</i>")
 
 	if(user != src && HAS_TRAIT(user, TRAIT_MATTHIOS_EYES) && (!HAS_TRAIT(src, TRAIT_DECEIVING_MEEKNESS)))
