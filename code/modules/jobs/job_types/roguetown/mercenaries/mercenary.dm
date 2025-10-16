@@ -20,7 +20,6 @@
 	always_show_on_latechoices = TRUE
 	class_categories = TRUE
 	job_subclasses = list(
-		/datum/advclass/mercenary/anthrax,
 		/datum/advclass/mercenary/atgervi,
 		/datum/advclass/mercenary/atgervi/shaman,
 		/datum/advclass/mercenary/condottiero,

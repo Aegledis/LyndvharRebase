@@ -249,10 +249,3 @@
 		obj_fix(full_repair = FALSE)
 	addtimer(CALLBACK(src, PROC_REF(skin_repair)), repair_time, TIMER_OVERRIDE|TIMER_UNIQUE|TIMER_STOPPABLE)
 
-/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/shadowrobe
-	name = "stalker robe"
-	desc = "A robe-like gambeson of moth-eaten cloth and cheap purple dye. No self-respecting elf would be seen wearing this."
-	allowed_race = NON_DWARVEN_RACE_TYPES
-	icon_state = "shadowrobe"
-	armor = ARMOR_PADDED_GOOD
-	max_integrity = ARMOR_INT_CHEST_LIGHT_MEDIUM + 30 //280
