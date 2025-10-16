@@ -2072,6 +2072,7 @@
 #include "code\modules\mob\living\simple_animal\hostile\retaliate\summons\void\voiddragon.dm"
 #include "code\modules\mob\living\simple_animal\hostile\roguetown\crow.dm"
 #include "code\modules\mob\living\simple_animal\hostile\roguetown\haunt.dm"
+#include "code\modules\mob\living\simple_animal\creacher\roguetown\smallrat.dm"
 #include "code\modules\mob\living\simple_animal\hostile\roguetown\werewolf\update_icons.dm"
 #include "code\modules\mob\living\simple_animal\hostile\roguetown\werewolf\werewolf.dm"
 #include "code\modules\mob\living\simple_animal\rogue\rogueanimals.dm"
