@@ -449,6 +449,17 @@
 	name = "surcoat, bog"
 	result = list(/obj/item/clothing/cloak/stabard/bog)
 
+/datum/crafting_recipe/roguetown/sewing/stabard/guardhood
+	name = "guard hood"
+	result = list(/obj/item/clothing/cloak/stabard/guardhood)
+
+/datum/crafting_recipe/roguetown/sewing/poncho
+	name = "cloth poncho"
+	result = /obj/item/clothing/cloak/poncho
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 1,)
+	craftdiff = 2
+
 /datum/crafting_recipe/roguetown/sewing/robe
 	name = "robe"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/robe)
@@ -855,7 +866,7 @@
 	tools = list(/obj/item/needle)
 	craftdiff = 5
 	sellprice = 25
-	
+
 /datum/crafting_recipe/roguetown/sewing/silkdress
 	name = "ornate silk dress"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/steward)
@@ -1111,7 +1122,7 @@
 	tools = list(/obj/item/needle)
 	craftdiff = 4
 	sellprice = 13
-	
+
 /datum/crafting_recipe/roguetown/sewing/weddingdress
 	name = "wedding silk dress"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/weddingdress)
