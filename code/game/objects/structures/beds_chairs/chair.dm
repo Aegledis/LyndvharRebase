@@ -258,6 +258,7 @@
 	obj_flags = CAN_BE_HIT
 	var/break_chance = 23 //Likely hood of smashing the chair.
 	var/obj/structure/chair/origin_type = /obj/structure/chair
+	gripped_intents = list(/datum/intent/hit)
 
 /obj/item/chair/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins hitting [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -302,8 +303,8 @@
 		user.visible_message("<span class='warning'>[src] is smashed to pieces!</span>")
 		if(iscarbon(target))
 			var/mob/living/carbon/C = target
-			if(C.health < C.maxHealth*0.5)
-				C.Paralyze(20)
+				C.adjustBruteLoss(50, TRUE)
+				C.Immobilize(20)
 		smash(user)
 
 /obj/item/chair/greyscale
