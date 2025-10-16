@@ -110,7 +110,8 @@
 	added_skills = list(list(/datum/skill/misc/reading, 3, 6))
 	added_stashed_items = list(
 		"Quill" = /obj/item/natural/feather,
-		"Scroll #1" = /obj/item/paper/scroll,
+		"Scroll" = /obj/item/paper/scroll,
+		"Unfinished Skillbook" = /obj/item/skillbook/unfinished
 		"Scroll #2" = /obj/item/paper/scroll,
 		"Book Crafting Kit" = /obj/item/book_crafting_kit
 	)
