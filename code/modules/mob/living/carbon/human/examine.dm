@@ -273,8 +273,8 @@
 					if(shit)
 						. += shit
 
-	if(user.mind.has_antag_datum(/datum/antagonist/vampirelord) || user.mind.has_antag_datum(/datum/antagonist/vampire))
-		. += span_userdanger("Blood Volume: [blood_volume]")					
+		if(Umind.has_antag_datum(/datum/antagonist/vampirelord) || Umind.has_antag_datum(/datum/antagonist/vampire))
+			. += span_userdanger("Blood Volume: [blood_volume]")					
 
 	var/list/obscured = check_obscured_slots()
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))

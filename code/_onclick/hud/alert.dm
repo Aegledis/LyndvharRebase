@@ -357,6 +357,7 @@
 	name = "Sitting/laying"
 	desc = ""
 	icon_state = "buckled"
+	var/datum/status_effect/attached_effect
 
 /atom/movable/screen/alert/restrained/handcuffed
 	name = "Restrained (arms)"
