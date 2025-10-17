@@ -73,9 +73,15 @@
 	duration = 5 MINUTES
 	status_type = STATUS_EFFECT_REFRESH
 	examine_text = "SUBJECTPRONOUN is surrounded by an aura of gentle light."
-	var/outline_colour = "#ffffff"
+	var/outline_colour = "#f5edda"
 	var/list/mobs_affected
 	var/obj/effect/dummy/lighting_obj/moblight/mob_light_obj
+	var/light_intensity = 1
+
+/datum/status_effect/light_buff/on_creation(mob/living/new_owner, light_power)
+	if (light_power)
+		light_intensity = light_power
+	. = ..()
 
 /datum/status_effect/light_buff/refresh()
 	duration += initial(duration) // stack this up as much as we can be bothered to cast it
@@ -89,7 +95,7 @@
 	var/filter = owner.get_filter(BLESSINGOFLIGHT_FILTER)
 	if (!filter)
 		owner.add_filter(BLESSINGOFLIGHT_FILTER, 2, list("type" = "outline", "color" = outline_colour, "alpha" = 60, "size" = 1))
-	mob_light_obj = owner.mob_light(7, 7, _color ="#f5edda")
+	mob_light_obj = owner.mob_light(outline_colour, light_intensity, light_intensity)
 	return TRUE
 
 /datum/status_effect/light_buff/on_remove()
@@ -120,7 +126,7 @@
 				user.visible_message(span_notice("The holy light emanating from [living_thing] becomes brighter!"), span_notice("I feed further devotion into [living_thing]'s blessing of light."))
 			else
 				user.visible_message(span_notice("A gentle illumination suddenly blossoms into being around [living_thing]!"), span_notice("I grant [living_thing] a blessing of light."))
-			living_thing.apply_status_effect(/datum/status_effect/light_buff,light_power)
+			living_thing.apply_status_effect(/datum/status_effect/light_buff, light_power)
 
 			return light_devotion
 	else
