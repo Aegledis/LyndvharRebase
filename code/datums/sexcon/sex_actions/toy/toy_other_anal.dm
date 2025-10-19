@@ -1,5 +1,7 @@
 /datum/sex_action/toy_other_anal
 	name = "Use toy on their butt"
+	category = SEX_CATEGORY_PENETRATE
+	target_sex_part = SEX_PART_ANUS
 
 /datum/sex_action/toy_other_anal/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
@@ -11,7 +13,7 @@
 /datum/sex_action/toy_other_anal/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
 		return FALSE
-	if(!get_location_accessible(target, BODY_ZONE_PRECISE_GROIN, TRUE))
+	if(!check_location_accessible(user, target, BODY_ZONE_PRECISE_GROIN, TRUE))
 		return FALSE
 	if(!get_dildo_in_either_hand(user))
 		return FALSE

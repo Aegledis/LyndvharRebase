@@ -1,5 +1,8 @@
 /datum/sex_action/masturbate_anus
 	name = "Finger butt"
+	category = SEX_CATEGORY_HANDS
+	user_sex_part = SEX_PART_ANUS
+	target_sex_part = SEX_PART_ANUS
 
 /datum/sex_action/masturbate_anus/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user != target)
@@ -9,7 +12,7 @@
 /datum/sex_action/masturbate_anus/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user != target)
 		return FALSE
-	if(!get_location_accessible(user, BODY_ZONE_PRECISE_GROIN, TRUE))
+	if(!check_location_accessible(user, user, BODY_ZONE_PRECISE_GROIN, TRUE))
 		return FALSE
 	return TRUE
 

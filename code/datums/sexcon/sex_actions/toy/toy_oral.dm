@@ -1,5 +1,8 @@
 /datum/sex_action/toy_oral
 	name = "Swallow toy"
+	category = SEX_CATEGORY_PENETRATE
+	user_sex_part = SEX_PART_JAWS
+	target_sex_part = SEX_PART_JAWS
 
 /datum/sex_action/toy_oral/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user != target)
@@ -11,7 +14,7 @@
 /datum/sex_action/toy_oral/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user != target)
 		return FALSE
-	if(!get_location_accessible(user, BODY_ZONE_PRECISE_MOUTH))
+	if(!check_location_accessible(user, user, BODY_ZONE_PRECISE_MOUTH))
 		return FALSE
 	if(!get_dildo_in_either_hand(user))
 		return FALSE

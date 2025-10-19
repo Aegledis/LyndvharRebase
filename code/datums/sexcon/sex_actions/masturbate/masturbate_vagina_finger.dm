@@ -1,5 +1,7 @@
 /datum/sex_action/masturbate_vagina_finger
 	name = "Finger pussy"
+	category = SEX_CATEGORY_HANDS
+	target_sex_part = SEX_PART_CUNT
 
 /datum/sex_action/masturbate_vagina_finger/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user != target)
@@ -11,7 +13,7 @@
 /datum/sex_action/masturbate_vagina_finger/can_perform(mob/living/user, mob/living/target)
 	if(user != target)
 		return FALSE
-	if(!get_location_accessible(user, BODY_ZONE_PRECISE_GROIN, TRUE))
+	if(!check_location_accessible(user, user, BODY_ZONE_PRECISE_GROIN, TRUE))
 		return FALSE
 	if(!user.getorganslot(ORGAN_SLOT_VAGINA))
 		return FALSE
