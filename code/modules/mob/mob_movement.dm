@@ -173,15 +173,13 @@
 			L.sprinted_tiles = 0
 
 	var/old_direct = mob.dir
-
+	
 	. = ..()
 
 	if((direct & (direct - 1)) && mob.loc == n) //moved diagonally successfully
 		add_delay *= 2
 
-	var/after_glide = 0
-
-	mob.set_glide_size(after_glide)
+	mob.set_glide_size(DELAY_TO_GLIDE_SIZE(add_delay))
 
 	move_delay += add_delay
 	if(.) // If mob is null here, we deserve the runtime
