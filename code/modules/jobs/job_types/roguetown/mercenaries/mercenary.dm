@@ -38,7 +38,6 @@
 		/datum/advclass/mercenary/xuefengclan,
 		/datum/advclass/mercenary/xuefengclan/gungsu,
 		/datum/advclass/mercenary/seonjang,
-		/datum/advclass/mercenary/steppesman,
 		/datum/advclass/mercenary/steppesman/sabrevet,
 		/datum/advclass/mercenary/steppesman/sapper,
 		/datum/advclass/mercenary/steppesman/archer,
