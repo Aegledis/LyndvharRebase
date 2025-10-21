@@ -267,9 +267,9 @@
 	toolspeed = 2
 
 /obj/item/rogueweapon/stoneaxe/woodcut/wardenpick
-	name = "Bluehandle axe"
+	name = "blackhandle axe"
 	desc = "A multi-use axe smithed for the garrison, for use as a tool and a weapon."
-	icon_state = "wardenpax"
+	icon_state = "garripax"
 	force = 22
 	force_wielded = 26
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop, /datum/intent/mace/warhammer/pick, /datum/intent/axe/bash)
