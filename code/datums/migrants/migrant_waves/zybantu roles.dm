@@ -163,13 +163,13 @@
 
 /datum/outfit/job/roguetown/zybantu/janissary/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/roguetown/helmet/sallet/zybantu
+	head = /obj/item/clothing/head/roguetown/roguehood/shalal/hijab/zybantu
 	mask = /obj/item/clothing/mask/rogue/facemask/steel
 	neck = /obj/item/clothing/neck/roguetown/gorget/steel
 	cloak = /obj/item/clothing/cloak/half/rider/red
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/scale
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
-	gloves = /obj/item/clothing/gloves/roguetown/leather
+	gloves = /obj/item/clothing/gloves/roguetown/chain
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/zybantu
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
@@ -225,7 +225,7 @@
 /datum/outfit/job/roguetown/zybantu/zeybek/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/roguehood/shalal/hijab/zybantu
-	mask = /obj/item/clothing/mask/rogue/facemask
+	mask = /obj/item/clothing/mask/rogue/facemask/steel
 	neck = /obj/item/clothing/neck/roguetown/gorget/steel
 	cloak = /obj/item/clothing/cloak/half/rider/red
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/zybantu
