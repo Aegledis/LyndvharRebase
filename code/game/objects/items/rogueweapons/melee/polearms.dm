@@ -728,7 +728,7 @@
 
 /obj/item/rogueweapon/spear/holysee
 	name = "see spear"
-	desc = "A blessed spear, wielded by the Holy See's templars to keep the forces of evil at bay. The design is remarkably well-balanced, allowing it for effective off-handed use with a shield. The prongs seem to catch even the tiniest glimmer of daelight, magnifying it into a blinding glare. </br>'I fear no evil, my Gods, for thou art with me!'"
+	desc = "A blessed spear, wielded by the Mother Church's templars to keep the forces of evil at bay. The design is remarkably well-balanced, allowing it for effective off-handed use with a shield. The prongs seem to catch even the tiniest glimmer of daelight, magnifying it into a blinding glare. </br>'I fear no evil, my Gods, for thou art with me!'"
 	icon_state = "gsspear"
 	force = 25 // better in one hand. Use it with the shield.
 	max_blade_int = 225

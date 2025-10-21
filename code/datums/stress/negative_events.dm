@@ -379,7 +379,7 @@
 
 /datum/stressevent/naledimasklost
 	stressadd = 3
-	desc = span_boldred("The mask! Anyone here could be a djinn. I'm exposed.")
+	desc = span_boldred("The mask! Everyone can see my face. I'm exposed.")
 	timer = 999 MINUTES
 
 /datum/stressevent/shamanhoodlost

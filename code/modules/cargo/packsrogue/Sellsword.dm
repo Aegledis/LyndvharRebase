@@ -190,7 +190,7 @@
 	contains = list(/obj/item/rogueweapon/sword/sabre/shamshir)
 
 ///////////////////////
-// RANESHEN - FORLON //
+// ZYBANTU - FORLON //
 ///////////////////////
 
 /datum/supply_pack/rogue/Sellsword/wolfhelm

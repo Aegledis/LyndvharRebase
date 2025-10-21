@@ -131,9 +131,9 @@
 		slapcraft_recipes = slapcraft_recipe_list,\
 	)
 
-/obj/item/roguegem/amethyst/naledi
-	name = "naledic amythortz"
-	desc = "A deep lavender crystal, crackling with magical energy. To a Disciple, it might simply be a keepsake from pilgrimages abroad: but to a Sojourner, it is the leyline to their arcyne-enchanted form of martial combat. </br>This gemstone can be applied to a yet-unfinished spelltome by those with arcyne potential, in order to recall more spells."
+/obj/item/roguegem/amethyst/khazumian
+	name = "khazumite amythortz"
+	desc = "A deep lavender crystal, crackling with magical energy. To a foreigner, it might simply be a keepsake from the lands of the Khaliphate: but to a Sojourner, it is the leyline to their arcyne-enchanted form of martial combat. </br>This gemstone can be applied to a yet-unfinished spelltome by those with arcyne potential, in order to recall more spells."
 
 /obj/item/roguegem/random
 	name = "random gem"

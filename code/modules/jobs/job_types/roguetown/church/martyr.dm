@@ -428,7 +428,7 @@
 	title = "Martyr"
 	department_flag = CHURCHMEN
 	faction = "Station"
-	tutorial = "Martyrs are hand-picked among the most devout of the Holy See. They are given one of the See's cherished relics to protect the Church, and to inspire hope and lead by example of grace, kindness and vicious intolerance to any who do not share the belief of the Ten. They have sworn an Oath in the sight of the gods, and will fulfill it to the bitter end."
+	tutorial = "Martyrs are hand-picked among the most devout of the Mother Church. They are given one of the See's cherished relics to protect the Church, and to inspire hope and lead by example of grace, kindness and vicious intolerance to any who do not share the belief of the Ten. They have sworn an Oath in the sight of the gods, and will fulfill it to the bitter end."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_RESPECTED_UP
 	allowed_patrons = list(/datum/patron/divine/undivided)
@@ -463,7 +463,7 @@
 
 /datum/advclass/martyr
 	name = "Martyr"
-	tutorial = "Martyrs are hand-picked among the most devout of the Holy See. They are given one of the See's cherished relics to protect the Church, and to inspire hope and lead by example of grace, kindness and vicious intolerance to any who do not share the belief of the Ten. They have sworn an Oath in the sight of the gods, and will fulfill it to the bitter end."
+	tutorial = "Martyrs are hand-picked among the most devout of the Mother Church. They are given one of the See's cherished relics to protect the Church, and to inspire hope and lead by example of grace, kindness and vicious intolerance to any who do not share the belief of the Ten. They have sworn an Oath in the sight of the gods, and will fulfill it to the bitter end."
 	outfit = /datum/outfit/job/roguetown/martyr/basic
 	subclass_languages = list(/datum/language/grenzelhoftian)
 	category_tags = list(CTAG_MARTYR)
@@ -533,7 +533,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguemartyr_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguemartyr_righthand.dmi'
 	name = "martyr sword"
-	desc = "A relic from the Holy See's own vaults. It simmers with godly energies, and will only yield to the hands of those who have taken the Oath."
+	desc = "A relic from the Mother Church's own vaults. It simmers with godly energies, and will only yield to the hands of those who have taken the Oath."
 	max_blade_int = 200
 	max_integrity = 300
 	parrysound = "bladedmedium"
@@ -657,7 +657,7 @@
 
 /obj/item/clothing/under/roguetown/platelegs/holysee
 	name = "holy silver chausses"
-	desc = "Plate leggings of silver forged for the Holy See's forces. A sea of silver to descend upon evil."
+	desc = "Plate leggings of silver forged for the Mother Church's forces. A sea of silver to descend upon evil."
 	icon = 'icons/roguetown/clothing/special/martyr.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/martyr.dmi'
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -671,7 +671,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/holysee
 	name = "holy silver bascinet"
-	desc = "Branded by the Holy See, these helms are worn by it's chosen warriors. A bastion of hope in the dark nite."
+	desc = "Branded by the Mother Church, these helms are worn by it's chosen warriors. A bastion of hope in the dark nite."
 	icon = 'icons/roguetown/clothing/special/martyr.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/martyrbascinet.dmi'
 	bloody_icon = 'icons/effects/blood64.dmi'
@@ -692,7 +692,7 @@
 
 /obj/item/clothing/cloak/holysee
 	name = "holy silver vestments"
-	desc = "A set of vestments worn by the Holy See's forces, silver embroidery and seals of light ordain it as a bastion against evil."
+	desc = "A set of vestments worn by the Mother Church's forces, silver embroidery and seals of light ordain it as a bastion against evil."
 	icon = 'icons/roguetown/clothing/special/martyr.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/martyr.dmi'
 	icon_state = "silvertabard"

@@ -518,7 +518,7 @@
 
 /atom/movable/screen/alert/status_effect/debuff/naledimask
 	name = "Lost Mask"
-	desc = "Djinns and daemons may claim me at any moment without the mask. It is not safe."
+	desc = "I am vulnerable without the protection of the mask. It is not safe."
 	icon_state = "muscles"
 
 /datum/status_effect/debuff/lost_shaman_hood

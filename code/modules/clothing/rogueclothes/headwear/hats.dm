@@ -220,9 +220,9 @@
 		REMOVE_TRAIT(user, TRAIT_SILVER_BLESSED, TRAIT_GENERIC)
 		REMOVE_TRAIT(user, TRAIT_ZOMBIE_IMMUNE, TRAIT_GENERIC)
 
-/obj/item/clothing/head/roguetown/headband/naledi
+/obj/item/clothing/head/roguetown/headband/khazumian
 	name = "sojourner's headband"
-	desc = "A traditional garment, carried by those who survived the lonesome pilgrimage through Naledi's cursed dunes. Like a helmet, it will ward off killing blows; but unlike a helmet, it will keep the sweat out of your eyes and the mistakes out of your incantations. </br>'..We had our tests; we had our places of sin and vice. We were to look out for brother and sister, arm-in-arm, to ensure none of us fell. And yet we all did. We all allowed that to become what is. The daemons that roam our streets, that snatch our children from our bed, that eat our wives and break our husbands. They are us, our own creations and perversions. They are humanity as humanity sees itself, made manifest through our own twisted arcyne magicks..'"
+	desc = "A traditional garment, carried by those who travel and survive crossing the Grand Dune. Like a helmet, it will ward off killing blows; but unlike a helmet, it will keep the sweat out of your eyes and the mistakes out of your incantations."
 	icon_state = "headband"
 	color = "#48443b"
 	sewrepair = TRUE
@@ -253,7 +253,7 @@
 
 /obj/item/clothing/head/roguetown/inqhat
 	name = "inquisitorial hat"
-	desc = "A fine leather slouch, beplumed with a crimson feather and fitted with a hidden steel skull cap. It serves as a reminder that the Holy Otavan Inquisition triumphs in one avenue above all else - fashion. </br>'To keep ones vision away from the heavens, and focused on the sin beneath the soil.'"
+	desc = "A fine leather slouch, beplumed with a crimson feather and fitted with a hidden steel skull cap. It serves as a reminder that the Inquisition triumphs in one avenue above all else - fashion. </br>'To keep ones vision away from the heavens, and focused on the sin beneath the soil.'"
 	icon_state = "inqhat"
 	item_state = "inqhat"
 	max_integrity = 200

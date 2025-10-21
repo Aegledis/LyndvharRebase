@@ -8,13 +8,13 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_SHUNNED_UP
 	allowed_patrons = ALL_NICE_PATRONS
-	tutorial = "Tales speak of the Gatemaster's legendary ability to stand still at a gate and ask people questions."
+	tutorial = "While you yourself had joined arms with the rest of the Watch, you were given a very specific and unique assignment- the watch of the manor gate. It's.. not exactly what you had in mind- but you get your own room below the gate, and can dictate the fate of those deemed unworthy of Kybraxor's presence. Ask questions and find out exactly WHO is trying to enter the Manor todae. Just try not to drop anyone important in there- lest you find your lyfe very quickly extinguished."
 	display_order = JDO_GATEMASTER
 	advclass_cat_rolls = list(CTAG_GATEMASTER = 20)
-	give_bank_account = 3
-	min_pq = 4
+	give_bank_account = 16
+	min_pq = 2
 	max_pq = null
-	round_contrib_points = 3
+	round_contrib_points = 2
 
 	cmode_music = 'sound/music/combat_garrison.ogg'
 
@@ -28,7 +28,7 @@
 
 /datum/advclass/gatemaster
 	name = "Gatemaster"
-	tutorial = "Tales speak of the Gatemaster's legendary ability to stand still at a gate and ask people questions."
+	tutorial = "While you yourself had joined arms with the rest of the Watch, you were given a very specific and unique assignment- the watch of the manor gate. It's.. not exactly what you had in mind- but you get your own room below the gate, and can dictate the fate of those deemed unworthy of Kybraxor's presence. Ask questions and find out exactly WHO is trying to enter the Manor todae. Just try not to drop anyone important in there- lest you find your lyfe very quickly extinguished."
 	outfit = /datum/outfit/job/roguetown/gatemaster
 	category_tags = list(CTAG_GATEMASTER)
 	subclass_stats = list(

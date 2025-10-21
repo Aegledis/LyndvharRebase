@@ -97,7 +97,7 @@ GLOBAL_LIST_EMPTY(heretical_players)
 		/obj/item/needle/pestra = 1,
 		/obj/item/natural/worms/leech/cheele = 1, //little buddy
 		/obj/item/ritechalk = 1,
-		/obj/item/rogueweapon/huntingknife/idagger/steel/holysee = 1,	//Unique knife from the Holy See
+		/obj/item/rogueweapon/huntingknife/idagger/steel/holysee = 1,	//Unique knife from the Mother Church
 		/obj/item/rogueweapon/scabbard/sheath = 1
 	)
 	var/datum/devotion/C = new /datum/devotion(H, H.patron) // This creates the cleric holder used for devotion spells
