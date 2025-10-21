@@ -89,6 +89,18 @@
 	user.changeNext_move(CLICK_CD_INTENTCAP)
 	if(dead)
 		..()
+	else
+		if(isturf(loc))
+			if(isliving(user))
+				var/mob/living/L = user
+				if(prob(L.STASPD * 1.5))
+					..()
+				else
+					dir = pick(GLOB.cardinals)
+					step(src, dir)
+					to_chat(user, span_warning("I fail to snatch it by the tail!"))
+					playsound(src, pick('sound/vo/mobs/rat/rat_life.ogg','sound/vo/mobs/rat/rat_life2.ogg','sound/vo/mobs/rat/rat_life3.ogg'), 100, TRUE, -1)
+					return
 	..()
 
 /obj/item/reagent_containers/food/snacks/smallrat/process()
