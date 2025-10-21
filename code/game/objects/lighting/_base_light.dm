@@ -22,6 +22,7 @@
 	desc = ""
 	layer = WALL_OBJ_LAYER
 	max_integrity = 100
+	light_system = MOVABLE_LIGHT
 	var/on = FALSE					// 1 if on, 0 if off
 	var/on_gs = FALSE
 	var/static_power_used = 0
@@ -63,6 +64,7 @@
 	var/fueluse = -1 // How much fuel the machinery starts with. At -1, it is never turned off with the passing of time.
 	var/obj/effect/fog_parter/fog_parter_effect = /obj/effect/fog_parter // set to null to remove fog parter
 
+	var/never_on
 /obj/machinery/light/broken
 	status = LIGHT_BROKEN
 	icon_state = "tube-broken"
@@ -182,12 +184,14 @@
 				if(status == LIGHT_OK && trigger)
 					explode()
 			else
-				set_light(BR, light_inner_range, PO, l_color = CO)
+				if(never_on) //snowflake override for shitty code I don't want to fix.
+					set_light(BR, light_inner_range, PO, l_color = CO)
+				else
+					set_light(BR, light_inner_range, PO, l_color = CO, l_on = on)
 	else
 		emergency_mode = TRUE
 		START_PROCESSING(SSmachines, src)
 	update_icon()
-
 	broken_sparks(start_only=TRUE)
 
 /obj/machinery/light/set_light_range()
@@ -222,7 +226,7 @@
 /obj/machinery/light/proc/burn_out()
 	if(on)
 		on = FALSE
-		set_light(0)
+		set_light(l_on = FALSE)
 		update_icon()
 
 // attempt to set the light's on/off status

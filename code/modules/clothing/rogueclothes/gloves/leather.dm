@@ -81,7 +81,7 @@
 
 /obj/item/clothing/gloves/roguetown/valorian/inqgloves
 	name = "inquisitorial leather gloves"
-	desc = "Masterfully crafted leather gloves, psycross included."
+	desc = "Masterworked leather gloves, reinforced with a light weave of maille. Hanging from the left glove's cuff is a small rosary necklace; a warm reminder that even the Inquisitors are beholden to His authority."
 	icon_state = "inqgloves"
 	item_state = "inqgloves"
 	salvage_result = /obj/item/natural/hide/cured

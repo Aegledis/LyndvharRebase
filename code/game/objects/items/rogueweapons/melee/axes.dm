@@ -267,9 +267,9 @@
 	toolspeed = 2
 
 /obj/item/rogueweapon/stoneaxe/woodcut/wardenpick
-	name = "Bluehandle axe"
+	name = "blackhandle axe"
 	desc = "A multi-use axe smithed for the garrison, for use as a tool and a weapon."
-	icon_state = "wardenpax"
+	icon_state = "garripax"
 	force = 22
 	force_wielded = 26
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop, /datum/intent/mace/warhammer/pick, /datum/intent/axe/bash)
@@ -523,6 +523,7 @@
 	icon = 'icons/roguetown/weapons/64.dmi'
 	minstr = 12
 	max_blade_int = 350
+	is_silver = TRUE
 	smeltresult = /obj/item/ingot/silver
 
 /obj/item/rogueweapon/greataxe/silver/ComponentInitialize()
@@ -547,6 +548,7 @@
 	icon = 'icons/roguetown/weapons/64.dmi'
 	minstr = 12
 	max_blade_int = 350
+	is_silver = TRUE
 	smeltresult = /obj/item/ingot/silverblessed
 
 /obj/item/rogueweapon/greataxe/psy/ComponentInitialize()
