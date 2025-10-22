@@ -660,8 +660,18 @@
 	screen_loc = rogueui_moves
 
 /atom/movable/screen/rogmove/Click(location, control, params)
-	var/mob/M = usr
-	toggle(M)
+	var/list/modifiers = params2list(params)
+	var/mob/living/M = usr
+	M.playsound_local(M, 'sound/misc/click.ogg', 100)
+	if(modifiers["middle"])
+		if(M.loud_sneaking == 1)
+			M.loud_sneaking = 0
+		else	
+			M.loud_sneaking = 1
+	else
+		toggle(M)
+		update_icon()
+
 
 /atom/movable/screen/rogmove/proc/toggle(mob/user)
 	if(isobserver(user))

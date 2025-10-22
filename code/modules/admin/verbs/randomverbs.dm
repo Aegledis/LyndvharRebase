@@ -714,6 +714,16 @@ Traitors and the like can also be revived with the previous role mostly intact.
 
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggled Hub Visibility", "[GLOB.hub_visibility ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+/client/proc/matryoshka(mob/living/self as mob)
+	set name = "Matryoshka"
+	set category = "Debug"
+	if(!check_rights(R_ADMIN) || !check_rights(R_FUN))
+		return
+
+	var/mob/where = input("Where?", "Location", null) as mob
+
+	where.forceMove(self)
+
 /client/proc/smite(mob/living/target as mob)
 	set name = "Smite"
 	set category = "-Fun-"

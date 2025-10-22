@@ -96,8 +96,12 @@
 
 /mob/living/carbon/human/send_speech(message, message_range = 6, obj/source = src, bubble_type = bubble_icon, list/spans, datum/language/message_language=null, message_mode, original_message)
 	. = ..()
+	if(isobj(src.loc) || ismob(src.loc))
+		message_range = 0
+
 	if(message_mode != MODE_WHISPER)
-		send_voice(message)
+		if (!isobj(src.loc) && !ismob(src.loc))
+			send_voice(message)
 
 /mob/living/carbon/human/proc/send_voice(message, skip_thingy)
 	if(!message || !length(message))
