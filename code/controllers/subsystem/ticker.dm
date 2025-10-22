@@ -767,7 +767,7 @@ SUBSYSTEM_DEF(ticker)
 /// Wrapper for setting rulermob and rulertype
 /datum/controller/subsystem/ticker/proc/set_ruler_mob(mob/newruler)
 	rulermob = newruler
-	var/datum/job/lord_job = SSjob.GetJob("Grand Duke")
+	var/datum/job/lord_job = SSjob.GetJob("Viscount")
 	if(should_wear_femme_clothes(rulermob))
 		SSticker.rulertype = lord_job?.f_title || lord_job.title
 	else
