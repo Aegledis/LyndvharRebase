@@ -1,6 +1,6 @@
 /datum/migrant_wave/ackrinve
 	name = "Ackrinval Incursion"
-	max_spawns = 1
+	max_spawns = 3 //debug purposes
 	weight = 100 //debug purposes
 	downgrade_wave = /datum/migrant_wave/ackrinve_down_one
 	roles = list(

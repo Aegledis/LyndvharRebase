@@ -149,6 +149,8 @@ decreases charge time if held opened in hand, for pure mage build + aesthetics.
 		var/mob/living/carbon/human/gamer = user
 		if(gamer.job == "Archmagus")
 			designlist = list("steel", "gem", "skin", "mimic")
+		if(gamer.job == "Ackrinval Necromancer")
+			designlist = list("skin", "mimic")
 		var/the_time = world.time
 		var/design = input(user, "Select a design.","Spellbook Design") as null|anything in designlist
 		if(!design)

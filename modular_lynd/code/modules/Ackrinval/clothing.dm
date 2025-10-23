@@ -26,8 +26,8 @@
 	name = "burning eyes"
 	desc = "A combination of fell magicks and exposure to the Arkrinval wastelands have made your eyeballs eternally aflame"
 	color = null
-	icon = 'modular_lynd/icons/Ackrinval/necromanceronmob.dmi'
-	item = 'modular_lynd/icons/Ackrinval/necromancer.dmi'
+	mob_overlay_icon = 'modular_lynd/icons/Ackrinval/necromanceronmob.dmi'
+	icon = 'modular_lynd/icons/Ackrinval/necromancer.dmi'
 	icon_state = "eyes"
 	item_state = "eyes"
 	body_parts_covered = EYES
