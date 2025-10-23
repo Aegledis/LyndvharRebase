@@ -36,18 +36,14 @@
 		handle_embedded_objects()
 		handle_blood()
 		//passively heal even wounds with no passive healing
-		for(var/datum/wound/wound as anything in get_wounds())
-			wound.heal_wound(1)
 
-	/// ENDVRE AS HE DOES.
-	if(!stat && HAS_TRAIT(src, TRAIT_PSYDONITE) && !HAS_TRAIT(src, TRAIT_PARALYSIS))
-		handle_wounds()
-		//passively heal wounds, but not if you're skullcracked OR DEAD.
-		if(blood_volume > BLOOD_VOLUME_SURVIVE)
-			for(var/datum/wound/wound as anything in get_wounds())
-				wound.heal_wound(0.6)		
-
-	if(QDELETED(src)) // diseases can qdel the mob via transformations
+	var/heal_amount = 1 + (blood_volume > BLOOD_VOLUME_SURVIVE ? 0.6 : 0)
+	// apparently this means NPCs should heal their wounds slowly over time,
+	// with a 60% bonus if they're not completely bled out.
+	// this is a strict replacement for two whole-ass block iteration things that did the same thing (or nothing at all)
+	heal_wounds(heal_amount)
+	
+	if (QDELETED(src)) // diseases can qdel the mob via transformations
 		return
 
 	handle_environment()
@@ -123,14 +119,24 @@
 	return
 
 /mob/living/proc/handle_wounds()
-	if(stat >= DEAD)
-		for(var/datum/wound/wound in get_wounds())
-			wound.on_death()
+	// the commented block below appears to be pointless, as no wound implements on_death
+	// moreover, why are psydonites excluded from on_death wound events?
+	// zero clue what the intent with this was.
 
-		return
+	/*
+	if(!HAS_TRAIT(src, TRAIT_PSYDONITE) && stat >= DEAD)
+		for(var/datum/wound/wound as anything in get_wounds())
+			if(istype(wound, /datum/wound))
+				wound.on_death()
+		return*/
 
-	for(var/datum/wound/wound in get_wounds())
-		wound.on_life()
+	for(var/datum/wound/wound as anything in get_wounds())
+		if(istype(wound, /datum/wound))
+			if (stat != DEAD)
+				wound.on_life()
+			else
+				wound.on_death()
+
 
 /obj/item/proc/on_embed_life(mob/living/user, obj/item/bodypart/bodypart)
 	return
