@@ -96,7 +96,7 @@
 
 /obj/item/rogueweapon/sickle/aalloy
 	name = "decrepit sickle"
-	desc = "Her thought was simple; to seperate the wheat from the chaff. By removing the limitations set upon one's spirit by lyfe, only then could divinity be obtained. She was correct - yet Her ascension had gone terribly awry, all-the-same."
+	desc = "This sickle is old- very old. Judging by its rust it predates even most written history. Legends tell of the first tools graced upon mortal hand by Malum themself having been wrought from these materials."
 	icon_state = "asickle"
 	color = "#bb9696"
 	sellprice = 15
@@ -129,7 +129,7 @@
 
 /obj/item/rogueweapon/hoe/aalloy
 	name = "decrepit hoe"
-	desc = "Food is what cultivates lyfe; and without lyfe, there would be nothing left. At least, that is what His children would want you to believe."
+	desc = "Food is what cultivates lyfe; and without lyfe, there would be nothing left. At least, that is what they would want you to believe."
 	icon_state = "ahoe"
 	smeltresult = /obj/item/ingot/aalloy
 	color = "#bb9696"
@@ -317,7 +317,7 @@
 
 /obj/item/rogueweapon/pitchfork/aalloy
 	name = "decrepit pitchfork"
-	desc = "Do not fault the layman for fearing Her disciples, nor for driving them out of the villages with pitchforks-and-torches. They, too, will come to see the blessings of Zizo, all in due tyme." 
+	desc = "Do not fault the layman for fearing daemons, nor for driving them out of the villages with pitchforks-and-torches. They, too, will come to see the blessings, all in due tyme." 
 	icon_state = "apitchfork"
 	smeltresult = /obj/item/ingot/aalloy
 	color = "#bb9696"

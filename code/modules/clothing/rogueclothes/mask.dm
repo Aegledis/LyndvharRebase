@@ -333,7 +333,7 @@
 	max_integrity = 75
 	color = "#bb9696"
 	smeltresult = /obj/item/ingot/aaslag
-	anvilrepair = null
+	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/mask/rogue/facemask/copper
 	name = "copper mask"

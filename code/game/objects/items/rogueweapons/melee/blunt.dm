@@ -95,7 +95,7 @@
 	blade_dulling = DULLING_SHAFT_CONJURED
 	color = "#bb9696"
 	smeltresult = /obj/item/ingot/aaslag
-	anvilrepair = null
+	anvilrepair = /datum/skill/craft/weaponsmithing
 
 
 /obj/item/rogueweapon/mace/church
@@ -389,7 +389,7 @@
 	blade_dulling = DULLING_SHAFT_CONJURED
 	color = "#bb9696"
 	smeltresult = /obj/item/ingot/aaslag
-	anvilrepair = null
+	anvilrepair = /datum/skill/craft/weaponsmithing
 
 /obj/item/rogueweapon/mace/goden/steel
 	name = "grand mace"
@@ -495,7 +495,7 @@
 	blade_dulling = DULLING_SHAFT_CONJURED
 	color = "#bb9696"
 	smeltresult = /obj/item/ingot/aaslag
-	anvilrepair = null
+	anvilrepair = /datum/skill/craft/weaponsmithing
 
 /obj/item/rogueweapon/mace/warhammer/steel
 	force = 25
