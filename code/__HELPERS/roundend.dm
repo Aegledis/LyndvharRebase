@@ -215,7 +215,7 @@
 /datum/controller/subsystem/ticker/proc/get_end_reason()
 	var/end_reason
 
-	if(!check_for_lord())
+	if(!check_for_lord(TRUE))
 		end_reason = pick("Without a Viscount, they were doomed to become slaves of daemons.",
 						"Without a Viscount, they were doomed to be eaten by nite creachers.",
 						"Without a Viscount, they were doomed to become victims of ZIZO.",
