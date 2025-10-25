@@ -31,7 +31,7 @@
 	max_integrity = ARMOR_INT_SIDE_DECREPIT
 	color = "#bb9696"
 	smeltresult = /obj/item/ingot/aaslag
-	anvilrepair = null
+	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/gloves/roguetown/plate/paalloy
 	name = "ancient plate gauntlets"

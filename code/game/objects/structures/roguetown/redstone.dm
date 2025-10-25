@@ -750,6 +750,6 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 		changing_state = FALSE
 
 /obj/structure/kybraxor/psy
-	name = "Kybraxor the Vaultkeeper"
-	desc = "The ever-vigilant watcher of the Serqo'meel, the last Vestige of the Ten-And-One."
+	name = "Moyolehuitl the Templekeeper"
+	desc = "The ever-vigilant watcher of the Temple of Serqo'meel, the last Vestige of the Caimanite Chapel."
 	redstone_id = "swamp_psy_dungeon"

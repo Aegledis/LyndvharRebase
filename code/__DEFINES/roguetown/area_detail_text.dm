@@ -52,7 +52,7 @@
 #define DETAIL_TEXT_LICH_DOMAIN ""
 #define DETAIL_TEXT_SPILLWAY ""
 #define DETAIL_TEXT_GETHSMANE ""
-#define DETAIL_TEXT_HIS_VAULT "An ancient and very old temple. The icons dotted across it show heavy religious influence of the Pantheon.. and also Valorian teachings? How odd.."
+#define DETAIL_TEXT_HIS_VAULT "An ancient and very old temple. Icons and artwork dotted across its decrepit halls signify it as a former prominent place of worship to the Pantheon- though its halls have become naught but filled with nothing but withering passages and its Eskallian watchers forever obediently protecting it under forsworn orders given ages ago."
 #define DETAIL_TEXT_FISHMAN_DUNGEON "A dark and damp location hidden away- likely dug through and up into the Abyssorite shrine by these things. For what intentions are unknown."
 
 // Forsaken Cathedral

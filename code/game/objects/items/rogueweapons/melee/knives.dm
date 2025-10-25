@@ -305,7 +305,7 @@
 	blade_dulling = DULLING_SHAFT_CONJURED
 	color = "#bb9696"
 	smeltresult = /obj/item/ingot/aaslag
-	anvilrepair = null
+	anvilrepair = /datum/skill/craft/weaponsmithing
 	randomize_blade_int_on_init = TRUE
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/padagger

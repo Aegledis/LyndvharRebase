@@ -21,7 +21,7 @@
 	max_integrity = ARMOR_INT_SIDE_DECREPIT
 	color = "#bb9696"
 	smeltresult = /obj/item/ingot/aaslag
-	anvilrepair = null
+	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/gloves/roguetown/chain/paalloy
 	name = "ancient chain gauntlets"

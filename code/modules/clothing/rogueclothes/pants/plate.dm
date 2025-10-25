@@ -38,7 +38,7 @@
 	max_integrity = ARMOR_INT_LEG_DECREPIT_PLATE
 	color = "#bb9696"
 	smeltresult = /obj/item/ingot/aaslag
-	anvilrepair = null
+	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/under/roguetown/platelegs/paalloy
 	name = "ancient plate chausses"

@@ -597,7 +597,7 @@
 	force = 9
 	color = "#bb9696"
 	smeltresult = null // Override iron inherit
-	anvilrepair = null
+	anvilrepair = /datum/skill/craft/weaponsmithing
 
 /obj/item/ammo_casing/caseless/rogue/javelin/steel
 	force = 16

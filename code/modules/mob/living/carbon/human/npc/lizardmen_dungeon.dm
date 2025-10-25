@@ -73,8 +73,8 @@
 	ears = new /obj/item/organ/ears/psy_vault_guard
 	ears.Insert(src)
 	//This Stuff handles their parts
-	job = "Zardman Jailer"
-	real_name = "Zardman Jailer"
+	job = "Eskallian Faith-Militant"
+	real_name = "Eskallian Faith-Militant"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_LEECHIMMUNE, INNATE_TRAIT)
@@ -118,33 +118,34 @@
 	//Body Stufff
 	H.skin_tone = "e9d298"
 	//Stat Stuff
-	H.STASTR = 15
+	H.STASTR = 14
 	H.STASPD = 13
-	H.STACON = 15
-	H.STAWIL = 15
-	H.STAPER = 12
-	H.STAINT = 10
-	H.STALUC = 13
+	H.STACON = 14
+	H.STAWIL = 14
+	H.STAPER = 10
+	H.STAINT = 8
+	H.STALUC = 10
 	//skill Stuff
-	H.adjust_skillrank(/datum/skill/combat/maces, 4, TRUE) //NPCs do not get these skills unless a mind takes them over, hopefully in the future someone can fix
-	H.adjust_skillrank(/datum/skill/combat/whipsflails, 4, TRUE)
-	H.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
-	H.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-	H.adjust_skillrank(/datum/skill/combat/shields, 4, TRUE)
-	H.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
-	H.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
-	H.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/maces, 3, TRUE) //NPCs do not get these skills unless a mind takes them over, hopefully in the future someone can fix
+	H.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/athletics, 5, TRUE)
 	ADD_TRAIT(H, TRAIT_NIGHT_VISION, TRAIT_GENERIC)
 	//Clothing Stuff
 	//Head Gear
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
-	armor = /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
+	armor = /obj/item/clothing/suit/roguetown/shirt/robe/monk/holy
+	cloak = /obj/item/clothing/cloak/templar/undivided
 	add_random_psy_vault_guard_mask(H)
 	neck = /obj/item/clothing/neck/roguetown/gorget/steel
 	//wrist Gear
 	add_random_psy_vault_guard_psycross(H)
 	//Lower Gear
-	belt = /obj/item/storage/belt/rogue/leather/sash
+	belt = /obj/item/storage/belt/rogue/leather/steel/tasset
 	add_random_psy_vault_guard_beltr_stuff(H)
 	add_random_psy_vault_guard_beltl_stuff(H)
 	pants = /obj/item/clothing/under/roguetown/chainlegs/kilt
@@ -155,17 +156,17 @@
 	var/add_random_psy_vault_guard_weapon = rand(1, 7)
 	switch(add_random_psy_vault_guard_weapon)
 		if(1)
-			r_hand = /obj/item/rogueweapon/sword/short/messer
+			r_hand = /obj/item/rogueweapon/sword/short/silver
 			l_hand = /obj/item/rogueweapon/shield/tower/metal
 		if(2)
-			r_hand = /obj/item/rogueweapon/sword/long/kriegmesser
+			r_hand = /obj/item/rogueweapon/sword/long/church
 		if(3)
-			r_hand = /obj/item/rogueweapon/eaglebeak
+			r_hand = /obj/item/rogueweapon/spear/holysee
 		if(4)
 			r_hand = /obj/item/rogueweapon/mace/warhammer/steel
-			l_hand = /obj/item/rogueweapon/shield/tower/metal
+			l_hand = /obj/item/rogueweapon/shield/tower
 		if(5)
-			r_hand = /obj/item/rogueweapon/greatsword/grenz
+			r_hand = /obj/item/rogueweapon/greatsword/zwei
 		if(6)
 			r_hand = /obj/item/rogueweapon/greataxe/steel
 		if(7)
@@ -176,27 +177,27 @@
 	var/add_random_psy_vault_guard_mask = rand(1,5)
 	switch(add_random_psy_vault_guard_mask)
 		if(1)
-			mask = /obj/item/clothing/mask/rogue/facemask/psydonmask
+			mask = /obj/item/clothing/mask/rogue/facemask/goldmask
 		if(2)
 			mask = /obj/item/clothing/mask/rogue/sack/psy
 		if(3)
-			head = /obj/item/clothing/head/roguetown/helmet/blacksteel/psythorns
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold
 		if(4)
-			head = /obj/item/clothing/head/roguetown/roguehood/psydon
+			head = /obj/item/clothing/head/roguetown/roguehood/black
 
 /datum/outfit/job/roguetown/human/species/lizardfolk/psy_vault_guard/proc/add_random_psy_vault_guard_psycross(mob/living/carbon/human/H)
 	var/add_random_psy_vault_guard_psycross = rand(1,5)
 	switch(add_random_psy_vault_guard_psycross)
 		if(1)
-			wrists = /obj/item/clothing/neck/roguetown/psicross/aalloy
+			wrists = /obj/item/clothing/neck/roguetown/psicross/astrata
 		if(2)
-			wrists = /obj/item/clothing/neck/roguetown/psicross/wood
+			wrists = /obj/item/clothing/neck/roguetown/psicross/malum
 		if(3)
-			wrists = /obj/item/clothing/neck/roguetown/psicross/silver
+			wrists = /obj/item/clothing/neck/roguetown/psicross/ravox
 		if(4)
-			wrists = /obj/item/clothing/neck/roguetown/psicross
+			wrists = /obj/item/clothing/neck/roguetown/psicross/undivided
 		if(5)
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/psythorns
+			wrists = /obj/item/clothing/wrists/roguetown/bracers
 
 /datum/outfit/job/roguetown/human/species/lizardfolk/psy_vault_guard/proc/add_random_psy_vault_guard_beltl_stuff(mob/living/carbon/human/H)
 	var/add_random_psy_vault_guard_beltl_stuff = rand(1,11)
@@ -206,23 +207,23 @@
 		if(2)
 			beltl = /obj/item/storage/belt/rogue/pouch/medicine
 		if(3)
-			beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-		if(4)
 			beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
+		if(4)
+			beltl = /obj/item/storage/belt/rogue/pouch/coins/rich
 		if(5)
-			beltl = /obj/item/reagent_containers/glass/bottle/waterskin
+			beltl = /obj/item/reagent_containers/glass/bottle/waterskin/purifier
 		if(6)
-			beltl = /obj/item/reagent_containers/glass/bottle/alchemical/healthpot
+			beltl = /obj/item/reagent_containers/glass/bottle/alchemical/healthpotnew
 		if(7)
 			beltl = /obj/item/rope/chain
 		if(8)
-			beltl = /obj/item/clothing/neck/roguetown/psicross/aalloy
+			beltl = /obj/item/clothing/neck/roguetown/psicross/astrata
 		if(9)
-			beltl = /obj/item/clothing/neck/roguetown/psicross/wood
+			beltl = /obj/item/clothing/neck/roguetown/psicross/malum
 		if(10)
-			beltl = /obj/item/clothing/neck/roguetown/psicross/silver
+			beltl = /obj/item/clothing/neck/roguetown/psicross/ravox
 		if(11)
-			beltl = /obj/item/clothing/neck/roguetown/psicross
+			beltl = /obj/item/clothing/neck/roguetown/psicross/undivided
 
 /datum/outfit/job/roguetown/human/species/lizardfolk/psy_vault_guard/proc/add_random_psy_vault_guard_beltr_stuff(mob/living/carbon/human/H)
 	var/add_random_psy_vault_guard_beltr_stuff = rand(1,11)
@@ -232,20 +233,20 @@
 		if(2)
 			beltr = /obj/item/storage/belt/rogue/pouch/medicine
 		if(3)
-			beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
-		if(4)
 			beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
+		if(4)
+			beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 		if(5)
-			beltr = /obj/item/reagent_containers/glass/bottle/waterskin
+			beltr = /obj/item/reagent_containers/glass/bottle/waterskin/purifier
 		if(6)
-			beltr = /obj/item/reagent_containers/glass/bottle/alchemical/healthpot
+			beltr = /obj/item/reagent_containers/glass/bottle/alchemical/healthpotnew
 		if(7)
 			beltr = /obj/item/rope/chain
 		if(8)
-			beltr = /obj/item/clothing/neck/roguetown/psicross/aalloy
+			beltr = /obj/item/clothing/neck/roguetown/psicross/astrata
 		if(9)
-			beltr = /obj/item/clothing/neck/roguetown/psicross/wood
+			beltr = /obj/item/clothing/neck/roguetown/psicross/malum
 		if(10)
-			beltr = /obj/item/clothing/neck/roguetown/psicross/silver
+			beltr = /obj/item/clothing/neck/roguetown/psicross/ravox
 		if(11)
-			beltr = /obj/item/clothing/neck/roguetown/psicross
+			beltr = /obj/item/clothing/neck/roguetown/psicross/undivided

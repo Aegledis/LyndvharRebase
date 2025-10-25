@@ -1,5 +1,5 @@
 /mob/living/simple_animal/hostile/rogue/eskallian_jailer_mage
-	name = "Zardman Jailer"
+	name = "Eskallian Faith-Militant"
 	desc = ""
 	icon = 'icons/mob/zard_guard_mage.dmi'
 	icon_state = "zard_guard_mage"

@@ -154,7 +154,7 @@
 	max_integrity = ARMOR_INT_SIDE_DECREPIT
 	color = "#bb9696"
 	smeltresult = /obj/item/ingot/aaslag
-	anvilrepair = null
+	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/neck/roguetown/chaincoif/chainmantle
 	name = "chain mantle"
@@ -264,7 +264,7 @@
 	max_integrity = ARMOR_INT_SIDE_DECREPIT
 	color = "#bb9696"
 	smeltresult = /obj/item/ingot/aaslag
-	anvilrepair = null
+	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/neck/roguetown/gorget/copper
 	name = "neck protector"

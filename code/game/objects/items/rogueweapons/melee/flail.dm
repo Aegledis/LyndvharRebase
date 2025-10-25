@@ -101,7 +101,7 @@
 	max_integrity = 175
 	color = "#bb9696"
 	smeltresult = /obj/item/ingot/aaslag
-	anvilrepair = null
+	anvilrepair = /datum/skill/craft/weaponsmithing
 
 /obj/item/rogueweapon/flail/sflail/paflail
 	name = "ancient flail"
