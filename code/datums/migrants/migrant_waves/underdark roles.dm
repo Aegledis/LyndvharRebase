@@ -211,7 +211,7 @@
 	greet_text = "You are hardly considered anything to these people. Nothing less than a serving caste dedicated to serving the whims of this party whenever desired- be it cooking, cleaning, sewing- whatever. Your worth is only valued at how valuable you make yourself. Perhaps you will get lucky and get sold away to a better place- or put out of your misery."
 	outfit = /datum/outfit/job/roguetown/underdark/slave
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = ACCEPTED_RACES
 /datum/outfit/job/roguetown/underdark/slave/pre_equip(mob/living/carbon/human/H)
 	..()
 	neck = /obj/item/clothing/neck/roguetown/collar/leather/nomagic

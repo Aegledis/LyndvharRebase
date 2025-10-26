@@ -94,7 +94,7 @@
 	name = "Butcher"
 	tutorial = "Some say you're a strange individual, some say you're a cheat, while some claim you're a savant in the art of sausage making. Without your skilled hands and knifework, most of the livestock around the town would be wasted. "
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = ACCEPTED_RACES
 	outfit = /datum/outfit/job/roguetown/adventurer/butcher
 	cmode_music = 'sound/music/cmode/towner/combat_retired.ogg'
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)

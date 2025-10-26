@@ -6,7 +6,7 @@
 	total_positions = 20
 	spawn_positions = 20
 	allowed_races = RACES_ALL_KINDS
-	tutorial = "A traveling salesman, a peddler of goods - commerce is your expertise, and you've come to this land to make a fortune."
+	tutorial = "A traveling salesman, a peddler of goods - commerce is your expertise, and you've come to this land to make a fortune. Whether you'll actually survive the journey to reach a destination of commerce is another matter altogether. THe winding paths of this territory are not very friendly, after all.."
 	outfit = null
 	outfit_female = null
 	display_order = JDO_TRADER
