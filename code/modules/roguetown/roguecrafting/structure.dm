@@ -292,7 +292,7 @@
 	verbage_simple = "build"
 	verbage = "builds"
 	craftsound = null
-	craftdiff = 2
+	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/structure/forge
 	name = "forge"
