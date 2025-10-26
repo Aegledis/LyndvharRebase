@@ -4,7 +4,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/doomsayer
 	category_tags = list(CTAG_TRADER, CTAG_COURTAGENT, CTAG_LICKER_WRETCH)
 	class_select_category = CLASS_CAT_TRADER
-	traits_applied = list(TRAIT_SCHIZO_AMBIENCE, TRAIT_HOMESTEAD_EXPERT)
+	traits_applied = list(TRAIT_HOMESTEAD_EXPERT, TRAIT_NUTCRACKER)
 	subclass_stats = list(
 		STATKEY_INT = 3,
 		STATKEY_PER = 1,
@@ -13,15 +13,16 @@
 	)
 	subclass_skills = list(
 		/datum/skill/combat/wrestling = SKILL_LEVEL_NOVICE,
-		/datum/skill/combat/axes = SKILL_LEVEL_NOVICE,
+		/datum/skill/combat/axes = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/unarmed = SKILL_LEVEL_NOVICE,
 		/datum/skill/misc/reading = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/craft/carpentry = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/craft/masonry = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/craft/crafting = SKILL_LEVEL_APPRENTICE,
-		/datum/skill/labor/lumberjacking = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/craft/crafting = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/labor/lumberjacking = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/misc/swimming = SKILL_LEVEL_NOVICE,
 		/datum/skill/misc/climbing = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/misc/athletics = SKILL_LEVEL_APPRENTICE,
 	)
 
 /datum/outfit/job/roguetown/adventurer/doomsayer/pre_equip(mob/living/carbon/human/H)
@@ -33,17 +34,18 @@
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/black
 	belt = /obj/item/storage/belt/rogue/leather/black
-	cloak = /obj/item/clothing/cloak/half
-	backl = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/storage/backpack/rogue/satchel
+	cloak = /obj/item/clothing/cloak/half/rider
+	backl = /obj/item/storage/backpack/rogue/backpack/bagpack
+	backr = /obj/item/storage/backpack/rogue/satchel/short
 	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 	beltl = /obj/item/flashlight/flare/torch/lantern
-	beltr = /obj/item/rogueweapon/stoneaxe/woodcut
+	beltr = /obj/item/rogueweapon/stoneaxe/woodcut/steel
 	backpack_contents = list(
-		/obj/item/clothing/neck/roguetown/psicross/silver = 3,
-		/obj/item/clothing/neck/roguetown/psicross = 2,
-		/obj/item/clothing/neck/roguetown/psicross/wood = 1,
+		/obj/item/clothing/neck/roguetown/psicross/undivided = 3,
+		/obj/item/clothing/neck/roguetown/psicross/astrata = 2,
+		/obj/item/clothing/neck/roguetown/psicross/noc = 1,
 		/obj/item/rogueweapon/huntingknife = 1,
 		/obj/item/recipe_book/survival = 1,
-		/obj/item/rogueweapon/scabbard/sheath = 1
+		/obj/item/rogueweapon/scabbard/sheath = 1,
+		/obj/item/mundane/adventurer_kit = 1
 		)

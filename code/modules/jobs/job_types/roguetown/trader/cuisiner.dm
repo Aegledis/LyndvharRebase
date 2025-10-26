@@ -3,7 +3,7 @@
 	tutorial = "Whether a disciple of a culinary school, a storied royal chef, or a mercenary cook for hire, your trade is plied at the counter, \
 	the cutting board, and the hearth."
 	outfit = /datum/outfit/job/roguetown/adventurer/cuisiner
-	traits_applied = list(TRAIT_GOODLOVER, TRAIT_HOMESTEAD_EXPERT)
+	traits_applied = list(TRAIT_GOODLOVER, TRAIT_HOMESTEAD_EXPERT, TRAIT_CICERONE)
 	class_select_category = CLASS_CAT_TRADER
 	category_tags = list(CTAG_TRADER, CTAG_COURTAGENT, CTAG_LICKER_WRETCH)
 	subclass_stats = list(
@@ -23,6 +23,7 @@
 		/datum/skill/labor/farming = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/misc/swimming = SKILL_LEVEL_NOVICE,
 		/datum/skill/misc/climbing = SKILL_LEVEL_APPRENTICE,
+		/datum/skill/misc/athletics = SKILL_LEVEL_APPRENTICE,
 	)
 
 /datum/outfit/job/roguetown/adventurer/cuisiner/pre_equip(mob/living/carbon/human/H)
@@ -36,8 +37,8 @@
 		H.adjust_skillrank_up_to(/datum/skill/craft/cooking, SKILL_LEVEL_LEGENDARY, TRUE)
 		H.adjust_skillrank_up_to(/datum/skill/combat/knives, SKILL_LEVEL_EXPERT, TRUE)
 	head = /obj/item/clothing/head/roguetown/chef
-	shoes = /obj/item/clothing/shoes/roguetown/shortboots
-	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced/short
+	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 	pants = /obj/item/clothing/under/roguetown/trou
 	armor = /obj/item/clothing/suit/roguetown/armor/workervest
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
@@ -55,5 +56,6 @@
 		/obj/item/rogueweapon/huntingknife/chefknife = 1,
 		/obj/item/rogueweapon/scabbard/sheath = 1,
 		/obj/item/recipe_book/survival = 1,
+		/obj/item/mundane/adventurer_kit = 1,
 		)
 		// no ration wrappers by design
