@@ -171,7 +171,7 @@
 
 /datum/advclass/sfighter/mhunter
 	name = "Monster Hunter"
-	tutorial = "You specialize in hunting down monsters and the undead, carrying two blades - one of silver, one of steel."
+	tutorial = "You specialize in dealing with lesser creechers and deadites, carrying two blades - one of silver, one of steel."
 	outfit = /datum/outfit/job/roguetown/adventurer/mhunter
 	cmode_music = 'sound/music/cmode/adventurer/combat_outlander2.ogg'
 	traits_applied = list(TRAIT_STEELHEARTED, TRAIT_SENTINELOFWITS, TRAIT_ALCHEMY_EXPERT)
@@ -197,7 +197,7 @@
 
 /datum/outfit/job/roguetown/adventurer/mhunter/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	..()
-	to_chat(H, span_warning("You specialize in hunting down monsters and the undead, carrying two blades - one of silver, one of steel."))
+	to_chat(H, span_warning("You specialize in dealing with lesser creechers and deadites, carrying two blades - one of silver, one of steel."))
 	if(H.mind)
 		var/steel = list("Parrying Dagger","Sword","Dagger")
 		var/steel_choice = input(H, "Choose your steel.", "PURGE THE LIVING") as anything in steel
@@ -212,7 +212,7 @@
 				l_hand = /obj/item/rogueweapon/huntingknife/idagger
 				beltr = /obj/item/rogueweapon/scabbard/sheath
 		var/silver = list("Silver Sword","Silver Dagger")
-		var/silver_choice = input(H, "Choose your silver.", "PURGE THE CURSED") as anything in silver
+		var/silver_choice = input(H, "Choose your silver.", "PURGE THE UNLIVING") as anything in silver
 		switch(silver_choice)
 			if("Silver Sword")
 				r_hand = /obj/item/rogueweapon/sword/silver
@@ -427,12 +427,12 @@
 
 /datum/advclass/sfighter/mhunter
 	name = "Exorcist"
-	tutorial = "You are a specialist who hunts terrible monsters; nitebeasts, vampyres, deadites and more. Your humenity might be limiting - but with silver weapons and steel maille, you may yet slight the odds in your favor."
+	tutorial = "You are a specialist who hunts terrible monsters; nitebeasts, vampyres, deadites and more. Your humenity might be limiting - but with silver weapons and maille, you may yet slight the odds in your favor."
 	outfit = /datum/outfit/job/roguetown/adventurer/mhunter
 	cmode_music = 'sound/music/cmode/adventurer/combat_outlander2.ogg'
 	category_tags = list(CTAG_ADVENTURER, CTAG_COURTAGENT)
 	traits_applied = list(TRAIT_STEELHEARTED, TRAIT_PURITAN_ADVENTURER, TRAIT_ALCHEMY_EXPERT)
-	maximum_possible_slots = 5 //Not a Wretch or Towner, but still conditionally lethal for an Adventurer - especially with steel coverage and round-start access to silver weapons. Adjust the amount of available slots as needed.
+	maximum_possible_slots = 2
 	subclass_stats = list(
 		STATKEY_STR = 2,
 		STATKEY_PER = 2,
@@ -532,7 +532,7 @@
 				l_hand = /obj/item/rogueweapon/shield/tower/metal
 				H.adjust_skillrank_up_to(/datum/skill/combat/shields, SKILL_LEVEL_JOURNEYMAN, TRUE)
 
-		var/discipline = list("Traditionalist - Bewitched Alchemics + Hauberk", "Reformist - Dodge Expert + Haubergeon", "Orthodoxist - Plate Training + Cuirass")
+		var/discipline = list("Traditionalist - Bewitched Alchemics + Hauberk", "Reformist - Dodge Expert + Leather Armor", "Orthodoxist - Plate Training + Cuirass")
 		var/discipline_choice = input(H, "Choose your DISCIPLINE.", "FACE YOUR NIGHTMARE.") as anything in discipline
 		switch(discipline_choice)
 			if("Traditionalist - Bewitched Alchemics + Hauberk")
@@ -553,13 +553,13 @@
 					/obj/item/reagent_containers/glass/bottle/alchemical/intpot,
 					/obj/item/reagent_containers/glass/bottle/alchemical/lucpot,
 					)
-			if("Reformist - Dodge Expert + Haubergeon")
+			if("Reformist - Dodge Expert + Leather Armor")
 				ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC) //'Puritan' archetype. Closer to the Roguetown-era Inquisitor in portrayal. No armor training, but overprepared with silver throwing daggers and excellent evasive maneuvers.
 				H.change_stat(STATKEY_SPD, 1)
 				H.adjust_skillrank_up_to(/datum/skill/misc/sneaking, SKILL_LEVEL_JOURNEYMAN, TRUE)
 				head = /obj/item/clothing/head/roguetown/puritan
-				armor = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
-				shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
+				armor = /obj/item/clothing/suit/roguetown/armor/leather
+				shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
 				belt = /obj/item/storage/belt/rogue/leather/knifebelt/black/silver
 			if("Orthodoxist - Plate Training + Cuirass")
 				ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)

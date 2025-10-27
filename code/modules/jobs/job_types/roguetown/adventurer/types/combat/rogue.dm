@@ -209,7 +209,7 @@
 		/datum/skill/misc/swimming = SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/wrestling = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/unarmed = SKILL_LEVEL_JOURNEYMAN,
-		/datum/skill/misc/athletics = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/misc/athletics = SKILL_LEVEL_EXPERT,
 		/datum/skill/misc/climbing = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/misc/reading = SKILL_LEVEL_NOVICE,
 		/datum/skill/misc/sneaking = SKILL_LEVEL_JOURNEYMAN,
@@ -225,13 +225,13 @@
 	pants = /obj/item/clothing/under/roguetown/tights/sailor
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red
-	backl = /obj/item/storage/backpack/rogue/satchel
+	backl = /obj/item/storage/backpack/rogue/satchel/short
 	backr = /obj/item/rogue/instrument/hurdygurdy
 	belt = /obj/item/storage/belt/rogue/leather/knifebelt/iron
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	beltl = /obj/item/flashlight/flare/torch/lantern
+	beltl = /obj/item/flashlight/flare/torch
 	r_hand = /obj/item/rogueweapon/sword/cutlass
 	beltr = /obj/item/rogueweapon/scabbard/sword
 	backpack_contents = list(
