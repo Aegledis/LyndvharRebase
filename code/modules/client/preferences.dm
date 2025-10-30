@@ -501,9 +501,10 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<br><b>Bedshot:</b> [nsfw_headshot_link ? "<font color = '#802929'><b>SET</b></font>" : "UNSET"] <a href='?_src_=prefs;preference=nsfw_headshot;task=input'>Change</a>"
 
 			dat += "<br><b>[(length(flavortext) < MINIMUM_FLAVOR_TEXT) ? "<font color = '#802929'>" : ""]Flavortext:[(length(flavortext) < MINIMUM_FLAVOR_TEXT) ? "</font>" : ""]</b><a href='?_src_=prefs;preference=formathelp;task=input'>(?)</a><a href='?_src_=prefs;preference=flavortext;task=input'>Change</a>"
-
-			dat += "<br><b>[(length(ooc_notes) < MINIMUM_OOC_NOTES) ? "<font color = '#802929'>" : ""]OOC Notes:[(length(ooc_notes) < MINIMUM_OOC_NOTES) ? "</font>" : ""]</b><a href='?_src_=prefs;preference=formathelp;task=input'>(?)</a><a href='?_src_=prefs;preference=ooc_notes;task=input'>Change</a>"
-
+			if(!is_legacy)
+				dat += "<br><b>[(length(ooc_notes) < MINIMUM_OOC_NOTES) ? "<font color = '#802929'>" : ""]OOC Notes:[(length(ooc_notes) < MINIMUM_OOC_NOTES) ? "</font>" : ""]</b><a href='?_src_=prefs;preference=formathelp;task=input'>(?)</a><a href='?_src_=prefs;preference=ooc_notes;task=input'>Change</a>"
+			else
+				dat += "<br><b> OOC Notes: ⋆ STEPPED AROUND ⋆"
 			dat += "<br><b>OOC Extra:</b> <a href='?_src_=prefs;preference=ooc_extra;task=input'>Change</a>"
 
 			dat += "<br><b>Closer Look:</b> <a href='?_src_=prefs;preference=ooc_preview;task=input'><b>Preview Examine</b></a>"
