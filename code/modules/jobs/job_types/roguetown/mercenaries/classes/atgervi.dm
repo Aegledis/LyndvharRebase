@@ -40,6 +40,7 @@
 	to_chat(H, span_warning("You are a Varangian Mercenary of Rhaenvali. The Varangians are one of the more prestigious mercenary groups of their time, known for their loyalty to their clients."))
 	head = /obj/item/clothing/head/roguetown/helmet/bascinet/atgervi/rhaenval/ownel
 	gloves = /obj/item/clothing/gloves/roguetown/chain/rhaenval
+	H.mind.current.faction += "[H.name]_faction"
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/atgervi
 	armor = /obj/item/clothing/suit/roguetown/armor/brigandine/rhaenval
 	pants = /obj/item/clothing/under/roguetown/splintlegs/iron/rhaenval
@@ -90,6 +91,7 @@
 /datum/outfit/job/roguetown/mercenary/atgervishaman/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.set_blindness(0)
+	H.mind.current.faction += "[H.name]_faction"
 	to_chat(H, span_warning("You are a Shaman of the Atgervian. Savage combatants who commune with the winds through gut-wrenching violence, rather than idle prayer."))
 	H.dna.species.soundpack_m = new /datum/voicepack/male/warrior()
 
