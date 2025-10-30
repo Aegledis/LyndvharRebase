@@ -194,6 +194,5 @@
 	bitesize = 4
 	list_reagents = list(/datum/reagent/consumable/nutriment = SMALLDOUGH_NUTRITION + MEATSLAB_NUTRITION)
 	tastes = list("crispy butterdough and shellfish meat" = 1)
-	list_reagents = list(/datum/reagent/consumable/nutriment = MEAL_GOOD)
 	rotprocess = null
 	dropshrink = 0.8

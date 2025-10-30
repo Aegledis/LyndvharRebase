@@ -55,32 +55,6 @@
 	icon = 'modular_azurepeak/icons/clothing/donor_clothes.dmi'
 	mob_overlay_icon = 'modular_azurepeak/icons/clothing/onmob/donor_clothes.dmi'
 
-//Bigfoot's donator item - knight helmet with gilded pattern
-/obj/item/clothing/head/roguetown/helmet/heavy/knight/gilded
-	name = "gilded knight's helmet"
-	desc = "A noble knight's helm made of steel and completed with a gilded trim."
-	icon_state = "gildedknight"
-	item_state = "gildedknight"
-	icon = 'modular_azurepeak/icons/clothing/donor_clothes.dmi'
-	mob_overlay_icon = 'modular_azurepeak/icons/clothing/onmob/donor_clothes.dmi'
-
-/obj/item/clothing/head/roguetown/helmet/heavy/knight/attackby(obj/item/W, mob/living/user, params)
-	if(istype(W, /obj/item/natural/feather) && !detail_tag)
-		user.visible_message(span_warning("[user] adds [W] to [src]."))
-		user.transferItemToLoc(W, src, FALSE, FALSE)
-		detail_tag = "_detail"
-		update_icon()
-		if(loc == user && ishuman(user))
-			var/mob/living/carbon/H = user
-			H.update_inv_head()
-
-//Bigfoot's donator item - steel great axe with gilded pattern
-/obj/item/rogueweapon/greataxe/steel/gilded
-	name = "gilded greataxe"
-	desc = "A gilded steel great axe, a long-handled axe with a single blade made for ruining someone's day beyond any measure.."
-	icon_state = "orin"
-	icon = 'modular_azurepeak/icons/obj/items/donor_weapons_64.dmi'
-
 //Zydras donator item - merchant dress
 /obj/item/clothing/suit/roguetown/shirt/dress/silkydress/zydrasdress //Recolored silky dress
 	name = "Gold-Black silky dress"

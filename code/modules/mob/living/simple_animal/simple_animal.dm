@@ -403,11 +403,11 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	if(stat == DEAD)
 		var/obj/item/held_item = user.get_active_held_item()
 		if(held_item)
-			if((butcher_results || guaranteed_butcher_results) && ((held_item.get_sharpness() && held_item.wlength == WLENGTH_SHORT) || istype(held_item, /obj/item/contraption/shears)))
+			if((butcher_results || guaranteed_butcher_results) && held_item.get_sharpness() && held_item.wlength == WLENGTH_SHORT)
 				var/used_time = 3 SECONDS
 				var/on_meathook = FALSE
-				if((src.buckled && istype(src.buckled, /obj/structure/meathook))|| istype(held_item, /obj/item/contraption/shears))
-					on_meathook = TRUE //will work efficiently if they are using autosheers as well
+				if(src.buckled && istype(src.buckled, /obj/structure/meathook))
+					on_meathook = TRUE
 					used_time -= 3 SECONDS
 					visible_message("[user] begins to efficiently butcher [src]...")
 				else
@@ -914,14 +914,11 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 		else
 			stack_trace("Something attempted to set simple animals AI to an invalid state: [togglestatus]")
 
-/mob/living/simple_animal/proc/consider_wakeup()
-	for(var/datum/spatial_grid_cell/grid as anything in our_cells.member_cells)
-		if(length(grid.client_contents))
-			toggle_ai(AI_ON)
-			return TRUE
+/mob/living/simple_animal/process(delta_time)
+	pass()
 
-	toggle_ai(AI_OFF)
-	return FALSE
+/mob/living/simple_animal/proc/consider_wakeup()
+	pass()
 
 /mob/living/simple_animal/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
@@ -951,8 +948,6 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 		food = max(food + 30, 100)
 
 /mob/living/simple_animal/Life()
-	if(!client && can_have_ai && (AIStatus == AI_Z_OFF || AIStatus == AI_OFF))
-		return
 	. = ..()
 	if(.)
 		if(food > 0)

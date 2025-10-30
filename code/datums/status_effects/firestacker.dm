@@ -186,8 +186,6 @@
 
 	var/turf/location = get_turf(owner)
 	location?.hotspot_expose(700, 25 * wait * 0.1, TRUE)
-	if(owner.surrendering)
-		owner.adjust_fire_stacks(-6)
 
 /**
  * Used to deal damage to humans and count their protection.

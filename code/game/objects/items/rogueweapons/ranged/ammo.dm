@@ -573,6 +573,7 @@
 	possible_item_intents = list(/datum/intent/sword/thrust, /datum/intent/spear/bash, /datum/intent/spear/cut)	//Sword-thrust to avoid having 2 reach.
 	embedding = list("embedded_pain_multiplier" = 4, "embed_chance" = 35, "embedded_fall_chance" = 10)	//Better than iron throwing knife by 10%
 	anvilrepair = /datum/skill/craft/weaponsmithing
+	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/polearms
 	heavy_metal = FALSE						//Stops spin animation, maybe.
 	thrown_damage_flag = "piercing"			//Checks peircing protection.
@@ -614,7 +615,7 @@
 	name = "ancient javelin"
 	desc = "A missile of polished gilbranze."
 	icon_state = "ajavelin"
-	smeltresult = null // 1 Ingots = 2 Javelins
+	smeltresult = null // 1 Ingots = 2 Javelin s
 
 /obj/item/ammo_casing/caseless/rogue/javelin/silver
 	name = "silver javelin"
@@ -624,7 +625,7 @@
 	throwforce = 25							//Less than steel because it's.. silver. Good at killing vampires/WW's still.
 	armor_penetration = 60
 	thrown_bclass = BCLASS_PICK				//Bypasses crit protection better than stabbing. Makes it better against heavy-targets.
-	smeltresult = /obj/item/ingot/silver // 2 ingots = 2 javelins so this can smelt.
+	smeltresult = /obj/item/ingot/silver
 
 /obj/item/ammo_casing/caseless/rogue/javelin/silver/ComponentInitialize()
 	. = ..()

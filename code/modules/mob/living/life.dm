@@ -2,9 +2,6 @@
 	set waitfor = FALSE
 	set invisibility = 0
 
-	if(!client && ai_controller && ai_controller.ai_status == AI_STATUS_OFF)
-		return
-
 	SEND_SIGNAL(src, COMSIG_LIVING_LIFE, seconds, times_fired)
 
 	if((movement_type & FLYING) && !(movement_type & FLOATING))	//TODO: Better floating

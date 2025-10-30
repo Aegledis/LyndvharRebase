@@ -59,8 +59,6 @@
 #define DETAIL_TEXT_FORSAKEN_CATHEDRAL "An oddity locked deep into the underground below the Draguippe, this Cathedral is where the lowest levels of society converge for collectivized nefarious deeds, whether it be banditry or worship of the Archdaemons."
 
 // Town
-
-// Town
 #define DETAIL_TEXT_LYNDVHAR "The port of Lyndvhar is one of the largest settlements upon the eastern coast of the Lyndhardtian Empire, and one of its founding cities. Named after its founder, Baelyx Lyndvhar- it was slowly expanded upon over time over the remains of a much older initial colonial settlement. While nowhere near as prestigious as other locations, its strategic location along the Splitstern Sea has always given it major prominence, while its geographical isolation has kept it relatively safe from any threats."
 #define DETAIL_TEXT_KEEP "The prestigious grounds of the manor is one of the most wealthiest places in modern Lyndvhar, owing to the autocratic power the Viscount has put forth across this region in the absence of centralized authority due to the Ruby War and subsequent Collapse."
 #define DETAIL_TEXT_MANOR "The prestigious grounds of the manor is one of the most wealthiest places in modern Lyndvhar, owing to the autocratic power the Viscount has put forth across this region in the absence of centralized authority due to the Ruby War and subsequent Collapse."
@@ -68,6 +66,3 @@
 #define DETAIL_TEXT_CHAPEL "The Holy Mother Church of Lyndvhar, or simply the Church of Lyndvhar, is a contingent of the greater Mother Church of the Ten. While simply originally acting as an extension of its hand, with the lack of authority given in the Ruby War, the Church of Lyndvhar has seen it fit to effectively branch off into its own contingent, becoming a center of faith for any follower of the Pantheon and downtrodden soul trying to survive."
 #define DETAIL_TEXT_INQUISITION_HQ "An old and abandoned home built by an unknown noble a long time ago- it has been recently refurbished with permission from the Church of Lyndvhar into a functionally indepedent apparatus for the visiting (and subsequently trapped) Valorian Inquisition to make their manuevers from- though with a sharp eye being kept on them to avoid any unfortunate confrontations of faith."
 #define DETAIL_TEXT_GUILD_OF_CRAFT "One of the earliest formed institutions in the city, the Maker's Guild founded this workshop of craft as one of the founding structures of the city, and ever since then has been a bastion of tools, weapons, armaments and the like for any wandering traveller or soldier looking for an axe-sharpening."
-
-// Tomb of Alotheos
-#define DETAIL_TEXT_TOMB_OF_ALOTHEOS ""

@@ -140,9 +140,18 @@
 	name = "View Character Setup"
 	screen_loc = "WEST:19,TOP:-10"
 	icon = 'icons/hud/lobby/character_sheet.dmi'
-	icon_state = "character_sheet"
+	icon_state = "character_sheet_disabled"
 	base_icon_state = "character_sheet"
-	enabled = TRUE
+	enabled = FALSE
+
+/atom/movable/screen/lobby/button/character_setup/Initialize(mapload, datum/hud/hud_owner)
+	. = ..()
+	if(SSatoms.initialized == INITIALIZATION_INNEW_REGULAR)
+		flick("[base_icon_state]_enabled", src)
+		set_button_status(TRUE)
+	else
+		set_button_status(FALSE)
+		RegisterSignal(SSatoms, COMSIG_SUBSYSTEM_POST_INITIALIZE, PROC_REF(enable_character_setup))
 
 /atom/movable/screen/lobby/button/character_setup/Click(location, control, params)
 	. = ..()
@@ -313,49 +322,6 @@
 		return
 
 	hud.mymob.client?.view_actors_manifest()
-
-///Button that appears after the game has started. Voyeur.
-/atom/movable/screen/lobby/button/voyeur
-	name = "Voyeur"
-	screen_loc = "WEST:20,TOP:-168"
-	icon = 'icons/hud/lobby/voyeur.dmi'
-	icon_state = ""
-	base_icon_state = "voyeur"
-	enabled = null // set in init
-	
-/atom/movable/screen/lobby/button/voyeur/Initialize(mapload, datum/hud/hud_owner)
-	. = ..()
-	switch(SSticker.current_state)
-		if(GAME_STATE_PREGAME, GAME_STATE_STARTUP)
-			set_button_status(FALSE)
-			RegisterSignal(SSticker, COMSIG_TICKER_ENTER_SETTING_UP, PROC_REF(show_voyeur_button))
-		if(GAME_STATE_SETTING_UP)
-			set_button_status(TRUE)
-			RegisterSignal(SSticker, COMSIG_TICKER_ERROR_SETTING_UP, PROC_REF(hide_voyeur_button))
-		else
-			set_button_status(TRUE)
-
-/atom/movable/screen/lobby/button/voyeur/proc/hide_voyeur_button()
-	SIGNAL_HANDLER
-	set_button_status(FALSE)
-	UnregisterSignal(SSticker, COMSIG_TICKER_ENTER_SETTING_UP)
-	RegisterSignal(SSticker, COMSIG_TICKER_ERROR_SETTING_UP, PROC_REF(show_voyeur_button))
-
-/atom/movable/screen/lobby/button/voyeur/proc/show_voyeur_button()
-	SIGNAL_HANDLER
-	set_button_status(TRUE)
-	UnregisterSignal(SSticker, COMSIG_TICKER_ERROR_SETTING_UP)
-	RegisterSignal(SSticker, COMSIG_TICKER_ENTER_SETTING_UP, PROC_REF(hide_voyeur_button))
-
-/atom/movable/screen/lobby/button/voyeur/Click(location, control, params)
-	. = ..()
-	if(!.)
-		return
-	var/mob/dead/new_player/P = usr
-	P.make_me_an_observer()
-	vand_update_appearance(UPDATE_ICON)
-	return
-
 
 /atom/movable/screen/lobby/button/collapse
 	name = "Collapse Lobby Menu"
