@@ -264,7 +264,6 @@ SUBSYSTEM_DEF(migrants)
 
 	if(role.advclass_cat_rolls)
 		SSrole_class_handler.setup_class_handler(character, role.advclass_cat_rolls)
-		hugboxify_for_class_selection(character)
 	else
 		// Apply a special if we're not applying an adv class, otherwise let the adv class apply it afterwards
 		try_apply_character_post_equipment(character, character.client)

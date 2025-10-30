@@ -426,17 +426,15 @@
 /obj/item/clothing/head/roguetown/helmet/bascinet/dunargi/ComponentInitialize()
 	AddComponent(/datum/component/adjustable_clothing, (HEAD|EARS|HAIR), (HIDEEARS|HIDEHAIR), null, 'sound/items/visor.ogg', null, UPD_HEAD)	//Standard helmet
 
+/obj/item/clothing/head/roguetown/helmet/kettle/jingasa/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
 
-/obj/item/clothing/head/roguetown/helmet/bascinet
-	name = "bascinet"
-	desc = "A steel bascinet helmet. Though it lacks a visor for the face, it still protects the head and ears."
-	icon_state = "bascinet_novisor"
-	item_state = "bascinet_novisor"
-	emote_environment = 3
-	body_parts_covered = HEAD|HAIR|EARS
-	flags_inv = HIDEHAIR
-	block2add = null
-	smeltresult = /obj/item/ingot/steel
 
 // Warden Helmets
 /obj/item/clothing/head/roguetown/helmet/bascinet/antler
