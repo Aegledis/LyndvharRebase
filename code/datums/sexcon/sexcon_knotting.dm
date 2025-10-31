@@ -107,6 +107,9 @@
 	target.remove_status_effect(/datum/status_effect/knot_gaped)
 	RegisterSignal(user.sexcon.knotted_owner, COMSIG_MOVABLE_MOVED, PROC_REF(knot_movement), TRUE)
 	RegisterSignal(user.sexcon.knotted_recipient, COMSIG_MOVABLE_MOVED, PROC_REF(knot_movement), TRUE)
+	GLOB.azure_round_stats[STATS_KNOTTED]++
+	if(!islupian(user)) // only add to counter if top isn't a Lupian (for lore reasons)
+		GLOB.azure_round_stats[STATS_KNOTTED_NOT_LUPIANS]++
 
 /datum/sex_controller/proc/knot_movement_mods_remove_his_knot_ty(var/mob/living/carbon/human/top, var/mob/living/carbon/human/btm)
 	var/obj/item/organ/penis/penor = top.getorganslot(ORGAN_SLOT_PENIS)
@@ -322,6 +325,18 @@
 			btm.emote("painmoan", forced = TRUE)
 			btm.sexcon.try_do_pain_effect(PAIN_MILD_EFFECT, FALSE)
 		add_cum_floor(get_turf(btm))
+		if(top.sexcon.knotted_part_partner&(SEX_PART_CUNT|SEX_PART_ANUS)) // use top's knotted_part_partner var to check what effect we need to apply, as bottom may be double knotted or more
+			var/datum/status_effect/facial/internal/creampie = btm.has_status_effect(/datum/status_effect/facial/internal)
+			if(!creampie)
+				btm.apply_status_effect(/datum/status_effect/facial/internal)
+			else
+				creampie.refresh_cum()
+		if(top.sexcon.knotted_part_partner&SEX_PART_JAWS)
+			var/datum/status_effect/facial/facial = btm.has_status_effect(/datum/status_effect/facial)
+			if(!facial)
+				btm.apply_status_effect(/datum/status_effect/facial)
+			else
+				facial.refresh_cum()
 	knot_exit(keep_top_status, keep_btm_status)
 
 /datum/sex_controller/proc/knot_exit(var/keep_top_status = FALSE, var/keep_btm_status = FALSE)
@@ -360,33 +375,33 @@
 		knotted_part_partner = SEX_PART_NULL
 
 /mob/living/carbon/human/werewolf_transform() // needed to ensure that we safely remove the tie before transitioning
-	if(src.sexcon.knotted_status)
-		src.sexcon.knot_remove()
+	if(istype(sexcon) && sexcon.knotted_status)
+		sexcon.knot_remove()
 	return ..()
 
 /mob/living/carbon/human/werewolf_untransform(dead,gibbed) // needed to ensure that we safely remove the tie after transitioning
-	if(src.sexcon.knotted_status)
-		src.sexcon.knot_remove()
+	if(istype(sexcon) && sexcon.knotted_status)
+		sexcon.knot_remove()
 	return ..()
 
 /mob/living/carbon/can_speak_vocal() // do not allow bottom to speak while knotted orally (at least until they're double knotted or it has been removed)
 	. = ..()
 	if(. && iscarbon(src))
 		var/mob/living/carbon/H = src
-		return !(H.sexcon.knotted_status == KNOTTED_AS_BTM && H.sexcon.knotted_part_partner&SEX_PART_JAWS)
+		return !((H?.sexcon?.knotted_status == KNOTTED_AS_BTM) && (H?.sexcon?.knotted_part_partner&SEX_PART_JAWS))
 	return .
 
 /datum/emote/is_emote_muffled(mob/living/carbon/H) // do not allow bottom to emote while knotted orally (at least until they're double knotted or it has been removed)
 	. = ..()
 	if(!.)
 		return FALSE
-	return !(H.sexcon.knotted_status == KNOTTED_AS_BTM && H.sexcon.knotted_part_partner&SEX_PART_JAWS)
+	return !((H?.sexcon?.knotted_status == KNOTTED_AS_BTM) && (H?.sexcon?.knotted_part_partner&SEX_PART_JAWS))
 
 /datum/emote/select_message_type(mob/user, intentional) // always use the muffled message while bottom is knotted orally (at least until they're double knotted or it has been removed)
 	. = ..()
 	if(message_muffled && iscarbon(user))
 		var/mob/living/carbon/H = user
-		if(H.sexcon.knotted_status == KNOTTED_AS_BTM && H.sexcon.knotted_part_partner&SEX_PART_JAWS)
+		if((H?.sexcon?.knotted_status == KNOTTED_AS_BTM) && (H?.sexcon?.knotted_part_partner&SEX_PART_JAWS))
 			. = message_muffled
 
 /datum/status_effect/knot_tied
@@ -407,8 +422,8 @@
 	effectedstats = list("intelligence" = -10)
 
 /atom/movable/screen/alert/status_effect/knot_fucked_stupid
-	name = "Braindead"
-	desc = "I am having difficulty thinking.."
+	name = "Fucked Stupid"
+	desc = "Mmmph I can't think straight..."
 	icon_state = "knotted_stupid"
 
 /datum/status_effect/knot_gaped
@@ -438,7 +453,7 @@
 
 /atom/movable/screen/alert/status_effect/knot_gaped
 	name = "Gaped"
-	desc = "You were forcefully withdrawn from."
+	desc = "You were forcefully withdrawn from. Warmth runs freely down your thighs..."
 
 /datum/status_effect/knotted
 	id = "knotted"
