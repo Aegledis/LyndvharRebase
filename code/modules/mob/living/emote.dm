@@ -1102,6 +1102,7 @@
 	key_third_person = "smiles"
 	message = "smiles."
 	emote_type = EMOTE_VISIBLE
+
 /mob/living/carbon/human/verb/emote_smile()
 	set name = "Smile"
 	set category = "Emotes"
@@ -1857,11 +1858,12 @@
 	message_muffled = "makes a muffled yip!"
 	is_animal = TRUE
 	show_runechat = FALSE
+
 /mob/living/carbon/human/verb/yip()
 	set name = "Yip"
 	set category = "Noises"
 	emote("yip", intentional = TRUE)
-
+*/
 /datum/emote/living/yap
 	key = "yap"
 	key_third_person = "yaps"
@@ -1870,6 +1872,7 @@
 	message_muffled = "makes a muffled yap!"
 	is_animal = TRUE
 	show_runechat = FALSE
+
 /mob/living/carbon/human/verb/yap()
 	set name = "Yap"
 	set category = "Noises"
@@ -1939,4 +1942,4 @@
 	set name = "Yip"
 	set category = "Noises"
 
-	emote("yip", intentional = TRUE)*/
+	emote("yip", intentional = TRUE)

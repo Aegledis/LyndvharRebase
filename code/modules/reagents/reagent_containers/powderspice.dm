@@ -100,21 +100,21 @@
 	if(M == user)
 		M.visible_message(span_notice("[user] sniffs [src]."))
 	else
-		if(iscarbon(M))
-			var/mob/living/carbon/C = M
-			var/obj/item/bodypart/CH = C.get_bodypart(BODY_ZONE_HEAD)
-			if(!CH)
-				to_chat(user, span_warning("[C.p_theyre(TRUE)] missing something."))
-			if(!C.can_smell())
-				to_chat(user, span_warning("[C.p_theyre(TRUE)] has no nose!"))
-			C.visible_message(span_danger("[user] attempts to force [C] to inhale [src]."), span_danger("[user] attempts to force me to inhale [src]!"))
-			if(C.cmode)
-				if(!C.grabbedby)
-					to_chat(user, span_info("[C] moves [C.p_their()] face away from it."))
-					return FALSE
-			if(!do_mob(user, M, 40))
-				return FALSE
-
+		if(do_mob(user, M, 40))
+			if(iscarbon(M))
+				var/mob/living/carbon/C = M
+				var/obj/item/bodypart/CH = C.get_bodypart(BODY_ZONE_HEAD)
+				if(!CH)
+					to_chat(user, span_warning("[C.p_theyre(TRUE)] missing something."))
+				if(!C.can_smell())
+					to_chat(user, span_warning("[C.p_theyre(TRUE)] has no nose!"))
+				C.visible_message(span_danger("[user] attempts to force [C] to inhale [src]."), span_danger("[user] attempts to force me to inhale [src]!"))
+				if(C.cmode)
+					if(!C.grabbedby)
+						to_chat(user, span_info("[C] moves [C.p_their()] face away from it."))
+						return FALSE
+		else
+			return FALSE				
 	playsound(M, 'sound/items/sniff.ogg', 100, FALSE)
 	record_round_statistic(STATS_DRUGS_SNORTED)
 

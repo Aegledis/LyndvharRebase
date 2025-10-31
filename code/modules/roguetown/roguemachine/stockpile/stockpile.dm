@@ -105,6 +105,25 @@
 	popup.open()
 
 /obj/structure/roguemachine/stockpile/proc/attemptsell(obj/item/I, mob/H, message = TRUE, sound = TRUE)
+	if(istype(I, /obj/structure/handcart)) // Handle carts specially - sell their contents, leave the empty cart
+		var/obj/structure/handcart/cart = I
+		var/turf/cart_location = get_turf(cart)
+		var/list/cart_contents = cart.stuff_shit.Copy()
+		for(var/atom/movable/cart_content in cart_contents) // Process all items inside the cart first
+			if(isitem(cart_content))
+				attemptsell(cart_content, H, message, FALSE)
+
+		for(var/atom/movable/remaining_item in cart_contents) // Any items that weren't sold (still exist) go to the ground
+			if(!QDELETED(remaining_item))
+				remaining_item.forceMove(cart_location)
+		// Setting cart back to square 1
+		cart.stuff_shit = list()
+		cart.current_capacity = 0
+		cart.update_icon()
+		if(sound == TRUE)
+			playsound(loc, 'sound/misc/hiss.ogg', 100, FALSE, -1)
+		return
+
 	for(var/datum/roguestock/R in SStreasury.stockpile_datums)
 		if(istype(I, /obj/item/natural/bundle))
 			var/obj/item/natural/bundle/B = I
