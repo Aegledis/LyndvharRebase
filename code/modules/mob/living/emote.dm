@@ -1937,9 +1937,10 @@
     emote_type = EMOTE_AUDIBLE
     stat_allowed = UNCONSCIOUS
     show_runechat = FALSE
-
+/*
 /mob/living/carbon/human/verb/yip()
 	set name = "Yip"
 	set category = "Noises"
 
 	emote("yip", intentional = TRUE)
+*/
