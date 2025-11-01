@@ -419,7 +419,7 @@
 	cookonme = TRUE
 	soundloop = /datum/looping_sound/fireloop
 	var/obj/item/attachment = null
-	var/obj/item/reagent_containers/food/snacks/food = null
+	var/obj/item/food = null
 	var/mob/living/carbon/human/lastuser
 	var/datum/looping_sound/boilloop/boilloop
 
@@ -503,6 +503,14 @@
 						playsound(get_turf(user), 'modular/Neu_Food/sound/eggbreak.ogg', 100, TRUE, -1)
 						sleep(25) // to get egg crack before frying hiss
 						W.icon_state = "rawegg" // added
+				if(!food)
+					S.forceMove(src)
+					food = S
+					update_icon()
+					playsound(src.loc, 'sound/misc/frying.ogg', 80, FALSE, extrarange = 5)
+					return
+			if(W.type in subtypesof(/obj/item/seeds))
+				var/obj/item/seeds/S = W
 				if(!food)
 					S.forceMove(src)
 					food = S
