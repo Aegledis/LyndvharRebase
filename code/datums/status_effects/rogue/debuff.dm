@@ -626,18 +626,11 @@
 	var/datum/sex_controller/uhhuh = owner.sexcon
 	if(uhhuh.arousal <= 69) // Funny.
 		switch(time)
-			if(3)
+			if(1)
 				uhhuh.adjust_arousal(1)
-			if(6)
-				uhhuh.adjust_arousal(2)
-			if(9)
+			if(2)
 				uhhuh.adjust_arousal(1)
-			if(12)
-				uhhuh.adjust_arousal(2)
-			if(15)	
-				uhhuh.adjust_arousal(1)
-			if(18)	
-				uhhuh.adjust_arousal(2)			
+			else		
 				time = 0
 	
 /* Kockout */
