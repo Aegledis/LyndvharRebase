@@ -69,6 +69,9 @@
 	toggle_icon_state = TRUE
 	sewrepair = TRUE
 
+/obj/item/clothing/neck/roguetown/coif/heavypadding/white
+	color = COLOR_WHITE
+
 /obj/item/clothing/neck/roguetown/coif/heavypadding/ComponentInitialize()
 	return
 
