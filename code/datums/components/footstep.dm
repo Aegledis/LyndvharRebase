@@ -56,12 +56,8 @@
 			if(C.rogue_sneaking && !C.loud_sneaking)
 				return// stealth
 		if(C.loud_sneaking) 		
-			steps++
 			if(steps&2 == 2) // Hrrghn... Colonel, I'm trying to sneak around, but I'm dummy thicc, and the clap of my asscheeks keeps ALERTING THE GUARDS
 				playsound(C, pick(list('sound/misc/mat/clap1.ogg', 'sound/misc/mat/clap2.ogg', 'sound/misc/mat/clap3.ogg', 'sound/misc/mat/clap4.ogg', 'sound/misc/mat/clap5.ogg', 'sound/misc/mat/clap6.ogg', 'sound/misc/mat/clap7.ogg', 'sound/misc/mat/clap8.ogg', 'sound/misc/mat/clap9.ogg')), 15 * volume, TRUE)
-			if(steps >= 4)
-				steps = 0
-			return// uhm... stealth?
 	steps++
 
 	if(steps >= 4)
