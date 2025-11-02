@@ -1867,4 +1867,4 @@
 #define EMOTES_LIZARD list(/mob/proc/emote_hiss, /mob/proc/emote_phiss, /mob/proc/emote_growl)
 #define EMOTES_BIRD list(/mob/proc/emote_peep, /mob/proc/emote_caw, /mob/proc/emote_hoot)
 #define EMOTES_LIVESTOCK list(/mob/proc/emote_moo, /mob/proc/emote_bleat)
-#define EMOTES_WILD list(EMOTES_KITTY, EMOTES_LUPINE, EMOTES_LIZARD, EMOTES_BIRD, EMOTES_LIVESTOCK, /mob/proc/emote_chitter, /mob/proc/emote_flutter)
+#define EMOTES_WILD list(/mob/proc/emote_moo, /mob/proc/emote_bleat, /mob/proc/emote_peep, /mob/proc/emote_caw, /mob/proc/emote_hoot, /mob/proc/emote_phiss, /mob/proc/emote_growl, /mob/proc/emote_whine, /mob/proc/emote_yap, /mob/proc/emote_bark, /mob/proc/emote_howl, /mob/proc/emote_cackle, /mob/proc/emote_meow, /mob/proc/emote_hiss, /mob/proc/emote_trill, /mob/proc/emote_purr, /mob/proc/emote_roar, /mob/proc/emote_chitter, /mob/proc/emote_flutter)
