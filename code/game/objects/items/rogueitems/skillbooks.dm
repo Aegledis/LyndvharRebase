@@ -17,8 +17,8 @@
 
 	var/chosen_icon_state = null
 	var/list/authors = list()
-	
-proc/add_author(mob/living/carbon/human/H)
+
+/obj/item/skillbook/proc/add_author(mob/living/carbon/human/H)
 	if(!H || !H.real_name)
 		return
 	var/author_job = H.advjob ? H.advjob : "Adventurer"
