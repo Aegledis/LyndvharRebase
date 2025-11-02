@@ -32,8 +32,8 @@
 	grid_height = 64
 
 //Destroyer of knowledge - for storytellers
-/obj/item/book/fire_act()
-	record_round_statistic(STATS_BOOKS_BURNED)
+/obj/item/book/burn()
+	GLOB.lynd_round_stats[STATS_BOOKS_BURNED]++
 	..()
 
 

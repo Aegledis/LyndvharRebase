@@ -4,6 +4,7 @@
 	desc = ""
 	randomable_dream_xp = FALSE
 	color = "#9f74d6"
+	max_skillbook_level = 3
 
 /datum/skill/magic/holy
 	name = "Miracles"

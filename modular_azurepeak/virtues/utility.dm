@@ -103,14 +103,15 @@
 	to_chat(recipient, span_notice("You can retrieve your hammer and polishing tools from a tree, statue, or clock."))
 
 /datum/virtue/utility/linguist
-	name = "Intellectual"
-	desc = "I've spent my life surrounded by various books or sophisticated foreigners, be it through travel or other fortunes beset on my life. I've picked up several tongues and wits, and keep a journal closeby. I can tell people's exact prowess."
-	custom_text = "Maximizes Assess benefits with a bonus of the target's Stats. Allows the choice of 3 languages to learn upon joining."
+	name = "Well-Studied"
+	desc = "I've spent my life surrounded by various books or sophisticated foreigners, be it through travel or other fortunes beset on my life. I've picked up several tongues and wits, and keep a journal closeby. I enjoy writing about my talents."
+	custom_text = "Allows the choice of 3 languages to learn upon joining. You can discern how smart someone is by examining them."
 	added_traits = list(TRAIT_INTELLECTUAL)
 	added_skills = list(list(/datum/skill/misc/reading, 3, 6))
 	added_stashed_items = list(
 		"Quill" = /obj/item/natural/feather,
-		"Scroll #1" = /obj/item/paper/scroll,
+		"Scroll" = /obj/item/paper/scroll,
+		"Unfinished Skillbook" = /obj/item/skillbook/unfinished,
 		"Scroll #2" = /obj/item/paper/scroll,
 		"Book Crafting Kit" = /obj/item/book_crafting_kit
 	)

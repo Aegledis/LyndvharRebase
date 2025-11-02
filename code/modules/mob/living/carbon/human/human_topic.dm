@@ -191,7 +191,7 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 		
 		var/mob/living/carbon/human/H = src
 		var/mob/living/carbon/human/user = usr
-		var/intellectual = HAS_TRAIT(user, TRAIT_INTELLECTUAL)
+		var/intellectual = HAS_TRAIT(user, TRAIT_ASSESSOR)
 
 		if(H.get_visible_name() in unknown_names)
 			obscured_name = TRUE
