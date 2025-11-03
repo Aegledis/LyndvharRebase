@@ -23,7 +23,9 @@
 		STATKEY_INT = 4,
 		STATKEY_PER = 2,
 		STATKEY_WIL = 1,
-		STATKEY_SPD = 1
+		STATKEY_SPD = 1,
+		STATKEY_STR = -1,
+		STATKEY_CON = -1
 	)
 	subclass_spellpoints = 12
 	subclass_skills = list(
