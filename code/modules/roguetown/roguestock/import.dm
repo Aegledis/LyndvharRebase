@@ -91,8 +91,8 @@
 	new /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve/warden(src)
 
 /datum/roguestock/import/manatarms
-	name = "Man at Arms Equipment Crate"
-	desc = "Starting kit for a man at arms."
+	name = "Manor Guard Equipment Crate"
+	desc = "Starting kit for a Manor Guard."
 	item_type = /obj/structure/closet/crate/chest/steward/manatarms
 	export_price = 250
 	importexport_amt = 1

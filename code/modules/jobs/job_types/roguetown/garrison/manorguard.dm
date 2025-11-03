@@ -1,5 +1,5 @@
 /datum/job/roguetown/manorguard
-	title = "Man at Arms"
+	title = "Manor Guard"
 	flag = MANATARMS
 	department_flag = GARRISON
 	faction = "Station"
@@ -7,12 +7,12 @@
 	spawn_positions = 2
 
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = ACCEPTED_RACES
+	allowed_races = RACES_SHUNNED_UP
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	job_traits = list(TRAIT_GUARDSMAN, TRAIT_STEELHEARTED)
-	tutorial = "Having proven yourself loyal and capable, you are entrusted to defend the town and enforce its laws. \
-				Trained regularly in combat and siege warfare, you deal with threats - both within and without. \
-				Obey your Sergeant-at-Arms, the Marshal, and the Crown. Show the nobles and knights your respect, so that you may earn it in turn. Not as a commoner, but as a soldier.."
+	tutorial = "Having proven yourself loyal and capable, you are entrusted to defend the Manor and keep it protected. \
+				Trained regularly in combat and wearing suitable equipment, you deal with threats - both within and without. \
+				The word of the Viscount is your law- much more than any common levy of the Watch. Show the noble court and the Cataphracts your respect, so that you may earn it in turn. Not as a commoner, but as a proper member of the retinue."
 	display_order = JDO_CASTLEGUARD
 	whitelist_req = TRUE
 
@@ -22,7 +22,7 @@
 	give_bank_account = 22
 	min_pq = 3
 	max_pq = null
-	round_contrib_points = 2
+	round_contrib_points = 1
 
 	cmode_music = 'sound/music/combat_ManAtArms.ogg'
 	job_subclasses = list(
@@ -36,7 +36,7 @@
 	. = ..()
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
-		if(istype(H.cloak, /obj/item/clothing/cloak/stabard/guard))
+		if(istype(H.cloak, /obj/item/clothing/cloak/stabard/surcoat/guard))
 			var/obj/item/clothing/S = H.cloak
 			var/index = findtext(H.real_name, " ")
 			if(index)
@@ -52,14 +52,14 @@
 	neck = /obj/item/clothing/neck/roguetown/coif/heavypadding/white
 	gloves = /obj/item/clothing/gloves/roguetown/plate
 	beltl = /obj/item/rogueweapon/scabbard
-	beltr = /obj/item/rogueweapon/sword/decorated
+	beltr = /obj/item/rogueweapon/sword
 	belt = /obj/item/storage/belt/rogue/leather/steel
 	backr = /obj/item/storage/backpack/rogue/satchel/short/black
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/half
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 
-// Melee goon
+// standard issue goon
 /datum/advclass/manorguard/footsman
 	name = "Footman"
 	tutorial = "You are a professional soldier of the realm, specializing in melee warfare. Stalwart and hardy, your body can both withstand and dish out powerful strikes.."

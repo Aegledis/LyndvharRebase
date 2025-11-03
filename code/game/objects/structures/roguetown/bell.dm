@@ -73,7 +73,7 @@
 				if("The Inquisition")
 					rolestonotify = list("Inquisitor", "Orthodoxist", "Absolver")
 				if("Garrison")
-					rolestonotify = list("Man at Arms", "Sergeant", "Dungeoneer", "Watchman")
+					rolestonotify = list("Manor Guard", "Sergeant", "Dungeoneer", "Watchman")
 			send_ooc_note(("I hear the distant sounds of [src] ringing. I'm being called to the [localarea]."), job = rolestonotify)
 
 /obj/structure/standingbell/proc/reset_cooldown()
