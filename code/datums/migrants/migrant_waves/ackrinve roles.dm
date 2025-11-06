@@ -5,12 +5,12 @@
 	name = "Ackrinval Necromancer"
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_SHUNNED_UP
-	greet_text = "You are a Warlock-Necromancer from the Ackrinve Wastelands, use your dark magic to bring RUIN upon the lands of the Pantheon and DEFILE their Temples"
+	greet_text = "Hailing from the wastelands of far away Ackrinval, you have travelled a far distance in order to setup a coven to the glorious ones in this region. Myths speak of the Draguippe's deep connection to leylines, and have brought your dark watch upon it."
 	advclass_cat_rolls = list(CTAG_ACKRINVE_NECROMANCER = 20)
 
 /datum/advclass/ackrinve_necromancer
 	name = "Ackrinval Necromancer"
-	tutorial = "You are a Warlock-Necromancer from the Ackrinve Wastelands, use your dark magic to bring RUIN upon the lands of the Pantheon and DEFILE their Temples"
+	tutorial = "Hailing from the wastelands of far away Ackrinval, you have travelled a far distance in order to setup a coven to the glorious ones in this region. Myths speak of the Draguippe's deep connection to leylines, and have brought your dark watch upon it."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/ackrinve/necromancer
@@ -49,7 +49,7 @@
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/heavy
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/aventine
-	belt = /obj/item/storage/belt/rogue/leather
+	belt = /obj/item/storage/belt/rogue/leather/black
 	beltr = /obj/item/reagent_containers/glass/bottle/rogue/manapot
 	neck = /obj/item/clothing/neck/roguetown/gorget/steel
 	beltl = /obj/item/rogueweapon/huntingknife/idagger/silver/elvish
@@ -77,7 +77,7 @@
 
 /datum/migrant_role/ackrinve/knight
 	name = "Death Knight"
-	greet_text = "You serve the Warlock-Necromancer which leads your party, do their complete bidding and bring RUIN to LYNDVHAR"
+	greet_text = "Having been rose as a thrall to the reigning Necromancer of the party, you know only one thing only: undying loyalty to your summoner. Let no harm befall them."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_SHUNNED_UP
 	advclass_cat_rolls = list(CTAG_ACKRINVE_KNIGHT = 20)
@@ -118,6 +118,7 @@
 		/datum/skill/combat/unarmed= SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/swords= SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/maces= SKILL_LEVEL_EXPERT,
+		/datum/skill/combat/axes= SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/shields= SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/polearms= SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/whipsflails= SKILL_LEVEL_APPRENTICE,
@@ -137,11 +138,11 @@
 	mask = /obj/item/clothing/mask/rogue/facemask/steel
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	if(H.mind)
-		to_chat(H, span_warning("Recall which Archdaemon bestowed their dark gifts upon you"))
-		var/daemons = list("Zizo, The Necromancer(Longsword)", "Gragger, The Dark Star(Greataxe)", "Archdaemons-Undivided(Greatsword)", "None(Mace)")
-		var/patron_choice = input(H, "Choose your weapon.", "TAKE UP ARMS") as anything in daemons
+		to_chat(H, span_warning("ASPECT OF SIN"))
+		var/daemons = list("ZIZO", "GRAGGAR", "MATTHIOS")
+		var/patron_choice = input(H, "Choose your sin.", "DARK BLESSINGS") as anything in daemons
 		switch(patron_choice)
-			if("Zizo, The Necromancer(Longsword)")
+			if("ZIZO")
 				H.set_patron(/datum/patron/inhumen/zizo)
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/full/zizo
 				pants = /obj/item/clothing/under/roguetown/platelegs/zizo
@@ -152,7 +153,7 @@
 				neck = /obj/item/clothing/neck/roguetown/gorget/steel
 				r_hand = /obj/item/rogueweapon/sword/long/zizo
 				mask = /obj/item/clothing/mask/rogue/facemask/steel
-			if("Gragger, The Dark Star(Greataxe)")
+			if("GRAGGAR")
 				H.set_patron(/datum/patron/inhumen/graggar)
 				armor = /obj/item/clothing/suit/roguetown/armor/plate/fluted/graggar
 				pants = /obj/item/clothing/under/roguetown/platelegs/graggar
@@ -165,28 +166,18 @@
 				mask = /obj/item/clothing/mask/rogue/facemask/steel
 				wrists = /obj/item/clothing/wrists/roguetown/bracers
 				cloak = /obj/item/clothing/cloak/graggar
-			if("Archdaemons-Undivided(Greatsword)")
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/modern/blacksteel_full_plate
-				pants = /obj/item/clothing/under/roguetown/platelegs/blacksteel/modern
-				shoes = /obj/item/clothing/shoes/roguetown/boots/blacksteel/modern/plateboots
-				gloves = /obj/item/clothing/gloves/roguetown/blacksteel/modern/plategloves
+			if("MATTHIOS")
+				H.set_patron(/datum/patron/inhumen/matthios)
+				armor = /obj/item/clothing/suit/roguetown/armor/plate/full/matthios
+				pants = /obj/item/clothing/under/roguetown/platelegs/matthios
+				shoes = /obj/item/clothing/shoes/roguetown/boots/armor/matthios
+				gloves = /obj/item/clothing/gloves/roguetown/plate/matthios
 				wrists = /obj/item/clothing/wrists/roguetown/bracers
-				head = /obj/item/clothing/head/roguetown/helmet/blacksteel/modern/armet
+				head = /obj/item/clothing/head/roguetown/helmet/heavy/matthios
 				neck = /obj/item/clothing/neck/roguetown/gorget/steel
-				r_hand = /obj/item/rogueweapon/greatsword/grenz/flamberge/blacksteel
+				r_hand = /obj/item/rogueweapon/flail/peasantwarflail/matthios
 				mask = /obj/item/clothing/mask/rogue/facemask/steel
 				wrists = /obj/item/clothing/wrists/roguetown/bracers
-			if("None(Mace)")
-				beltl = /obj/item/rogueweapon/scabbard/sword
-				belt = /obj/item/storage/belt/rogue/leather
-				pants = /obj/item/clothing/under/roguetown/platelegs/blk/death
-				shoes = /obj/item/clothing/shoes/roguetown/boots/armor/blkknight
-				shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
-				armor = /obj/item/clothing/suit/roguetown/armor/plate/blkknight/death
-				gloves = /obj/item/clothing/gloves/roguetown/plate/blk/death
-				backr = /obj/item/storage/backpack/rogue/satchel/black
-				cloak = /obj/item/clothing/cloak/tabard/blkknight
-				r_hand = /obj/item/rogueweapon/mace/goden/steel/paalloy
 
 	
 #undef CTAG_ACKRINVE_NECROMANCER
