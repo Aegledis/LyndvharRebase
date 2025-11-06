@@ -154,8 +154,8 @@
 	lockid = "garrison"
 
 /obj/item/roguekey/sergeant
-	name = "sergeant key"
-	desc = "This key belongs to the sergeant of the Men-at-Arms."
+	name = "watch captain key"
+	desc = "This key belongs to the captain of the Watch."
 	icon_state = "spikekey"
 	lockid = "watch captain"
 
