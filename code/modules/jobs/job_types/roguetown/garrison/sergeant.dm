@@ -50,6 +50,7 @@
 //All skills/traits are on the loadouts. All are identical. Welcome to the stupid way we have to make sub-classes...
 /datum/outfit/job/roguetown/sergeant
 	neck = /obj/item/clothing/neck/roguetown/chaincoif/full
+	backr = /obj/item/storage/backpack/rogue/satchel/short/black
 	head = /obj/item/clothing/head/roguetown/helmet/heavy/captain
 	armor = /obj/item/clothing/suit/roguetown/armor/brigandine/captain
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
