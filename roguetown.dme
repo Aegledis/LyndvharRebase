@@ -733,6 +733,8 @@
 #include "code\datums\migrants\migrant_pref.dm"
 #include "code\datums\migrants\migrant_role.dm"
 #include "code\datums\migrants\migrant_wave.dm"
+#include "code\datums\migrants\migrant_waves\ackrinve roles.dm"
+#include "code\datums\migrants\migrant_waves\ackrinve wave.dm"
 #include "code\datums\migrants\migrant_waves\fablefield roles.dm"
 #include "code\datums\migrants\migrant_waves\fablefield wave.dm"
 #include "code\datums\migrants\migrant_waves\grenzelhoft roles.dm"
@@ -2755,4 +2757,5 @@
 #include "modular_lynd\code\game\objects\structures\walldeco_evil.dm"
 #include "modular_lynd\code\modules\adv_kit.dm"
 #include "modular_lynd\code\modules\repair_powder.dm"
+#include "modular_lynd\code\modules\Ackrinval\clothing.dm"
 // END_INCLUDE
