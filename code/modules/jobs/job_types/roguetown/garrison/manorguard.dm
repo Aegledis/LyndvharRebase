@@ -24,7 +24,7 @@
 	max_pq = null
 	round_contrib_points = 2
 
-	cmode_music = 'sound/music/combat_ManAtArms.ogg'
+	cmode_music = 'sound/music/combat_garrison.ogg'
 	job_subclasses = list(
 		/datum/advclass/manorguard/footsman
 	)
@@ -117,7 +117,7 @@
 	if(H.mind)
 		var/helmets = list(
 		"Bascinet"		= /obj/item/clothing/head/roguetown/helmet/bascinet,
-		"Visored Sallet"		= /obj/item/clothing/head/roguetown/helmet/sallet/visored,
+		"Slitted Kettle Helmet"		= /obj/item/clothing/head/roguetown/helmet/heavy/knight/skettle,
 		"Kettle Helmet"				= /obj/item/clothing/head/roguetown/helmet/kettle,
 		"None"
 		)
