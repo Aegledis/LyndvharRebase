@@ -313,3 +313,8 @@
 	name = "Heresiarch"
 	desc = "You've spent your days studying the ways of the occult and the methodology of all the Daemons. You've grown to tell the followers by hunch and sight. They give themselves away so easily in this world slowly brewing to a fester. I also know the location of a secret altar to the Archdaemons- where we may convene."
 	added_traits = list(TRAIT_HERESIARCH)
+
+/datum/virtue/utility/mountable
+	name = "Mountable"
+	desc = "You have trained and become fit enough to function as a suitable mount. People may ride you as they would a saiga."
+	added_traits = list(TRAIT_MOUNTABLE)

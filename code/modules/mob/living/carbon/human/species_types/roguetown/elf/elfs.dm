@@ -8,11 +8,12 @@
 	The eldest of the Pantheon’s creations, the elves are one of the most ancient races in Beowricke. Known for being one of the most intelligent and long-living races, they have graceful nature in their stead and are almost exclusively seen in the upper echelons of societies, and in fact many baronies, cities, and even realms (like Greencrest) are made up of an entire elvish nobility. Elves are prideful and believe themselves to be the superior mortal race, however have been intertwined with Humens for so long that it is not uncommon to see a half-elf in many circles of the world.<br>"
 
 	skin_tone_wording = "Tribal Identity"
+	max_age = 850
 
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,OLDGREY)
 	default_features = MANDATORY_FEATURE_LIST
-	use_skintones = 1
+	use_skintones = TRUE
 	disliked_food = NONE
 	liked_food = NONE
 	possible_ages = ALL_AGES_LIST

@@ -624,6 +624,9 @@
 /datum/status_effect/debuff/pent_up/tick()
 	time += 1
 	var/datum/sex_controller/uhhuh = owner.sexcon
+	if(uhhuh.arousal_frozen)
+		uhhuh.arousal_frozen = 0
+		
 	if(uhhuh.arousal <= 69) // Funny.
 		switch(time)
 			if(1)

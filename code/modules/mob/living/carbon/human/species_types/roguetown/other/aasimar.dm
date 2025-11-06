@@ -8,11 +8,12 @@
 	The Aasimar, or as many call them Godlings, are the race created by the Pantheon to directly serve in the Bloodwake as the main bulk of the militaries. If they were not serving in these positions, they often held command over non-aasimar legions, like the humens or the elves. After the Bloodwake, the Aasimar were left to wander the realm after the Gods looked inward to recover. Due to the nature of their creation and construct they are much more prone to aggression and violence when feeling threatened than many other races, leading them to have a stigma about them. Despite this, they can be found in many positions of wisdom or still found in military garrisons, performing their duties they were created to do oh-so long ago.<br>"
 
 	skin_tone_wording = "Craft"
+	max_age = "???"
 
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	default_features = MANDATORY_FEATURE_LIST
-	use_skintones = 1
+	use_skintones = TRUE
 	disliked_food = NONE
 	liked_food = NONE
 	possible_ages = ALL_AGES_LIST

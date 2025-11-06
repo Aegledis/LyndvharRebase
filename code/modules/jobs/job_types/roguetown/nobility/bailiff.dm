@@ -3,8 +3,8 @@
 	flag = MARSHAL
 	department_flag = NOBLEMEN
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_patrons = ALL_NICE_PATRONS
 	allowed_races = RACES_TOLERATED_UP
@@ -126,7 +126,7 @@
 	set category = "Voice of Command"
 	if(stat)
 		return
-	var/inputty = input("Write a new law", "MARSHAL") as text|null
+	var/inputty = input("Write a new law", "NEW LAW") as text|null
 	if(inputty)
 		if(hasomen(OMEN_NOLORD))
 			make_law(inputty)
@@ -142,7 +142,7 @@
 	set category = "Voice of Command"
 	if(stat)
 		return
-	var/inputty = input("Remove a law", "MARSHAL") as text|null
+	var/inputty = input("Remove a law", "REMOVE LAW") as text|null
 	var/law_index = text2num(inputty) || 0
 	if(law_index && GLOB.laws_of_the_land[law_index])
 		if(hasomen(OMEN_NOLORD))
@@ -173,7 +173,7 @@
 	set category = "Voice of Command"
 	if(stat)
 		return
-	var/inputty = input("Outlaw a person", "MARSHAL") as text|null
+	var/inputty = input("Outlaw a person", "OUTLAW!") as text|null
 	if(inputty)
 		if(hasomen(OMEN_NOLORD))
 			make_outlaw(inputty)
@@ -194,36 +194,36 @@
 	return lord
 
 /proc/lord_law_requested(mob/living/bailiff, mob/living/carbon/human/lord, requested_law)
-	var/choice = alert(lord, "The Marshal requests a new law!\n[requested_law]", "MARSHAL LAW REQUEST", "Yes", "No")
+	var/choice = alert(lord, "The Gentry requests a new law!\n[requested_law]", "LAW REQUEST", "Yes", "No")
 	if(choice != "Yes" || QDELETED(lord) || lord.stat > CONSCIOUS)
 		if(bailiff)
-			to_chat(span_warning("The lord has denied the request for a new law!"))
+			to_chat(span_warning("The viscount has denied the request for a new law!"))
 		return
 	make_law(requested_law)
 
 /proc/lord_law_removal_requested(mob/living/bailiff, mob/living/carbon/human/lord, requested_law)
 	if(!requested_law || !GLOB.laws_of_the_land[requested_law])
 		return
-	var/choice = alert(lord, "The Marshal requests the removal of a law!\n[GLOB.laws_of_the_land[requested_law]]", "MARSHAL LAW REQUEST", "Yes", "No")
+	var/choice = alert(lord, "The Gentry requests the removal of a law!\n[GLOB.laws_of_the_land[requested_law]]", "LAW REQUEST", "Yes", "No")
 	if(choice != "Yes" || QDELETED(lord) || lord.stat > CONSCIOUS)
 		if(bailiff)
-			to_chat(span_warning("The lord has denied the request for a law removal!"))
+			to_chat(span_warning("The viscount has denied the request for a law removal!"))
 		return
 	remove_law(requested_law)
 
 /proc/lord_purge_requested(mob/living/bailiff, mob/living/carbon/human/lord)
-	var/choice = alert(lord, "The Marshal requests a purge of all laws!", "MARSHAL PURGE REQUEST", "Yes", "No")
+	var/choice = alert(lord, "The Gentry requests a purge of all laws!", "PURGE REQUEST", "Yes", "No")
 	if(choice != "Yes" || QDELETED(lord) || lord.stat > CONSCIOUS)
 		if(bailiff)
-			to_chat(span_warning("The lord has denied the request for a purge of all laws!"))
+			to_chat(span_warning("The viscount has denied the request for a purge of all laws!"))
 		return
 	purge_laws()
 
 /proc/lord_outlaw_requested(mob/living/bailiff, mob/living/carbon/human/lord, requested_outlaw)
-	var/choice = alert(lord, "The Marshal requests to outlaw someone!\n[requested_outlaw]", "MARSHAL OUTLAW REQUEST", "Yes", "No")
+	var/choice = alert(lord, "The Gentry requests to outlaw someone!\n[requested_outlaw]", "OUTLAW REQUEST", "Yes", "No")
 	if(choice != "Yes" || QDELETED(lord) || lord.stat > CONSCIOUS)
 		if(bailiff)
-			to_chat(span_warning("The lord has denied the request for declaring an outlaw!"))
+			to_chat(span_warning("The viscount has denied the request for declaring an outlaw!"))
 		return
 	make_outlaw(requested_outlaw)
 

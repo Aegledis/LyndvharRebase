@@ -70,23 +70,23 @@ GLOBAL_LIST_INIT(noble_positions, list(
 	"Councillor",
 	"Steward",
 	"Cataphract",
+	"Archmagus",
 ))
 
 GLOBAL_LIST_INIT(courtier_positions, list(
-	"Archmagus",
 	"Practitioner",
 	"Jester",
 	"Seneschal",
 ))
 
 GLOBAL_LIST_INIT(garrison_positions, list(
-	"Watchman",
-	"Warden",
-	"Sergeant",
-	"Gatemaster",
 	"Manor Guard",
+	"Gatemaster",
 	"Squire",
 	"Dungeoneer",
+	"Watch Captain",
+	"Watchman",
+	"Warden",
 ))
 
 GLOBAL_LIST_INIT(church_positions, list(
@@ -137,9 +137,7 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Outlander",
 	"Trader",
 	"Pilgrim",
-	"Bandit",
 	"Court Agent",
-	"Wretch",
 	"Hostage",
 ))
 
@@ -148,6 +146,11 @@ GLOBAL_LIST_INIT(mercenary_positions, list(
 	"Grenzelhoft Mercenary",
 	"Desert Rider Mercenary",
 	"Veteran",
+))
+
+GLOBAL_LIST_INIT(culprit_positions, list(
+	"Bandit",
+	"Wretch",
 ))
 
 GLOBAL_LIST_INIT(youngfolk_positions, list(

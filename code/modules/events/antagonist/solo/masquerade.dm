@@ -25,7 +25,7 @@
 		"Grand Duke",
 		"Grand Duchess",
 		"Consort",
-		"Sergeant",
+		"Watch Captain",
 		"Men-at-arms",
 		"Marshal",
 		"Bishop",

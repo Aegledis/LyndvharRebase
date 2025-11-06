@@ -3,8 +3,8 @@
 	flag = MANATARMS
 	department_flag = GARRISON
 	faction = "Station"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 4
+	spawn_positions = 4
 
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_SHUNNED_UP
@@ -36,7 +36,7 @@
 	. = ..()
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
-		if(istype(H.cloak, /obj/item/clothing/cloak/stabard/surcoat/guard))
+		if(istype(H.cloak, /obj/item/clothing/cloak/stabard/guard))
 			var/obj/item/clothing/S = H.cloak
 			var/index = findtext(H.real_name, " ")
 			if(index)
@@ -46,7 +46,7 @@
 			S.name = "guard tabard ([index])"
 
 /datum/outfit/job/roguetown/manorguard
-	cloak = /obj/item/clothing/cloak/stabard/surcoat/guard
+	cloak = /obj/item/clothing/cloak/stabard/guard
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	neck = /obj/item/clothing/neck/roguetown/coif/heavypadding/white
@@ -61,8 +61,8 @@
 
 // standard issue goon
 /datum/advclass/manorguard/footsman
-	name = "Footman"
-	tutorial = "You are a professional soldier of the realm, specializing in melee warfare. Stalwart and hardy, your body can both withstand and dish out powerful strikes.."
+	name = "Manor Guard"
+	tutorial = "You have one task. Ensuring the Manor and its occupants are protected."
 	outfit = /datum/outfit/job/roguetown/manorguard/footsman
 
 	category_tags = list(CTAG_MENATARMS)

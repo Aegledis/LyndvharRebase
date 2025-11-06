@@ -331,3 +331,7 @@
 	timer = 999 MINUTES
 	desc = span_green("I'm wielding a BLESSED weapon!")
 
+/datum/stressevent/vampiric_nostalgia
+	stressadd = -2
+	desc = span_green("Astrata and her gaze may burn you now, but you distantly remember when it was pleasant to your skin.")
+	timer = 20 SECONDS

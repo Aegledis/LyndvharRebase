@@ -28,7 +28,7 @@
 		"Viscountess",
 		"Consort",
 		"Dungeoneer",
-		"Sergeant",
+		"Watch Captain",
 		"Men-at-arms",
 		"Marshal",
 		"Priest",

@@ -187,15 +187,16 @@
 #define DESERT_RIDER	(1<<3)	//Unused
 #define GRENZELHOFT		(1<<4)	//Unused
 
+#define CULPRIT		(1<<8)
 
-#define TRIBAL		(1<<8)
+#define TRIBAL		(1<<9)
 
 #define CHIEFTAIN	(1<<0)
 #define TRIBALCOOK	(1<<1)
 #define TRIBALGUARD	(1<<2)
 #define TRIBALSMITH	(1<<3)
 
-#define SLOP		(1<<9)
+#define SLOP		(1<<10)
 
 #define TESTER		(1<<0)
 #define DEATHKNIGHT (1<<1)
@@ -205,13 +206,13 @@
 #define VAMPIRE_GUARD (1<<5)
 #define VAMPIRE_SPAWN (1<<6)
 
-#define INQUISITION (1<<10)
+#define INQUISITION (1<<11)
 
 #define PURITAN		(1<<0)
 #define ORTHODOXIST	(1<<1)
 #define ABSOLVER (1<<2)
 
-#define GUILDSMEN	(1<<11)
+#define GUILDSMEN	(1<<12)
 #define GUILDMASTER (1<<1)
 #define GUILDSMAN  	(1<<2)
 #define TAILOR		(1<<3)
@@ -224,7 +225,8 @@
 #define JCOLOR_GUILD "#6e6259"
 #define JCOLOR_PEASANT "#b09262"
 #define JCOLOR_MERCENARY "#c86e3a"
-#define JCOLOR_INQUISITION "#FF0000"
+#define JCOLOR_CULPRIT "#9c2636"
+#define JCOLOR_INQUISITION "#c23e3e"
 
 // job display orders //
 
@@ -240,7 +242,7 @@
 #define JDO_COUNCILLOR 4.1
 
 // Courtiers
-#define JDO_MAGICIAN 5
+#define JDO_MAGICIAN 4.2
 #define JDO_MAGEAPPRENTICE 5.1
 #define JDO_PHYSICIAN 6
 #define JDO_APOTHECARY 6.1
@@ -329,7 +331,6 @@
 	/datum/job/roguetown/servant,\
 	/datum/job/roguetown/butler,\
 	/datum/job/roguetown/apothecary,\
-	/datum/job/roguetown/magician
 
 #define NOBLE_ROLES \
 	/datum/job/roguetown/prince,\
@@ -341,7 +342,8 @@
 	/datum/job/roguetown/knight,\
 	/datum/job/roguetown/lady,\
 	/datum/job/roguetown/lord,\
-	/datum/job/roguetown/steward
+	/datum/job/roguetown/steward,\
+	/datum/job/roguetown/magician
 
 #define KING_QUEEN_ROLES \
 	/datum/job/roguetown/lady,\
@@ -401,4 +403,5 @@
 
 #define INQUISITION_ROLES \
 	/datum/job/roguetown/puritan,\
-	/datum/job/roguetown/orthodoxist
+	/datum/job/roguetown/orthodoxist,\
+	/datum/job/roguetown/absolver

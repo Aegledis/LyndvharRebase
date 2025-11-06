@@ -2054,6 +2054,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					var/new_s_tone = browser_input_list(user, "CHOOSE AN ORIGIN:", "TIME IN THE SUN", listy, skin_tone)
 					if(new_s_tone)
 						skin_tone = listy[new_s_tone]
+						features["mcolor"] = sanitize_hexcolor(skin_tone)
 						try_update_mutant_colors()
 
 				if("charflaw")
@@ -2623,9 +2624,8 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 	parent?.ensure_keys_set(src)
 
 /datum/preferences/proc/try_update_mutant_colors()
-	if(update_mutant_colors)
-		reset_body_marking_colors()
-		reset_all_customizer_accessory_colors()
+	reset_body_marking_colors()
+	reset_all_customizer_accessory_colors()
 
 /datum/preferences/proc/get_ui_theme_stylesheet()
 	switch(ui_theme)

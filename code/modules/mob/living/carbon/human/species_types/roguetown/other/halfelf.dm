@@ -8,11 +8,13 @@
 	The children of an Elf and a Humen, most conservative minds frown upon such a union. Half-Elves are distinguishable by their elf-ears yet humen appearance and features. However with the lack of a true cultural identity and pillar, they are often found either acting more as an elf or more as a humen. They are the embodiment of a “melting pot” of cultures, where the identity of humen and elf is blended into one.<br>" 
 
 	skin_tone_wording = "Identity"
+	max_age = 250
+
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	default_features = MANDATORY_FEATURE_LIST
-	use_skintones = 1
+	use_skintones = TRUE
 	possible_ages = ALL_AGES_LIST
 	disliked_food = NONE
 	liked_food = NONE

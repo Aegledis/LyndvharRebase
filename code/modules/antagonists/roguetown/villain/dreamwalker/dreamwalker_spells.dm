@@ -21,7 +21,7 @@
 		"Absolver",
 		"Templar",
 		"Dungeoneer",
-		"Sergeant",
+		"Watch Captain",
 		"Men-at-arms",
 		"Cataphract",
 		"Squire",

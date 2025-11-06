@@ -1,7 +1,8 @@
 /datum/job/roguetown/bandit //pysdon above there's like THREE bandit.dms now I'm so sorry. This one is latejoin bandits, the one in villain is the antag datum, and the one in the 'antag' folder is an old adventurer class we don't use. Good luck!
 	title = "Bandit"
 	flag = BANDIT
-	department_flag = PEASANTS
+	department_flag = CULPRIT
+	selection_color = JCOLOR_CULPRIT
 	faction = "Station"
 	total_positions = 5
 	spawn_positions = 5

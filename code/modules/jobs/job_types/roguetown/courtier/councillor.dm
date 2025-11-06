@@ -1,7 +1,7 @@
 /datum/job/roguetown/councillor
 	title = "Councillor"
 	flag = COUNCILLOR
-	department_flag = NOBLEMEN
+	department_flag = COURTIERS
 	faction = "Station"
 	total_positions = 3
 	spawn_positions = 3
@@ -63,3 +63,4 @@
 	beltl = /obj/item/storage/keyring/steward // If this turns out to be overbearing re:stewardry bump down to the clerk keyring instead.
 	beltr = /obj/item/rogueweapon/huntingknife/idagger/steel
 	cloak = /obj/item/clothing/cloak/stabard/surcoat/councillor
+	H.verbs |= list(/mob/living/carbon/human/proc/request_law, /mob/living/carbon/human/proc/request_law_removal, /mob/living/carbon/human/proc/request_purge)

@@ -5,7 +5,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	resistance_flags = FIRE_PROOF
 	experimental_inhand = FALSE
-	grid_width = 32
+	grid_width = 64
 	grid_height = 32
 
 /obj/item/rogueore/gold
@@ -159,7 +159,7 @@
 		QDEL_NULL(currecipe)
 	if(istype(loc, /obj/machinery/anvil))
 		var/obj/machinery/anvil/A = loc
-		A.hingot = null
+		A.current_workpiece = null
 		A.update_icon()
 	..()
 
@@ -246,14 +246,14 @@
 
 /obj/item/ingot/silverblessed/
 	name = "blessed silver bar"
-	desc = "This bar radiates a divine purity. Treasured by the realms and commonly found in Valorian weaponry."
+	desc = "This bar radiates a divine purity. Treasured by the realms and commonly found in Psydonic weaponry."
 	icon_state = "ingotsilvblessed"
 	smeltresult = /obj/item/ingot/silver //Smelting it removes the blessing
 	sellprice = 100
 
 /obj/item/ingot/silverblessed/bullion
 	name = "blessed silver bullion"
-	desc = "This bar radiates a divine purity. The Psycross and the words casted into the surface denotes the Valorian Inquisition as the point of it's origin."
+	desc = "This bar radiates a divine purity. The Psycross and the words casted into the surface denotes the Otavan Inquisition as the point of it's origin."
 	icon_state = "ingotsilvblessed_psy"
 	smeltresult = /obj/item/ingot/silver //Smelting it removes the blessing
 	sellprice = 100

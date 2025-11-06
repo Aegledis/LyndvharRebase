@@ -117,7 +117,7 @@ GLOBAL_LIST_INIT(bog_aggro, world.file2list("strings/rt/highwaymanaggrolines.txt
 		wander = TRUE
 		if(!is_silent && target != newtarg)
 			say(pick(GLOB.bog_aggro))
-			linepoint(target)
+			pointed(target)
 
 /mob/living/carbon/human/species/human/northern/bog_deserters/should_target(mob/living/L)
 	if(L.stat != CONSCIOUS)

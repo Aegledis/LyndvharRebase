@@ -13,11 +13,12 @@
 	// Stat balancing. Per-server decision. Preferably keep neutral until analysis post testmerges.
 	//race_bonus = list(STAT_INTELLIGENCE = 1, STAT_CONSTITUTION = 1)
 	skin_tone_wording = "Catalyst"
+	max_age = "???"
 
-	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY,MUTCOLORS_PARTSONLY)
+	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY,MUTCOLORS)
 	default_features = MANDATORY_FEATURE_LIST
-	inherent_traits = list(TRAIT_EASYDECAPITATION)
-	use_skintones = 1
+	inherent_traits = list(TRAIT_EASYDECAPITATION, TRAIT_NOHUNGER, TRAIT_NOBREATH, TRAIT_ZOMBIE_IMMUNE) //Given the deathless traits inherently as part of their nature as pseudo-undead.
+	use_skintones = TRUE
 	disliked_food = NONE
 	liked_food = NONE
 	possible_ages = ALL_AGES_LIST
@@ -159,6 +160,13 @@
 
 /datum/species/dullahan/get_skin_list()
 	return list(
+		"Commorah" = SKIN_COLOR_COMMORAH,
+		"Gloomhaven" = SKIN_COLOR_GLOOMHAVEN,
+		"Darkpila" = SKIN_COLOR_DARKPILA,
+		"Sshanntynlan" = SKIN_COLOR_SSHANNTYNLAN,
+		"Llurth Dreir" = SKIN_COLOR_LLURTH_DREIR,
+		"Tafravma" = SKIN_COLOR_TAFRAVMA,
+		"Yuethindrynn" = SKIN_COLOR_YUETHINDRYNN,
 		"Grenzelhoft" = SKIN_COLOR_PALE_GRENZELHOFT,
 		"Hammerhold" = SKIN_COLOR_PALE_HAMMERHOLD,
 		"Ebon" = SKIN_COLOR_PALE_EBON,
@@ -167,14 +175,7 @@
 		"Arlenneth" = SKIN_COLOR_ARLENNETH,
 		"Nessyss" = SKIN_COLOR_NESSYSS,
 		"Helixia" = SKIN_COLOR_HELIXIA,
-		"Nymsea" = SKIN_COLOR_NYMSEA,
-		"Commorah" = SKIN_COLOR_COMMORAH,
-		"Gloomhaven" = SKIN_COLOR_GLOOMHAVEN,
-		"Darkpila" = SKIN_COLOR_DARKPILA,
-		"Sshanntynlan" = SKIN_COLOR_SSHANNTYNLAN,
-		"Llurth Dreir" = SKIN_COLOR_LLURTH_DREIR,
-		"Tafravma" = SKIN_COLOR_TAFRAVMA,
-		"Yuethindrynn" = SKIN_COLOR_YUETHINDRYNN
+		"Nymsea" = SKIN_COLOR_NYMSEA
 	)
 
 /datum/species/dullahan/get_hairc_list()

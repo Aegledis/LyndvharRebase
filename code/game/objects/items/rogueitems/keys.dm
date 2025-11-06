@@ -157,7 +157,7 @@
 	name = "sergeant key"
 	desc = "This key belongs to the sergeant of the Men-at-Arms."
 	icon_state = "spikekey"
-	lockid = "sergeant"
+	lockid = "watch captain"
 
 /obj/item/roguekey/warden
 	name = "watchtower key"

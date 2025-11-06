@@ -16,7 +16,7 @@
 		"Heiress",
 		"Retinue Captain",
 		"Marshal",
-		"Sergeant",
+		"Watch Captain",
 		"Steward",
 		"Archmagus"
 	)

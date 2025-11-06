@@ -23,10 +23,11 @@
 	They typically trace their beginnings to how their progenator died before being raised."
 */
 	skin_tone_wording = "Origin City-State"
+	max_age = 850
 
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,OLDGREY)
 	default_features = MANDATORY_FEATURE_LIST
-	use_skintones = 1
+	use_skintones = TRUE
 	disliked_food = NONE
 	liked_food = NONE
 	possible_ages = ALL_AGES_LIST

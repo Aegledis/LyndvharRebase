@@ -80,6 +80,7 @@
 #define TRAIT_SIMPLESPEECH "Simple Speech" // Can only say the 1000 most common English-language words; other words get modified
 #define TRAIT_BLOODPOOL_BORN "Bloodpool Born"
 #define TRAIT_ROYALSERVANT "Household Insight" // Let's you see the royals liked/hated food/drink
+#define TRAIT_MOUNTABLE "Mount" //riding
 
 //Hearthstone port (Tracking)
 #define TRAIT_PERFECT_TRACKER "Perfect Tracker" //Will always find any tracks and analyzes them perfectly.
@@ -263,7 +264,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_LEAPER = "I can leap like a frog, landing where I want.",
 	TRAIT_NUTCRACKER = "I love kicking idiots in the nuts!",
 	TRAIT_SEEPRICES = "I can tell the prices of things down to the zenny.",
-	TRAIT_SEEPRICES_SHITTY = "I can tell the prices of things... <i>kind of</i>.",
+	TRAIT_STRONGBITE = span_info("Stronger bites, critical bite attacks."),
+	TRAIT_SEEPRICES_SHITTY = "I can tell the prices of things... <i>Kind of</i>.",
 	TRAIT_STRONGKICK = span_info("My kicks knock people down and back a step, consistently. There's no need for obstacles."),
 	TRAIT_IGNORESLOWDOWN = span_info("Nothing stops this carriage!"),
 	TRAIT_IGNOREDAMAGESLOWDOWN = span_info("Hits slow me down no longer."),
@@ -278,7 +280,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_DODGEEXPERT = span_info("I can dodge easily while only wearing light armor."),
 	TRAIT_MAGEARMOR = span_info("My magics can protect me from a blow every so often."),
 	TRAIT_DECEIVING_MEEKNESS = span_info("People look at me and think I am a weakling. They are mistaken. I've learned how to hide my vices and true beliefs from others."),
-	TRAIT_CRITICAL_RESISTANCE = span_info("My constitution is iron-clad. My lifeblood flows slowly, I can resist the first few criitical wounds that would fell others, but repeated punishment will overwhelm my defenses."),
+	TRAIT_CRITICAL_RESISTANCE = span_info("My constitution is iron-clad. My lifeblood flows slowly, I can resist the first few critical wounds that would fell others, but repeated punishment will overwhelm my defenses."),
 	TRAIT_CRITICAL_WEAKNESS = span_danger("I am weak to wounds that others could survive."),
 	TRAIT_DNR = span_danger("My lux' vigor is weak. There is no hope for me. This lyfe is all I have."),
 	TRAIT_MANIAC_AWOKEN = span_danger("I am <b>WAKING UP</b> and the sheeple know this. They will resist."),
@@ -426,6 +428,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_SIMPLESPEECH = span_info("I can not say hard words."),
 	TRAIT_BLOODPOOL_BORN = span_bloody("I emerged from the bloodpool of a Vampire Lord. There is no possibility for redemption for me in this land."),
 	TRAIT_ROYALSERVANT = span_greentext("I've been serving the royal family for long enough to know their exotic tastes."),
+	TRAIT_MOUNTABLE = span_notice("I've been trained to carry other people's burdens."),
 	TRAIT_GOODWRITER = span_notice("I'm proficient at writing. Any skillbooks made by me will allow the reader to learn the subject more quickly.")
 ))
 
