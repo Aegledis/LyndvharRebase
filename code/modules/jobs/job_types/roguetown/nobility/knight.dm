@@ -108,12 +108,12 @@
 
 	H.adjust_blindness(-3)
 	if(H.mind)
-		var/weapons = list("Claymore","Great Mace","Battle Axe","Greataxe","Estoc","Lucerne", "Partizan")
+		var/weapons = list("Greatsword","Great Mace","Battle Axe","Greataxe","Estoc","Lucerne", "Partizan")
 		var/weapon_choice = browser_input_list(H, "Choose your weapon.", "TAKE UP ARMS", weapons)
 		H.set_blindness(0)
 		switch(weapon_choice)
-			if("Claymore")
-				r_hand = /obj/item/rogueweapon/greatsword/zwei
+			if("Greatsword")
+				r_hand = /obj/item/rogueweapon/greatsword
 				backl = /obj/item/rogueweapon/scabbard/gwstrap
 				H.adjust_skillrank_up_to(/datum/skill/combat/swords, SKILL_LEVEL_MASTER, TRUE)
 			if("Great Mace")
@@ -153,7 +153,6 @@
 			"Armet"				= /obj/item/clothing/head/roguetown/helmet/heavy/knight/armet,
 			"Hounskull Bascinet" = /obj/item/clothing/head/roguetown/helmet/bascinet/pigface/hounskull,
 			"Dunargi Bascinet" = /obj/item/clothing/head/roguetown/helmet/bascinet/dunargi,
-			"Slitted Kettle" = /obj/item/clothing/head/roguetown/helmet/heavy/knight/skettle,
 			"None"
 		)
 		var/helmchoice = browser_input_list(H, "Choose your Helm.", "TAKE UP HELMS", helmets)

@@ -53,12 +53,12 @@
 	backr = /obj/item/storage/backpack/rogue/satchel/short/black
 	head = /obj/item/clothing/head/roguetown/helmet/heavy/captain
 	armor = /obj/item/clothing/suit/roguetown/armor/brigandine/captain
-	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
+	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 	pants = /obj/item/clothing/under/roguetown/chainlegs/captain
 	gloves = /obj/item/clothing/gloves/roguetown/plate
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
-	belt = /obj/item/storage/belt/rogue/leather/black
+	belt = /obj/item/storage/belt/rogue/leather/steel/tasset
 	cloak = /obj/item/clothing/cloak/captain
 
 //Rare-ish anti-armor two hander sword. Kinda alternative of a bastard sword type. Could be cool.
