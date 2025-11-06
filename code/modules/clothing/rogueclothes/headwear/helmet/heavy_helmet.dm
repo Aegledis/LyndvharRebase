@@ -159,7 +159,7 @@
 	desc = "A reinforced Eisenhut that's been extended downwards to cover the face, fully protecting the wearer but limiting his field of view. Pairs well with a bevor."
 	icon_state = "skettle"
 	item_state = "skettle"
-	max_integrity = ARMOR_INT_HELMET_HEAVY_STEEL
+	max_integrity = ARMOR_INT_HELMET_STEEL
 	adjustable = CANT_CADJUST
 
 /obj/item/clothing/head/roguetown/helmet/heavy/knight/skettle/attackby(obj/item/W, mob/living/user, params)
