@@ -47,10 +47,10 @@
 
 /datum/outfit/job/roguetown/manorguard
 	cloak = /obj/item/clothing/cloak/stabard/guard
-	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	neck = /obj/item/clothing/neck/roguetown/coif/heavypadding/white
-	gloves = /obj/item/clothing/gloves/roguetown/plate
+	gloves = /obj/item/clothing/gloves/roguetown/angle
 	beltl = /obj/item/rogueweapon/scabbard
 	beltr = /obj/item/rogueweapon/sword
 	belt = /obj/item/storage/belt/rogue/leather/steel
@@ -116,8 +116,7 @@
 
 	if(H.mind)
 		var/helmets = list(
-		"Hounskull Bascinet"		= /obj/item/clothing/head/roguetown/helmet/bascinet/pigface/hounskull,
-		"Pigface Bascinet"			= /obj/item/clothing/head/roguetown/helmet/bascinet/pigface,
+		"Bascinet"		= /obj/item/clothing/head/roguetown/helmet/bascinet,
 		"Visored Sallet"		= /obj/item/clothing/head/roguetown/helmet/sallet/visored,
 		"Kettle Helmet"				= /obj/item/clothing/head/roguetown/helmet/kettle,
 		"None"

@@ -37,7 +37,7 @@
 	..()
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
-		if(istype(H.cloak, /obj/item/clothing/cloak/tabard/knight/guard))
+		if(istype(H.cloak, /obj/item/clothing/cloak/stabard/surcoat/guard))
 			var/obj/item/clothing/S = H.cloak
 			var/index = findtext(H.real_name, " ")
 			if(index)
@@ -60,8 +60,8 @@
 					H.mind.person_knows_me(MF)
 
 /datum/outfit/job/roguetown/knight
-	cloak = /obj/item/clothing/cloak/tabard/knight/guard
-	neck = /obj/item/clothing/neck/roguetown/gorget/steel
+	cloak = /obj/item/clothing/cloak/stabard/surcoat/guard
+	neck = /obj/item/clothing/neck/roguetown/chaincoif/chainmantle
 	gloves = /obj/item/clothing/gloves/roguetown/plate
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
@@ -140,7 +140,7 @@
 				H.adjust_skillrank_up_to(/datum/skill/combat/polearms, SKILL_LEVEL_MASTER, TRUE)
 
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
-	pants = /obj/item/clothing/under/roguetown/chainlegs
+	pants = /obj/item/clothing/under/roguetown/platelegs
 
 	if(H.mind)
 		var/helmets = list(
@@ -162,7 +162,7 @@
 		var/armors = list(
 			"Brigandine"		= /obj/item/clothing/suit/roguetown/armor/brigandine,
 			"Coat of Plates"	= /obj/item/clothing/suit/roguetown/armor/brigandine/coatplates,
-			"Steel Cuirass"		= /obj/item/clothing/suit/roguetown/armor/plate/half,
+			"Scalemail"		= /obj/item/clothing/suit/roguetown/armor/plate/scale,
 			"Fluted Cuirass"	= /obj/item/clothing/suit/roguetown/armor/plate/half/fluted,
 		)
 		var/armorchoice = browser_input_list(H, "Choose your armor.", "TAKE UP ARMOR", armors)
@@ -230,7 +230,7 @@
 				H.adjust_skillrank_up_to(/datum/skill/combat/swords, SKILL_LEVEL_MASTER, TRUE)
 	
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
-	pants = /obj/item/clothing/under/roguetown/chainlegs
+	pants = /obj/item/clothing/under/roguetown/platelegs
 	backl = /obj/item/rogueweapon/shield/tower/metal
 	if(H.mind)
 		var/helmets = list(
@@ -243,7 +243,6 @@
 			"Armet"				= /obj/item/clothing/head/roguetown/helmet/heavy/knight/armet,
 			"Hounskull Bascinet" = /obj/item/clothing/head/roguetown/helmet/bascinet/pigface/hounskull,
 			"Dunargi Bascinet" = /obj/item/clothing/head/roguetown/helmet/bascinet/dunargi,
-			"Slitted Kettle"	= /obj/item/clothing/head/roguetown/helmet/heavy/knight/skettle,
 			"None"
 		)
 		var/helmchoice = browser_input_list(H, "Choose your Helm.", "TAKE UP HELMS", helmets)
@@ -253,7 +252,7 @@
 		var/armors = list(
 			"Brigandine"		= /obj/item/clothing/suit/roguetown/armor/brigandine,
 			"Coat of Plates"	= /obj/item/clothing/suit/roguetown/armor/brigandine/coatplates,
-			"Steel Cuirass"		= /obj/item/clothing/suit/roguetown/armor/plate/half,
+			"Scalemail"		= /obj/item/clothing/suit/roguetown/armor/plate/scale,
 			"Fluted Cuirass"	= /obj/item/clothing/suit/roguetown/armor/plate/half/fluted,
 		)
 		var/armorchoice = browser_input_list(H, "Choose your armor.", "TAKE UP ARMOR", armors)
@@ -349,7 +348,7 @@
 				H.adjust_skillrank_up_to(/datum/skill/combat/polearms, SKILL_LEVEL_MASTER, TRUE)
 
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
-	pants = /obj/item/clothing/under/roguetown/chainlegs
+	pants = /obj/item/clothing/under/roguetown/platelegs
 
 	if(H.mind)
 		var/helmets = list(
@@ -362,7 +361,6 @@
 			"Armet"				= /obj/item/clothing/head/roguetown/helmet/heavy/knight/armet,
 			"Hounskull Bascinet" = /obj/item/clothing/head/roguetown/helmet/bascinet/pigface/hounskull,
 			"Dunargi Bascinet" = /obj/item/clothing/head/roguetown/helmet/bascinet/dunargi,
-			"Slitted Kettle"	= /obj/item/clothing/head/roguetown/helmet/heavy/knight/skettle,
 			"None"
 		)
 		var/helmchoice = browser_input_list(H, "Choose your Helm.", "TAKE UP HELMS", helmets)
@@ -372,7 +370,7 @@
 		var/armors = list(
 			"Brigandine"		= /obj/item/clothing/suit/roguetown/armor/brigandine,
 			"Coat of Plates"	= /obj/item/clothing/suit/roguetown/armor/brigandine/coatplates,
-			"Steel Cuirass"		= /obj/item/clothing/suit/roguetown/armor/plate/half,
+			"Scalemail"		= /obj/item/clothing/suit/roguetown/armor/plate/scale,
 			"Fluted Cuirass"	= /obj/item/clothing/suit/roguetown/armor/plate/half/fluted,
 		)
 		var/armorchoice = browser_input_list(H, "Choose your armor.", "TAKE UP ARMOR", armors)
@@ -491,7 +489,6 @@
 			"Armet"				= /obj/item/clothing/head/roguetown/helmet/heavy/knight/armet,
 			"Hounskull Bascinet" = /obj/item/clothing/head/roguetown/helmet/bascinet/pigface/hounskull,
 			"Dunargi Bascinet" = /obj/item/clothing/head/roguetown/helmet/bascinet/dunargi,
-			"Slitted Kettle" = /obj/item/clothing/head/roguetown/helmet/heavy/knight/skettle,
 			"None"
 		)
 		
