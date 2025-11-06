@@ -9,7 +9,7 @@
 	allowed_patrons = ALL_NICE_PATRONS
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
-	tutorial = "You served as a squire in the Garrison all the way to where you stand now. After years of training under a Cataphract, you were officially knighted by the Viscount and placed at their side as one of their formal Retinue. You are the last line of defense against any threat that may harm this city and its denizens, and would rather die than see such harm befall them."
+	tutorial = "Having served as one of the most faithful members of the Retinue serving from humble beginnings as a squire, you were rewarded most gloriously by the Viscount with a proper noble title and knighthood, serving as the Cataphract to the House of Lyndvhar. Lead your men to victory--and keep them in line--and you will see this city prosper under a thousand suns and be returned to its former glory."
 	display_order = JDO_KNIGHT
 	whitelist_req = TRUE
 	outfit = /datum/outfit/job/roguetown/knight
