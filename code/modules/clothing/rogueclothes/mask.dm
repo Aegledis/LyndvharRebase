@@ -481,7 +481,8 @@
 	body_parts_covered = FACE|EYES|MOUTH
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
 	sewrepair = TRUE
-
+	salvage_result = /obj/item/natural/hide/cured
+	salvage_amount = 1
 
 /obj/item/clothing/mask/rogue/skullmask
 	name = "skull mask"
@@ -500,6 +501,8 @@
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
 	experimental_onhip = TRUE
 	smeltresult = /obj/item/natural/bone
+	salvage_result = /obj/item/natural/bone
+	salvage_amount = 1
 
 /obj/item/clothing/mask/rogue/ragmask
 	name = "rag mask"
@@ -566,6 +569,8 @@
 	sewrepair = TRUE
 	adjustable = CAN_CADJUST
 	toggle_icon_state = FALSE
+	salvage_result = /obj/item/natural/silk
+	salvage_amount = 2
 
 /obj/item/clothing/mask/rogue/exoticsilkmask/ComponentInitialize()
 	AddComponent(/datum/component/adjustable_clothing, NECK, null, null, 'sound/foley/equip/rummaging-03.ogg', null, (UPD_HEAD|UPD_MASK))	//Standard mask

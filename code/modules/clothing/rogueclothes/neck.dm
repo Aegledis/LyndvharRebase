@@ -439,6 +439,8 @@
 	name = "amulet of Abyssor"
 	desc = "To fear the unknown is to turn away from the greatest mysteries of all."
 	icon_state = "abyssor"
+	salvage_result = /obj/item/pearl/blue
+	salvage_amount = 1
 
 /obj/item/clothing/neck/roguetown/psicross/dendor
 	name = "amulet of Dendor"
@@ -476,6 +478,8 @@
 	icon_state = "psycross_w"
 	item_state = "psycross_w"
 	sellprice = 0
+	salvage_result = /obj/item/grown/log/tree/stick
+	salvage_amount = 1
 
 /obj/item/clothing/neck/roguetown/psicross/silver
 	name = "silver psycross"
@@ -499,18 +503,24 @@
 	icon_state = "pearlcross"
 	desc = "An amulet made of white pearls, usually worn by fishers or sailors."
 	sellprice = 80
+	salvage_result = /obj/item/pearl
+	salvage_amount = 3 // Pearls are easy to cut off from an amulet
 
 /obj/item/clothing/neck/roguetown/psicross/bpearl
 	name = "blue pearl amulet"
 	icon_state = "bpearlcross"
 	desc = "An amulet made of rare blue pearls, usually worn by priests and worshippers of Abyssor, or as lucky charms for captains of ships."
 	sellprice = 220
+	salvage_result = /obj/item/pearl/blue
+	salvage_amount = 3 // Pearls are easy to cut off from an amulet
 
 /obj/item/clothing/neck/roguetown/psicross/shell
 	name = "oyster shell necklace"
 	icon_state = "oyster_necklace"
 	desc = "A necklace of strung-up sea shells, the calming noise they make when they clack together is reminiscent of a shellfish's claws. They remind you that while men no longer live in water, Abyssor will always remember our origins."
 	sellprice = 25
+	salvage_result = /obj/item/oystershell
+	salvage_amount = 5
 
 /obj/item/clothing/neck/roguetown/psicross/shell/bracelet
 	name = "shell bracelet"
@@ -518,6 +528,8 @@
 	desc = "A beaded bracelet made from sea shells, their rough exterior and glossy interior reminding you that Abyssor's children hide the best gifts at the deepest spots beneath the waves."
 	sellprice = 15
 	slot_flags = ITEM_SLOT_WRISTS
+	salvage_result = /obj/item/oystershell
+	salvage_amount = 3
 
 /obj/item/clothing/neck/roguetown/talkstone
 	name = "talkstone"
@@ -624,6 +636,7 @@
 	leashable = TRUE
 	bellsound = FALSE
 	bell = FALSE
+	salvage_result = null
 
 /obj/item/clothing/neck/roguetown/collar/leather
 	name = "leather collar"
@@ -709,6 +722,8 @@
 	sellprice = 15
 	slot_flags = ITEM_SLOT_NECK
 	var/goodluckactivated = FALSE
+	salvage_result = /obj/item/natural/fibers
+	salvage_result = 1
 
 /obj/item/clothing/neck/roguetown/luckcharm/equipped(mob/living/carbon/human/user, slot)
 	. = ..()

@@ -1341,6 +1341,7 @@
 	wdefense = 6
 	throwforce = 12	//Not a throwing weapon. Too heavy!
 	icon_angle_wielded = 50
+	smeltresult = /obj/item/ingot/steel
 
 /obj/item/rogueweapon/spear/partizan/getonmobprop(tag)
 	. = ..()
@@ -1360,6 +1361,7 @@
 	force_wielded = 33 // 10% base damage increase
 	wdefense = 6 // A little bit extra
 	max_blade_int = 200 
+	smeltresult = /obj/item/ingot/steel
 
 /obj/item/rogueweapon/spear/boar/frei
 	name = "Kargradi lándzsa"
@@ -1380,6 +1382,7 @@
 	possible_item_intents = list(SPEAR_THRUST, /datum/intent/lance/onehand, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(/datum/intent/spear/thrust/lance, /datum/intent/lance, SPEAR_BASH)
 	resistance_flags = null
+	smeltresult = /obj/item/ingot/steel
 
 /obj/item/rogueweapon/spear/naginata
 	name = "Naginata"
@@ -1395,6 +1398,7 @@
 	wdefense = 5
 	throwforce = 12	//Not a throwing weapon. 
 	icon_angle_wielded = 50
+	smeltresult = /obj/item/ingot/steel
 
 /obj/item/rogueweapon/spear/naginata/getonmobprop(tag)
 	. = ..()
