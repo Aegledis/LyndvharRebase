@@ -113,7 +113,7 @@
 	//flipping knives has a cooldown on to_chat to reduce chatspam
 	COOLDOWN_DECLARE(flip_cooldown)
 	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_dagger.ogg'
-	sheathe_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_dagger.ogg'
+	holster_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_dagger.ogg'
 
 /obj/item/rogueweapon/huntingknife/Initialize()
 	..()

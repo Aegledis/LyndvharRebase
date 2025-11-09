@@ -33,7 +33,7 @@
 	anvilrepair = /datum/skill/craft/carpentry
 	COOLDOWN_DECLARE(shield_bang)
 	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_shield.ogg'
-	sheathe_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_shield.ogg'
+	holster_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_shield.ogg'
 
 /obj/item/rogueweapon/shield/attackby(obj/item/attackby_item, mob/user, params)
 

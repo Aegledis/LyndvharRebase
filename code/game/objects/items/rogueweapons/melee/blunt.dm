@@ -123,7 +123,7 @@
 	anvilrepair = /datum/skill/craft/weaponsmithing
 
 	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_blunt.ogg'
-	sheathe_sound = 'sound/items/wood_sharpen.ogg'
+	holster_sound = 'sound/items/wood_sharpen.ogg'
 
 /obj/item/rogueweapon/mace/equipped(mob/user, slot, initial = FALSE)
 	pickup_sound = pick("modular_helmsguard/sound/sheath_sounds/draw_blunt.ogg", "modular_helmsguard/sound/sheath_sounds/draw_mace.ogg", "modular_helmsguard/sound/sheath_sounds/draw_blunt2.ogg")

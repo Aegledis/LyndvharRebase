@@ -213,7 +213,7 @@
 	anvilrepair = /datum/skill/craft/carpentry
 	resistance_flags = FLAMMABLE
 	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_blunt.ogg'
-	sheathe_sound = 'sound/items/wood_sharpen.ogg'
+	holster_sound = 'sound/items/wood_sharpen.ogg'
 
 
 /obj/item/rogueweapon/woodstaff/getonmobprop(tag)
@@ -284,7 +284,7 @@
 	throwforce = 25
 	resistance_flags = FLAMMABLE
 	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg'
-	sheathe_sound = 'sound/foley/equip/swordlarge1.ogg'
+	holster_sound = 'sound/foley/equip/swordlarge1.ogg'
 
 /obj/item/rogueweapon/spear/aalloy
 	name = "decrepit spear"
@@ -478,7 +478,7 @@
 
 /obj/item/rogueweapon/spear/equipped(mob/user, slot, initial = FALSE)
 	pickup_sound = pick("modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg", "modular_helmsguard/sound/sheath_sounds/draw_spear.ogg")
-	sheathe_sound = pick("sound/foley/equip/swordlarge1.ogg", "sound/foley/equip/swordlarge2.ogg")
+	holster_sound = pick("sound/foley/equip/swordlarge1.ogg", "sound/foley/equip/swordlarge2.ogg")
 	. = ..()
 
 
@@ -594,7 +594,7 @@
 		"ceruleanFishingMod" = 0, // 1 on cerulean aril, 0 on everything else
 	)
 	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg'
-	sheathe_sound = 'sound/foley/equip/swordlarge1.ogg'
+	holster_sound = 'sound/foley/equip/swordlarge1.ogg'
 
 /obj/item/rogueweapon/fishspear/depthseek //DO NOT ADD RECIPE. MEANT TO BE AN ABYSSORITE RELIC. IDEA COURTESY OF LORDINQPLAS
 	force = 45
@@ -752,7 +752,7 @@
 	walking_stick = TRUE
 	wdefense = 6
 	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg'
-	sheathe_sound = 'sound/foley/equip/swordlarge1.ogg'
+	holster_sound = 'sound/foley/equip/swordlarge1.ogg'
 
 /obj/item/rogueweapon/halberd/getonmobprop(tag)
 	. = ..()
@@ -767,7 +767,7 @@
 
 /obj/item/rogueweapon/halberd/equipped(mob/user, slot, initial = FALSE)
 	pickup_sound = pick("modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg", "modular_helmsguard/sound/sheath_sounds/draw_spear.ogg")
-	sheathe_sound = pick("sound/foley/equip/swordlarge1.ogg", "sound/foley/equip/swordlarge2.ogg")
+	holster_sound = pick("sound/foley/equip/swordlarge1.ogg", "sound/foley/equip/swordlarge2.ogg")
 	. = ..()
 
 /obj/item/rogueweapon/spear/holysee
@@ -904,11 +904,11 @@
 	wbalance = WBALANCE_HEAVY
 	sellprice = 60
 	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg'
-	sheathe_sound = 'sound/foley/equip/swordlarge1.ogg'
+	holster_sound = 'sound/foley/equip/swordlarge1.ogg'
 
 /obj/item/rogueweapon/eaglebeak/equipped(mob/user, slot, initial = FALSE)
 	pickup_sound = pick("modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg", "modular_helmsguard/sound/sheath_sounds/draw_spear.ogg")
-	sheathe_sound = pick("sound/foley/equip/swordlarge1.ogg", "sound/foley/equip/swordlarge2.ogg")
+	holster_sound = pick("sound/foley/equip/swordlarge1.ogg", "sound/foley/equip/swordlarge2.ogg")
 	. = ..()
 
 /obj/item/rogueweapon/eaglebeak/getonmobprop(tag)
@@ -987,7 +987,7 @@
 	wdefense = 5
 	smelt_bar_num = 3
 	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_greatsword.ogg'
-	sheathe_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_sword2.ogg'
+	holster_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_sword2.ogg'
 
 /obj/item/rogueweapon/greatsword/getonmobprop(tag)
 	. = ..()
@@ -1033,7 +1033,7 @@
 	smeltresult = /obj/item/ingot/aaslag
 /obj/item/rogueweapon/greatsword/equipped(mob/user, slot, initial = FALSE)
 	pickup_sound = pickup_sound
-	sheathe_sound = pick("sound/foley/equip/swordlarge1.ogg", "sound/foley/equip/swordlarge2.ogg", "	sheathe_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_sword2.ogg'")
+	holster_sound = pick("sound/foley/equip/swordlarge1.ogg", "sound/foley/equip/swordlarge2.ogg", "	holster_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_sword2.ogg'")
 	. = ..()
 
 /obj/item/rogueweapon/greatsword/zwei
@@ -1230,7 +1230,7 @@
 	wdefense_wbonus = 6
 	smelt_bar_num = 2
 	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_greatsword.ogg'
-	sheathe_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_sword2.ogg'
+	holster_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_sword2.ogg'
 
 /obj/item/rogueweapon/estoc/getonmobprop(tag)
 	. = ..()
@@ -1287,7 +1287,7 @@
 				
 /obj/item/rogueweapon/estoc/equipped(mob/user, slot, initial = FALSE)
 	pickup_sound = pickup_sound
-	sheathe_sound = pick("sound/foley/equip/swordlarge1.ogg", "sound/foley/equip/swordlarge2.ogg", "	sheathe_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_sword2.ogg'")
+	holster_sound = pick("sound/foley/equip/swordlarge1.ogg", "sound/foley/equip/swordlarge2.ogg", "	holster_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_sword2.ogg'")
 	. = ..()
 
 /obj/item/rogueweapon/woodstaff/khazumian

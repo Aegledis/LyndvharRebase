@@ -856,14 +856,15 @@
 			P.original = targeted_atom
 			P.preparePixelProjectile(targeted_atom, src)
 			P.speed = 1.5
-			if(G.muzzle)
+
+		/*	if(G.muzzle)
 				new /obj/effect/particle_effect/sparks/muzzle(get_ranged_target_turf(src, src.dir, 1))
 				spawn (5)
 					new/obj/effect/particle_effect/smoke/arquebus(get_ranged_target_turf(src, src.dir, 1))
 				spawn (10)
 					new/obj/effect/particle_effect/smoke/arquebus(get_ranged_target_turf(src, src.dir, 2))
 				spawn (16)
-					new/obj/effect/particle_effect/smoke/arquebus(get_ranged_target_turf(src, src.dir, 1))
+					new/obj/effect/particle_effect/smoke/arquebus(get_ranged_target_turf(src, src.dir, 1)) */
 			P.fire()
 
 			shots_fired++

@@ -24,7 +24,7 @@
 	grid_width = 32
 	grid_height = 96
 	pickup_sound = 'sound/foley/equip/equip_armor_chain.ogg'
-	sheathe_sound = 'sound/items/wood_sharpen.ogg'
+	holster_sound = 'sound/items/wood_sharpen.ogg'
 	intdamage_factor = 1.1
 
 /datum/intent/flail/strike
@@ -252,7 +252,7 @@
 	name = "whip"
 	desc = "A leather whip. Built to last, with a sharp stone for a tip."
 	icon_state = "whip"
-	icon = 'icons/roguetown/weapons/32.dmi'
+	icon = 'icons/roguetown/weapons/whips32.dmi'
 	sharpness = IS_BLUNT
 	//dropshrink = 0.75
 	wlength = WLENGTH_NORMAL
@@ -268,7 +268,7 @@
 	grid_width = 32
 	grid_height = 64
 	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_gen.ogg'
-	sheathe_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_to_leather.ogg'
+	holster_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_to_leather.ogg'
 
 /obj/item/rogueweapon/whip/getonmobprop(tag)
 	. = ..()
@@ -303,10 +303,6 @@
 	name = "psydonite whip"
 	desc = "An ornate whip, plated in a ceremonial veneer of silver. Crack the leather and watch as the apostates clammer aside."
 	icon_state = "psywhip_lesser"
-
-/obj/item/rogueweapon/whip/psywhip_lesser/ComponentInitialize()
-	. = ..()					//+3 force, +50 int, +1 def, make silver
-	AddComponent(/datum/component/psyblessed, FALSE, 3, FALSE, 50, 1, TRUE)
 
 /obj/item/rogueweapon/flail/peasantwarflail
 	force = 10
