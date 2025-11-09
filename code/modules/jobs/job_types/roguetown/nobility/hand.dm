@@ -81,7 +81,9 @@
 	l_hand = /obj/item/rogueweapon/huntingknife/idagger/dtace
 	r_hand = /obj/item/rogueweapon/sword/rapier/dec
 	backpack_contents = list(
-		/obj/item/storage/keyring/hand = 1
+		/obj/item/storage/keyring/hand = 1,
+		/obj/item/rogueweapon/scabbard/sword = 1,
+		/obj/item/rogueweapon/scabbard/sheath = 1,
 		)
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/hand
 	pants = /obj/item/clothing/under/roguetown/tights/black
@@ -126,7 +128,10 @@
 	r_hand = /obj/item/rogueweapon/sword/rapier/dec
 	backpack_contents = list(
 		/obj/item/storage/keyring/hand = 1,
-		/obj/item/lockpickring/mundane = 1
+		/obj/item/lockpickring/mundane = 1,
+		/obj/item/rogueweapon/scabbard/sword = 1,
+		/obj/item/rogueweapon/scabbard/sheath = 1, 
+		
 		)
 	if(H.dna.species.type in NON_DWARVEN_RACE_TYPES)
 		shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/shadowrobe
@@ -174,6 +179,7 @@
 
 /datum/outfit/job/roguetown/hand/marshal/pre_equip(mob/living/carbon/human/H)
 	armor = /obj/item/clothing/suit/roguetown/armor/brigandine/sheriff
+	gloves = /obj/item/clothing/gloves/roguetown/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	cloak = /obj/item/clothing/cloak/stabard/surcoat/bailiff
@@ -181,9 +187,10 @@
 	beltl = /obj/item/rogueweapon/mace/cudgel/justice
 	head = /obj/item/clothing/head/roguetown/chaperon/noble/bailiff
 	backr = /obj/item/storage/backpack/rogue/satchel/short
+	shoes = /obj/item/clothing/shoes/roguetown/boots/nobleboot
 	backpack_contents = list(
 		/obj/item/storage/keyring/hand = 1,
-		/obj/item/book/rogue/law = 1
+		/obj/item/book/rogue/law = 1,
 		)
 
 /datum/advclass/hand/kcommander
@@ -218,10 +225,12 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	armor = /obj/item/clothing/suit/roguetown/armor/brigandine/sheriff/coat
+	gloves = /obj/item/clothing/gloves/roguetown/leather
 	backr = /obj/item/rogueweapon/sword/long/oathkeeper
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 	beltl = /obj/item/reagent_containers/glass/bottle/rogue/healthpot
 	backl = /obj/item/storage/backpack/rogue/satchel/short
+	shoes = /obj/item/clothing/shoes/roguetown/boots/nobleboot
 	backpack_contents = list(
 		/obj/item/storage/keyring/hand = 1,
 		/obj/item/book/rogue/law = 1
