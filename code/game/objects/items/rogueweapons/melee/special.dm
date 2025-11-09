@@ -287,6 +287,8 @@
 	grid_height = 64
 	grid_width = 32
 	sharpness_mod = 2	//Can't parry, so it decays quicker on-hit.
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_dagger.ogg'
+	holster_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_dagger.ogg'
 
 /obj/item/rogueweapon/katar/getonmobprop(tag)
 	. = ..()

@@ -91,7 +91,7 @@
 		INTENT_GENERIC,
 		)
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/bow
-	fire_sound = 'sound/combat/Ranged/flatbow-shot-01.ogg'
+	fire_sound = list('sound/combat/Ranged/flatbow-shot-01.ogg')
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
 	w_class = WEIGHT_CLASS_BULKY
 	randomspread = 0
@@ -103,6 +103,12 @@
 	load_sound = 'sound/foley/nockarrow.ogg'
 	obj_flags = UNIQUE_RENAME
 	var/heavy_bow = FALSE //used for adding a STR check to the charge time of a bow
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_bow.ogg'
+	holster_sound = 'sound/items/wood_sharpen.ogg'
+	associated_skill = /datum/skill/combat/bows // NPC related
+	npc_min_reload_time = 3 SECONDS
+	npc_reload_sound = 'modular_helmsguard/sound/NPC_reload/npc_bow_reload.ogg'// NPC related
+	npc_aim_sound = 'sound/combat/Ranged/bow-draw-01.ogg'// NPC related
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/Initialize()
 	. = ..()

@@ -812,14 +812,14 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 			A.Grant(user)
 	item_flags |= IN_INVENTORY
 	if(!initial)
-		if(equip_sound)
-			if(slot_flags & slotdefine2slotbit(slot))
-				if(user.m_intent != MOVE_INTENT_SNEAK) // Sneaky sheathing/equipping
-					playsound(src, equip_sound, EQUIP_SOUND_VOLUME, TRUE, ignore_walls = FALSE)
-		if(pickup_sound)
-			if(user.is_holding(src))
-				if(user.m_intent != MOVE_INTENT_SNEAK) // Don't play a sound if we're sneaking, for assassination purposes.
-					playsound(src, pickup_sound, PICKUP_SOUND_VOLUME, ignore_walls = FALSE)
+		var/slotbit = slotdefine2slotbit(slot)
+		if(user.m_intent != MOVE_INTENT_SNEAK) // Sneaky sheathing/equipping
+			if(slot == ITEM_SLOT_HANDS)
+				playsound(src, pickup_sound, PICKUP_SOUND_VOLUME, ignore_walls = FALSE)
+			if(slotbit == ITEM_SLOT_HIP | ITEM_SLOT_BACK_R | ITEM_SLOT_BACK_L)
+				playsound(src, holster_sound, HOLSTER_SOUND_VOLUME, ignore_walls = FALSE)
+			else if(equip_sound &&(slot_flags & slotbit))
+				playsound(src, equip_sound, EQUIP_SOUND_VOLUME, TRUE, ignore_walls = FALSE)
 	user.update_equipment_speed_mods()
 
 	if(!user.is_holding(src))

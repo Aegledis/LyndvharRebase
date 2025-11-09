@@ -90,6 +90,13 @@
 	var/tac_reloads = TRUE //Snowflake mechanic no more.
 	var/verbage = "load"
 
+	// NPC related vars
+	var/npc_reload_sound
+	var/npc_min_reload_time = 3 SECONDS // How long it takes to reload, in deciseconds
+	var/npc_aim_sound
+	var/muzzle = FALSE //Whether the gun has a muzzle effect when firing, used for NPCs
+
+
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
 	if (!spawnwithmagazine)

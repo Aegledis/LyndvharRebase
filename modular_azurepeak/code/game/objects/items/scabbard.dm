@@ -38,7 +38,7 @@
 	var/obj/item/rogueweapon/sheathed
 
 	var/sheathe_time = 0.1 SECONDS
-	var/sheathe_sound = 'sound/foley/equip/scabbard_holster.ogg'
+	holster_sound = 'sound/foley/equip/scabbard_holster.ogg'
 
 
 /obj/item/rogueweapon/scabbard/attack_obj(obj/O, mob/living/user)
@@ -95,7 +95,7 @@
 		span_notice("I sheathe [A] into [src].")
 	)
 
-	playsound(src, sheathe_sound, 100, TRUE)
+	playsound(src, holster_sound, 100, TRUE)
 	return TRUE
 
 

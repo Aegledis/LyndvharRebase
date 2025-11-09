@@ -48,6 +48,29 @@
 	/// When above this amount of stamina (Stamina is stamina damage), the NPC will not attempt to jump.
 	var/npc_max_jump_stamina = 50
 
+
+// RANGED	
+	var/min_distance = 5 // minimum distance to target before we start pathing
+	var/attack_mode = "melee" // attack mode, either melee or ranged
+	var/projectile_type = null // type of projectile to fire, if ranged
+	var/rapid = 0 //How many shots per volley.
+	var/rapid_fire_delay = 2 //Time between rapid fire shots
+	var/check_friendly_fire = 0 // Should the ranged mob check for friendlies when shooting
+	var/ranged_cooldown = 0 //What the current cooldown on ranged attacks is, generally world.time + ranged_cooldown_time
+	var/ranged_cooldown_time = 30 //How long, in deciseconds, the cooldown of ranged attacks is
+	var/shots_fired = 0 // How many shots have been fired in the current volley
+	var/shots_until_reload = 1 // How many shots until we reload, if applicable
+
+	var/reload_skill = /datum/skill/combat/bows // Skill used for reloading, if applicable
+	var/reload_time = 0 // How long it takes to reload, in deciseconds	
+	var/reload_sound = null // sound to play when reloading
+	var/min_reload_time = 3 SECONDS // How long it takes to reload, in deciseconds
+
+	var/aim_sound = null // sound to play when aiming
+	var/fire_sound = null
+	var/can_fire = TRUE // Whether the NPC can fire their weapon or not, used for cooldowns and reloading
+	
+// //	var/atom/targets_from = null
 	/// Attack Selection
 	var/attack_on_zone = 1
 
@@ -622,9 +645,25 @@
 				var/turf/my_turf = get_turf(src)
 				var/turf/target_turf = get_turf(target)
 				// only path if we're more than one tile away
-				if(my_turf.Distance_cardinal_3d(target_turf, src) > 1)
+				if(my_turf.Distance_cardinal_3d(target_turf, src) > min_distance)
 					if(!length(myPath)) // create a new path to the target
-						start_pathing_to(target)
+						switch(attack_mode)
+							if("melee")
+								start_pathing_to(target)
+							if("ranged")
+								// Target a turf between the target and the source for ranged pathing
+								if(my_turf && target_turf)
+									// Find a turf between src and target, but not adjacent to target
+									var/list/path = get_path_to(my_turf, target_turf, TYPE_PROC_REF(/turf, Heuristic_cardinal_3d), 32, 250, 1, adjacent = TYPE_PROC_REF(/turf, reachableTurftest3d))
+									if(length(path) > 1)
+										// Pick a turf a few tiles away from the target (not adjacent)
+										var/desired_index = max(1, length(path) - min_distance)
+										var/turf/intermediate_turf = path[desired_index]
+										start_pathing_to(intermediate_turf)
+									else
+										start_pathing_to(target)
+								else
+									start_pathing_to(target)
 
 			// Flee before trying to pick up a weapon.
 			if(flee_in_pain && target && (target.stat == CONSCIOUS))
@@ -635,8 +674,18 @@
 					m_intent = MOVE_INTENT_RUN
 					clear_path()
 					return TRUE
-
+			if(attack_mode == "ranged" && get_dist(src, target) > 1 && istype(get_active_held_item(), /obj/item/gun/ballistic))  
+				var/obj/item/gun/ballistic/gun = get_active_held_item()
+				face_atom(target)
+				if(!gun.gripsprite)
+					OpenFire(target)
+				else
+					gun.wield(src) // if we have a gun with a grip, wield it
+					if(gun.wielded)
+						OpenFire(target)
+				return TRUE
 			if(!get_active_held_item() && !HAS_TRAIT(src, TRAIT_CHUNKYFINGERS) && (mobility_flags & MOBILITY_PICKUP))
+				attack_mode = "melee" // if we don't have a weapon, switch to melee
 				// pickup any nearby weapon
 				for(var/obj/item/I in view(1,src))
 					if(!isturf(I.loc))
@@ -644,7 +693,25 @@
 					if(blacklistItems[I])
 						continue
 					if(I.force > 7 && equip_item(I))
-						// Picked up an item, end turn.
+						// if we picked up a weapon, switch to ranged if it's a ranged weapon
+						if(istype(I, /obj/item/gun/ballistic))
+							var/obj/item/gun/ballistic/G = I
+							reload_skill = G.associated_skill
+							reload_sound = G.npc_reload_sound
+							aim_sound = G.npc_aim_sound
+							fire_sound = G.fire_sound
+							min_reload_time = G.npc_min_reload_time
+							if(G.mag_type)
+								var/obj/item/ammo_box/magazine/internal/M = G.mag_type
+								var/obj/item/ammo_casing/caseless/rogue/ammo = M.ammo_type
+								projectile_type = ammo.projectile_type
+								shots_until_reload = M.max_ammo
+							if(G.gripsprite)
+								G.wield(src)								
+							attack_mode = "ranged"
+						else
+							attack_mode = "melee"
+						// Picked up an item, end turn.	
 						return TRUE
 
 			// if can't reach target for long enough, go idle
@@ -655,6 +722,7 @@
 			// if we COULD attack, check rection time
 			var/should_frustrate = TRUE
 			if(Adjacent(target) && isturf(target.loc))	// if right next to perp
+				attack_mode = "melee"
 				frustration = 0
 				face_atom(target)
 				. = monkey_attack(target)
@@ -665,7 +733,7 @@
 					return
 			else if(should_frustrate) // not next to perp, and we didn't fail due to reaction time
 				frustration++
-
+			
 		if(NPC_AI_FLEE)
 			var/const/NPC_FLEE_DISTANCE = 8
 			if(!target || get_dist(src, target) >= NPC_FLEE_DISTANCE)
@@ -698,6 +766,109 @@
 
 	return IsStandingStill()
 
+
+/mob/living/carbon/human/proc/CheckFriendlyFire(atom/A)
+	if(check_friendly_fire)
+		for(var/turf/T in getline(src,A)) // Not 100% reliable but this is faster than simulating actual trajectory
+			for(var/mob/living/L in T)
+				if(L == src || L == A)
+					continue
+				if(faction_check_mob(L))
+					return TRUE
+
+
+/mob/living/carbon/human/proc/OpenFire(atom/A)
+	if(shots_fired >= shots_until_reload)
+		can_fire = FALSE
+		NPC_THINK("Out of ammo, reloading!")
+		reload()
+		return
+	if(can_fire)
+		playsound(src, aim_sound, 100, TRUE)
+		if(do_after(src, get_aiming_time(), src))
+			if(CheckFriendlyFire(A))
+				return
+			visible_message(span_danger("<b>[src]</b> shoots at [A]!"))
+			if(rapid > 1)
+				var/datum/callback/cb = CALLBACK(src, PROC_REF(Shoot), A)
+				for(var/i in 1 to rapid)
+					addtimer(cb, (i - 1)*rapid_fire_delay)
+			else
+				Shoot(A)
+			ranged_cooldown = world.time + ranged_cooldown_time
+
+/mob/living/carbon/human/proc/get_aiming_time()
+	if(reload_skill)
+		var/skill_level = get_reloading_skill_npc()
+		if(skill_level >= 5)
+			return 1 SECONDS
+		else if(skill_level >= 3)
+			return 2 SECONDS
+		else if(skill_level >= 1)
+			return 3 SECONDS
+	return 3 SECONDS
+		
+/mob/living/carbon/human/proc/reload()
+	if(istype(get_active_held_item(), /obj/item/gun/ballistic))
+		var/obj/item/gun/ballistic/G = get_active_held_item()
+		if(G.gripsprite)
+			G.ungrip(src) // if we have a gun with a grip, unwield it
+		playsound(src, reload_sound, 100, TRUE)
+		visible_message(span_danger("<b>[src]</b> is reloading!"))
+		if(do_after(src, get_reloading_time_npc(), src))
+			can_fire = TRUE // don't block firing if we failed to reload
+			shots_fired = 0
+			if(G.gripsprite)
+				G.wield(src) // re-wield the gun if we had a grip
+
+/mob/living/carbon/human/proc/get_reloading_skill_npc()
+	return get_skill_level(reload_skill)
+
+/mob/living/carbon/human/proc/get_reloading_time_npc()
+	if(reload_skill)
+		var/skill_level = get_reloading_skill_npc()
+		if(skill_level >= 5)
+			return min_reload_time
+		else if(skill_level >= 3)
+			return min_reload_time * 1.5
+		else if(skill_level >= 1)
+			return min_reload_time * 2
+	return 8 SECONDS
+
+
+/mob/living/carbon/human/proc/Shoot(atom/targeted_atom)
+	if(istype(get_active_held_item(), /obj/item/gun/ballistic))
+		var/obj/item/gun/ballistic/G = get_active_held_item()
+		var/turf/startloc = get_turf(src)
+	//	if(casingtype)
+	//		var/obj/item/ammo_casing/casing = new casingtype(startloc)
+	//		playsound(src, projectilesound, 100, TRUE)
+	//		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), 0,  src)
+		playsound(src, pick(G.fire_sound), 100, TRUE)
+		if(projectile_type)
+			var/obj/projectile/P = new projectile_type(startloc)
+	//		playsound(src, projectilesound, 100, TRUE)
+			P.starting = startloc
+			P.firer = src
+			P.fired_from = src
+			P.yo = targeted_atom.y - startloc.y
+			P.xo = targeted_atom.x - startloc.x
+			P.original = targeted_atom
+			P.preparePixelProjectile(targeted_atom, src)
+			P.speed = 1.5
+
+		/*	if(G.muzzle)
+				new /obj/effect/particle_effect/sparks/muzzle(get_ranged_target_turf(src, src.dir, 1))
+				spawn (5)
+					new/obj/effect/particle_effect/smoke/arquebus(get_ranged_target_turf(src, src.dir, 1))
+				spawn (10)
+					new/obj/effect/particle_effect/smoke/arquebus(get_ranged_target_turf(src, src.dir, 2))
+				spawn (16)
+					new/obj/effect/particle_effect/smoke/arquebus(get_ranged_target_turf(src, src.dir, 1)) */
+			P.fire()
+
+			shots_fired++
+			return P
 
 /mob/living/carbon/human/proc/back_to_idle()
 	last_aggro_loss = world.time

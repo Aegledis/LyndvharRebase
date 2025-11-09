@@ -22,13 +22,16 @@
 	var/cocked = FALSE
 	cartridge_wording = "bolt"
 	load_sound = 'sound/foley/nockarrow.ogg'
-	fire_sound = 'sound/combat/Ranged/crossbow-small-shot-02.ogg'
+	fire_sound = list('sound/combat/Ranged/crossbow-small-shot-02.ogg')
 	anvilrepair = /datum/skill/craft/weaponsmithing
 	smeltresult = /obj/item/ingot/steel
 	resistance_flags = FIRE_PROOF
 	obj_flags = UNIQUE_RENAME
 	damfactor = 1.2
 	accfactor = 1.1
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_crossbow.ogg'
+	holster_sound = 'sound/items/wood_sharpen.ogg'
+	associated_skill = /datum/skill/combat/crossbows // NPC related
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/getonmobprop(tag)
 	. = ..()

@@ -212,6 +212,9 @@
 	associated_skill = /datum/skill/combat/polearms
 	anvilrepair = /datum/skill/craft/carpentry
 	resistance_flags = FLAMMABLE
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_blunt.ogg'
+	holster_sound = 'sound/items/wood_sharpen.ogg'
+
 
 /obj/item/rogueweapon/woodstaff/getonmobprop(tag)
 	. = ..()
@@ -280,6 +283,25 @@
 	thrown_bclass = BCLASS_STAB
 	throwforce = 25
 	resistance_flags = FLAMMABLE
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg'
+	holster_sound = 'sound/foley/equip/swordlarge1.ogg'
+
+/obj/item/rogueweapon/spear/aalloy
+	name = "decrepit spear"
+	desc = "A decrepit old spear. Aeon's grasp is upon it."
+	icon_state = "ancient_spear"
+	smeltresult = /obj/item/ingot/aalloy
+	force = 13
+	force_wielded = 22
+	max_integrity = 180
+	blade_dulling = DULLING_SHAFT_CONJURED
+
+/obj/item/rogueweapon/spear/paalloy
+	name = "ancient spear"
+	desc = "A spear made of ancient alloys. Aeon's grasp has been lifted from it."
+	smeltresult = /obj/item/ingot/aaslag
+	icon_state = "ancient_spear"
+
 
 /obj/item/rogueweapon/spear/trident
 	// Better one handed & throwing weapon, flimsier.
@@ -454,6 +476,12 @@
 			if("wielded")
 				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
 
+/obj/item/rogueweapon/spear/equipped(mob/user, slot, initial = FALSE)
+	pickup_sound = pick("modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg", "modular_helmsguard/sound/sheath_sounds/draw_spear.ogg")
+	holster_sound = pick("sound/foley/equip/swordlarge1.ogg", "sound/foley/equip/swordlarge2.ogg")
+	. = ..()
+
+
 /obj/item/rogueweapon/spear/bonespear
 	force = 18
 	force_wielded = 22
@@ -565,6 +593,8 @@
 		"dangerFishingMod" = 1,
 		"ceruleanFishingMod" = 0, // 1 on cerulean aril, 0 on everything else
 	)
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg'
+	holster_sound = 'sound/foley/equip/swordlarge1.ogg'
 
 /obj/item/rogueweapon/fishspear/depthseek //DO NOT ADD RECIPE. MEANT TO BE AN ABYSSORITE RELIC. IDEA COURTESY OF LORDINQPLAS
 	force = 45
@@ -721,6 +751,8 @@
 	associated_skill = /datum/skill/combat/polearms
 	walking_stick = TRUE
 	wdefense = 6
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg'
+	holster_sound = 'sound/foley/equip/swordlarge1.ogg'
 
 /obj/item/rogueweapon/halberd/getonmobprop(tag)
 	. = ..()
@@ -732,6 +764,11 @@
 				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/rogueweapon/halberd/equipped(mob/user, slot, initial = FALSE)
+	pickup_sound = pick("modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg", "modular_helmsguard/sound/sheath_sounds/draw_spear.ogg")
+	holster_sound = pick("sound/foley/equip/swordlarge1.ogg", "sound/foley/equip/swordlarge2.ogg")
+	. = ..()
 
 /obj/item/rogueweapon/spear/holysee
 	name = "see spear"
@@ -866,6 +903,13 @@
 	wdefense = 5
 	wbalance = WBALANCE_HEAVY
 	sellprice = 60
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg'
+	holster_sound = 'sound/foley/equip/swordlarge1.ogg'
+
+/obj/item/rogueweapon/eaglebeak/equipped(mob/user, slot, initial = FALSE)
+	pickup_sound = pick("modular_helmsguard/sound/sheath_sounds/draw_polearm.ogg", "modular_helmsguard/sound/sheath_sounds/draw_spear.ogg")
+	holster_sound = pick("sound/foley/equip/swordlarge1.ogg", "sound/foley/equip/swordlarge2.ogg")
+	. = ..()
 
 /obj/item/rogueweapon/eaglebeak/getonmobprop(tag)
 	. = ..()
@@ -942,6 +986,8 @@
 	max_blade_int = 300
 	wdefense = 5
 	smelt_bar_num = 3
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_greatsword.ogg'
+	holster_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_sword2.ogg'
 
 /obj/item/rogueweapon/greatsword/getonmobprop(tag)
 	. = ..()
@@ -985,6 +1031,10 @@
 	desc = "A massive blade, forged from polished gilbronze. Your kind will discover your true nature, in wrath and ruin. You will take to the stars and burn them out, one by one. Only when the last star turns to dust, will you finally realize that She was trying to save you from Man's greatest foe; oblivion."
 	icon_state = "ancient_gsw"
 	smeltresult = /obj/item/ingot/aaslag
+/obj/item/rogueweapon/greatsword/equipped(mob/user, slot, initial = FALSE)
+	pickup_sound = pickup_sound
+	holster_sound = pick("sound/foley/equip/swordlarge1.ogg", "sound/foley/equip/swordlarge2.ogg", "	holster_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_sword2.ogg'")
+	. = ..()
 
 /obj/item/rogueweapon/greatsword/zwei
 	name = "claymore"
@@ -1179,6 +1229,8 @@
 	wdefense = 3
 	wdefense_wbonus = 6
 	smelt_bar_num = 2
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_greatsword.ogg'
+	holster_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_sword2.ogg'
 
 /obj/item/rogueweapon/estoc/getonmobprop(tag)
 	. = ..()
@@ -1232,6 +1284,11 @@
 					"wflip" = 8,
 					"eflip" = 0,
 					)
+				
+/obj/item/rogueweapon/estoc/equipped(mob/user, slot, initial = FALSE)
+	pickup_sound = pickup_sound
+	holster_sound = pick("sound/foley/equip/swordlarge1.ogg", "sound/foley/equip/swordlarge2.ogg", "	holster_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_sword2.ogg'")
+	. = ..()
 
 /obj/item/rogueweapon/woodstaff/khazumian
 	name = "Khazumian warstaff"

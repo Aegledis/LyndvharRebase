@@ -3,6 +3,7 @@
 	desc = ""
 	ammo_type = /obj/item/ammo_casing/caseless
 	impact_effect_type = null
+	var/drop_ammo = TRUE // Whether the ammo should be dropped on hit
 	var/has_dropped = FALSE  //Flag to track if we've already dropped the ammo
 
 /obj/projectile/bullet/reusable/handle_drop()
@@ -16,9 +17,11 @@
 		dropped = new ammo_type(T)
 
 /obj/projectile/bullet/reusable/on_hit()
-	dropped = new ammo_type(src)
+	if(drop_ammo)
+		dropped = new ammo_type(src)
 	..()
 
 /obj/projectile/bullet/reusable/on_range()
-	handle_drop()
+	if(drop_ammo)
+		handle_drop()
 	..()

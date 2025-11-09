@@ -328,10 +328,10 @@
 	switch(SSticker.current_state)
 		if(GAME_STATE_PREGAME, GAME_STATE_STARTUP)
 			set_button_status(FALSE)
-			RegisterSignal(SSticker, COMSIG_TICKER_ENTER_SETTING_UP, PROC_REF(show_voyeur_button))
+			RegisterSignal(SSticker, COMSIG_TICKER_ENTER_SETTING_UP, PROC_REF(show_voyeur_button), override = TRUE)
 		if(GAME_STATE_SETTING_UP)
 			set_button_status(TRUE)
-			RegisterSignal(SSticker, COMSIG_TICKER_ERROR_SETTING_UP, PROC_REF(hide_voyeur_button))
+			RegisterSignal(SSticker, COMSIG_TICKER_ERROR_SETTING_UP, PROC_REF(hide_voyeur_button), override = TRUE)
 		else
 			set_button_status(TRUE)
 
@@ -339,13 +339,13 @@
 	SIGNAL_HANDLER
 	set_button_status(FALSE)
 	UnregisterSignal(SSticker, COMSIG_TICKER_ENTER_SETTING_UP)
-	RegisterSignal(SSticker, COMSIG_TICKER_ERROR_SETTING_UP, PROC_REF(show_voyeur_button))
+	RegisterSignal(SSticker, COMSIG_TICKER_ERROR_SETTING_UP, PROC_REF(show_voyeur_button), override = TRUE)
 
 /atom/movable/screen/lobby/button/voyeur/proc/show_voyeur_button()
 	SIGNAL_HANDLER
 	set_button_status(TRUE)
 	UnregisterSignal(SSticker, COMSIG_TICKER_ERROR_SETTING_UP)
-	RegisterSignal(SSticker, COMSIG_TICKER_ENTER_SETTING_UP, PROC_REF(hide_voyeur_button))
+	RegisterSignal(SSticker, COMSIG_TICKER_ENTER_SETTING_UP, PROC_REF(hide_voyeur_button), override = TRUE)
 
 /atom/movable/screen/lobby/button/voyeur/Click(location, control, params)
 	. = ..()

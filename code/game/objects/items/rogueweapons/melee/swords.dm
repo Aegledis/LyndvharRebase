@@ -182,6 +182,8 @@
 	wdefense = 4
 	grid_width = 32
 	grid_height = 64
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_sword.ogg'
+	holster_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_sword.ogg'
 
 	equip_delay_self = 1.5 SECONDS
 	unequip_delay_self = 1.5 SECONDS
@@ -194,6 +196,11 @@
 	if(icon_state == "sword1")
 		icon_state = "[rand_icon]"
 		sheathe_icon = "[rand_icon]"
+
+/obj/item/rogueweapon/sword/equipped(mob/user, slot, initial = FALSE)
+	pickup_sound = pick("modular_helmsguard/sound/sheath_sounds/draw_sword.ogg", "modular_helmsguard/sound/sheath_sounds/draw_sword2.ogg", "modular_helmsguard/sound/sheath_sounds/draw_sword3.ogg")
+	holster_sound = pick("modular_helmsguard/sound/sheath_sounds/put_back_sword.ogg", "modular_helmsguard/sound/sheath_sounds/put_back_sword2.ogg")
+	. = ..()
 
 /obj/item/rogueweapon/sword/falchion
 	name = "falchion"
@@ -282,7 +289,6 @@
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
 	swingsound = BLADEWOOSH_LARGE
-	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
 	bigboy = 1
 	wlength = WLENGTH_LONG
 	gripsprite = TRUE
@@ -297,6 +303,8 @@
 	wdefense_wbonus = 4
 	dropshrink = 0.75
 	smeltresult = /obj/item/ingot/steel
+	pickup_sound = 'modular_helmsguard/sound/sheath_sounds/draw_greatsword.ogg'
+	holster_sound = 'modular_helmsguard/sound/sheath_sounds/put_back_sword2.ogg'
 
 /obj/item/rogueweapon/sword/long/training
 	name = "training sword"
@@ -559,6 +567,11 @@
 	desc = "An uncommon and elaborate type of longsword with a compound hilt like those seen on rapiers and smallswords. It has a marked unsharpened section for safe unarmored half-swording, and it's made of a mixture of Kargradi steel smelted from Khaliphate weapons, and Grenz techniques."
 	icon_state = "elongsword"
 
+/obj/item/rogueweapon/sword/long/equipped(mob/user, slot, initial = FALSE)
+	pickup_sound = pickup_sound
+	holster_sound = pick("sound/foley/equip/swordlarge1.ogg", "sound/foley/equip/swordlarge2.ogg")
+	. = ..()
+	
 /obj/item/rogueweapon/sword/long/frei		//Challenge weapon
 	name = "dueling longsword"
 	desc = "Fechtfeders are a type of training sword brought up by Grenzelhoft fencing guilds, their name - literally \"Feather\" - matches their construction; thinner, lighter, dull but more balanced - with a blade catcher to boot. Freifechters often modify them, giving them edges and a point for use in real dueling - this is one such example, and there's a reason they don't make it out of the fighting pit."
