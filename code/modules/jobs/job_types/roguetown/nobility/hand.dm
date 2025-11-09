@@ -29,6 +29,7 @@
 
 /datum/outfit/job/roguetown/hand
 	shoes = /obj/item/clothing/shoes/roguetown/boots
+	neck = /obj/item/clothing/neck/roguetown/leather
 	belt = /obj/item/storage/belt/rogue/leather/steel
 	beltr = /obj/item/rogueweapon/scabbard/sword
 	beltl = /obj/item/rogueweapon/scabbard/sheath
