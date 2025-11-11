@@ -29,16 +29,16 @@
 // North Coast
 #define DETAIL_TEXT_NORTH_COAST ""
 #define DETAIL_TEXT_NORTH_COAST_HAMLET ""
-#define DETAIL_TEXT_MAD_DUKE_COURT "A nigh-buried and destroyed ruin deep beneath the tundra. Be prepared for a fight."
+#define DETAIL_TEXT_MAD_DUKE_COURT "A nigh-buried and destroyed ruin deep beneath the tundra. The rattling of bones can continously be heard from within its walls. Be prepared for a fight."
 
 // Actual Coast
 #define DETAIL_TEXT_ACTUAL_COAST "A windswept shore."
 
 // Mount Decap & Dungeons
 #define DETAIL_TEXT_DECAP "Known by many as simply Mount Decapitation, this region of the Dunargi is well known for its abruptly harsh weather. With cold temperatures, sudden snow storms, and poorly maintained roads, it is considered a hotspot for criminal activity and as such is incredibly dangerous for the unprepared traveller. A glance upwards would meet your eyes to the mountain itself- the Caldera."
-#define DETAIL_TEXT_DECAP_TARICHEA "Dubbed simply the Scorched Caldera by the commonfolk and traveller, this is the summit of Mount Decapitation- revealing to an astute intellect that this isn't just any mountain- but it is an ACTIVE VOLCANO. How exactly nothing bad has happened to the region below is nothing short but a miracle, but the ruins dotting it show others have not been so lucky.."
+#define DETAIL_TEXT_DECAP_TARICHEA "Dubbed the Scorched Caldera by the commonfolk and traveller, this is the summit of Mount Decapitation- revealing to an astute intellect that this isn't just any mountain- but it is an ACTIVE VOLCANO. How exactly nothing bad has happened to the region below is nothing short but a miracle, but the ruins dotting it show others have not been so lucky.."
 #define DETAIL_TEXT_DECAP_GUNDU_ZIRAK "It is unknown exactly what this structure is- signs indicate it hasn't been touched by living hands in a long time. However, judging by the architecture and what lies within- it seems to be a.. dwarven hold? How peculiar."
-#define DETAIL_TEXT_DECAP_DRAGONDEN "A recluse location at the very highest point of the Caldera. It reeks of malice and danger- as though something ancient, venerable, and dangerous lies within."
+#define DETAIL_TEXT_DECAP_DRAGONDEN "A recluse, heavily fortified location at the very highest point of the Caldera. It reeks of malice and danger- as though something ancient, venerable, and dangerous lies within. The gates seem especially solid- there will be no forcing your way in. It seems to be waiting for something.."
 #define DETAIL_TEXT_DECAP_GOBLIN_FORTRESS ""
 #define DETAIL_TEXT_DECAP_NECRAN_LABYRINTH ""
 #define DETAIL_TEXT_DECAP_MINOTAUR_FORTRESS "This is obviously an ancient dwarven location- but judging by what lies within, that was a long time ago, and all the dwarves are long dead."

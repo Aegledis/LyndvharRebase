@@ -82,10 +82,10 @@
 	return FALSE
 
 /area/rogue/under/cave/dragonden
-	name = "Den of Dragons"
+	name = "Wyvern's Peak Fortress"
 	icon_state = "under"
-	first_time_text = "DEN OF DRAGONS"
-	droning_sound = 'sound/music/area/dragonden.ogg'
+	first_time_text = "WYVERN'S PEAK"
+	droning_sound = 'sound/music/area/sewersold.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/rogue/outdoors/dungeon1
