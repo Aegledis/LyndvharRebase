@@ -34,6 +34,9 @@
 	if(!loc)
 		return
 
+	//Breathing, if applicable - CURRENTLY NOT IMPLEMENTED
+	//handle_breathing(times_fired)
+
 	if(HAS_TRAIT(src, TRAIT_SIMPLE_WOUNDS))
 		handle_wounds()
 		handle_embedded_objects()
@@ -46,7 +49,7 @@
 		// this is a strict replacement for two whole-ass block iteration things that did the same thing (or nothing at all)
 		heal_wounds(heal_amount)
 
-	if(QDELETED(src)) // diseases can qdel the mob via transformations
+	if (QDELETED(src)) // diseases can qdel the mob via transformations
 		return
 
 	handle_environment()
@@ -122,17 +125,6 @@
 	return
 
 /mob/living/proc/handle_wounds()
-	// the commented block below appears to be pointless, as no wound implements on_death
-	// moreover, why are psydonites excluded from on_death wound events?
-	// zero clue what the intent with this was.
-
-	/*
-	if(!HAS_TRAIT(src, TRAIT_PSYDONITE) && stat >= DEAD)
-		for(var/datum/wound/wound as anything in get_wounds())
-			if(istype(wound, /datum/wound))
-				wound.on_death()
-		return*/
-
 	for(var/datum/wound/wound as anything in get_wounds())
 		if(istype(wound, /datum/wound))
 			if (stat != DEAD)

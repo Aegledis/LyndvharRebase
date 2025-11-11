@@ -8,21 +8,15 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	flags_1 = NONE
 
 	invisibility = INVISIBILITY_ABSTRACT
-
-//	hud_type = /datum/hud/new_player
-
 	density = FALSE
 	stat = DEAD
 	hud_possible = list()
+	hud_type = /datum/hud/new_player
 
 	var/mob/living/new_character	//for instant transfer once the round is set up
 
 	//Used to make sure someone doesn't get spammed with messages if they're ineligible for roles
 	var/ineligible_for_roles = FALSE
-
-	var/brohand
-
-	hud_type = /datum/hud/new_player
 
 /mob/dead/new_player/Initialize()
 //	if(client && SSticker.state == GAME_STATE_STARTUP)
@@ -141,15 +135,6 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 
 	if(href_list["show_keybinds"])
 		client.prefs.ShowChoices(src, 3)
-		return 1
-
-	if(href_list["sethand"])
-		if(brohand == href_list["sethand"])
-			brohand = null
-			to_chat(src, span_boldwarning("Your Hand is REJECTED, sire."))
-			return 1
-		brohand = href_list["sethand"]
-		to_chat(src, span_boldnotice("Your Hand is selected, sire."))
 		return 1
 
 	if(href_list["ready"])

@@ -29,7 +29,6 @@
 	handle_nausea()
 
 	handle_sleep()
-	check_cremation()
 
 	if(HAS_TRAIT(src, TRAIT_IN_FRENZY))
 		handle_automated_frenzy()
@@ -534,6 +533,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 /mob/living/carbon/proc/handle_sleep()
 	if (!client) // not really relevant to NPCs at the moment
 		return
+
 	var/datum/charflaw/sleepless/sleepless_flaw = get_flaw()
 	if(!istype(sleepless_flaw, /datum/charflaw/sleepless))
 		sleepless_flaw = null

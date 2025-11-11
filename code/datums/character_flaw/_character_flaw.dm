@@ -366,7 +366,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 
 /proc/narcolepsy_drug_up(mob/living/living)
 	var/datum/charflaw/narcoleptic/narco = living.get_flaw()
-	if (!narco)
+	if (!istype(narco, /datum/charflaw/narcoleptic))
 		return
 	narco.drugged_up = TRUE
 
@@ -391,7 +391,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 
 /proc/sleepless_drug_up(mob/living/living)
 	var/datum/charflaw/sleepless/sleeper = living.get_flaw()
-	if (!sleeper)
+	if (!istype(sleeper, /datum/charflaw/sleepless))
 		return
 	sleeper.drugged_up = TRUE
 
