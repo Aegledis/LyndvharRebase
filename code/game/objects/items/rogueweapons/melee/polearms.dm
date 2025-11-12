@@ -1084,6 +1084,28 @@
 	smeltresult = /obj/item/ingot/blacksteel
 	smelt_bar_num = 2 // Okay you CAN get a refund on the blacksteel
 
+/obj/item/rogueweapon/greatsword/silver
+	name = "silver greatsword"
+	desc = "A greatsword with a massive blade of pure silver. Such is favored amongst the Order of Syonica's paladins: a faith-militance that seeks to safeguard those who've taken pilgrimage towards Azuria. </br>'There is no fate, but what we make for ourselves. It is not the will of gods that will determine Psydonia's fate.. but instead, the hope of its children.'"
+	icon_state = "silverexealt"
+	force = 8
+	force_wielded = 25
+	minstr = 11
+	wdefense = 6
+	is_silver = TRUE
+	smeltresult = /obj/item/ingot/silver
+
+/obj/item/rogueweapon/greatsword/silver/ComponentInitialize()
+	AddComponent(\
+		/datum/component/silverbless,\
+		pre_blessed = BLESSING_NONE,\
+		silver_type = SILVER_TENNITE,\
+		added_force = 0,\
+		added_blade_int = 0,\
+		added_int = 50,\
+		added_def = 2,\
+	)
+
 /obj/item/rogueweapon/greatsword/psygsword
 	name = "psydonic greatsword"
 	desc = "It is said that a Psydonian smith was guided by Psydon himself to forge such a formidable blade, and given the task to slay a daemon preying on the Valorian farmlands. The design was retrieved, studied, and only a few replicas made - for they believe it dulls its edge."
@@ -1578,7 +1600,7 @@
 	max_blade_int = 555
 	alt_intents = null 
 	is_silver = TRUE
-	smeltresult = /obj/item/rogueweapon/sword/long/kriegmesser/silver //Too thick to completely melt.
+	smeltresult = /obj/item/rogueweapon/greatsword/silver //Too thick to completely melt.
 
 /obj/item/rogueweapon/greatsword/psygsword/dragonslayer/ComponentInitialize()
 	AddComponent(\
