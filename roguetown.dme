@@ -2760,5 +2760,5 @@
 #include "modular_lynd\code\modules\adv_kit.dm"
 #include "modular_lynd\code\modules\repair_powder.dm"
 #include "modular_lynd\code\modules\Ackrinval\clothing.dm"
-#include "modular_hearthstone\code\modules\spells\roguetown\flagellant.dm"
+#include "modular_scarletreach\code\modules\jobs\job_types\roguetown\adventurer\stigmata.dm"
 // END_INCLUDE
