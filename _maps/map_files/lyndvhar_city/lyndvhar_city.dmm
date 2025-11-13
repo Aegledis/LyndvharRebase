@@ -26123,7 +26123,7 @@
 /obj/structure/closet/crate/roguecloset/lord,
 /obj/item/clothing/gloves/roguetown/blacksteel/modern/plategloves,
 /obj/item/clothing/head/roguetown/helmet/blacksteel/modern/armet,
-/obj/item/clothing/suit/roguetown/armor/plate/modern/blacksteel_full_plate,
+/obj/item/clothing/suit/roguetown/armor/plate/blacksteel,
 /obj/item/clothing/under/roguetown/platelegs/blacksteel/modern,
 /obj/item/clothing/shoes/roguetown/boots/armor/blk,
 /obj/item/clothing/wrists/roguetown/bracers,
