@@ -129,7 +129,7 @@
 			uses--
 			thing.remove_atom_colour(FIXED_COLOUR_PRIORITY)
 			thing.add_atom_colour("#635e65", FIXED_COLOUR_PRIORITY)
-			thing.RegisterSignal(thing, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(remove_polish))
+			thing.RegisterSignal(thing, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(remove_polish), override = TRUE)
 			if(uses <= 8)
 				smeltresult = null
 				icon_state = "low_cream"
