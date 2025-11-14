@@ -589,7 +589,6 @@
 /obj/item/clothing/head/roguetown/helmet/heavy/guard/aalloy,
 /obj/item/clothing/gloves/roguetown/plate/aalloy,
 /obj/item/clothing/under/roguetown/platelegs/aalloy,
-/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/aalloy,
 /obj/item/clothing/wrists/roguetown/bracers/aalloy,
 /turf/open/floor/rogue/tile/bfloorz,
 /area/rogue/indoors/vampire_lair)
@@ -627,7 +626,8 @@
 /area/rogue/indoors/vampire_lair)
 "bW" = (
 /obj/structure/well,
-/turf/open/floor/rogue/grass,
+/obj/item/reagent_containers/glass/bucket,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
 "bX" = (
 /turf/closed/mineral/rogue/bedrock,
@@ -1851,7 +1851,6 @@
 /obj/item/clothing/head/roguetown/helmet/heavy/guard/aalloy,
 /obj/item/clothing/gloves/roguetown/plate/aalloy,
 /obj/item/clothing/under/roguetown/platelegs/aalloy,
-/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/aalloy,
 /obj/item/clothing/wrists/roguetown/bracers/aalloy,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/vampire_lair)
@@ -2053,6 +2052,11 @@
 /area/rogue/indoors/shelter)
 "le" = (
 /obj/machinery/light/rogue/wallfire/candle/l,
+/obj/structure/closet/crate/chest/wicker,
+/obj/item/seeds/pumpkin,
+/obj/item/seeds/potato,
+/obj/item/seeds/apple,
+/obj/item/seeds/wheat,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/vampire_lair)
 "lh" = (
@@ -2688,7 +2692,6 @@
 /obj/item/clothing/gloves/roguetown/plate/aalloy,
 /obj/machinery/light/rogue/wallfire/candle,
 /obj/item/clothing/under/roguetown/platelegs/aalloy,
-/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/aalloy,
 /obj/item/clothing/wrists/roguetown/bracers/aalloy,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/vampire_lair)
@@ -3714,6 +3717,10 @@
 "zn" = (
 /turf/open/water/cleanshallow,
 /area/rogue/under/cave/inhumen)
+"zp" = (
+/obj/machinery/light/rogue/firebowl/standing,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "zq" = (
 /obj/machinery/light/rogue/wallfire/candle{
 	pixel_y = -32
@@ -4415,6 +4422,7 @@
 /area/rogue/under/cave/inhumen)
 "FV" = (
 /obj/structure/rack/rogue,
+/obj/item/rogueweapon/hoe,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/vampire_lair)
 "FW" = (
@@ -4501,6 +4509,7 @@
 	dir = 6;
 	icon_state = "largetable"
 	},
+/obj/item/reagent_containers/glass/cup/aalloygob,
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/vampire_lair)
 "Gt" = (
@@ -4896,7 +4905,6 @@
 /obj/item/clothing/gloves/roguetown/plate/aalloy,
 /obj/machinery/light/rogue/wallfire/candle,
 /obj/item/clothing/under/roguetown/platelegs/aalloy,
-/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/aalloy,
 /obj/item/clothing/wrists/roguetown/bracers/aalloy,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/vampire_lair)
@@ -5492,6 +5500,10 @@
 /obj/item/roguebin/water,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/vampire_lair)
+"Pd" = (
+/obj/structure/chair/wood/rogue/throne,
+/turf/open/floor/carpet/red,
+/area/rogue/indoors/vampire_lair)
 "Pe" = (
 /obj/structure/table/wood{
 	dir = 10;
@@ -5625,6 +5637,7 @@
 	dir = 8;
 	icon_state = "largetable"
 	},
+/obj/item/reagent_containers/glass/cup/aalloygob,
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/vampire_lair)
 "Qe" = (
@@ -18485,8 +18498,8 @@ jc
 Vu
 bO
 jc
-jc
-jc
+LZ
+LZ
 LZ
 dN
 Vu
@@ -19775,7 +19788,7 @@ dG
 dG
 dR
 Xz
-Ac
+Pd
 mW
 Ia
 km
@@ -19908,7 +19921,7 @@ bS
 cL
 Pk
 Ia
-km
+So
 cI
 Xz
 YZ
@@ -20281,8 +20294,8 @@ rQ
 kB
 CE
 dU
-Qa
-Qa
+Vu
+Vu
 Vu
 Vu
 jN
@@ -20411,9 +20424,9 @@ rQ
 kB
 CE
 dU
-co
-Qa
 GN
+dV
+zp
 Vu
 Vu
 Vu
@@ -20541,11 +20554,11 @@ rQ
 kB
 sk
 dU
-Qa
-Qa
 GN
 dV
-Qa
+vQ
+vQ
+vQ
 Vu
 cT
 Ba
@@ -20671,11 +20684,11 @@ rQ
 kB
 sk
 dU
-Qa
-co
 GN
 dV
-Qa
+vQ
+Sw
+vQ
 Vu
 Vu
 Ba
@@ -20801,12 +20814,12 @@ rQ
 kB
 sk
 vQ
-Qa
-Qa
 GN
 dV
-Qa
-Qa
+vQ
+vQ
+vQ
+vQ
 dR
 Ba
 Ba
@@ -20931,12 +20944,12 @@ rQ
 kB
 sk
 vQ
-vQ
-Qa
 GN
 dV
-Qa
-Qa
+vQ
+vQ
+vQ
+vQ
 Vu
 FV
 Ba
@@ -21061,11 +21074,11 @@ rQ
 kB
 sk
 vQ
-vQ
-vQ
 GN
 dV
-Qa
+Sw
+vQ
+vQ
 bW
 Vu
 Ka
@@ -21085,7 +21098,7 @@ YM
 Vu
 dN
 jc
-jc
+LZ
 MR
 qe
 MR
@@ -21191,11 +21204,11 @@ rQ
 kB
 sk
 Qa
-vQ
-vQ
 GN
 dV
-Qa
+vQ
+vQ
+zp
 Vu
 Vu
 Vu
@@ -21321,9 +21334,9 @@ rQ
 kB
 sk
 sk
-sk
-dX
 GN
+dV
+vQ
 Vu
 Vu
 Vu
@@ -21451,8 +21464,8 @@ rQ
 kB
 kB
 kB
-kB
-kB
+Vu
+Vu
 Vu
 Vu
 Vu
