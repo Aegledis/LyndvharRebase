@@ -31,8 +31,6 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	neck = /obj/item/clothing/neck/roguetown/leather
 	belt = /obj/item/storage/belt/rogue/leather/steel
-	beltr = /obj/item/rogueweapon/scabbard/sword
-	beltl = /obj/item/rogueweapon/scabbard/sheath
 	job_bitflag = BITFLAG_ROYALTY
 
 /datum/outfit/job/roguetown/hand/pre_equip(mob/living/carbon/human/H)
@@ -50,7 +48,7 @@
 
 /datum/advclass/hand/hand
 	name = "Hand"
-	tutorial = " You have played blademaster and strategist to the Noble-Family for so long that you are a master tactician, something you exploit with potent conviction. Let no man ever forget whose ear you whisper into. You've killed more men with swords than any spymaster could ever claim to."
+	tutorial = "You have played blademaster and strategist to the Noble-Family for so long that you are a master tactician, something you exploit with potent conviction. Let no man ever forget whose ear you whisper into. You've killed more men with swords than any spymaster could ever claim to."
 	outfit = /datum/outfit/job/roguetown/hand/handclassic
 
 	category_tags = list(CTAG_HAND)
