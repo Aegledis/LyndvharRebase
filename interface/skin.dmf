@@ -73,7 +73,7 @@ window "mapwindow"
 		font-size = 7
 		is-default = true
 		saved-params = "icon-size;zoom-mode"
-		style = ".center { text-align: center; } .maptext { font-family: 'Pterra'; font-size: 8pt; -dm-text-outline: 1px black; color: white; line-height: 1.0; } .flyuptext { font-family: 'Small Fonts'; font-size: 6px; -dm-text-outline: 1px black; color: white; line-height: 1.1; } .small { font-size: 6pt; } .big { font-size: 8pt; } .reallybig { font-size: 8pt; } .extremelybig { font-size: 8pt; } .greentext { color: #00FF00; font-size: 6pt; } .redtext { color: #FF0000; font-size: 6pt; } .yell { font-weight: bold; } .italics { font-size: 6pt }"
+		style = ".center { text-align: center; } .maptext { font-family: 'Pterra'; font-size: 8pt; -dm-text-outline: 1px black; color: white; line-height: 1.0; } .flyuptext { font-family: 'Small Fonts'; font-size: 6px; -dm-text-outline: 1px black; color: white; line-height: 1.1; } .small { font-size: 6pt; } .big { font-size: 8pt; } .reallybig { font-size: 8pt; } .extremelybig { font-size: 8pt; } .greentext { color: #00FF00; font-size: 6pt; } .redtext { color: #FF0000; font-size: 6pt; } .yell { font-weight: bold; } .italics { font-size: 6pt } .maptext-legible { font-family: 'Small Fonts'; font-size: 7px; -dm-text-outline: 1 #0000001a; color: black; }"
 
 
 

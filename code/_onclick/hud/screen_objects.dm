@@ -1889,12 +1889,16 @@
 	icon_state = ""
 	name = ""
 	screen_loc = "1,1"
-	layer = HUD_LAYER+0.01
 	plane = HUD_PLANE
 	alpha = 0
 	var/atom/movable/screen/readtext/textright
 	var/atom/movable/screen/readtext/textleft
 	var/reading
+
+/atom/movable/screen/read/Destroy()
+	. = ..()
+	textleft = null
+	textright = null
 
 /atom/movable/screen/read/Click(location, control, params)
 	. = ..()
@@ -1931,6 +1935,10 @@
 	if(input == READ_BOTH)
 		animate(textleft, alpha = 255, time = 5, easing = EASE_IN)
 		animate(textright, alpha = 255, time = 5, easing = EASE_IN)
+
+#undef READ_RIGHT
+#undef READ_LEFT
+#undef READ_BOTH
 
 /atom/movable/screen/readtext
 	name = ""

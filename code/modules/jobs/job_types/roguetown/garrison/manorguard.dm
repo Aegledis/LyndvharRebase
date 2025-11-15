@@ -52,6 +52,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	neck = /obj/item/clothing/neck/roguetown/coif/heavypadding/white
 	gloves = /obj/item/clothing/gloves/roguetown/angle
+	head = /obj/item/clothing/head/roguetown/helmet/heavy/knight/skettle
 	beltl = /obj/item/rogueweapon/scabbard
 	beltr = /obj/item/rogueweapon/sword
 	belt = /obj/item/storage/belt/rogue/leather/steel
@@ -114,14 +115,3 @@
 		/obj/item/reagent_containers/glass/bottle/rogue/healthpot = 1,
 		)
 	H.verbs |= /mob/proc/haltyell
-
-	if(H.mind)
-		var/helmets = list(
-		"Bascinet"		= /obj/item/clothing/head/roguetown/helmet/bascinet,
-		"Slitted Kettle Helmet"		= /obj/item/clothing/head/roguetown/helmet/heavy/knight/skettle,
-		"Kettle Helmet"				= /obj/item/clothing/head/roguetown/helmet/kettle,
-		"None"
-		)
-		var/helmchoice = input(H, "Choose your Helm.", "TAKE UP HELMS") as anything in helmets
-		if(helmchoice != "None")
-			head = helmets[helmchoice]

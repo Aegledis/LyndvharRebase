@@ -97,7 +97,7 @@
 	allowed_races = ACCEPTED_RACES
 	outfit = /datum/outfit/job/roguetown/adventurer/butcher
 	cmode_music = 'sound/music/cmode/towner/combat_retired.ogg'
-	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
+	category_tags = list(CTAG_SOILBRIDE)
 	maximum_possible_slots = 1
 	subclass_stats = list(
 		STATKEY_WIL = 2,
@@ -132,6 +132,7 @@
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	backl = /obj/item/storage/backpack/rogue/satchel/short
 	belt = /obj/item/storage/belt/rogue/leather/rope
+	beltr = /obj/item/storage/keyring/butcher
 	beltl = /obj/item/rogueweapon/huntingknife/cleaver // old tbutcher had no knife. as a butcher.
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
