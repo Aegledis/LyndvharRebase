@@ -162,11 +162,10 @@
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/lord
 	head = /obj/item/clothing/head/roguetown/helmet/sallet/visored/iron
 	pants = /obj/item/clothing/under/roguetown/chainlegs/iron
-	gloves = /obj/item/clothing/gloves/roguetown/chain/iron
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/iron
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	backr = /obj/item/storage/backpack/rogue/satchel/short
-	belt = /obj/item/storage/belt/rogue/leather/black
+	belt = /obj/item/storage/belt/rogue/leather
 	cloak = /obj/item/clothing/cloak/half/vet
 	backpack_contents = list(
 		/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1,
@@ -239,8 +238,8 @@
 
 /datum/outfit/job/roguetown/vet/scout/pre_equip(mob/living/carbon/human/H)
 	neck = /obj/item/clothing/neck/roguetown/leather
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/lord
+	armor = /obj/item/clothing/suit/roguetown/armor/leather
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
