@@ -16,7 +16,7 @@
 	outfit = /datum/outfit/job/roguetown/ackrinve/necromancer
 	cmode_music = 'sound/music/combat_heretic.ogg'
 	category_tags = list(CTAG_ACKRINVE_NECROMANCER)
-	traits_applied = list(TRAIT_ZOMBIE_IMMUNE, TRAIT_MAGEARMOR, TRAIT_GRAVEROBBER, TRAIT_ARCYNE_T4, TRAIT_ALCHEMY_EXPERT, TRAIT_MEDICINE_EXPERT, TRAIT_HERESIARCH, TRAIT_HERETIC_SEER, TRAIT_DARKVISION)
+	traits_applied = list(TRAIT_ZOMBIE_IMMUNE, TRAIT_MAGEARMOR, TRAIT_GRAVEROBBER, TRAIT_ARCYNE_T4, TRAIT_ALCHEMY_EXPERT, TRAIT_MEDICINE_EXPERT, TRAIT_DARKVISION)
 	maximum_possible_slots = 1
 	
 	subclass_stats = list(
@@ -40,7 +40,7 @@
 	)
 
 /datum/outfit/job/roguetown/ackrinve/necromancer/pre_equip(mob/living/carbon/human/H)
-	H.mind.current.faction += "[H.name]_faction"
+	H.mind.current.faction += "[H.real_name]_faction"
 	H.set_patron(/datum/patron/inhumen/zizo)
 	head = /obj/item/clothing/head/roguetown/aventine
 	mask = /obj/item/clothing/mask/rogue/facemask/burningeyes
@@ -73,6 +73,8 @@
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/raise_undead_formation/necromancer)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/raise_undead_guard)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/tame_undead)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/raise_deadite)
+	
 
 
 /datum/migrant_role/ackrinve/knight
@@ -138,6 +140,8 @@
 	mask = /obj/item/clothing/mask/rogue/facemask/steel
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	if(H.mind)
+		H.dna.species.soundpack_m = new /datum/voicepack/skeleton/get_sound()
+		H.dna.species.soundpack_f = new /datum/voicepack/skeleton/get_sound()
 		to_chat(H, span_warning("ASPECT OF SIN"))
 		var/daemons = list("ZIZO", "GRAGGAR", "MATTHIOS")
 		var/patron_choice = input(H, "Choose your sin.", "DARK BLESSINGS") as anything in daemons

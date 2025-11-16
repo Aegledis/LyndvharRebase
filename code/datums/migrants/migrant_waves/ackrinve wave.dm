@@ -1,7 +1,7 @@
 /datum/migrant_wave/ackrinve
 	name = "Ackrinval Incursion"
 	max_spawns = 1 
-	weight = 50 
+	weight = 100
 	downgrade_wave = /datum/migrant_wave/ackrinve_down_one
 	roles = list(
 		/datum/migrant_role/ackrinve/necromancer = 1,

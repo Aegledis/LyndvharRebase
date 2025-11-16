@@ -6,7 +6,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/foreigner
 	class_select_category = CLASS_CAT_NOMAD
 	traits_applied = list(TRAIT_STEELHEARTED)
-	category_tags = list(CTAG_ADVENTURER, CTAG_COURTAGENT)
+	category_tags = list(CTAG_ADVENTURER, CTAG_COURTAGENT, CTAG_LICKER_WRETCH) //Lyndvhar change, dont see many balance implications for foreigner vamps
 	subclass_languages = list(/datum/language/saltlian)
 	cmode_music = 'sound/music/combat_saltlia.ogg'
 	subclass_stats = list(
