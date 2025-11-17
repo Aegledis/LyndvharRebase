@@ -94,6 +94,7 @@
 	testing("attackobj1")
 
 	if(!spillable)
+		to_chat(user, span_warning("[src] is closed!"))
 		return
 
 
