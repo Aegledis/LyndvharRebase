@@ -147,7 +147,7 @@
 	icon_state = "tavern"
 	ambientsounds = AMB_INGEN
 	ambientnight = AMB_INGEN
-	droning_sound = 'sound/silence.ogg'
+	droning_sound = 'sound/music/unused/tav1.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/rogue/outdoors/exposed/tavern
@@ -156,7 +156,7 @@
 
 /area/rogue/outdoors/exposed/tavern
 	icon_state = "tavern"
-	droning_sound = 'sound/silence.ogg'
+	droning_sound = 'sound/music/unused/tav1.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	tavern_area = TRUE
