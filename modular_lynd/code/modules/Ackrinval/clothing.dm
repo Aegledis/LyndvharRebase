@@ -41,4 +41,5 @@
 /obj/item/clothing/mask/rogue/facemask/burningeyes/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+	AddComponent(/datum/component/cursed_item, TRAIT_CABAL, "FLAME")
 	
