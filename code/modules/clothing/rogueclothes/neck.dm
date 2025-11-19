@@ -821,7 +821,7 @@
 	. = ..()
 	if(slot == SLOT_NECK)
 		active_item = TRUE
-		to_chat(user, span_red("As you don the psicross, the chains tighten like a vice around your neck! You're overcome with a sense of terrible anguish - all of humenity's suffering, thrust upon your very spirit! Your chest grows cold, yet your blood boils hotter than magma! Psydonia's villains may be brutal and merciless, but you will be WORSE! </br>You've gone BERSERK!"))
+		to_chat(user, span_red("As you don the psicross, the chains tighten like a vice around your neck! You're overcome with a sense of terrible anguish - all of humenity's suffering, thrust upon your very spirit! Your chest grows cold, yet your blood boils hotter than magma! Beowricke's villains may be brutal and merciless, but you will be WORSE! </br>You've gone BERSERK!"))
 		user.change_stat(STATKEY_STR, 3)
 		user.change_stat(STATKEY_CON, -3)
 		user.change_stat(STATKEY_WIL, 3)

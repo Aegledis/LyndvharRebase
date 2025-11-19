@@ -165,7 +165,7 @@
 
 /datum/advclass/cleric/paladin
 	name = "Paladin"
-	tutorial = "A holy knight, clad in maille and armed with steel. Where others of the clergy may have spent their free time studying scriptures, you devoted yourself towards fighting Psydonia's evils - a longsword in one hand, and a clenched psycross in the other."
+	tutorial = "A holy knight, clad in maille and armed with steel. Where others of the clergy may have spent their free time studying scriptures, you devoted yourself towards fighting Beowricke's evils - a longsword in one hand, and a clenched psycross in the other."
 	outfit = /datum/outfit/job/roguetown/adventurer/paladin
 	traits_applied = list(TRAIT_MEDIUMARMOR)
 	subclass_stats = list(
@@ -197,7 +197,7 @@
 	extra_context = "This subclass can choose to take one of two holy items to take along: a potion of lifeblood and Novice skills in Medicine, or a silver longsword that gives Journeyman skills in Swordsmanship."
 
 /datum/outfit/job/roguetown/adventurer/paladin/pre_equip(mob/living/carbon/human/H)
-	to_chat(H, span_warning("A holy knight, clad in maille and armed with steel. Where others of the clergy may have spent their free time studying scriptures, you devoted yourself towards fighting Psydonia's evils - a longsword in one hand, and a clenched psycross in the other."))
+	to_chat(H, span_warning("A holy knight, clad in maille and armed with steel. Where others of the clergy may have spent their free time studying scriptures, you devoted yourself towards fighting Beowricke's evils - a longsword in one hand, and a clenched psycross in the other."))
 	belt = /obj/item/storage/belt/rogue/leather
 	backl = /obj/item/storage/backpack/rogue/satchel/short
 	backr = /obj/item/rogueweapon/shield/iron

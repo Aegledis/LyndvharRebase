@@ -1096,7 +1096,7 @@
 
 /obj/item/rogueweapon/greatsword/silver
 	name = "silver greatsword"
-	desc = "A greatsword with a massive blade of pure silver. Such is favored amongst the Order of Syonica's paladins: a faith-militance that seeks to safeguard those who've taken pilgrimage towards Azuria. </br>'There is no fate, but what we make for ourselves. It is not the will of gods that will determine Psydonia's fate.. but instead, the hope of its children.'"
+	desc = "A greatsword with a massive blade of pure silver. Such is favored amongst the Order of Syonica's paladins: a faith-militance that seeks to safeguard those who've taken pilgrimage towards Valoria's capital. </br>'There is no fate, but what we make for ourselves. It is not the will of Psydon that will determine Beowricke's fate.. but instead, the hope of its children.'"
 	icon_state = "silverexealt"
 	force = 8
 	force_wielded = 25

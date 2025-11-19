@@ -14,7 +14,7 @@
 /*	.................   Hardtack   ................... */
 /obj/item/reagent_containers/food/snacks/rogue/crackerscooked
 	name = "hardtack"
-	desc = "Brittle and hard, like chewing on a rock. These salted biscuits will never expire, however: and for those who travel across Psydonia, that fact alone earns it a space in their packs."
+	desc = "Brittle and hard, like chewing on a rock. These salted biscuits will never expire, however: and for those who travel across Beowricke, that fact alone earns it a space in their packs."
 	icon = 'modular/Neu_Food/icons/cooked/cooked_baked.dmi'
 	icon_state = "tack6"
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_DECENT)
