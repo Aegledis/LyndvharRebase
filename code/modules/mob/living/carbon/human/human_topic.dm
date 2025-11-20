@@ -556,7 +556,7 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 		if(-1)
 			return "<font color = '#f8d3d3'<i>I am slightly worse.</i></font>"
 		if(0)
-			return "We are equal."
+			return "We are equals"
 		if(1)
 			return "<font color = '#3f6343'> I am slightly better</font>"
 		if(2)
