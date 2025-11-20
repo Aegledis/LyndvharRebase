@@ -1,6 +1,6 @@
 /obj/structure/roguemachine/vendor
 	name = "PEDDLER"
-	desc = "A half-alive magitech vending machine. The stomach of this thing can be stuffed with fun things to buy."
+	desc = "A vendor crafted by the Artificer's of the Crafter's Guild to store and dispense goods and services. It's repository can be filled with a variety of items to be purchased."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "streetvendor1"
 	density = TRUE

@@ -1,6 +1,6 @@
 /obj/structure/roguemachine/withdraw
 	name = "vomitorium"
-	desc = "A magitech wall device connected to the local trade network. Users can buy basic goods, crafting materials, and food for a price from these units, either from in-town or imported for a heftier price."
+	desc = "A device that has been connected to a wider artificery network crafted by the Crafter's Guild. Users can buy basic goods, crafting materials, and food for a price from these units, either from in-town or imported for a heftier price."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "submit"
 	density = FALSE

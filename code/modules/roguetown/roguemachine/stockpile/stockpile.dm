@@ -1,6 +1,6 @@
 /obj/structure/roguemachine/stockpile
 	name = "stockpile"
-	desc = "A magitech device connected to the trade network. Users can buy basic goods, crafting materials, and food for a price from these units, or sell them here for money."
+	desc = "A device that has been connected to a wider artificery network crafted by the Crafter's Guild. This one has been specially tailored to serve as an intake along with its usual functions. Its form has been considered a mastery of modern artificery."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "stockpile_vendor"
 	density = FALSE
