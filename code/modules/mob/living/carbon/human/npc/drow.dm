@@ -124,7 +124,9 @@ GLOBAL_LIST_INIT(drowraider_aggro, world.file2list("strings/rt/drowaggrolines.tx
 	. = ..()
 
 /datum/outfit/job/roguetown/human/species/elf/dark/drowraider/pre_equip(mob/living/carbon/human/H)
-	armor = /obj/item/clothing/suit/roguetown/armor/plate/iron
+	armor = /obj/item/clothing/suit/roguetown/armor/plate/cuirass/iron
+	if(prob(50))
+		armor = /obj/item/clothing/suit/roguetown/armor/plate/iron
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/iron
 	pants = /obj/item/clothing/under/roguetown/chainlegs/iron
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak/black
@@ -147,9 +149,9 @@ GLOBAL_LIST_INIT(drowraider_aggro, world.file2list("strings/rt/drowaggrolines.tx
 	H.STAINT = 10
 	if(prob(50))
 		r_hand = /obj/item/rogueweapon/sword/falx
-		l_hand = /obj/item/rogueweapon/shield/iron
+		l_hand = /obj/item/rogueweapon/shield/wood
 	else
-		r_hand = /obj/item/rogueweapon/halberd/bardiche
+		r_hand = /obj/item/rogueweapon/greataxe
 	H.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/maces, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/combat/axes, 2, TRUE)

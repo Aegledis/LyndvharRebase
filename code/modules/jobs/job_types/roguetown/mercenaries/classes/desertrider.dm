@@ -134,13 +134,13 @@
 		H.set_blindness(0)
 		switch(weapon_choice)
 			if("Shamshir and Javelin")
-				H.adjust_skillrank_up_to(/datum/skill/combat/swords, SKILL_LEVEL_EXPERT, TRUE)
+				H.adjust_skillrank_up_to(/datum/skill/combat/swords, SKILL_LEVEL_JOURNEYMAN, TRUE)
 				r_hand = /obj/item/rogueweapon/sword/sabre/shamshir
 				beltr = /obj/item/rogueweapon/scabbard/sword
 				backl = /obj/item/quiver/javelin/iron
 			if("Whips and Knives")	///They DO enslave people after all
-				H.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, SKILL_LEVEL_EXPERT, TRUE)
-				H.adjust_skillrank_up_to(/datum/skill/combat/knives, SKILL_LEVEL_EXPERT, TRUE)
+				H.adjust_skillrank_up_to(/datum/skill/combat/whipsflails, SKILL_LEVEL_JOURNEYMAN, TRUE)
+				H.adjust_skillrank_up_to(/datum/skill/combat/knives, SKILL_LEVEL_JOURNEYMAN, TRUE)
 				r_hand = /obj/item/rogueweapon/whip
 				l_hand = /obj/item/rogueweapon/huntingknife/idagger/steel/parrying
 				backl = /obj/item/rogueweapon/scabbard/sheath
