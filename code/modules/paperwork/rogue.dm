@@ -378,7 +378,7 @@
 	if(istype(I, /obj/item/clothing/ring/signet))
 		var/obj/item/clothing/ring/signet/S = I
 		if(waxed)
-			to_chat(user,  span_warning("It's already wax-sealed."))
+			to_chat(user, span_warning("It's already wax-sealed."))
 			return
 		if(S.tallowed && sealed)
 			waxed = TRUE
@@ -388,9 +388,9 @@
 			playsound(src, 'sound/items/inqslip_sealed.ogg', 75, TRUE, 4)
 			marquevalue += 2
 		else if(S.tallowed && !sealed)
-			to_chat(user,  span_warning("I need to fold the [src] first."))
+			to_chat(user, span_warning("I need to fold the [src] first."))
 		else
-			to_chat(user,  span_warning("The ring hasn't been waxed."))
+			to_chat(user, span_warning("The ring hasn't been waxed."))
 
 	if(sliptype != 1)
 		if(istype(I, /obj/item/inqarticles/indexer))
