@@ -1,6 +1,7 @@
 /mob/living
 	//used by the basic ai controller /datum/ai_behavior/basic_melee_attack to determine how fast a mob can attack
 	var/melee_cooldown = CLICK_CD_MELEE
+	var/pain_threshold = 0
 
 /mob/living/Initialize()
 	. = ..()

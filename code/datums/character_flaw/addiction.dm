@@ -114,6 +114,10 @@
 	time = 40 MINUTES
 	needsate_text = "I need someone to HURT me."
 
+	
+/datum/charflaw/addiction/masochist/on_mob_creation(mob/living/living)
+	living.pain_threshold += 10
+	
 /// NYMPHO
 /datum/charflaw/addiction/lovefiend
 	name = "Nymphomaniac"
