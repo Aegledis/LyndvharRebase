@@ -323,7 +323,8 @@
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	belt = /obj/item/storage/belt/rogue/leather/steel/tasset
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
-	H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
+	if(!istabaxi(H))
+		H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
 	var/datum/devotion/C = new /datum/devotion(H, H.patron)
 	C.grant_miracles(H, cleric_tier = CLERIC_T2, passive_gain = CLERIC_REGEN_MINOR, devotion_limit = CLERIC_REQ_2)	//Capped to T2 miracles.
 
