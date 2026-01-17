@@ -2411,6 +2411,9 @@
 /obj/structure/fluff/railing/corner/south_west,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/banditcamp)
+"om" = (
+/turf/closed/mineral/rogue/bedrock,
+/area/rogue/under/cavewet/bogcaves)
 "op" = (
 /obj/structure/fluff/railing/wood/east,
 /turf/open/floor/rogue/twig,
@@ -3488,11 +3491,18 @@
 /obj/item/flashlight/flare/torch/lantern,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/banditcamp)
+"xf" = (
+/turf/open/floor/rogue/dirt,
+/area/rogue/under/cavewet/bogcaves)
 "xi" = (
 /obj/effect/proc_holder/spell/invoked/heal,
 /obj/machinery/light/rogue/firebowl,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/shelter)
+"xk" = (
+/obj/structure/flora/roguegrass/thorn_bush,
+/turf/open/water/swamp,
+/area/rogue/under/cavewet/bogcaves)
 "xl" = (
 /obj/machinery/light/rogue/firebowl,
 /turf/open/floor/rogue/carpet,
@@ -3783,6 +3793,13 @@
 /obj/structure/fluff/railing/border/east,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/vampire_lair)
+"zX" = (
+/obj/structure/fluff/traveltile/bandit{
+	aportalid = "banditin";
+	aportalgoesto = "banditexit2"
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue)
 "Ac" = (
 /obj/structure/chair/wood/rogue/fancy,
 /turf/open/floor/carpet/red,
@@ -4109,6 +4126,13 @@
 "CM" = (
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/vampire_lair)
+"CN" = (
+/obj/structure/fluff/traveltile/bandit{
+	aportalid = "banditin";
+	aportalgoesto = "banditexit2"
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cavewet/bogcaves)
 "CP" = (
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/banditcamp)
@@ -4441,6 +4465,9 @@
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/vampire_lair)
+"FZ" = (
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/under/cavewet/bogcaves)
 "Ga" = (
 /turf/open/floor/rogue/greenstone/glyph6,
 /area/rogue/indoors/eventarea)
@@ -4740,6 +4767,9 @@
 	},
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/vampire_lair)
+"IB" = (
+/turf/open/water/swamp,
+/area/rogue/under/cavewet/bogcaves)
 "IG" = (
 /obj/structure/mineral_door/wood/donjon/stone{
 	name = "Forgotten Chapel"
@@ -6110,6 +6140,9 @@
 /obj/structure/fluff/railing/border/east,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/woods)
+"Um" = (
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cavewet/bogcaves)
 "Un" = (
 /obj/structure/table/wood{
 	icon_state = "longtable"
@@ -6517,6 +6550,10 @@
 "Yu" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/banditcamp)
+"Yw" = (
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cavewet/bogcaves)
 "Yx" = (
 /obj/structure/fluff/railing/border/west,
 /obj/structure/fluff/railing/border,
@@ -6949,14 +6986,14 @@ Ew
 Ew
 Ew
 sk
-sk
-sk
-sk
-sk
-sk
-sk
-sk
-VW
+om
+om
+om
+om
+om
+om
+om
+om
 bX
 "}
 (3,1,1) = {"
@@ -7079,14 +7116,14 @@ Et
 Et
 Et
 Cq
-Qa
-Qa
-Te
-Qa
-Qa
-Qa
-Qa
-sk
+om
+om
+CN
+CN
+CN
+CN
+om
+om
 bX
 "}
 (4,1,1) = {"
@@ -7209,14 +7246,14 @@ Et
 Et
 Et
 Cq
-hO
-Te
-TX
-Te
-pY
-Qa
-Qa
-sk
+om
+om
+IB
+Um
+Um
+Um
+om
+om
 bX
 "}
 (5,1,1) = {"
@@ -7339,14 +7376,14 @@ Et
 Et
 Et
 Cq
-Qa
-Te
-TX
-TX
-Te
-Qa
-Qa
-sk
+om
+om
+IB
+IB
+Um
+Um
+IB
+om
 bX
 "}
 (6,1,1) = {"
@@ -7470,13 +7507,13 @@ Et
 Et
 Te
 Te
-Te
-TX
-TX
-Te
-pY
-Qa
-sk
+om
+Yw
+IB
+xf
+Um
+IB
+om
 bX
 "}
 (7,1,1) = {"
@@ -7602,11 +7639,11 @@ Te
 TX
 TX
 TX
-Xu
-Te
-Qa
-Qa
-sk
+xk
+FZ
+xf
+om
+om
 bX
 "}
 (8,1,1) = {"
@@ -7732,11 +7769,11 @@ Te
 Te
 TX
 TX
-TX
-Te
-Qa
-Qa
-sk
+vQ
+vQ
+om
+om
+om
 bX
 "}
 (9,1,1) = {"
@@ -7862,10 +7899,10 @@ Cq
 Te
 Xu
 TX
-TX
+vQ
 Te
-Qa
-Qa
+sk
+sk
 sk
 bX
 "}
@@ -7991,10 +8028,10 @@ Et
 Cq
 Te
 Te
-TX
-Te
-Te
-Qa
+vQ
+vQ
+vQ
+vQ
 Qa
 sk
 bX
@@ -8122,9 +8159,9 @@ Cq
 Cq
 mA
 Te
-Te
+vQ
 qH
-Qa
+vQ
 Qa
 sk
 bX
@@ -8254,7 +8291,7 @@ Cq
 Sg
 sB
 Cq
-Qa
+vQ
 Qa
 sk
 bX
@@ -8382,9 +8419,9 @@ Cq
 Qa
 Qa
 Qa
-Cq
-Qa
-Qa
+vQ
+vQ
+vQ
 Qa
 sk
 bX
@@ -8511,8 +8548,8 @@ Et
 DW
 hO
 Qa
-Qa
-Qa
+Rv
+vQ
 Qa
 Qa
 Qa
@@ -8772,8 +8809,8 @@ qN
 ic
 Qa
 Te
-Te
-Te
+vQ
+vQ
 Qa
 Qa
 sk
@@ -8902,7 +8939,7 @@ gb
 vQ
 Te
 Te
-Te
+vQ
 Te
 Qa
 Qa
@@ -9032,7 +9069,7 @@ Fl
 vQ
 vQ
 Te
-Te
+vQ
 Te
 Qa
 Qa
@@ -12542,7 +12579,7 @@ bX
 bX
 bX
 tz
-tz
+zX
 tz
 tz
 bX
