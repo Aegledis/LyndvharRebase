@@ -17,7 +17,7 @@
 			return strings("german_replacement.json", type)
 		if("Valorian accent")
 			return strings("italian_replacement.json", type)
-		if("Saltlian accent")
+		if("Yanshen accent")
 			return strings("asian_replacement.json", type)
 		if("Lyndhardtian accent")
 			return strings("Anglish.json", type)
