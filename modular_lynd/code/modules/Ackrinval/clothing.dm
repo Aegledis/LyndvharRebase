@@ -6,9 +6,9 @@
 	icon_state = "warlock"
 	item_state = "warlock"
 	icon = 'icons/roguetown/clothing/armor.dmi'
-	mob_overlay_icon = 'icons/roguetown/clothing/onmob/armor.dmi'
+	mob_overlay_icon = 'modular_lynd/icons/Ackrinval/necromanceronmob.dmi'
 	sleeved = null
-	boobed = TRUE
+	boobed = FALSE
 	color = null
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
