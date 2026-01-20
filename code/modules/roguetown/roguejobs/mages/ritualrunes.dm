@@ -168,7 +168,7 @@ GLOBAL_LIST(teleport_runes)
 		fail_invoke()
 		return
 
-	var/ritualnameinput = browser_input_list(user, "Rituals", "", rituals)
+	var/ritualnameinput = tgui_input_list(user, "Rituals", "", rituals)
 	var/datum/runeritual/pickritual1 = rituals[ritualnameinput]
 
 	if(!pickritual1)
