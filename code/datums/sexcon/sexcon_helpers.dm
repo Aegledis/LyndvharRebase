@@ -134,6 +134,21 @@
 		else
 			playsound(target, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
 
+/datum/sex_controller/proc/oralcourse_noise(atom/movable/target)
+	if(!user || QDELETED(user) || !istype(user))
+		return
+	playsound(target, pick('sound/misc/mat/oral (1).ogg','sound/misc/mat/oral (2).ogg','sound/misc/mat/oral (3).ogg','sound/misc/mat/oral (4).ogg','sound/misc/mat/oral (5).ogg','sound/misc/mat/oral (6).ogg','sound/misc/mat/oral (7).ogg'), 40, TRUE, -2, ignore_walls = FALSE)
+	var/volume_layer = 1
+	switch(force)
+		if(SEX_FORCE_LOW)
+			return
+		if(SEX_FORCE_HIGH)
+			volume_layer = 2
+		if(SEX_FORCE_EXTREME)
+			volume_layer = 3
+	volume_layer *= speed // speed is always between 1-4 (SEX_SPEED_MIN-SEX_SPEED_MAX)
+	playsound(target, pick('sound/misc/mat/saliva (1).ogg','sound/misc/mat/saliva (2).ogg','sound/misc/mat/saliva (3).ogg'), volume_layer, TRUE, -2, ignore_walls = FALSE)
+
 /mob/living/carbon/human/proc/try_impregnate(mob/living/carbon/human/wife)
 	var/obj/item/organ/testicles/testes = getorganslot(ORGAN_SLOT_TESTICLES)
 	if(!testes)
