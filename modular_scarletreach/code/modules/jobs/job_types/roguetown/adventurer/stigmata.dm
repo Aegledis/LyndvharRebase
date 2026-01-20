@@ -8,7 +8,7 @@
 
 	subclass_stats = list(
 		STATKEY_CON = 5,
-		STATKEY_END = 3,
+		STATKEY_WIL = 3,
 		STATKEY_SPD = 1,
 		STATKEY_STR = -2,
 	)
