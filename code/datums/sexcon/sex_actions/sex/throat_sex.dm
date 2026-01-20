@@ -43,7 +43,8 @@
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks [target]'s throat."))
 	else
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] knot-fucks [target]'s throat."))
-	playsound(target, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
+	user.sexcon.intercourse_noise(target, TRUE)
+	target.sexcon.make_sucking_noise()
 	user.sexcon.do_thrust_animate(target)
 
 	user.sexcon.perform_sex_action(user, 2, 0, TRUE)
@@ -89,7 +90,8 @@
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] double-fucks [target]'s throat."))
 	else
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] double-knots [target]'s throat."))
-	playsound(target, 'sound/misc/mat/segso.ogg', 50, TRUE, -2, ignore_walls = FALSE)
+	user.sexcon.intercourse_noise(target, TRUE)
+	target.sexcon.make_sucking_noise()
 	user.sexcon.do_thrust_animate(target)
 
 	user.sexcon.perform_sex_action(user, 2, 0, TRUE)
