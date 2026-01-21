@@ -2,7 +2,7 @@
 	name = "Forvheipal Thrall"
 	tutorial = "A thrall-warrior from the strange and enigmatic kingdom in Yoheon, Forvheipal. The thralls are a sellsword contingent of the Zapyrixian Order- mostly made up of Lupians and Vulpkian slaves-from-birth. They will do any work for the highest bidder as per their contract made from birth- and thus you will, too."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_SHUNNED_UP
+	allowed_races = ACCEPTED_RACES
 	class_select_category = CLASS_CAT_FORVHEIPAL
 	outfit = /datum/outfit/job/roguetown/mercenary/forvthrall
 	subclass_languages = list(/datum/language/forvheipan)
@@ -37,7 +37,7 @@
 	name = "Forvheipal Javelineer"
 	tutorial = "The Forvheipal Javelineers are the Zapyrixian Order's ranged thrall, wielding javelins and relying on their agility to avoid blows."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_SHUNNED_UP
+	allowed_races = ACCEPTED_RACES
 	outfit = /datum/outfit/job/roguetown/mercenary/forvjavelineer
 	subclass_languages = list(/datum/language/forvheipan)
 	cmode_music = 'sound/music/combat_blackstar.ogg'

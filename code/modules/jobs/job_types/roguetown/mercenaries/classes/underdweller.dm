@@ -3,7 +3,7 @@
 	name = "Underdweller Contractor"
 	tutorial = "A member of the Underdwellers, you've taken many of the deadliest contracts known to man in literal underground circles. No matter the race, you've put your differences aside for coin and adventure."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_SHUNNED_UP
+	allowed_races = ACCEPTED_RACES
 	outfit = /datum/outfit/job/roguetown/mercenary/underdweller
 	class_select_category = CLASS_CAT_UNALIGNED
 	category_tags = list(CTAG_MERCENARY)

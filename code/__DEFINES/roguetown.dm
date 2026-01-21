@@ -78,13 +78,13 @@ Balloon Alert / Floating Text defines
 	/datum/species/cervaline,\
 
 #define RACES_SHUNNED \
+	/datum/species/anthromorph,\
 	/datum/species/halforc,\
 	/datum/species/akula,\
 	/datum/species/tieberian,\
 	/datum/species/elf/dark,\
 
 #define RACES_DESPISED \
-	/datum/species/anthromorph,\
 	/datum/species/goblinp,\
 	/datum/species/kobold,\
 
