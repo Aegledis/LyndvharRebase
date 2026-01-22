@@ -126,7 +126,14 @@
 		"Chyerno" = SKIN_COLOR_CHYERNO,
 		"Zierzati" = SKIN_COLOR_ZIERZATI,
 		"Yolzuthboc" = SKIN_COLOR_YOLZUTHBOC,
-		"Yaborys" = SKIN_COLOR_YABORYS
+		"Yaborys" = SKIN_COLOR_YABORYS,
+		"Vesyl"	= SKIN_COLOR_VESYL,
+		"Krosec" = SKIN_COLOR_KROSEC,
+		"Asza" = SKIN_COLOR_ASZA,
+		"Krizzsha" = SKIN_COLOR_KRIZZSHA,
+		"Tosiz" = SKIN_COLOR_TOSIZ,
+		"Velothel" = SKIN_COLOR_VELOTHEL
+		
 	)
 
 /datum/species/tieberian/get_hairc_list()
