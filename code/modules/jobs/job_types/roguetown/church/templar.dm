@@ -273,7 +273,7 @@
 						cloak = /obj/item/clothing/cloak/templar/undivided
 		if(/datum/patron/divine/astrata)
 			wrists = /obj/item/clothing/neck/roguetown/psicross/astrata
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/astratan
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
 			cloak = /obj/item/clothing/cloak/templar/astratan
 		if(/datum/patron/divine/abyssor)
 			wrists = /obj/item/clothing/neck/roguetown/psicross/abyssor
