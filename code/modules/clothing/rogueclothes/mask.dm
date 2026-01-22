@@ -348,6 +348,7 @@
 	icon_state = "psydonmask"
 	item_state = "psydonmask"
 
+/*
 /obj/item/clothing/mask/rogue/facemask/prisoner
 	name = "cursed mask"
 	desc = "An iron mask that seals around the head, making it impossible to remove. It seems to be enchanted with some kind of vile magic..."
@@ -405,7 +406,7 @@
 		addtimer(CALLBACK(src, PROC_REF(timerup), user), timer)
 		say("YOUR PENANCE WILL BE COMPLETE IN [timer_minutes] MINUTES.")
 	return
-
+*/
 /obj/item/clothing/mask/rogue/facemask/steel
 	name = "steel mask"
 	icon_state = "smask"
