@@ -195,6 +195,7 @@
 	data += "<font color='#d0d67c'><span class='bold'>Adults:</span></font> [GLOB.lynd_round_stats[STATS_ADULT_POPULATION]]<br>"
 	data += "<font color='#FFD700'><span class='bold'>Middle-Aged:</span></font> [GLOB.lynd_round_stats[STATS_MIDDLEAGED_POPULATION]]<br>"
 	data += "<font color='#C0C0C0'><span class='bold'>Elderly:</span></font> [GLOB.lynd_round_stats[STATS_ELDERLY_POPULATION]]<br>"
+	data += "<font color='#cbd5ab'><span class='bold'>Immortal:</span></font> [GLOB.lynd_round_stats[STATS_IMMORTAL_POPULATION]]<br>"
 	data += "</div>"
 
 	// Right column	- Way too many races, so they've been thrown together.

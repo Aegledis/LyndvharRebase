@@ -7,7 +7,7 @@
 	desc = "<b>Kobold</b><br>\
 	Sharing a slightly common ancestry with the Eskallian, the Kobold is considered the failure-state of an Eskallian hatchery. Kobolds are small and relatively scrawny, but make up for this by living in large communities above and under the ground. Ever since the Eskallian were subjugated by Naexidor, Kobolds have lived in relatively more isolated but large tribes in the frontiers of society. They scavenge, steal, and raid from whatever they find, with a culture almost entirely based around their kleptomania. They reproduce fast, and unlike the roots of the other scaled beings they come from, Kobolds simply make more Kobolds- and can only reproduce with other Kobolds. Due to being seen as little more than pests they face extreme scrutiny from other mortals, as many are still openly hostile to their kind due to the repeat raids from kobold settlements.<br>"
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
-	possible_ages = ALL_AGES_LIST
+	possible_ages = ALL_NATURAL_AGES_LIST
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/mob/species/anthro_small_malea.dmi'
 	limbs_icon_f = 'icons/mob/species/anthro_small_femalea.dmi'

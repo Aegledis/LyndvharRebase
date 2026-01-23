@@ -10,7 +10,7 @@
 	These feline-like beings hail from the far northern territories of Zybantu, found more in the jungles of Akunana than the rest of the territory. They can come in many shapes and sizes, often being seen as tall as seven feet. With slender bodies they are often quite agile, making it much easier for them to hunt prey in the jungles of Northeastern Zybantium. Matched with an acute sense of smell and striking intelligence, the Tabaxi are some of the most feared hunters in these regions- as many still hold to tribal tradition in the northern areas where the Raj government is not able to so easily control or hold sway. They often prey on unsuspecting foreigners or adventurers who stray too close into their tribal prides in these jungles. Most others have propagated well outside of these regions however thanks to extreme efforts to slowly bring the race to heel over the decades and many Tabaxi are seen abroad now. Most living on this side of Beowricke are descendants of slaves that were brought by Zybantine corsairs to work as relatively cheap labor in many construction projects along the coastal regions of the Ruby Empire.<br>"
 	skin_tone_wording = "Fur Colors"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE, MUTCOLORS)
-	possible_ages = ALL_AGES_LIST
+	possible_ages = ALL_NATURAL_AGES_LIST
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mta.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fma.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'

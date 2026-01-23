@@ -7,7 +7,7 @@
 	spawn_positions = 2
 
 	allowed_races = RACES_SHUNNED_UP
-	allowed_ages = list(AGE_ADULT)
+	allowed_ages = list(AGE_ADULT, AGE_IMMORTAL)
 
 	tutorial = "Working under the tutelage of the Practitioner, you still remain a mere apprentice in the medical arts. Woe is the one who has to suffer your hand holding the scalpel when your master is out."
 

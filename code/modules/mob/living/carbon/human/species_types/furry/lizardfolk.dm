@@ -8,7 +8,7 @@
 	The Eskallian are incredibly distinct from the many other races dotted across Beowricke. This race hailing from the swamps of Calmirixia consists of many different shapes and sizes of scaled hides- which many could refer to smaller depictions of drakes, or Dragons- as they were much more well known in the Gilded Era. What position exactly they served- whether it be as servants or as their chosen beings- is a wildly debated topic amongst Eskallian society. Divided into two castes, the Eskallian consist of the Dracaena and the Caiman- who split during a heavy disagreement that resulted in brutal suppression and open revolt for years after the Dragons mysteriously vanished near the end of the Gilded Era. The Dracaena believed themselves to be the chosen of the Dragons, while the Caiman believed they had never been anything more than slaves. This resulting schism would uproot and destroy Eskallian society- much so to the point that both Dracaena and Caiman have formed a brutal hatred for one another, and something that to this day long after Naexidor’s conquest of Calmirixia has still not been mended.<br>"
 	skin_tone_wording = "Tribe"
 	species_traits = list(EYECOLOR,LIPS,STUBBLE,MUTCOLORS)
-	possible_ages = ALL_AGES_LIST
+	possible_ages = ALL_NATURAL_AGES_LIST
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mta.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fma.dmi'

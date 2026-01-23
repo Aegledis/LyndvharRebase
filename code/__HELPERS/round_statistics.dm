@@ -37,6 +37,7 @@
 #define STATS_ADULT_POPULATION "adult_population"
 #define STATS_MIDDLEAGED_POPULATION "middleaged_population"
 #define STATS_ELDERLY_POPULATION "elderly_population"
+#define STATS_IMMORTAL_POPULATION "immortal_population"
 
 // General statistics
 
@@ -266,6 +267,7 @@ GLOBAL_LIST_INIT(lynd_round_stats, list(
 	STATS_ADULT_POPULATION = 0,
 	STATS_MIDDLEAGED_POPULATION = 0,
 	STATS_ELDERLY_POPULATION = 0,
+	STATS_IMMORTAL_POPULATION = 0,
 	STATS_PSYCROSS_USERS = 0,
 	STATS_VAMPIRES = 0,
 	STATS_LUX_HARVESTED = 0,

@@ -8,7 +8,7 @@
 	selection_color = JCOLOR_SOLDIER
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_SHUNNED_UP
-	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
+	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_IMMORTAL)
 	job_traits = list(TRAIT_GUARDSMAN, TRAIT_STEELHEARTED)
 	tutorial = "Whether it was through a conscription or a want to do good and serve the city, you are one of the many city guard dotted the walls and streets. Responsible for the safety of the port city and the enforcement of the law, you are the vanguard of the city faced with punishing those who defy the Viscount and their laws. Life is difficult and danger often lurks around every single alley, but you find great camaraderie in your fellow men and women of the watch. Hopefully the city will endure another week with you protecting it."
 	display_order = JDO_TOWNGUARD

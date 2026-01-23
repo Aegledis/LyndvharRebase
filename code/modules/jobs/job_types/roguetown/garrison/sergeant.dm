@@ -8,7 +8,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_patrons = ALL_NICE_PATRONS
 	allowed_races = RACES_SHUNNED_UP
-	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	tutorial = "As the one with the most veterancy in the lump of men and women of the watch, you've been given direct control over most of the day-to-day orders given to these lemmings. While the lyfe is not easy, it is not the worst. You get paid well, and you get to tell people what to do. \
 				See to those under your command with due diligence and fill in the gaps that any of the retinue leave in their wake. Obey the orders given to you by your superiors, and you may be well-rewarded."
 	display_order = JDO_SERGEANT

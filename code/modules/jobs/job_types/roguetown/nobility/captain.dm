@@ -8,7 +8,7 @@
 	allowed_races = RACES_TOLERATED_UP
 	allowed_patrons = ALL_NICE_PATRONS
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	tutorial = "Your lineage is noble, and generations of strong, loyal men and women have come before you. You served your time gracefully as one of the most prominent knights of the Viscount, and one of the most feared fighters in Lyndvhar.. and now you've grown into a role which many men can only dream of becoming. Lead your men to victory--and keep them in line--and you will see this city prosper under a thousand suns and be returned to its former glory."
 	display_order = JDO_GUARD_CAPTAIN
 	advclass_cat_rolls = list(CTAG_CAPTAIN = 20)

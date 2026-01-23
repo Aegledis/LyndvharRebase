@@ -14,6 +14,8 @@
 		return "old"
 	else if (H.age == AGE_MIDDLEAGED)
 		return "middle-aged"
+	else if (H.age == AGE_IMMORTAL)
+		return "immortal"
 	else
 		return "adult"
 
