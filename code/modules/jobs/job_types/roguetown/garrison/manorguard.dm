@@ -9,7 +9,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_patrons = ALL_NICE_PATRONS
 	allowed_races = RACES_SHUNNED_UP
-	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
+	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_IMMORTAL)
 	job_traits = list(TRAIT_GUARDSMAN, TRAIT_STEELHEARTED)
 	tutorial = "Having proven yourself loyal and capable compared to most of the rabble on the streets, you were hired and entrusted to defend the Manor and keep it protected at all cost. \
 				With your newfound position came much training under the Cataphract, and with it a true warrior's education. \
