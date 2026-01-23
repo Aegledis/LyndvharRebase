@@ -159,10 +159,10 @@
 				to_chat(recipient, span_info("I recall my knowledge of [chosen_language]..."))
 				count--
 
-/datum/virtue/utility/deathless
+/*/datum/virtue/utility/deathless
 	name = "Deathless"
 	desc = "Some fell magick has rendered me inwardly unliving - I do not hunger, and I do not breathe. (Abuse of this Virtue will net punishment for immersion break. Tailored to Aasimar.)"
-	added_traits = list(TRAIT_NOHUNGER, TRAIT_NOBREATH)
+	added_traits = list(TRAIT_NOHUNGER, TRAIT_NOBREATH)*/
 
 /datum/virtue/utility/feral_appetite
 	name = "Feral Appetite"
