@@ -8,6 +8,7 @@
 
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_SHUNNED_UP
+	allowed_ages = ALL_NATURAL_AGES_LIST
 	advclass_cat_rolls = list(CTAG_CONSORT = 20)
 	tutorial = "You are a noble from a foreign court who has travelled to the city in order to win the hand of Lyndvhar's eligible ruler or his offspring and secure a political ally for your lesser house in this time of civil strife amongst the continent. Competition is fierce due to the city's relative isolation and safety from the war, and it seems you're not the only one vying for the Viscount's favor..."
 
