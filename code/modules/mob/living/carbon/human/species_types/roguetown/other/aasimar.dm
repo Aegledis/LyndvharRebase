@@ -11,7 +11,7 @@
 	max_age = "???"
 
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)
-	inherent_traits = list(TRAIT_NOMOBSWAP)
+	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_NOBREATH, TRAIT_NOHUNGER)
 	default_features = MANDATORY_FEATURE_LIST
 	use_skintones = TRUE
 	disliked_food = NONE
