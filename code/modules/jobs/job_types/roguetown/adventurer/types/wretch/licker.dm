@@ -17,10 +17,12 @@
 	if(H.mind)
 		H.adjust_blindness(-3)
 		var/list/possible_classes = list()
-		for(var/datum/advclass/CHECKS in SSrole_class_handler.sorted_class_categories[CTAG_ADVENTURER])
-			if(!(CTAG_LICKER_WRETCH in CHECKS.category_tags))
-				continue
-			possible_classes += CHECKS
+		var/list/categories_check = list(CTAG_ADVENTURER, CTAG_TRADER)
+		for(var/category in categories_check)
+			for(var/datum/advclass/CHECKS in SSrole_class_handler.sorted_class_categories[category])
+				if(!(CTAG_LICKER_WRETCH in CHECKS.category_tags))
+					continue
+				possible_classes += CHECKS
 
 		var/datum/advclass/C = input(H.client, "What is my class?", "Adventure") as null|anything in possible_classes
 		C.equipme(H)
