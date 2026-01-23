@@ -168,10 +168,14 @@
 /obj/item/organ/ears/elf
 	name = "elf ears"
 	accessory_type = /datum/sprite_accessory/ears/elf
+	icon = 'icons/roguetown/items/surgery.dmi'
+	icon_state = "elfear"
 
 /obj/item/organ/ears/elfw
 	name = "wood elf ears"
 	accessory_type = /datum/sprite_accessory/ears/elfw
+	icon = 'icons/roguetown/items/surgery.dmi'
+	icon_state = "elfear"
 
 /obj/item/organ/ears/tiefling
 	name = "tiefling ears"

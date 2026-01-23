@@ -599,6 +599,14 @@ GLOBAL_LIST_EMPTY(loadout_items)
 	name = "Fitted Coat"
 	path = /obj/item/clothing/cloak/cotehardie
 
+/datum/loadout_item/elfears
+	name = "Elfear Necklace"
+	path = /obj/item/clothing/neck/roguetown/elfears
+
+/datum/loadout_item/menears
+	name = "Menear Necklace"
+	path = /obj/item/clothing/neck/roguetown/menears
+
 //Donator Section
 //All these items are stored in the donator_fluff.dm in the azure modular folder for simplicity.
 //All should be subtypes of existing weapons/clothes/armor/gear, whatever, to avoid balance issues I guess. Idk, I'm not your boss.
