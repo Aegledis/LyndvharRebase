@@ -2,7 +2,7 @@
 	name = "Atgervian Varangian"
 	tutorial = "Atgervians are the term for those who live in the far north of Rhaenval. This land is particular known for its highlands and more hostile weather patterns- those who live here are the hardiest and most fiercesome of people. In past ages the Atgervians were known as fierce sea raiders- amassing wealth across the seas. But those daes have passed, and now most of the Varangian are seen doing mercenary work abroad."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_ALL_KINDS
+	allowed_races = ACCEPTED_RACES
 	outfit = /datum/outfit/job/roguetown/mercenary/atgervi
 	subclass_languages = list(/datum/language/rhaenvalian)
 	cmode_music = 'sound/music/combat_vagarian.ogg'

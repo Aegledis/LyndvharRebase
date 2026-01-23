@@ -4,7 +4,7 @@
 /datum/migrant_role/ackrinve/necromancer
 	name = "Ackrinval Necromancer"
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_SHUNNED_UP
+	allowed_races = RACES_ALL_KINDS
 	greet_text = "Hailing from the wastelands of far away Ackrinval, you have travelled a far distance in order to setup a coven to the glorious ones in this region. Myths speak of the Draguippe's deep connection to leylines, and have brought your dark watch upon it."
 	advclass_cat_rolls = list(CTAG_ACKRINVE_NECROMANCER = 20)
 
@@ -82,7 +82,7 @@
 	name = "Death Knight"
 	greet_text = "Having been rose as a thrall to the reigning Necromancer of the party, you know only one thing only: undying loyalty to your summoner. Let no harm befall them."
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = RACES_SHUNNED_UP
+	allowed_races = RACES_ALL_KINDS
 	advclass_cat_rolls = list(CTAG_ACKRINVE_KNIGHT = 20)
 
 /datum/migrant_role/ackrinve/knight/after_spawn(mob/living/carbon/human/L, mob/M, latejoin = TRUE)
