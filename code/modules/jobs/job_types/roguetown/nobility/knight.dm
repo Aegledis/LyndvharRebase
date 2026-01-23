@@ -8,7 +8,7 @@
 	allowed_races = RACES_TOLERATED_UP
 	allowed_patrons = ALL_NICE_PATRONS
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
+	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_IMMORTAL)
 	tutorial = "Having served as one of the most faithful members of the Retinue serving from humble beginnings as a squire, you were rewarded most gloriously by the Viscount with a proper noble title and knighthood, serving as the Cataphract to the House of Lyndvhar. Lead your men to victory--and keep them in line--and you will see this city prosper under a thousand suns and be returned to its former glory."
 	display_order = JDO_KNIGHT
 	whitelist_req = TRUE
