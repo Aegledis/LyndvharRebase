@@ -29,7 +29,7 @@
 	)
 
 /datum/advclass/servant
-	traits_applied = list(TRAIT_CICERONE, TRAIT_ROYALSERVANT)
+	traits_applied = list(TRAIT_CICERONE, TRAIT_KEENEARS, TRAIT_SLEUTH, TRAIT_ROYALSERVANT)
 
 /datum/advclass/servant/servant
 	name = "Servant"
@@ -56,14 +56,14 @@
 
 /datum/outfit/job/roguetown/servant/servant/pre_equip(mob/living/carbon/human/H)
 	..()
-	pants = /obj/item/clothing/under/roguetown/trou
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
-	shoes = /obj/item/clothing/shoes/roguetown/shortboots
-	backl = /obj/item/storage/backpack/rogue/satchel/short
-	belt = /obj/item/storage/belt/rogue/leather
+	pants = /obj/item/clothing/under/roguetown/trou/formal/shorts
+	armor = /obj/item/clothing/suit/roguetown/shirt/dress/maid/servant
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/formal
+	shoes = /obj/item/clothing/shoes/roguetown/boots
+	backl = /obj/item/storage/backpack/rogue/satchel/black
+	belt = /obj/item/storage/belt/rogue/leather/suspenders/butler
 	beltr = /obj/item/storage/keyring/servant
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-	armor = /obj/item/clothing/suit/roguetown/armor/workervest
 	gloves = /obj/item/clothing/gloves/roguetown/fingerless
 	if(H.age == AGE_MIDDLEAGED)
 		H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
@@ -100,13 +100,12 @@
 
 /datum/outfit/job/roguetown/servant/maid/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/roguetown/paddedcap
-	armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen
+	head = /obj/item/clothing/head/roguetown/maidband
+	armor = /obj/item/clothing/suit/roguetown/shirt/dress/maid
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
-	pants = /obj/item/clothing/under/roguetown/tights/stockings/white
-	cloak = /obj/item/clothing/cloak/apron/waist
-	backl = /obj/item/storage/backpack/rogue/satchel/short
-	belt = /obj/item/storage/belt/rogue/leather
+	cloak = /obj/item/clothing/cloak/apron/maid
+	backl = /obj/item/storage/backpack/rogue/satchel/black
+	belt = /obj/item/storage/belt/rogue/leather/sash
 	beltr = /obj/item/storage/keyring/servant
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 	if(H.age == AGE_MIDDLEAGED)
@@ -144,11 +143,11 @@
 
 /datum/outfit/job/roguetown/servant/butler/pre_equip(mob/living/carbon/human/H)
 	..()
-	pants = /obj/item/clothing/under/roguetown/tights
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
-	shoes = /obj/item/clothing/shoes/roguetown/shortboots
-	backl = /obj/item/storage/backpack/rogue/satchel/short
-	belt = /obj/item/storage/belt/rogue/leather
+	pants = /obj/item/clothing/under/roguetown/trou/formal/shorts
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/formal
+	shoes = /obj/item/clothing/shoes/roguetown/boots
+	backl = /obj/item/storage/backpack/rogue/satchel/black
+	belt = /obj/item/storage/belt/rogue/leather/suspenders/butler
 	beltr = /obj/item/storage/keyring/servant
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest

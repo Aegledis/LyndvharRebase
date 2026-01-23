@@ -40,6 +40,10 @@ GLOBAL_LIST_EMPTY(loadout_items)
 	name = "Tricorn Hat"
 	path = /obj/item/clothing/head/roguetown/helmet/tricorn
 
+/datum/loadout_item/maidband
+    name = "Maid's Headband"
+    path = /obj/item/clothing/head/roguetown/maidband
+
 /datum/loadout_item/nurseveil
 	name = "Nurse's Veil"
 	path = /obj/item/clothing/head/roguetown/veiled
@@ -180,6 +184,10 @@ GLOBAL_LIST_EMPTY(loadout_items)
 	name = "Poncho"
 	path = /obj/item/clothing/cloak/poncho
 
+/datum/loadout_item/maidapron
+    name = "Maid's Apron"
+    path = /obj/item/clothing/cloak/apron/maid
+
 //SHOES
 /datum/loadout_item/darkboots
 	name = "Dark Boots"
@@ -274,6 +282,18 @@ GLOBAL_LIST_EMPTY(loadout_items)
 	name = "Striped Tunic"
 	path = /obj/item/clothing/suit/roguetown/armor/workervest
 
+/datum/loadout_item/formalshirt
+    name = "Formal Shirt"
+    path = /obj/item/clothing/suit/roguetown/shirt/undershirt/formal
+
+/datum/loadout_item/servantdress
+    name = "Dress, Servant"
+    path = /obj/item/clothing/suit/roguetown/shirt/dress/maid/servant
+
+/datum/loadout_item/maiddress
+    name = "Dress, Maid"
+    path = /obj/item/clothing/suit/roguetown/shirt/dress/maid
+
 /datum/loadout_item/dress
 	name = "Dress"
 	path = /obj/item/clothing/suit/roguetown/shirt/dress/gen
@@ -346,6 +366,14 @@ GLOBAL_LIST_EMPTY(loadout_items)
 	name = "Leather Tights"
 	path = /obj/item/clothing/under/roguetown/trou/leathertights
 
+/datum/loadout_item/formalshorts
+    name = "Formal Shorts"
+    path = /obj/item/clothing/under/roguetown/trou/formal/shorts
+
+/datum/loadout_item/formaltrousers
+    name = "Formal Trousers"
+    path = /obj/item/clothing/under/roguetown/trou/formal
+
 /datum/loadout_item/trou
 	name = "Work Trousers"
 	path = /obj/item/clothing/under/roguetown/trou
@@ -406,6 +434,10 @@ GLOBAL_LIST_EMPTY(loadout_items)
 /datum/loadout_item/exoticsilkbelt
 	name = "Exotic Silk Belt"
 	path = /obj/item/storage/belt/rogue/leather/exoticsilkbelt
+
+/datum/loadout_item/butlersuspenders
+    name = "Suspenders"
+    path = /obj/item/storage/belt/rogue/leather/suspenders/butler
 
 /datum/loadout_item/ragmask
 	name = "Rag Mask"

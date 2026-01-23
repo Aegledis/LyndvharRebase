@@ -23,7 +23,7 @@
 	)
 
 /datum/advclass/seneschal
-	traits_applied = list(TRAIT_CICERONE, TRAIT_HOMESTEAD_EXPERT, TRAIT_SEWING_EXPERT, TRAIT_ROYALSERVANT) // They have Expert Sewing
+	traits_applied = list(TRAIT_CICERONE, TRAIT_KEENEARS, TRAIT_SLEUTH, TRAIT_HOMESTEAD_EXPERT, TRAIT_SEWING_EXPERT, TRAIT_ROYALSERVANT) // They have Expert Sewing
 	category_tags = list(CTAG_SENESCHAL)
 
 /datum/advclass/seneschal/seneschal
@@ -67,15 +67,14 @@
 
 /datum/outfit/job/roguetown/seneschal/seneschal/pre_equip(mob/living/carbon/human/H)
 	..()
-	pants = /obj/item/clothing/under/roguetown/tights
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced/short
-	backl = /obj/item/storage/backpack/rogue/satchel/short
-	belt = /obj/item/storage/belt/rogue/leather
+	armor = /obj/item/clothing/armor/gambeson/tailcoat
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/formal
+	pants = /obj/item/clothing/under/roguetown/trou/formal
+	shoes = /obj/item/clothing/shoes/roguetown/boots/nobleboot
+	backl = /obj/item/storage/backpack/rogue/satchel/black
+	belt = /obj/item/storage/belt/rogue/leather/suspenders/butler // Aware that these render over shit like coats. it's a problem for another day, in my time.
 	beltr = /obj/item/storage/keyring/servant
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
-	if(should_wear_femme_clothes(H)) 
-		armor = /obj/item/clothing/suit/roguetown/armor/silkcoat
 
 /datum/advclass/seneschal/headmaid
 	name = "Head Maid"
@@ -102,12 +101,12 @@
 
 /datum/outfit/job/roguetown/seneschal/headmaid/pre_equip(mob/living/carbon/human/H)
 	..()
-	armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/black
-	pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/white 
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced/short
-	cloak = /obj/item/clothing/cloak/apron/waist
-	backl = /obj/item/storage/backpack/rogue/satchel/short
-	belt = /obj/item/storage/belt/rogue/leather
+	head = /obj/item/clothing/head/roguetown/maidband
+	armor = /obj/item/clothing/suit/roguetown/shirt/dress/maid
+	shoes = /obj/item/clothing/shoes/roguetown/shortboots
+	cloak = /obj/item/clothing/cloak/apron/maid
+	backl = /obj/item/storage/backpack/rogue/satchel/black
+	belt = /obj/item/storage/belt/rogue/leather/sash
 	beltr = /obj/item/storage/keyring/servant
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 
@@ -136,11 +135,11 @@
 
 /datum/outfit/job/roguetown/seneschal/chiefbutler/pre_equip(mob/living/carbon/human/H)
 	..() // They need a monocle.
-	pants = /obj/item/clothing/under/roguetown/tights/black
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced/short
-	backl = /obj/item/storage/backpack/rogue/satchel/short
-	belt = /obj/item/storage/belt/rogue/leather
+	armor = /obj/item/clothing/armor/gambeson/tailcoat
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/formal
+	pants = /obj/item/clothing/under/roguetown/trou/formal
+	shoes = /obj/item/clothing/shoes/roguetown/boots/nobleboot
+	backl = /obj/item/storage/backpack/rogue/satchel/black
+	belt = /obj/item/storage/belt/rogue/leather/suspenders/butler
 	beltr = /obj/item/storage/keyring/servant
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/black
