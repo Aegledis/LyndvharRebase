@@ -906,3 +906,13 @@
 		REMOVE_TRAIT(user, TRAIT_STRENGTH_UNCAPPED, TRAIT_GENERIC)
 		active_item = FALSE
 	return
+
+/obj/item/clothing/neck/roguetown/elfears
+	name = "elfear necklace"
+	desc = "A necklace made from the preserved ears of elves. A trophy to show off the wearer's macabre collection of elven ears."
+	icon_state = "elfears"
+
+/obj/item/clothing/neck/roguetown/menears
+	name = "menear necklace"
+	desc = "A necklace made from the preserved ears of humens. A trophy to show off the wearer's macabre collection of humen ears."
+	icon_state = "menears"
