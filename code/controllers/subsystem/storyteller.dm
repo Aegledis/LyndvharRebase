@@ -1159,6 +1159,7 @@ SUBSYSTEM_DEF(gamemode)
         STATS_ADULT_POPULATION,
         STATS_MIDDLEAGED_POPULATION,
         STATS_ELDERLY_POPULATION,
+		STATS_IMMORTAL_POPULATION,
         STATS_ALIVE_NORTHERN_HUMANS,
         STATS_ALIVE_DWARVES,
         STATS_ALIVE_DARK_ELVES,
@@ -1243,8 +1244,10 @@ SUBSYSTEM_DEF(gamemode)
 					record_round_statistic(STATS_ADULT_POPULATION)
 				if(AGE_MIDDLEAGED)
 					record_round_statistic(STATS_MIDDLEAGED_POPULATION)
-				if(AGE_OLD, AGE_IMMORTAL)
+				if(AGE_OLD)
 					record_round_statistic(STATS_ELDERLY_POPULATION)
+				if(AGE_IMMORTAL)
+					record_round_statistic(STATS_IMMORTAL_POPULATION)
 			if(human_mob.is_noble())
 				record_round_statistic(STATS_ALIVE_NOBLES)
 			if(human_mob.mind.assigned_role in GLOB.garrison_positions)
