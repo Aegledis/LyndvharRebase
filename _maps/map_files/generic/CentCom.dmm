@@ -2465,6 +2465,13 @@
 /obj/structure/fluff/walldeco/mona,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/vampire_lair)
+"oF" = (
+/obj/machinery/light/rogue/wallfire/candle,
+/obj/structure/fluff/buysign{
+	name = "TO UNDERDARK"
+	},
+/turf/open/floor/carpet/red,
+/area/rogue/under/cave/inhumen)
 "oH" = (
 /obj/structure/fluff/railing/corner/south_west,
 /obj/structure/fluff/railing/corner,
@@ -11882,7 +11889,7 @@ bY
 bY
 bY
 df
-cs
+oF
 bZ
 bZ
 df
